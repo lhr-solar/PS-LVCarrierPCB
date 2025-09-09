@@ -8,13 +8,10 @@
 *.kicad_pcb-bak
 *.kicad_sch-bak
 *-backups
-*-cache*
-*-bak
-*-bak*
+*.kicad_prl
+*.sch-bak
 *~
-~*
 _autosave-*
-\#auto_saved_files\#
 *.tmp
 *-save.pro
 *-save.kicad_pcb
@@ -33,8 +30,9 @@ fp-info-cache
 *.xml
 *.csv
 
-# Archived Backups (KiCad 6.0)
-**/*-backups/*.zip
+.DS_Store
+replicate_layout.log
 
-# Local project settings
-*.kicad_prl
+build/
+.vscode/
+.vscode/compile_commands.json
