@@ -1665,16 +1665,6 @@
 		)
 		(uuid "8afa13ec-cfb3-4a58-a1eb-3d1bd3183bf1")
 	)
-	(text "Caps must be rated >150v"
-		(exclude_from_sim no)
-		(at 83.312 31.75 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "9148e5e1-7ad9-4a1b-8246-aadf33ad3678")
-	)
 	(text "Vicor Maxi Converter"
 		(exclude_from_sim no)
 		(at 124.46 64.516 0)
@@ -1724,12 +1714,6 @@
 		(uuid "853b53aa-ee26-4785-8228-e166d4ea757a")
 	)
 	(junction
-		(at 100.33 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "85c955ef-cdec-43ed-b7ee-d6253e8ed2eb")
-	)
-	(junction
 		(at 59.69 25.4)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1752,12 +1736,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b87ce148-d887-466d-9dfa-774d7a59a3ab")
-	)
-	(junction
-		(at 100.33 25.4)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bfe811f6-4bdf-40d1-b48e-cfb53cedd584")
 	)
 	(junction
 		(at 80.01 38.1)
@@ -1968,16 +1946,6 @@
 			(type default)
 		)
 		(uuid "46d1a75d-b613-445b-bb5b-4edb4983a67a")
-	)
-	(wire
-		(pts
-			(xy 100.33 35.56) (xy 100.33 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4cacdd12-41f5-4dd4-b9d0-f19cb8fa1a6c")
 	)
 	(wire
 		(pts
@@ -2248,16 +2216,6 @@
 			(type default)
 		)
 		(uuid "caa4863f-f0c7-40fe-8f6b-3311e10f0508")
-	)
-	(wire
-		(pts
-			(xy 100.33 27.94) (xy 100.33 25.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eccdb8b3-5e97-4b35-98fc-cbe4e19ff41d")
 	)
 	(wire
 		(pts
@@ -6298,7 +6256,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric_Pad1.57x3.40mm_HandSolder"
 			(at 73.66 37.1348 0)
 			(effects
 				(font
@@ -6318,6 +6276,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 69.85 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PN" "GA343DR7GD472KW01L"
+			(at 69.85 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6365,7 +6332,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric_Pad1.57x3.40mm_HandSolder"
 			(at 93.98 37.1348 0)
 			(effects
 				(font
@@ -6385,6 +6352,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 90.17 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PN" "GA343DR7GD472KW01L"
+			(at 90.17 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6900,7 +6876,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric_Pad1.57x3.40mm_HandSolder"
 			(at 73.66 24.4348 0)
 			(effects
 				(font
@@ -6920,6 +6896,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 69.85 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PN" "GA343DR7GD472KW01L"
+			(at 69.85 25.4 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7567,76 +7552,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 100.33 31.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c0a48e16-a6f8-487d-a0c2-af4aa8cf0e5a")
-		(property "Reference" "C6"
-			(at 104.14 30.4799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0.1uF"
-			(at 104.14 33.0199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 101.2952 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 100.33 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 100.33 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "daef455d-f8bf-4299-976a-dce2a5f9c11f")
-		)
-		(pin "2"
-			(uuid "9d76921f-25c7-4957-8eaf-ece872e15d67")
-		)
-		(instances
-			(project "MaxiCarrier"
-				(path "/9822b44e-a9c2-4c7f-86ac-4edcd1d27dc4/89fb0e6b-6d5f-4609-8215-b6408236ae89"
-					(reference "C6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:VCC")
 		(at 22.86 22.86 0)
 		(unit 1)
@@ -7925,7 +7840,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric_Pad1.57x3.40mm_HandSolder"
 			(at 93.98 24.4348 0)
 			(effects
 				(font
@@ -7945,6 +7860,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 90.17 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PN" "GA343DR7GD472KW01L"
+			(at 90.17 25.4 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7995,7 +7919,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1812_4532Metric_Pad1.57x3.40mm_HandSolder"
 			(at 60.6552 35.56 0)
 			(effects
 				(font
@@ -8014,6 +7938,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 59.69 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" ""
+			(at 59.69 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PN" "C1812X204KDRLCAUTO"
 			(at 59.69 31.75 0)
 			(effects
 				(font
