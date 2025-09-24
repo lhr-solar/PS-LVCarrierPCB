@@ -276,189 +276,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:LED"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "LED"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Light emitting diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "LED diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "LED_0_1"
-				(polyline
-					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy 1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "LED_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -2058,18 +1875,6 @@
 		(uuid 49ad4cc3-a02b-4bb0-89bf-940b4c81307d)
 	)
 	(rectangle
-		(start 127 12.7)
-		(end 175.26 105.41)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 5ed0dd4b-cd24-43c8-8cc1-1c76063a36fe)
-	)
-	(rectangle
 		(start 12.7 12.7)
 		(end 88.265 105.41)
 		(stroke
@@ -2400,17 +2205,6 @@
 		)
 		(uuid "72fb4dc9-4132-445b-a8e1-2ed9b13e1d5d")
 	)
-	(text "Using buffer"
-		(exclude_from_sim no)
-		(at 130.81 20.32 0)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left)
-		)
-		(uuid "743bf2e0-9e5b-4b12-b44b-ae61cb8b848b")
-	)
 	(text "Current Limit"
 		(exclude_from_sim no)
 		(at 24.13 110.49 0)
@@ -2498,18 +2292,6 @@
 			)
 		)
 		(uuid "cd29f736-1855-4de0-a4a4-32f72e5cebbd")
-	)
-	(text "LEDs"
-		(exclude_from_sim no)
-		(at 133.35 16.51 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-		)
-		(uuid "da8513f6-00e1-4ffc-b674-560deaf40176")
 	)
 	(text "Notes:\n- As per datasheet, using 10uf to 50 uf\n  of output capacitance per Ampere of\n  maximum load current achieves a\n  reasonable tradeoff. As such:\n \n  40 uf * 20 = 8 mF\n- Need to look more closely into this.\n"
 		(exclude_from_sim no)
@@ -2701,8 +2483,20 @@
 		(uuid "f50c7fc2-420d-4ca9-8dd5-310c31263cac")
 	)
 	(no_connect
+		(at 151.13 157.48)
+		(uuid "00b1145d-243e-4305-a739-0b7de93fa45d")
+	)
+	(no_connect
 		(at 31.75 71.12)
 		(uuid "43f29c60-eeeb-4ef4-a6fe-2d27e4d41e19")
+	)
+	(no_connect
+		(at 100.33 81.28)
+		(uuid "7c769140-64bc-4d65-9c2b-cc8d0ad36204")
+	)
+	(no_connect
+		(at 133.35 157.48)
+		(uuid "fd03759e-d140-4386-b927-b19860b2ee56")
 	)
 	(wire
 		(pts
@@ -2916,16 +2710,6 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 31.75) (xy 151.13 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "270f25df-ac2e-44b7-ad10-ae110db13d7f")
-	)
-	(wire
-		(pts
 			(xy 260.35 99.06) (xy 260.35 85.09)
 		)
 		(stroke
@@ -2966,16 +2750,6 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 76.2) (xy 151.13 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2e667ad5-f541-4b37-bc7c-7c635d4415b4")
-	)
-	(wire
-		(pts
 			(xy 198.12 25.4) (xy 200.66 25.4)
 		)
 		(stroke
@@ -2986,23 +2760,13 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 92.71) (xy 106.68 97.79)
+			(xy 114.3 91.44) (xy 114.3 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "32cf4536-c47c-47fb-a81c-2a074ac472bd")
-	)
-	(wire
-		(pts
-			(xy 148.59 58.42) (xy 151.13 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "343633df-3788-4ecd-b4f2-ed29078c3c63")
 	)
 	(wire
 		(pts
@@ -3466,16 +3230,6 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 40.64) (xy 151.13 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ee6b569-cb38-403b-b444-6ef421f0ddd1")
-	)
-	(wire
-		(pts
 			(xy 220.98 22.86) (xy 223.52 22.86)
 		)
 		(stroke
@@ -3866,23 +3620,13 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 77.47) (xy 106.68 85.09)
+			(xy 114.3 76.2) (xy 114.3 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c8b68afb-20a8-4731-8cb0-e4b6c126542d")
-	)
-	(wire
-		(pts
-			(xy 148.59 67.31) (xy 151.13 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c9a05f2d-134c-4c99-8090-edc1f44bc4b6")
 	)
 	(wire
 		(pts
@@ -4103,16 +3847,6 @@
 			(type default)
 		)
 		(uuid "fb831898-6e79-4a47-8bbe-56ddb20619ba")
-	)
-	(wire
-		(pts
-			(xy 148.59 49.53) (xy 151.13 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fe625e9e-b5ae-4f58-875c-f4fd88f0723e")
 	)
 	(wire
 		(pts
@@ -7893,16 +7627,6 @@
 		)
 		(uuid "0c45f329-a996-49c1-97a9-f395ac5be01c")
 	)
-	(label "CHL1"
-		(at 140.97 31.75 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "0f8cfc5a-defb-406c-93a5-d7bac3774a72")
-	)
 	(label "OUT"
 		(at 68.58 82.55 270)
 		(effects
@@ -7972,16 +7696,6 @@
 			(justify left bottom)
 		)
 		(uuid "230ac8fb-cfc0-41a2-a687-97eccc8d3085")
-	)
-	(label "FTL1"
-		(at 140.97 49.53 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "2542b694-12af-4457-a3b5-ed605a4d8625")
 	)
 	(label "SHDN"
 		(at 269.24 99.06 90)
@@ -8063,26 +7777,6 @@
 		)
 		(uuid "35937735-9588-48dd-92ac-30753b87d625")
 	)
-	(label "CH1"
-		(at 156.21 31.75 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "36a2086e-8c93-47f4-84d7-566474c58bb4")
-	)
-	(label "VALID1"
-		(at 156.21 67.31 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3942b2ab-9b61-45c3-a2ee-e7594049c0f8")
-	)
 	(label "VALID1"
 		(at 232.41 160.02 90)
 		(effects
@@ -8132,6 +7826,16 @@
 			(justify right bottom)
 		)
 		(uuid "42e06ede-d10f-4592-af92-5024fb3917e7")
+	)
+	(label "TMR2"
+		(at 154.94 163.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "430379d9-a121-4e6d-8454-3160de8bfbc9")
 	)
 	(label "DISABLE1"
 		(at 275.59 121.92 180)
@@ -8213,26 +7917,6 @@
 		)
 		(uuid "5324424a-dffd-4b1f-bb82-a46073ebe25b")
 	)
-	(label "VDL2"
-		(at 140.97 76.2 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "53c56906-de88-46c9-ab01-8f013949aadc")
-	)
-	(label "FAULT2"
-		(at 156.21 58.42 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "55cf2526-43fd-4ac9-9c7a-fabab226ae6a")
-	)
 	(label "VALID1"
 		(at 223.52 22.86 0)
 		(effects
@@ -8313,15 +7997,15 @@
 		)
 		(uuid "64c6582e-d855-4120-bd13-a0954c3c2d64")
 	)
-	(label "CH2"
-		(at 156.21 40.64 0)
+	(label "TMR1"
+		(at 137.16 163.83 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "68d8c0e0-b036-4478-97eb-1ed96772df62")
+		(uuid "69091f8d-96fa-4e3c-86ad-02a4e9534c5b")
 	)
 	(label "OUT"
 		(at 223.52 41.91 0)
@@ -8353,16 +8037,6 @@
 		)
 		(uuid "6e670e23-7621-449e-8e29-044b7d8a67d3")
 	)
-	(label "FTL2"
-		(at 140.97 58.42 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "6fea407e-312d-4028-8a80-e07b74ec5887")
-	)
 	(label "OV1"
 		(at 198.12 40.64 180)
 		(effects
@@ -8393,25 +8067,15 @@
 		)
 		(uuid "7826c772-d9ee-4ee5-8df5-bed87ad13ba3")
 	)
-	(label "VALID2"
-		(at 156.21 76.2 0)
+	(label "QUAL"
+		(at 104.14 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "78f1351e-aa4d-40a0-a3aa-de0641eed061")
-	)
-	(label "FAULT1"
-		(at 156.21 49.53 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8509648d-ceea-4333-a327-039e8a380848")
+		(uuid "85d8c443-6b7f-46fe-9af9-5e9b2da4dc9b")
 	)
 	(label "UVF2"
 		(at 77.47 45.72 180)
@@ -8523,16 +8187,6 @@
 		)
 		(uuid "9762e234-c210-4486-8d3a-4106861ba420")
 	)
-	(label "VDL1"
-		(at 140.97 67.31 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "99cb3425-8491-41aa-8278-5b6d2fddd53d")
-	)
 	(label "SENSE2"
 		(at 77.47 35.56 180)
 		(effects
@@ -8594,7 +8248,7 @@
 		(uuid "a13e0ea2-bf13-472a-be1f-2e1d6d2c7ac3")
 	)
 	(label "QUAL"
-		(at 106.68 77.47 270)
+		(at 114.3 76.2 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8963,16 +8617,6 @@
 		)
 		(uuid "ee91cb69-302d-42d2-82f1-8ff112d07da0")
 	)
-	(label "CHL2"
-		(at 140.97 40.64 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "ef0e42b4-0798-45ad-be56-34c32f7d4633")
-	)
 	(label "UVR1"
 		(at 223.52 17.78 0)
 		(effects
@@ -9053,74 +8697,6 @@
 			(justify right)
 		)
 		(uuid "ab2103ff-0e8b-46cb-9ba2-d44439a001db")
-	)
-	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 153.67 31.75 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "022b91b8-10fd-42c8-9f68-bae82760e60b")
-		(property "Reference" "R11"
-			(at 153.924 29.21 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R_Small_US"
-			(at 153.67 27.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 153.67 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 153.67 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 153.67 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "33691f81-73b7-4093-8784-fada9969981a")
-		)
-		(pin "1"
-			(uuid "7e7a77a5-4e19-44ec-9d15-c8aab0f5d18b")
-		)
-		(instances
-			(project "LVMuxPCB"
-				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "R11")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "ECE319K:C")
@@ -9487,82 +9063,6 @@
 			(project "LVMuxPCB"
 				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
 					(reference "R17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 144.78 31.75 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "112643f2-1485-47d9-aca8-e04fac4ed829")
-		(property "Reference" "D3"
-			(at 144.526 26.162 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 144.526 28.702 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
-			(at 144.78 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.78 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 144.78 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 144.78 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b47bcdff-16ba-4fc6-8dda-a441d4878916")
-		)
-		(pin "1"
-			(uuid "995af9ea-a726-4c00-814a-9841e5b919fc")
-		)
-		(instances
-			(project "LVMuxPCB"
-				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -10195,74 +9695,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 153.67 49.53 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1e50f5d5-8f8c-4b2a-9c46-124bfad916ff")
-		(property "Reference" "R13"
-			(at 153.924 46.99 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R_Small_US"
-			(at 153.67 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 153.67 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 153.67 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 153.67 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "4bb4cce4-05cd-49a1-a143-ab979a871dac")
-		)
-		(pin "1"
-			(uuid "546e6719-d7c3-4ceb-a0a5-683c66ba6f25")
-		)
-		(instances
-			(project "LVMuxPCB"
-				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "R13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 214.63 81.28 0)
 		(unit 1)
@@ -10453,24 +9885,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 153.67 67.31 90)
+		(lib_id "power:GND")
+		(at 133.35 170.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2181e964-25f9-4670-a0a6-336fe7c0187f")
-		(property "Reference" "R15"
-			(at 153.924 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R_Small_US"
-			(at 153.67 63.5 90)
+		(fields_autoplaced yes)
+		(uuid "21fec3e8-5700-4693-a4d0-a9ac65cb9fb1")
+		(property "Reference" "#PWR029"
+			(at 133.35 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10478,8 +9903,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 153.67 67.31 0)
+		(property "Value" "GND"
+			(at 133.35 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10487,8 +9912,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 153.67 67.31 0)
+		(property "Footprint" ""
+			(at 133.35 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10496,8 +9921,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small US symbol"
-			(at 153.67 67.31 0)
+		(property "Datasheet" ""
+			(at 133.35 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10505,16 +9930,22 @@
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "82df2b12-dcc3-403e-878b-7ff4b220d560")
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 133.35 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "1"
-			(uuid "f1f479bb-59de-4a69-b889-0c90c1d645e2")
+			(uuid "e54a600a-ba90-4123-a048-638fca696036")
 		)
 		(instances
 			(project "LVMuxPCB"
 				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "R15")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -10522,7 +9953,7 @@
 	)
 	(symbol
 		(lib_id "ECE319K:C")
-		(at 106.68 88.9 0)
+		(at 114.3 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10531,7 +9962,7 @@
 		(fields_autoplaced yes)
 		(uuid "236c49ad-d890-472c-827e-0b9c6169e4c8")
 		(property "Reference" "CQUAL1"
-			(at 110.49 87.6299 0)
+			(at 118.11 86.3599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10540,7 +9971,7 @@
 			)
 		)
 		(property "Value" "500p"
-			(at 110.49 90.1699 0)
+			(at 118.11 88.8999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10549,7 +9980,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 107.6452 92.71 0)
+			(at 115.2652 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10558,7 +9989,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-250V_24.pdf"
-			(at 106.68 88.9 0)
+			(at 114.3 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10567,7 +9998,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 106.68 88.9 0)
+			(at 114.3 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10576,7 +10007,7 @@
 			)
 		)
 		(property "Height" ""
-			(at 106.68 88.9 0)
+			(at 114.3 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10585,7 +10016,7 @@
 			)
 		)
 		(property "MFG PN" "CC0603KRX7R9BB501"
-			(at 106.68 88.9 0)
+			(at 114.3 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10594,7 +10025,7 @@
 			)
 		)
 		(property "P/N" ""
-			(at 106.68 88.9 0)
+			(at 114.3 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10603,7 +10034,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 106.68 88.9 0)
+			(at 114.3 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10612,7 +10043,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 106.68 88.9 0)
+			(at 114.3 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10621,7 +10052,7 @@
 			)
 		)
 		(property "Sim.Type" ""
-			(at 106.68 88.9 0)
+			(at 114.3 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10705,74 +10136,6 @@
 			(project "LVMuxPCB"
 				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
 					(reference "#PWR08")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 153.67 40.64 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2dd76c50-46cf-4d52-87ec-3a043ad019ea")
-		(property "Reference" "R12"
-			(at 153.924 38.1 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R_Small_US"
-			(at 153.67 36.83 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 153.67 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 153.67 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 153.67 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "d8a6c550-7a66-4850-bbfc-0fb67c395401")
-		)
-		(pin "1"
-			(uuid "ccd63628-5f8a-41b3-aab6-0218e5f7397b")
-		)
-		(instances
-			(project "LVMuxPCB"
-				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -12052,6 +11415,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 151.13 170.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6121b79b-1d35-4c9d-8704-8612f464c232")
+		(property "Reference" "#PWR030"
+			(at 151.13 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 151.13 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 151.13 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 151.13 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ee41d54d-5a0d-47a4-895e-ae85db6f0099")
+		)
+		(instances
+			(project "LVMuxPCB"
+				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
+					(reference "#PWR030")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 83.82 189.23 0)
 		(unit 1)
@@ -12300,7 +11730,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 106.68 97.79 0)
+		(at 114.3 96.52 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12309,7 +11739,7 @@
 		(fields_autoplaced yes)
 		(uuid "7323468b-2426-41b8-9a20-318be54380eb")
 		(property "Reference" "#PWR012"
-			(at 106.68 104.14 0)
+			(at 114.3 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12318,7 +11748,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 106.68 102.87 0)
+			(at 114.3 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12327,7 +11757,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 97.79 0)
+			(at 114.3 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12336,7 +11766,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 97.79 0)
+			(at 114.3 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12345,7 +11775,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 106.68 97.79 0)
+			(at 114.3 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12360,82 +11790,6 @@
 			(project "LVMuxPCB"
 				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
 					(reference "#PWR012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 144.78 67.31 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "75886ed6-aef5-4631-9af6-735b0c231869")
-		(property "Reference" "D7"
-			(at 144.526 61.722 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 144.526 64.262 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
-			(at 144.78 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.78 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 144.78 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 144.78 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "c9d8d0fe-5d98-453b-a517-3d945c449178")
-		)
-		(pin "1"
-			(uuid "cf536953-44bc-4a32-855c-d172a0e47897")
-		)
-		(instances
-			(project "LVMuxPCB"
-				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "D7")
 					(unit 1)
 				)
 			)
@@ -13006,74 +12360,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 153.67 76.2 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8ad09169-b36e-4eaf-96a9-ece6e98ff3c0")
-		(property "Reference" "R16"
-			(at 153.924 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R_Small_US"
-			(at 153.67 72.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 153.67 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 153.67 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 153.67 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "6f02c720-fd9a-4199-a810-ed48248f6673")
-		)
-		(pin "1"
-			(uuid "34099048-26aa-4396-b68b-572876c4e083")
-		)
-		(instances
-			(project "LVMuxPCB"
-				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "R16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 269.24 81.28 0)
 		(unit 1)
@@ -13569,32 +12855,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 144.78 58.42 180)
+		(lib_id "power:GND")
+		(at 100.33 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a5617bc4-a7f0-4a8b-93f0-a2d8d017301a")
-		(property "Reference" "D6"
-			(at 144.526 52.832 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 144.526 55.372 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
-			(at 144.78 58.42 0)
+		(fields_autoplaced yes)
+		(uuid "a5b2012f-4fbc-4020-9515-f26a4d0957e8")
+		(property "Reference" "#PWR028"
+			(at 100.33 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13602,8 +12873,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 144.78 58.42 0)
+		(property "Value" "GND"
+			(at 100.33 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13611,8 +12882,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
-			(at 144.78 58.42 0)
+		(property "Footprint" ""
+			(at 100.33 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13620,8 +12891,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 144.78 58.42 0)
+		(property "Datasheet" ""
+			(at 100.33 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13629,16 +12900,22 @@
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "58cebf4c-ade0-4122-8e49-0f5f3b937430")
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 100.33 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "1"
-			(uuid "808a39a2-0fe7-4b7e-822e-43c0e8b45716")
+			(uuid "00c782b3-3be7-458f-9e0c-b6bbd75870ad")
 		)
 		(instances
 			(project "LVMuxPCB"
 				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "D6")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -13769,82 +13046,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 144.78 49.53 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ad96ceab-86c7-4463-b2bc-64e4f8e2ac36")
-		(property "Reference" "D5"
-			(at 144.526 43.942 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 144.526 46.482 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
-			(at 144.78 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.78 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 144.78 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 144.78 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "2bcfb90e-76b3-4276-9c0c-1864e8b7f19c")
-		)
-		(pin "1"
-			(uuid "2a72d58c-d410-49aa-883b-63d860a428e5")
-		)
-		(instances
-			(project "LVMuxPCB"
-				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "D5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 52.07 123.19 90)
 		(unit 1)
@@ -13862,7 +13063,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1m"
+		(property "Value" "500k"
 			(at 53.34 118.11 90)
 			(effects
 				(font
@@ -14152,6 +13353,132 @@
 			(project "LVMuxPCB"
 				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
 					(reference "#FLG04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:Jumper_3_Open")
+		(at 100.33 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ba91ac61-e61b-4f99-b145-95bc4274fda9")
+		(property "Reference" "JP10"
+			(at 95.504 90.424 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "QUAL Jumper"
+			(at 97.536 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Jumper, 3-pole, both open"
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFG PN" ""
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" ""
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 100.33 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "70db2718-18a3-4a8d-b898-6a954a496f30")
+		)
+		(pin "1"
+			(uuid "73dc376c-4619-47bc-8fd9-f3bf4e47be6c")
+		)
+		(pin "3"
+			(uuid "c8d16d35-7f69-4176-9eda-7ffcc5ebc58b")
+		)
+		(instances
+			(project "LVMuxPCB"
+				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
+					(reference "JP10")
 					(unit 1)
 				)
 			)
@@ -14488,7 +13815,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1m"
+		(property "Value" "500k"
 			(at 53.34 109.22 90)
 			(effects
 				(font
@@ -14956,150 +14283,6 @@
 			(project "LVMuxPCB"
 				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
 					(reference "TP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 144.78 76.2 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d524058c-553c-4aa9-b22b-49982d6a1634")
-		(property "Reference" "D8"
-			(at 144.526 70.612 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 144.526 73.152 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
-			(at 144.78 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.78 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 144.78 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 144.78 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "5267ac91-5443-4229-80de-dbe331308c9e")
-		)
-		(pin "1"
-			(uuid "6d6a920c-e64a-40d4-a1e9-1df205e7e795")
-		)
-		(instances
-			(project "LVMuxPCB"
-				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "D8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 153.67 58.42 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dac66198-fad7-4584-b716-e5a3561ca65b")
-		(property "Reference" "R14"
-			(at 153.924 55.88 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R_Small_US"
-			(at 153.67 54.61 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 153.67 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 153.67 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 153.67 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "9791fdbf-4756-4284-903f-c0cdc4d8249d")
-		)
-		(pin "1"
-			(uuid "c8730ffb-3739-40f9-97d3-c7735e0f2c84")
-		)
-		(instances
-			(project "LVMuxPCB"
-				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -15598,6 +14781,258 @@
 		)
 	)
 	(symbol
+		(lib_id "Jumper:Jumper_3_Open")
+		(at 151.13 163.83 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "eaba015f-1480-4531-9fbf-723e68216dd7")
+		(property "Reference" "JP12"
+			(at 146.304 166.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TMR2 Jumper"
+			(at 148.336 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 151.13 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 151.13 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Jumper, 3-pole, both open"
+			(at 151.13 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 151.13 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFG PN" ""
+			(at 151.13 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" ""
+			(at 151.13 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 151.13 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 151.13 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 151.13 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "9a078229-74d0-466e-bf7b-c882dd990791")
+		)
+		(pin "1"
+			(uuid "2af93bf8-e700-428a-b98c-468c329dd587")
+		)
+		(pin "3"
+			(uuid "781a39ec-58e3-4c42-b948-5509717b06a7")
+		)
+		(instances
+			(project "LVMuxPCB"
+				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
+					(reference "JP12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:Jumper_3_Open")
+		(at 133.35 163.83 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "edc58f66-a473-4a87-b21a-73ebd450e3d6")
+		(property "Reference" "JP11"
+			(at 128.524 166.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TMR1 Jumper"
+			(at 130.556 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 133.35 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 133.35 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Jumper, 3-pole, both open"
+			(at 133.35 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 133.35 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFG PN" ""
+			(at 133.35 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" ""
+			(at 133.35 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 133.35 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 133.35 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 133.35 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "87dff921-b356-4afe-b649-61eb63ad32c7")
+		)
+		(pin "1"
+			(uuid "11177afc-cbf2-4c14-939a-a77b2021ef82")
+		)
+		(pin "3"
+			(uuid "0ec8c3fa-d3aa-4a7d-b20e-fd031fdb4a08")
+		)
+		(instances
+			(project "LVMuxPCB"
+				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
+					(reference "JP11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PowerBoardLib:LTC4421CG-PBF")
 		(at 50.8 49.53 0)
 		(unit 1)
@@ -15941,82 +15376,6 @@
 			(project "LVMuxPCB"
 				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
 					(reference "CCPO1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 144.78 40.64 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fe7b548f-2685-4a82-910f-9a64520ebe51")
-		(property "Reference" "D4"
-			(at 144.526 35.052 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 144.526 37.592 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
-			(at 144.78 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.78 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 144.78 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 144.78 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "80c4619f-6c30-4e45-bdab-bcd7268272dc")
-		)
-		(pin "1"
-			(uuid "285dcde0-7513-4554-b105-6d439afe739d")
-		)
-		(instances
-			(project "LVMuxPCB"
-				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "D4")
 					(unit 1)
 				)
 			)
