@@ -4524,13 +4524,13 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 77.47) (xy 96.52 85.09)
+			(xy 111.76 87.63) (xy 111.76 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c8b68afb-20a8-4731-8cb0-e4b6c126542d")
+		(uuid "c9c99d45-2246-4691-a87b-f45d6c48c83e")
 	)
 	(wire
 		(pts
@@ -8136,12 +8136,12 @@
 		(uuid "1560286b-f58a-451d-8478-589c32eeb92f")
 	)
 	(label "SOURCE2"
-		(at 24.13 38.1 0)
+		(at 77.47 38.1 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "171f6db9-210a-4752-9a3e-fb56a2ffc73e")
 	)
@@ -8415,6 +8415,16 @@
 		)
 		(uuid "5ccc85fd-98d1-49c1-b2f5-5cbed0c8eeb9")
 	)
+	(label "QUAL"
+		(at 111.76 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5e7bd94e-80d3-4391-915c-b5fcdbc12501")
+	)
 	(label "RETRY"
 		(at 260.35 99.06 90)
 		(effects
@@ -8626,12 +8636,12 @@
 		(uuid "8d9b0e92-9329-4ab4-80c3-67407376cbef")
 	)
 	(label "SOURCE1"
-		(at 77.47 38.1 180)
+		(at 24.13 38.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "8dbd3ebc-00b6-4356-a348-fedac1539f56")
 	)
@@ -8766,12 +8776,12 @@
 		(uuid "a13e0ea2-bf13-472a-be1f-2e1d6d2c7ac3")
 	)
 	(label "QUAL"
-		(at 96.52 77.47 270)
+		(at 96.52 77.47 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "a5478bbc-adf4-4c76-b903-1961963c3fb1")
 	)
@@ -11829,6 +11839,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 111.76 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6905ccc5-5e83-4de6-886c-b87f1412eb5f")
+		(property "Reference" "#PWR039"
+			(at 111.76 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 111.76 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 111.76 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 111.76 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 111.76 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c3fe172e-c457-452e-9fdb-4008810604a0")
+		)
+		(instances
+			(project "LVMuxPCB"
+				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
+					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 92.71 168.91 180)
 		(unit 1)
@@ -12084,6 +12161,76 @@
 			(project "LVMuxPCB"
 				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
 					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 111.76 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "754b372d-64c8-453f-8719-19a27c4469af")
+		(property "Reference" "R43"
+			(at 114.3 82.5499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0"
+			(at 114.3 85.0899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 109.982 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 111.76 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 111.76 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "826ce26e-3107-4417-96d2-880df17adc08")
+		)
+		(pin "1"
+			(uuid "e341cbdd-35df-4f67-bb01-d173d24a31d7")
+		)
+		(instances
+			(project "LVMuxPCB"
+				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
+					(reference "R43")
 					(unit 1)
 				)
 			)
@@ -13926,6 +14073,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 96.52 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "aaa21616-e27c-473f-b782-315fcd8fc28e")
+		(property "Reference" "R42"
+			(at 99.06 80.0099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0"
+			(at 99.06 82.5499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 94.742 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 96.52 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 96.52 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "82553b3c-0788-4be5-8de6-4d5b504ea80c")
+		)
+		(pin "1"
+			(uuid "d3758bbc-d1ee-4f64-b18d-aac3d5bb83f2")
+		)
+		(instances
+			(project "LVMuxPCB"
+				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
+					(reference "R42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 46.99 91.44 0)
 		(unit 1)
@@ -14854,7 +15071,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:SC70-6_MC_MCH"
+		(property "Footprint" "footprints:SOT95P237X112-3N"
 			(at 39.37 83.82 0)
 			(effects
 				(font
