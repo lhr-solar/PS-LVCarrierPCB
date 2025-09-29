@@ -1196,7 +1196,7 @@
 	)
 	(text "Seven Segment"
 		(exclude_from_sim no)
-		(at 108.966 111.506 0)
+		(at 114.046 112.776 0)
 		(effects
 			(font
 				(face "FF Comma Trial")
@@ -1277,6 +1277,18 @@
 		(uuid "55f5b5f0-ea54-4a9f-8ef1-97127917d4a1")
 	)
 	(junction
+		(at 40.64 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "83cc2561-b28f-423e-a22a-7e502a44a18a")
+	)
+	(junction
+		(at 40.64 68.58)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "845997eb-bdf6-49f7-bdab-9cc75e816eb5")
+	)
+	(junction
 		(at 196.85 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1299,20 +1311,12 @@
 		(uuid "09d811a4-43aa-40f1-9232-bc4724cf9aef")
 	)
 	(no_connect
-		(at 45.72 63.5)
-		(uuid "21174c3a-5e91-4866-a73d-f74f502f54a8")
-	)
-	(no_connect
-		(at 45.72 60.96)
-		(uuid "50a1c9bd-c721-4447-badc-3082b1b397a5")
-	)
-	(no_connect
 		(at 45.72 53.34)
 		(uuid "573727ef-639a-40d1-bb53-7ef18a606256")
 	)
 	(no_connect
 		(at 45.72 58.42)
-		(uuid "97504a5a-d4fa-44c7-889f-59ad52ab4a82")
+		(uuid "5940eb61-9660-4ea9-9893-86cbef29c45e")
 	)
 	(no_connect
 		(at 45.72 43.18)
@@ -1325,6 +1329,16 @@
 	(no_connect
 		(at 45.72 48.26)
 		(uuid "eee849a7-4ca9-4916-a290-608d0101c42b")
+	)
+	(wire
+		(pts
+			(xy 40.64 60.96) (xy 45.72 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03d84492-abf8-45b6-b277-effb91b78f35")
 	)
 	(wire
 		(pts
@@ -1355,6 +1369,16 @@
 			(type default)
 		)
 		(uuid "1c38b741-94ff-4e9c-ade5-d21bd6e49c8f")
+	)
+	(wire
+		(pts
+			(xy 40.64 63.5) (xy 40.64 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "204e6f72-93a5-4055-a0c7-63aa5c2c380c")
 	)
 	(wire
 		(pts
@@ -1405,6 +1429,16 @@
 			(type default)
 		)
 		(uuid "65920a53-6458-4ef8-b3b9-1ec13ab5eb4b")
+	)
+	(wire
+		(pts
+			(xy 45.72 63.5) (xy 40.64 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70e37759-d453-4d11-8121-3fe70a45367d")
 	)
 	(wire
 		(pts
@@ -1468,16 +1502,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 66.04) (xy 45.72 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c91a1b10-a3e8-4f8f-abb0-5a2f05a47140")
-	)
-	(wire
-		(pts
 			(xy 40.64 68.58) (xy 45.72 68.58)
 		)
 		(stroke
@@ -1506,18 +1530,28 @@
 		)
 		(uuid "f3a00d2f-ffcf-4cc4-bbd2-fcc128096148")
 	)
-	(label "Initial_Input"
-		(at 30.48 129.54 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
+	(wire
+		(pts
+			(xy 40.64 66.04) (xy 40.64 68.58)
 		)
-		(uuid "09feeaee-358c-4812-8aff-72232d459b98")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3a157a0-582a-4272-9929-3f555eb74d23")
+	)
+	(wire
+		(pts
+			(xy 40.64 66.04) (xy 45.72 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f99651e8-cb74-45fd-9185-b25469a2970f")
 	)
 	(label "RCLK"
-		(at 97.79 129.54 180)
+		(at 102.87 130.81 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1527,7 +1561,7 @@
 		(uuid "0a55c411-aa6a-495c-8e8c-b36ae9ac3867")
 	)
 	(label "Initial_Voltage"
-		(at 69.85 132.08 0)
+		(at 73.66 133.35 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1556,7 +1590,17 @@
 		)
 		(uuid "15bf20b9-0838-40cc-b6c2-f716be31c496")
 	)
-	(label "VRef"
+	(label "Unregulated_Initial_Sense"
+		(at 34.29 109.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2b7cbf7c-8e77-4fd7-9f64-33301a9c8971")
+	)
+	(label "1.024V"
 		(at 240.03 113.03 0)
 		(effects
 			(font
@@ -1566,18 +1610,8 @@
 		)
 		(uuid "2bc852cc-657b-409d-a822-61db5ca4acdb")
 	)
-	(label "Regulated_Input"
-		(at 30.48 153.67 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "33b7f78a-30b1-4ae2-a60d-26ecec018ac2")
-	)
 	(label "Regulated_Current"
-		(at 69.85 154.94 0)
+		(at 73.66 156.21 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1586,8 +1620,18 @@
 		)
 		(uuid "342847be-8984-4aec-a5f1-220b1037024e")
 	)
+	(label "Unregulated_Initial_V"
+		(at 34.29 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3de23a89-7f15-45bc-9971-58d2caedd3e0")
+	)
 	(label "SRCLK"
-		(at 97.79 134.62 180)
+		(at 102.87 135.89 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1597,7 +1641,7 @@
 		(uuid "4a4ef0ce-f655-41b3-a2ad-a3da693f5762")
 	)
 	(label "Regulated_Voltage"
-		(at 69.85 129.54 0)
+		(at 73.66 130.81 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1606,7 +1650,7 @@
 		)
 		(uuid "51826be8-8d66-4c1b-a477-e0f27748b9f7")
 	)
-	(label "Regulated_Input"
+	(label "Regulated_24V"
 		(at 45.72 45.72 180)
 		(effects
 			(font
@@ -1616,7 +1660,7 @@
 		)
 		(uuid "5ee3d365-55d2-46cc-b28e-7f64067816fc")
 	)
-	(label "Regulated_Shunt"
+	(label "Regulated_24V_Sense"
 		(at 45.72 55.88 180)
 		(effects
 			(font
@@ -1636,16 +1680,6 @@
 		)
 		(uuid "6800410e-931f-4827-b73e-628f811e417c")
 	)
-	(label "Regulated_Shunt"
-		(at 30.48 156.21 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "88b46e89-1d05-470a-8c26-724c0684659e")
-	)
 	(label "Initial_Current"
 		(at 68.58 55.88 0)
 		(effects
@@ -1657,7 +1691,7 @@
 		(uuid "9112e081-45ea-4da5-921a-f962d239455e")
 	)
 	(label "SER"
-		(at 97.79 132.08 180)
+		(at 102.87 133.35 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1686,18 +1720,8 @@
 		)
 		(uuid "97334e4e-42c4-4414-b331-2810708e6fb4")
 	)
-	(label "Regulated_Input"
-		(at 30.48 132.08 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "98649f2c-9b12-4467-a27a-6adbbf6e5407")
-	)
 	(label "Initial_Current"
-		(at 69.85 106.68 0)
+		(at 73.66 107.95 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1706,8 +1730,18 @@
 		)
 		(uuid "a1dd635f-a789-4216-83b9-fc1f36ad2395")
 	)
-	(label "VRef"
-		(at 30.48 110.49 180)
+	(label "Unregulated_Initial_V"
+		(at 34.29 130.81 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ab84d67c-c4ee-41fe-bdd7-eb41b3e2472f")
+	)
+	(label "1.024V"
+		(at 34.29 111.76 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1716,7 +1750,7 @@
 		)
 		(uuid "ac84ca37-799e-4fdd-b463-6c78d5bdbf6f")
 	)
-	(label "Initial_Input"
+	(label "Unregulated_Initial_V"
 		(at 45.72 40.64 180)
 		(effects
 			(font
@@ -1726,7 +1760,27 @@
 		)
 		(uuid "ccd57f34-01e1-4921-a805-8edad9530bfd")
 	)
-	(label "Initial_Shunt"
+	(label "Regulated_24V"
+		(at 34.29 133.35 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d0e4ecc7-33c1-497e-9152-32856a2e9dc6")
+	)
+	(label "Regulated_24V_Sense"
+		(at 34.29 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d23403d5-ad82-4b96-bfab-12ee6382ddaa")
+	)
+	(label "Unregulated_Initial_Sense"
 		(at 45.72 50.8 180)
 		(effects
 			(font
@@ -1736,28 +1790,8 @@
 		)
 		(uuid "d6735153-6c1b-4661-b691-c7b04bb6371a")
 	)
-	(label "Initial_Shunt"
-		(at 30.48 107.95 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d76cd195-767a-4390-b0c9-8a7ebce37af4")
-	)
-	(label "Initial_Input"
-		(at 30.48 105.41 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "de88b683-e01f-4af8-908a-c519dda45b7e")
-	)
-	(label "VRef"
-		(at 30.48 158.75 180)
+	(label "1.024V"
+		(at 34.29 160.02 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1765,6 +1799,16 @@
 			(justify right bottom)
 		)
 		(uuid "e59b1e71-cc16-434e-bc3a-a47b2e970773")
+	)
+	(label "Regulated_24V"
+		(at 34.29 154.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f37c3fcd-22f8-4ecf-8c25-1a2eb40b484b")
 	)
 	(label "RCLK"
 		(at 68.58 68.58 0)
@@ -1844,16 +1888,15 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 40.64 66.04 0)
+		(at 40.64 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3147d632-30c4-4ddc-b865-4ebf277d59cd")
 		(property "Reference" "#PWR02"
-			(at 40.64 69.85 0)
+			(at 40.64 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1862,7 +1905,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 40.64 60.96 0)
+			(at 36.322 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1870,7 +1913,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 40.64 66.04 0)
+			(at 40.64 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1879,7 +1922,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 40.64 66.04 0)
+			(at 40.64 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1888,7 +1931,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 40.64 66.04 0)
+			(at 40.64 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1900,7 +1943,7 @@
 			(uuid "ce930d37-d8aa-477a-9eb3-229ae149552e")
 		)
 		(instances
-			(project ""
+			(project "Supplemental Monitoring PCB"
 				(path "/4b30d391-cf39-434b-85dc-df89b45eb2b2"
 					(reference "#PWR02")
 					(unit 1)
@@ -2765,7 +2808,7 @@
 		)
 	)
 	(sheet
-		(at 30.48 99.06)
+		(at 34.29 100.33)
 		(size 39.37 15.24)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2781,7 +2824,7 @@
 		)
 		(uuid "1c9c40d1-9135-4b24-beff-d2d4ce45e42f")
 		(property "Sheetname" "CurrentBefore"
-			(at 30.48 98.3484 0)
+			(at 34.29 99.6184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2790,7 +2833,7 @@
 			)
 		)
 		(property "Sheetfile" "CurrentBefore.kicad_sch"
-			(at 30.48 114.8846 0)
+			(at 34.29 116.1546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2798,44 +2841,24 @@
 				(justify left top)
 			)
 		)
-		(pin "Initial_Input" input
-			(at 30.48 105.41 180)
-			(uuid "0fd70aa5-81fe-4ce0-ad45-47d2d308894b")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "Initial_Shunt" input
-			(at 30.48 107.95 180)
-			(uuid "cc3c788d-6661-445d-bec2-df3af3a9d8e5")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "VRef" input
-			(at 30.48 110.49 180)
-			(uuid "3111fd5a-8d47-43ca-acb7-b9892da6085f")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "Initial_Current" output
-			(at 69.85 106.68 0)
+			(at 73.66 107.95 0)
 			(uuid "89e210c9-9b47-4230-ac1e-9295e70257a4")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+		(pin "1.024V" input
+			(at 34.29 111.76 180)
+			(uuid "bea63879-94ab-4d6a-a6f8-05485d818a0e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -2847,7 +2870,7 @@
 		)
 	)
 	(sheet
-		(at 97.79 124.46)
+		(at 102.87 125.73)
 		(size 35.56 13.97)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2863,7 +2886,7 @@
 		)
 		(uuid "6aefca84-d4ae-4551-964f-8e4c2683e527")
 		(property "Sheetname" "Seven Segment"
-			(at 97.79 123.7484 0)
+			(at 102.87 125.0184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2872,7 +2895,7 @@
 			)
 		)
 		(property "Sheetfile" "SevenSegment.kicad_sch"
-			(at 97.79 139.0146 0)
+			(at 102.87 140.2846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2881,7 +2904,7 @@
 			)
 		)
 		(pin "RCLK" input
-			(at 97.79 129.54 180)
+			(at 102.87 130.81 180)
 			(uuid "cf849fd7-44f8-490f-9162-03595f68f402")
 			(effects
 				(font
@@ -2891,7 +2914,7 @@
 			)
 		)
 		(pin "SER" input
-			(at 97.79 132.08 180)
+			(at 102.87 133.35 180)
 			(uuid "b7b41067-a340-4a95-bce9-98a9bee34002")
 			(effects
 				(font
@@ -2901,7 +2924,7 @@
 			)
 		)
 		(pin "SRCLK" input
-			(at 97.79 134.62 180)
+			(at 102.87 135.89 180)
 			(uuid "631267f9-e1ba-4f9d-b69e-d3ff5cee4f4e")
 			(effects
 				(font
@@ -2919,7 +2942,7 @@
 		)
 	)
 	(sheet
-		(at 30.48 123.19)
+		(at 34.29 124.46)
 		(size 39.37 15.24)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2935,7 +2958,7 @@
 		)
 		(uuid "bd92b964-6bfd-4964-9fc2-8b10bf975ec3")
 		(property "Sheetname" "Voltage"
-			(at 30.48 122.4784 0)
+			(at 34.29 123.7484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2944,7 +2967,7 @@
 			)
 		)
 		(property "Sheetfile" "VoltageBefore.kicad_sch"
-			(at 30.48 139.0146 0)
+			(at 34.29 140.2846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2952,28 +2975,8 @@
 				(justify left top)
 			)
 		)
-		(pin "Initial_Input" input
-			(at 30.48 129.54 180)
-			(uuid "d82107ef-7286-4911-a987-95ff18e2c691")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "Regulated_Input" input
-			(at 30.48 132.08 180)
-			(uuid "1ba4b174-cd57-4f9c-8622-70ecb69e203a")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "Regulated_Voltage" output
-			(at 69.85 129.54 0)
+			(at 73.66 130.81 0)
 			(uuid "07160e6b-4ba7-4081-b500-22c61d24024c")
 			(effects
 				(font
@@ -2983,7 +2986,7 @@
 			)
 		)
 		(pin "Initial_Voltage" output
-			(at 69.85 132.08 0)
+			(at 73.66 133.35 0)
 			(uuid "d27b7d29-eee6-4422-bc99-a382db57a960")
 			(effects
 				(font
@@ -3001,7 +3004,7 @@
 		)
 	)
 	(sheet
-		(at 30.48 147.32)
+		(at 34.29 148.59)
 		(size 39.37 15.24)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3017,7 +3020,7 @@
 		)
 		(uuid "e6ad27a4-998d-404c-8222-a3ba4eac724d")
 		(property "Sheetname" "CurrentAfter"
-			(at 30.48 146.6084 0)
+			(at 34.29 147.8784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3026,7 +3029,7 @@
 			)
 		)
 		(property "Sheetfile" "currentAfter.kicad_sch"
-			(at 30.48 163.1446 0)
+			(at 34.29 164.4146 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3034,28 +3037,8 @@
 				(justify left top)
 			)
 		)
-		(pin "Regulated_Shunt" input
-			(at 30.48 156.21 180)
-			(uuid "0e810480-e311-4d48-acf8-b0345aa62fce")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "Regulated_Input" input
-			(at 30.48 153.67 180)
-			(uuid "fd5eed1e-ab19-4bb7-bdbd-e226b8178212")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "Regulated_Current" output
-			(at 69.85 154.94 0)
+			(at 73.66 156.21 0)
 			(uuid "fd3cd57f-7f6e-4c10-86cb-9efc8f39c9df")
 			(effects
 				(font
@@ -3064,9 +3047,9 @@
 				(justify right)
 			)
 		)
-		(pin "VRef" input
-			(at 30.48 158.75 180)
-			(uuid "448af4d4-a640-4120-877f-ae1dea58c1e1")
+		(pin "1.024V" input
+			(at 34.29 160.02 180)
+			(uuid "a13a8718-b2bf-4669-83f3-85229d5769d6")
 			(effects
 				(font
 					(size 1.27 1.27)
