@@ -1143,16 +1143,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "rip"
-		(exclude_from_sim no)
-		(at 201.422 50.038 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "0b916e8d-beac-4209-aaeb-3cd33ce5da44")
-	)
 	(text "Reference Voltage"
 		(exclude_from_sim no)
 		(at 208.788 86.36 0)
@@ -1215,17 +1205,6 @@
 			)
 		)
 		(uuid "5e5902ff-6a39-40e3-b778-384d38bd5145")
-	)
-	(text "Adressable LED"
-		(exclude_from_sim no)
-		(at 200.406 21.336 0)
-		(effects
-			(font
-				(face "FF Comma Trial")
-				(size 1.905 1.905)
-			)
-		)
-		(uuid "860ba051-6809-4b66-86d5-69e48955dc29")
 	)
 	(text "Connector"
 		(exclude_from_sim no)
@@ -1731,7 +1710,7 @@
 		(uuid "a1dd635f-a789-4216-83b9-fc1f36ad2395")
 	)
 	(label "Unregulated_Initial_V"
-		(at 34.29 130.81 180)
+		(at 34.29 128.27 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2861,6 +2840,26 @@
 				(justify left)
 			)
 		)
+		(pin "Unregulated_Initial_Sense" input
+			(at 34.29 109.22 180)
+			(uuid "39b09104-2362-4979-b899-cf3147ed67bf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Unregulated_Initial_V" input
+			(at 34.29 106.68 180)
+			(uuid "9cf4157b-b487-4e71-b5ef-49f1a423e05d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(instances
 			(project "Supplemental Monitoring PCB"
 				(path "/4b30d391-cf39-434b-85dc-df89b45eb2b2"
@@ -2975,9 +2974,29 @@
 				(justify left top)
 			)
 		)
-		(pin "Regulated_Voltage" output
+		(pin "Regulated_24V" input
+			(at 34.29 133.35 180)
+			(uuid "ce3f1d82-12c6-49ea-a9e5-211d82d031d7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Unregulated_Initial_V" input
+			(at 34.29 128.27 180)
+			(uuid "db1601c4-a3e6-4d48-beb2-62ecee0113aa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Regulated_Out" output
 			(at 73.66 130.81 0)
-			(uuid "07160e6b-4ba7-4081-b500-22c61d24024c")
+			(uuid "f0ca177f-53ce-45d3-a21e-0d5ee47c6e4b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2985,9 +3004,9 @@
 				(justify right)
 			)
 		)
-		(pin "Initial_Voltage" output
+		(pin "Unregulated_Out" output
 			(at 73.66 133.35 0)
-			(uuid "d27b7d29-eee6-4422-bc99-a382db57a960")
+			(uuid "eafc3610-3666-4106-83d0-e1e6e7109f8e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3050,6 +3069,26 @@
 		(pin "1.024V" input
 			(at 34.29 160.02 180)
 			(uuid "a13a8718-b2bf-4669-83f3-85229d5769d6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Regulated_24V" input
+			(at 34.29 154.94 180)
+			(uuid "8010a1d5-5b6f-486f-ba9b-8367b4fe4555")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Regulated_24V_Sense" input
+			(at 34.29 157.48 180)
+			(uuid "7e1c3e42-dfb0-4498-9c66-8c38a59e5398")
 			(effects
 				(font
 					(size 1.27 1.27)
