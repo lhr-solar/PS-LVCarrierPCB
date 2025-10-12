@@ -2236,10 +2236,6 @@
 		(at 53.34 110.49)
 		(uuid "287f743f-3d23-4ca4-9934-480844636ac6")
 	)
-	(no_connect
-		(at 53.34 85.09)
-		(uuid "e3d61a9d-ff85-4d6b-9a2a-ef06569f85e6")
-	)
 	(wire
 		(pts
 			(xy 185.42 40.64) (xy 185.42 44.45)
@@ -2452,13 +2448,23 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 107.95) (xy 78.74 107.95)
+			(xy 76.2 107.95) (xy 80.01 107.95)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "39fc7db3-2bd9-4a9c-a900-0e3de84e301f")
+	)
+	(wire
+		(pts
+			(xy 85.09 85.09) (xy 76.2 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d5be3ad-075b-48c0-99de-d5aa1fb9f21e")
 	)
 	(wire
 		(pts
@@ -2532,7 +2538,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 105.41) (xy 78.74 105.41)
+			(xy 76.2 105.41) (xy 80.01 105.41)
 		)
 		(stroke
 			(width 0)
@@ -2589,6 +2595,16 @@
 			(type default)
 		)
 		(uuid "6cdbba04-5903-4d5b-a520-1a95dc8078d9")
+	)
+	(wire
+		(pts
+			(xy 43.18 85.09) (xy 53.34 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7478e851-da59-491e-b5ee-1e44c3501da6")
 	)
 	(wire
 		(pts
@@ -2742,7 +2758,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 92.71) (xy 53.34 92.71)
+			(xy 43.18 92.71) (xy 53.34 92.71)
 		)
 		(stroke
 			(width 0)
@@ -2792,7 +2808,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 90.17) (xy 86.36 90.17)
+			(xy 76.2 90.17) (xy 85.09 90.17)
 		)
 		(stroke
 			(width 0)
@@ -2842,7 +2858,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 100.33) (xy 78.74 100.33)
+			(xy 76.2 100.33) (xy 80.01 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2852,7 +2868,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 90.17) (xy 53.34 90.17)
+			(xy 43.18 90.17) (xy 53.34 90.17)
 		)
 		(stroke
 			(width 0)
@@ -2922,7 +2938,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 92.71) (xy 83.82 92.71)
+			(xy 76.2 92.71) (xy 85.09 92.71)
 		)
 		(stroke
 			(width 0)
@@ -2932,7 +2948,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 110.49) (xy 78.74 110.49)
+			(xy 76.2 110.49) (xy 80.01 110.49)
 		)
 		(stroke
 			(width 0)
@@ -2982,7 +2998,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 102.87) (xy 78.74 102.87)
+			(xy 76.2 102.87) (xy 80.01 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3111,7 +3127,7 @@
 		(uuid "fe8f1e9b-036d-49a1-8031-31c3921c6728")
 	)
 	(label "SOURCE1"
-		(at 41.91 90.17 0)
+		(at 43.18 90.17 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3210,6 +3226,16 @@
 		)
 		(uuid "6ed2aa4a-b895-4e1b-86b3-38fa9c8365c5")
 	)
+	(label "Out"
+		(at 43.18 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6f6bd7f3-1422-4954-bc31-640427120aea")
+	)
 	(label "GATE1"
 		(at 118.11 55.88 0)
 		(effects
@@ -3221,7 +3247,7 @@
 		(uuid "768d7430-2e1a-4f85-9af9-0fe8d5bbfdff")
 	)
 	(label "GATE2"
-		(at 83.82 92.71 180)
+		(at 85.09 92.71 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3231,7 +3257,7 @@
 		(uuid "8b96dcc7-3bb1-4706-9427-f097f8085bf6")
 	)
 	(label "GATE1"
-		(at 44.45 92.71 0)
+		(at 43.18 92.71 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3251,7 +3277,7 @@
 		(uuid "b091a60a-77a3-4050-96e1-07a57ea2c8f5")
 	)
 	(label "SOURCE2"
-		(at 86.36 90.17 180)
+		(at 85.09 90.17 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3269,6 +3295,16 @@
 			(justify left bottom)
 		)
 		(uuid "c369fd49-d48a-47e5-8669-ec008fb21ed0")
+	)
+	(label "Out"
+		(at 85.09 85.09 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cabadd34-39db-4ac2-b373-4c5742679b3a")
 	)
 	(label "SENSE2"
 		(at 124.46 87.63 180)
@@ -3326,7 +3362,7 @@
 	)
 	(hierarchical_label "FTL2"
 		(shape output)
-		(at 78.74 105.41 0)
+		(at 80.01 105.41 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3337,7 +3373,7 @@
 	)
 	(hierarchical_label "CHL2"
 		(shape output)
-		(at 78.74 100.33 0)
+		(at 80.01 100.33 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3359,7 +3395,7 @@
 	)
 	(hierarchical_label "VDL2"
 		(shape output)
-		(at 78.74 102.87 0)
+		(at 80.01 102.87 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3381,7 +3417,7 @@
 	)
 	(hierarchical_label "SHDN"
 		(shape input)
-		(at 78.74 110.49 0)
+		(at 80.01 110.49 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3436,7 +3472,7 @@
 	)
 	(hierarchical_label "DISABLE2"
 		(shape output)
-		(at 78.74 107.95 0)
+		(at 80.01 107.95 0)
 		(effects
 			(font
 				(size 1.27 1.27)
