@@ -241,7 +241,36 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "footprint_link_issues|1193800|711200|57c7fd86-c58f-4ffb-88ef-95c5bfb1904e|00000000-0000-0000-0000-000000000000|||",
+        ""
+      ],
+      [
+        "multiple_net_names|1943100|431800|0bdb22da-2104-495b-af67-da962221e5b2|74aba5f9-efa4-4294-93ed-d2fec643d4de|/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e|/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e|/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e",
+        ""
+      ],
+      [
+        "multiple_net_names|2349500|914400|0e785a1b-ccc7-4d32-b81d-de7e610da3c2|d28bac9d-e64f-4663-bb28-e5899141935e|/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e|/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e|/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1092200|673100|d2d19fc5-84e6-4912-8490-028c5dbd6987|00000000-0000-0000-0000-000000000000|/c5c5922b-1600-4b67-acf3-33264cecd75b/eb5e61c4-fcb9-4f3b-9225-002a6ddfe10f|/c5c5922b-1600-4b67-acf3-33264cecd75b/eb5e61c4-fcb9-4f3b-9225-002a6ddfe10f|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1219200|431800|b8498a8a-053e-4a77-85c5-652ee784b43e|00000000-0000-0000-0000-000000000000|/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e|/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|292100|939800|4679e616-a695-4f91-8f66-57c6d5d462cc|00000000-0000-0000-0000-000000000000|/c5c5922b-1600-4b67-acf3-33264cecd75b|/c5c5922b-1600-4b67-acf3-33264cecd75b|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|381000|1181100|53b98ee7-aa37-4b50-8f24-b6b021a53ddf|00000000-0000-0000-0000-000000000000|/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e|/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e|",
+        ""
+      ]
+    ],
     "meta": {
       "version": 0
     },
@@ -425,7 +454,7 @@
       "different_unit_net": "error",
       "duplicate_reference": "error",
       "duplicate_sheet_names": "error",
-      "endpoint_off_grid": "warning",
+      "endpoint_off_grid": "ignore",
       "extra_units": "error",
       "footprint_filter": "ignore",
       "footprint_link_issues": "warning",
@@ -639,12 +668,16 @@
       "SupplementalBattery"
     ],
     [
+      "45706932-97c1-4d7b-aa46-6b7bb69295a6",
+      "SuppCharger"
+    ],
+    [
       "eb5e61c4-fcb9-4f3b-9225-002a6ddfe10f",
       "HV_DCDC"
     ],
     [
-      "45706932-97c1-4d7b-aa46-6b7bb69295a6",
-      "SuppCharger"
+      "11406bd6-20e1-4aec-adcd-a49d5b483a0d",
+      "MCU"
     ]
   ],
   "text_variables": {}
