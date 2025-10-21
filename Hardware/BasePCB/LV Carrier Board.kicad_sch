@@ -454,170 +454,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:C_Polarized_US"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "C"
-				(at 0.635 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "C_Polarized_US"
-				(at 0.635 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Polarized capacitor, US symbol"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "cap capacitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "CP_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "C_Polarized_US_0_1"
-				(polyline
-					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 2.286) (xy -0.762 2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 1.778) (xy -1.27 2.794)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -2.032 -1.27)
-					(mid 0 -0.5572)
-					(end 2.032 -1.27)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "C_Polarized_US_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 2.794)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 3.302)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:D_Schottky"
 			(pin_numbers
 				(hide yes)
@@ -20503,12 +20339,6 @@
 		(uuid "4489538a-647b-4780-8d19-c55c8f768ed0")
 	)
 	(junction
-		(at 260.985 33.02)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "525b462b-63af-4431-b18c-c83654d0d2ce")
-	)
-	(junction
 		(at 55.88 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -20531,12 +20361,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cc4f4af5-1055-4197-9f2a-1df4d7fd7b75")
-	)
-	(junction
-		(at 264.16 33.02)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cee7e0e6-6ca7-4fdc-9977-e6773d364aba")
 	)
 	(junction
 		(at 41.91 53.34)
@@ -20709,16 +20533,6 @@
 			(type default)
 		)
 		(uuid "24f22b0b-0aaf-4710-b2ac-cb0e0bce640e")
-	)
-	(wire
-		(pts
-			(xy 260.985 33.02) (xy 264.16 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2613e527-1fc5-4fe2-bb65-325940861312")
 	)
 	(wire
 		(pts
@@ -20922,7 +20736,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 33.02) (xy 260.985 33.02)
+			(xy 252.73 33.02) (xy 272.415 33.02)
 		)
 		(stroke
 			(width 0)
@@ -21209,16 +21023,6 @@
 			(type default)
 		)
 		(uuid "7b1413f0-f7a7-4191-ab67-cd894c636ff1")
-	)
-	(wire
-		(pts
-			(xy 264.16 33.02) (xy 272.415 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7ee372bf-93ba-41a1-b2cb-94f1abc2465c")
 	)
 	(wire
 		(pts
@@ -21709,16 +21513,6 @@
 			(type default)
 		)
 		(uuid "ef1f2811-e520-4b1d-a775-2e2c62639e1e")
-	)
-	(wire
-		(pts
-			(xy 260.985 40.64) (xy 260.985 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f0e6ba04-4388-4b09-b0ce-2c59d5ede11e")
 	)
 	(wire
 		(pts
@@ -22644,74 +22438,6 @@
 			(project "LV Carrier Board"
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
 					(reference "J9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 264.16 33.02 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "05777bfe-fade-4948-a877-0b1faa55d029")
-		(property "Reference" "TP28"
-			(at 266.7 28.4479 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 266.7 30.9879 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
-			(at 269.24 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 269.24 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 264.16 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5279bbd9-55b7-40a3-b8e3-91068c9a0ee5")
-		)
-		(instances
-			(project "LV Carrier Board"
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
-					(reference "TP28")
 					(unit 1)
 				)
 			)
@@ -23656,72 +23382,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 260.985 41.91 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7239c5d8-97e3-4e4f-a207-8dc6632fd7f8")
-		(property "Reference" "#PWR046"
-			(at 260.985 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 260.985 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 260.985 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 260.985 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 260.985 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "959a4956-e2eb-44c8-91ff-1550ca0123cd")
-		)
-		(instances
-			(project "LV Carrier Board"
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
-					(reference "#PWR046")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 246.38 142.24 0)
 		(unit 1)
@@ -23783,76 +23443,6 @@
 			(project "LV Carrier Board"
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
 					(reference "H6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Polarized_US")
-		(at 260.985 36.83 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "92eba122-d51f-4133-bfe9-a897167403ab")
-		(property "Reference" "C8"
-			(at 264.16 34.9249 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1.5mF"
-			(at 264.16 37.4649 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm"
-			(at 260.985 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.com/ProductDetail/Vishay-BC-Components/MAL215031152E3?qs=sGAEpiMZZMsh%252B1woXyUXjzuV3IXCFK6VI%252BiF1CKhlJ4%3D"
-			(at 260.985 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Polarized capacitor, US symbol"
-			(at 260.985 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "79a5eb5d-c397-49b3-ac8e-0fea8af64113")
-		)
-		(pin "2"
-			(uuid "63e4e551-48a6-4ed8-bf8b-cd571024cd47")
-		)
-		(instances
-			(project ""
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
-					(reference "C8")
 					(unit 1)
 				)
 			)
