@@ -1245,6 +1245,12 @@
 		(uuid "3b08402d-9c8a-48fa-a665-81510dbfd577")
 	)
 	(junction
+		(at 149.86 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6fc34e66-dd98-4757-abbc-0085023bd2d1")
+	)
+	(junction
 		(at 170.18 65.405)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1332,6 +1338,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 74.93) (xy 149.86 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "670749ee-991b-4232-8d35-f52631cd616f")
+	)
+	(wire
+		(pts
 			(xy 142.24 65.405) (xy 147.32 65.405)
 		)
 		(stroke
@@ -1389,16 +1405,6 @@
 			(type default)
 		)
 		(uuid "a068e8f9-a9da-44ff-b3a3-fd4d4107fd34")
-	)
-	(wire
-		(pts
-			(xy 149.86 70.485) (xy 149.86 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a2760a9d-459c-4805-8645-0839ce7fe10d")
 	)
 	(wire
 		(pts
@@ -1480,6 +1486,26 @@
 		)
 		(uuid "f6700ed0-c3ff-4471-b910-e4a48b56c1f0")
 	)
+	(wire
+		(pts
+			(xy 149.86 70.485) (xy 149.86 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6c5c712-ac78-48aa-b546-c96b704a0599")
+	)
+	(label "diodeGate"
+		(at 149.86 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "242767c6-9ad8-4691-9b01-e670efb5a2e5")
+	)
 	(label "FETGOOD"
 		(at 137.795 121.285 0)
 		(effects
@@ -1522,6 +1548,72 @@
 			(justify left)
 		)
 		(uuid "c72ed133-ca43-47be-a4df-2f5ab15a6a3b")
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 149.86 74.93 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "21e5ac22-9251-465e-bc44-a18d07bfe57d")
+		(property "Reference" "TP28"
+			(at 146.685 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 147.8279 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.5mm"
+			(at 149.86 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 149.86 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2f0d3ef4-8125-4669-becc-4abd52724292")
+		)
+		(instances
+			(project "LV Carrier Board"
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/43d57115-5e1b-4cd6-9a42-d8d2dd9ec7f7"
+					(reference "TP28")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "PowerBoardLib:SQJQ140E-T1_GE3")
