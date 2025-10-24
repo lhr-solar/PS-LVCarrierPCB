@@ -20218,7 +20218,7 @@
 	)
 	(text "^^^\nDirect connection \nto PS"
 		(exclude_from_sim no)
-		(at 195.58 41.275 0)
+		(at 197.612 42.164 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -20289,13 +20289,23 @@
 	)
 	(text "Current go this way ->"
 		(exclude_from_sim no)
-		(at 173.355 38.735 0)
+		(at 175.768 34.798 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
 		(uuid "d3680235-312d-46ca-829a-32d82eaf43dd")
+	)
+	(text "OV = 26.94V"
+		(exclude_from_sim no)
+		(at 155.702 26.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "da6f16f1-e030-4924-b441-d5bd84761cf8")
 	)
 	(text "Current go this way ->"
 		(exclude_from_sim no)
@@ -20326,22 +20336,28 @@
 		(uuid "4489538a-647b-4780-8d19-c55c8f768ed0")
 	)
 	(junction
-		(at 157.48 47.625)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4eab5e74-d8f3-4d9d-bccb-d92a533e4814")
-	)
-	(junction
 		(at 55.88 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5bfaf31d-b3d5-4907-b21b-661503d268c4")
 	)
 	(junction
+		(at 153.67 30.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5e951f87-c904-43c7-a6fd-c52aef87c5f8")
+	)
+	(junction
 		(at 127 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5fb9da20-c2d4-4e3f-bcc6-0329f87932dd")
+	)
+	(junction
+		(at 153.67 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8ff9a478-9ab0-41a3-b3c4-6c10289a7cba")
 	)
 	(junction
 		(at 262.89 33.02)
@@ -20366,6 +20382,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e00bc31b-ab6c-4215-b01e-1cc1ff1bf86c")
+	)
+	(junction
+		(at 160.02 54.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e8e7ec9c-c505-40b9-bd46-d99164c1f0f1")
 	)
 	(junction
 		(at 60.96 53.34)
@@ -20439,6 +20461,16 @@
 	)
 	(wire
 		(pts
+			(xy 153.67 31.75) (xy 153.67 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09f19ad9-d875-47f7-8beb-4808f24612f7")
+	)
+	(wire
+		(pts
 			(xy 25.4 53.34) (xy 41.91 53.34)
 		)
 		(stroke
@@ -20476,6 +20508,16 @@
 			(type default)
 		)
 		(uuid "0e1bbb32-5b98-4137-aa99-aa7b7c5daa88")
+	)
+	(wire
+		(pts
+			(xy 153.67 30.48) (xy 162.56 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17d0793f-ccdd-4f65-b075-3be2417aed8f")
 	)
 	(wire
 		(pts
@@ -20859,7 +20901,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 30.48) (xy 160.02 30.48)
+			(xy 140.97 30.48) (xy 153.67 30.48)
 		)
 		(stroke
 			(width 0)
@@ -21056,16 +21098,6 @@
 			(type default)
 		)
 		(uuid "800a9804-0458-42d6-b6a4-db1f50b72672")
-	)
-	(wire
-		(pts
-			(xy 157.48 47.625) (xy 160.02 47.625)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81fd5b01-58d3-43ae-abd2-dc8375060318")
 	)
 	(wire
 		(pts
@@ -21299,6 +21331,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 54.61) (xy 162.56 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af94d576-c3e8-4e7a-bfde-f517799b08fc")
+	)
+	(wire
+		(pts
 			(xy 41.91 58.42) (xy 44.45 58.42)
 		)
 		(stroke
@@ -21319,7 +21361,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 47.625) (xy 157.48 47.625)
+			(xy 146.05 54.61) (xy 160.02 54.61)
 		)
 		(stroke
 			(width 0)
@@ -21389,7 +21431,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 36.83) (xy 195.58 36.83)
+			(xy 191.77 36.83) (xy 195.58 36.83)
 		)
 		(stroke
 			(width 0)
@@ -21489,13 +21531,23 @@
 	)
 	(wire
 		(pts
-			(xy 186.055 30.48) (xy 195.58 30.48)
+			(xy 188.595 30.48) (xy 195.58 30.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "eabdac21-f07b-4445-80a2-88265f802d7e")
+	)
+	(wire
+		(pts
+			(xy 153.67 39.37) (xy 162.56 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb943d0b-29df-456a-9dcf-615abf8fc41b")
 	)
 	(wire
 		(pts
@@ -21728,7 +21780,7 @@
 		(uuid "3ccb15b2-7fe2-4424-be86-16ba19b6ed58")
 	)
 	(label "PS"
-		(at 189.23 36.83 0)
+		(at 191.77 36.83 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -22028,7 +22080,7 @@
 		(uuid "b99d0ce0-e867-4862-bc06-14a0ae1eb8b6")
 	)
 	(label "LV_EN_PS"
-		(at 146.05 47.625 0)
+		(at 146.05 54.61 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -23906,6 +23958,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 153.67 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b3440f0b-7f69-44a7-8b0a-66240b76bb0f")
+		(property "Reference" "R13"
+			(at 156.21 34.2899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "66.5k"
+			(at 156.21 36.8299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 151.892 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/ProductDetail/Vishay/CRCW060366K5FKEAC?qs=E3Y5ESvWgWOGbq5Mg2tjWg%3D%3D"
+			(at 153.67 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 153.67 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "CRCW060366K5FKEAC"
+			(at 153.67 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d8bb2053-2fc4-4fe3-bb38-d52ddf4b9cbc")
+		)
+		(pin "1"
+			(uuid "654d4754-a23e-4176-8287-1ada095730c5")
+		)
+		(instances
+			(project "LV Carrier Board"
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 222.25 142.24 0)
 		(unit 1)
@@ -23967,6 +24098,71 @@
 			(project "LV Carrier Board"
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
 					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 153.67 46.99 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b7042d7b-a190-4c04-b9e9-e0615b0b710b")
+		(property "Reference" "#PWR095"
+			(at 153.67 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 153.67 51.054 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 153.67 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 153.67 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 153.67 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "52f530ed-95e8-4580-a3a0-4eefbb8d0c41")
+		)
+		(instances
+			(project "LV Carrier Board"
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
+					(reference "#PWR095")
 					(unit 1)
 				)
 			)
@@ -24752,6 +24948,76 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 153.67 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f9de0d03-8bf8-45a6-b56d-4d85d4c5e263")
+		(property "Reference" "R39"
+			(at 156.21 41.9099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "6.8K"
+			(at 156.21 44.4499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 151.892 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 153.67 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 153.67 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d9841b84-92be-4c89-adcc-8fb0a7b22d75")
+		)
+		(pin "1"
+			(uuid "9f60489e-508b-400b-ad5d-eaa309849a2f")
+		)
+		(instances
+			(project "LV Carrier Board"
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
+					(reference "R39")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 50.8 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24830,7 +25096,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 157.48 47.625 0)
+		(at 160.02 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -24839,7 +25105,7 @@
 		(fields_autoplaced yes)
 		(uuid "fd304fde-6c94-4c6f-a363-125562727f2a")
 		(property "Reference" "TP26"
-			(at 160.02 43.0529 0)
+			(at 162.56 50.0379 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24849,7 +25115,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 160.02 45.5929 0)
+			(at 162.56 52.5779 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24859,7 +25125,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
-			(at 162.56 47.625 0)
+			(at 165.1 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24868,7 +25134,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 162.56 47.625 0)
+			(at 165.1 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24877,7 +25143,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 157.48 47.625 0)
+			(at 160.02 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25305,8 +25571,8 @@
 		)
 	)
 	(sheet
-		(at 160.02 26.67)
-		(size 26.035 23.495)
+		(at 162.56 26.67)
+		(size 26.035 29.21)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -25321,7 +25587,7 @@
 		)
 		(uuid "43d57115-5e1b-4cd6-9a42-d8d2dd9ec7f7")
 		(property "Sheetname" "Ideal Diode"
-			(at 160.02 25.9584 0)
+			(at 162.56 25.9584 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25330,7 +25596,7 @@
 			)
 		)
 		(property "Sheetfile" "IdealDiode.kicad_sch"
-			(at 160.02 50.7496 0)
+			(at 162.56 56.4646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25339,7 +25605,7 @@
 			)
 		)
 		(pin "DIODE_VIN" input
-			(at 160.02 30.48 180)
+			(at 162.56 30.48 180)
 			(uuid "235f107c-efb0-4f6c-8ac3-8f610f8c8c2b")
 			(effects
 				(font
@@ -25349,7 +25615,7 @@
 			)
 		)
 		(pin "DIODE_EN" input
-			(at 160.02 47.625 180)
+			(at 162.56 54.61 180)
 			(uuid "e34b01b1-5bfd-41db-85ab-5ec493ea96d1")
 			(effects
 				(font
@@ -25359,13 +25625,23 @@
 			)
 		)
 		(pin "DIODE_VOUT" output
-			(at 186.055 30.48 0)
+			(at 188.595 30.48 0)
 			(uuid "903b71af-99ce-4071-83ce-e18156553df6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+		(pin "OVLO" input
+			(at 162.56 39.37 180)
+			(uuid "9a4251b9-522d-40c5-938e-8e6beed33d41")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
