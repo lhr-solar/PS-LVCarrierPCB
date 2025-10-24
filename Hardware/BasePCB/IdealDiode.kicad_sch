@@ -404,130 +404,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_0_1"
-				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "NVMFWS1D7N04XMT1G:NVMFWS1D7N04XMT1G"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1264,9 +1140,9 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "OV Resistor Divider:\n\nOV = VIN (R35 / (R1 + R35)) = 30.662 V"
+	(text "OV comp threshold = 2.5V"
 		(exclude_from_sim no)
-		(at 207.01 101.6 0)
+		(at 201.422 101.6 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1310,12 +1186,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "55dfec07-12a9-4bcd-8f10-696735fb7c2d")
-	)
-	(junction
-		(at 198.12 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "76eb8a74-df6d-482c-ba38-b597c213d760")
 	)
 	(junction
 		(at 172.72 86.36)
@@ -1627,16 +1497,6 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 90.17) (xy 198.12 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ad5cd6c9-54ed-46d6-be5a-168aaa00988b")
-	)
-	(wire
-		(pts
 			(xy 148.59 69.85) (xy 148.59 74.93)
 		)
 		(stroke
@@ -1644,16 +1504,6 @@
 			(type default)
 		)
 		(uuid "b0dcc2a8-8d2e-444a-b716-2e7e6acacf4a")
-	)
-	(wire
-		(pts
-			(xy 165.1 101.6) (xy 198.12 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bf548d65-f12c-446b-8077-323f5c1932af")
 	)
 	(wire
 		(pts
@@ -1684,6 +1534,16 @@
 			(type default)
 		)
 		(uuid "cb8658bc-871a-4544-b4a3-47a8b8bbfd6f")
+	)
+	(wire
+		(pts
+			(xy 165.1 101.6) (xy 193.04 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da9a4e62-2ada-4130-a17c-d9f5c3bbe06b")
 	)
 	(wire
 		(pts
@@ -1755,15 +1615,16 @@
 		)
 		(uuid "e2a28630-7087-4ac4-b0b4-182cab2a704c")
 	)
-	(label "VIN"
-		(at 198.12 90.17 270)
+	(hierarchical_label "OVLO"
+		(shape input)
+		(at 193.04 101.6 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left)
 		)
-		(uuid "ee5dfb44-8a9b-47d3-a3e1-7a3326fd3649")
+		(uuid "3660ad92-a215-4d6c-ab59-480708992cdf")
 	)
 	(hierarchical_label "DIODE_VOUT"
 		(shape output)
@@ -2446,151 +2307,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 198.12 109.22 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7fbbf895-af7e-4e87-97fd-5cc45245b64b")
-		(property "Reference" "#PWR046"
-			(at 198.12 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 198.12 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 198.12 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 198.12 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 198.12 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2aed7195-d6f9-459f-b405-e16ac1980662")
-		)
-		(instances
-			(project "LV Carrier Board"
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/43d57115-5e1b-4cd6-9a42-d8d2dd9ec7f7"
-					(reference "#PWR047")
-					(unit 1)
-				)
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e/235a5f78-79bc-442b-9f8f-94d7d41f7629"
-					(reference "#PWR046")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 198.12 97.79 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "892d3b79-6a2f-4979-a81c-a9f8ecc2facf")
-		(property "Reference" "R1"
-			(at 200.66 96.5199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "160K"
-			(at 200.66 99.0599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 196.342 97.79 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 198.12 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 198.12 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "aaf2b211-232e-45d9-81f9-0af8d561e141")
-		)
-		(pin "1"
-			(uuid "75510bf7-e6ec-4fe2-affc-c38319520b2d")
-		)
-		(instances
-			(project ""
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/43d57115-5e1b-4cd6-9a42-d8d2dd9ec7f7"
-					(reference "R19")
-					(unit 1)
-				)
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e/235a5f78-79bc-442b-9f8f-94d7d41f7629"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "PowerBoardLib:SMBJ15D-M3I")
 		(at 91.44 87.63 90)
 		(unit 1)
@@ -2855,80 +2571,6 @@
 				)
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e/235a5f78-79bc-442b-9f8f-94d7d41f7629"
 					(reference "#PWR048")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 198.12 105.41 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c08d5a48-e6a2-4e32-94f1-69c5fecc0975")
-		(property "Reference" "R35"
-			(at 200.66 104.1399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "6.8K"
-			(at 200.66 106.6799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 196.342 105.41 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 198.12 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 198.12 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "98de7c01-ca78-4ce9-8ac3-fac388660c0f")
-		)
-		(pin "1"
-			(uuid "1cb683d0-09c0-44a5-afbc-8ff14002d5df")
-		)
-		(instances
-			(project "LV Carrier Board"
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/43d57115-5e1b-4cd6-9a42-d8d2dd9ec7f7"
-					(reference "R39")
-					(unit 1)
-				)
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e/235a5f78-79bc-442b-9f8f-94d7d41f7629"
-					(reference "R35")
 					(unit 1)
 				)
 			)
