@@ -2157,17 +2157,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "250U\n"
-		(exclude_from_sim no)
-		(at 177.8 43.18 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "42489b2d-e743-4ba5-a8ca-ed14a601f5cc")
-	)
-	(text "OV = 33.19V"
+	(text "OV = 33.3V"
 		(exclude_from_sim no)
 		(at 56.134 42.164 0)
 		(effects
@@ -2270,12 +2260,6 @@
 		(uuid "9e19cd99-3d17-4d74-ba45-499d9cf63764")
 	)
 	(junction
-		(at 53.34 52.07)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9ebc1f79-a05f-4b61-aa89-62a7a5240112")
-	)
-	(junction
 		(at 101.6 172.72)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2322,6 +2306,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fb2f2f75-6066-4586-b531-46e04e085819")
+	)
+	(junction
+		(at 53.34 52.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fd93c7d3-b336-42f3-8d53-cb9fb50b85a5")
 	)
 	(no_connect
 		(at 78.74 121.92)
@@ -5190,6 +5180,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5268,6 +5259,84 @@
 			(project "LV Carrier Board"
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e"
 					(reference "#PWR035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 53.34 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7315b698-7944-436e-b3ee-63da65eda1a7")
+		(property "Reference" "R44"
+			(at 55.118 54.7116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 55.118 57.023 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 51.562 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "CRCW060310K0FKEI"
+			(at 53.34 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 53.34 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "CRCW060310K0FKEI "
+			(at 53.34 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a736e6ee-71bf-44bb-8e85-a7bd6d3d68fa")
+		)
+		(pin "2"
+			(uuid "7411f1a3-88c6-4ae0-abd1-759392d950c5")
+		)
+		(instances
+			(project "LV Carrier Board"
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e"
+					(reference "R44")
 					(unit 1)
 				)
 			)
@@ -5768,7 +5837,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "83.5k"
+		(property "Value" "255k"
 			(at 55.88 48.2599 0)
 			(effects
 				(font
@@ -5786,7 +5855,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.mouser.com/ProductDetail/Vishay/TNPW060383K5BEEA?qs=FNcb6ahWXRziq5L%252BKVYS3A%3D%3D"
+		(property "Datasheet" "https://www.mouser.com/ProductDetail/Vishay/CRCW0603255KFKEA?qs=%2F2dL3%2Fmkwc4b%252B6ps3kncaw%3D%3D"
 			(at 53.34 46.99 0)
 			(effects
 				(font
@@ -5804,7 +5873,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "TNPW060383K5BEEA"
+		(property "P/N" "CRCW0603255KFKEA"
 			(at 53.34 46.99 0)
 			(effects
 				(font
@@ -6410,6 +6479,14 @@
 				(hide yes)
 			)
 		)
+		(property "P/N" "1053091303"
+			(at 154.94 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "099431d3-1c1c-4ab4-81d3-d5f26b5e7f2b")
 		)
@@ -6563,76 +6640,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 53.34 55.88 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c08d5a48-e6a2-4e32-94f1-69c5fecc0975")
-		(property "Reference" "R35"
-			(at 55.88 54.6099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "6.8K"
-			(at 55.88 57.1499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 51.562 55.88 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 53.34 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 53.34 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "98de7c01-ca78-4ce9-8ac3-fac388660c0f")
-		)
-		(pin "1"
-			(uuid "1cb683d0-09c0-44a5-afbc-8ff14002d5df")
-		)
-		(instances
-			(project "LV Carrier Board"
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e"
-					(reference "R35")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Transistor_FET:IRLML0030")
 		(at 41.91 69.85 0)
 		(unit 1)
@@ -6696,6 +6703,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "2"
