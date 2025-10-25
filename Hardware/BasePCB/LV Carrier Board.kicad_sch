@@ -20357,13 +20357,13 @@
 		(at 153.67 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8ff9a478-9ab0-41a3-b3c4-6c10289a7cba")
+		(uuid "6801f9c6-e993-424f-97ab-fdb9ac0b271b")
 	)
 	(junction
-		(at 262.89 33.02)
+		(at 261.62 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9f81b1ad-ffae-4624-b0b4-e3009d6347f4")
+		(uuid "af624cf1-a4bd-49de-a65a-e0e827b6dce2")
 	)
 	(junction
 		(at 60.96 27.94)
@@ -20511,6 +20511,16 @@
 	)
 	(wire
 		(pts
+			(xy 261.62 33.02) (xy 272.415 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1182ec92-cff7-479d-aacf-75db3943c67e")
+	)
+	(wire
+		(pts
 			(xy 153.67 30.48) (xy 162.56 30.48)
 		)
 		(stroke
@@ -20631,7 +20641,7 @@
 	)
 	(wire
 		(pts
-			(xy 262.89 40.64) (xy 262.89 42.545)
+			(xy 261.62 40.64) (xy 261.62 43.18)
 		)
 		(stroke
 			(width 0)
@@ -20791,7 +20801,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 33.02) (xy 262.89 33.02)
+			(xy 252.73 33.02) (xy 261.62 33.02)
 		)
 		(stroke
 			(width 0)
@@ -21278,16 +21288,6 @@
 			(type default)
 		)
 		(uuid "9c381619-11b3-47a2-966a-fc0a5daf7544")
-	)
-	(wire
-		(pts
-			(xy 262.89 33.02) (xy 272.415 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a26c703c-fb07-492f-8df9-7d81759b0454")
 	)
 	(wire
 		(pts
@@ -22382,6 +22382,15 @@
 				(hide yes)
 			)
 		)
+		(property "P/N" "FIT0586"
+			(at 277.495 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9db89b40-a894-4d1d-b225-f075c3b921e8")
 		)
@@ -22976,6 +22985,15 @@
 				(hide yes)
 			)
 		)
+		(property "P/N" "FIT0586"
+			(at 20.32 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "15cebf01-09f4-478c-9baa-f5406863d249")
 		)
@@ -22986,6 +23004,84 @@
 			(project "LV Carrier Board"
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
 					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 153.67 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4d280f04-b0f9-4eba-835b-aaf6cecb21bd")
+		(property "Reference" "R39"
+			(at 155.448 42.0116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 155.448 44.323 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 151.892 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "CRCW060310K0FKEI"
+			(at 153.67 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 153.67 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "CRCW060310K0FKEI "
+			(at 153.67 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d8605f15-a197-4a1a-857f-ab4ee601da34")
+		)
+		(pin "2"
+			(uuid "594f91b2-1f70-4616-8189-4f1d097a3865")
+		)
+		(instances
+			(project "LV Carrier Board"
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
+					(reference "R39")
 					(unit 1)
 				)
 			)
@@ -23045,7 +23141,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" ""
+		(property "P/N" "CRCW06030000Z0EE"
 			(at 48.26 58.42 0)
 			(effects
 				(font
@@ -23071,7 +23167,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 262.89 36.83 0)
+		(at 261.62 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -23080,7 +23176,7 @@
 		(fields_autoplaced yes)
 		(uuid "5383f4be-f737-421a-8cc5-3ee3638a8b9f")
 		(property "Reference" "C3"
-			(at 266.7 35.5599 0)
+			(at 265.43 35.5599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23089,7 +23185,7 @@
 			)
 		)
 		(property "Value" "1.5mF"
-			(at 266.7 38.0999 0)
+			(at 265.43 38.0999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23098,7 +23194,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm"
-			(at 263.8552 40.64 0)
+			(at 262.5852 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23107,7 +23203,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 262.89 36.83 0)
+			(at 261.62 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23116,7 +23212,16 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 262.89 36.83 0)
+			(at 261.62 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "MAL217051152E3"
+			(at 261.62 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23248,6 +23353,15 @@
 			)
 		)
 		(property "Description" "Schottky diode"
+			(at 48.26 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "B340BQ-13-F "
 			(at 48.26 53.34 0)
 			(effects
 				(font
@@ -23407,7 +23521,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 262.89 42.545 0)
+		(at 261.62 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -23416,7 +23530,7 @@
 		(fields_autoplaced yes)
 		(uuid "745ae591-2969-49a8-9ddf-f219dd0cb050")
 		(property "Reference" "#PWR043"
-			(at 262.89 48.895 0)
+			(at 261.62 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23425,7 +23539,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 262.89 47.625 0)
+			(at 261.62 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23433,7 +23547,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 262.89 42.545 0)
+			(at 261.62 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23442,7 +23556,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 262.89 42.545 0)
+			(at 261.62 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23451,7 +23565,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 262.89 42.545 0)
+			(at 261.62 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23784,7 +23898,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.digikey.com/en/products/detail/diodes-incorporated/BAT400D-7-F/725016"
 			(at 132.08 114.3 0)
 			(effects
 				(font
@@ -23794,6 +23908,15 @@
 			)
 		)
 		(property "Description" "Dual Schottky diode, common cathode on pin 3"
+			(at 133.35 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "BAT400D-7-F "
 			(at 133.35 114.3 0)
 			(effects
 				(font
@@ -23942,6 +24065,15 @@
 				(hide yes)
 			)
 		)
+		(property "P/N" "FIT0586"
+			(at 20.32 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4bbf7d76-6859-42dc-b705-cbd88848b047")
 		)
@@ -23976,7 +24108,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "66.5k"
+		(property "Value" "198k"
 			(at 156.21 36.8299 0)
 			(effects
 				(font
@@ -23994,7 +24126,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.mouser.com/ProductDetail/Vishay/CRCW060366K5FKEAC?qs=E3Y5ESvWgWOGbq5Mg2tjWg%3D%3D"
+		(property "Datasheet" "https://www.mouser.com/ProductDetail/YAGEO/RT0603BRD07198KL?qs=bQfrgN9vNvxjjoB%252BIKRwPQ%3D%3D"
 			(at 153.67 35.56 0)
 			(effects
 				(font
@@ -24012,7 +24144,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW060366K5FKEAC"
+		(property "P/N" "RT0603BRD07198KL"
 			(at 153.67 35.56 0)
 			(effects
 				(font
@@ -24500,6 +24632,15 @@
 				(hide yes)
 			)
 		)
+		(property "P/N" "PRT-10474 "
+			(at 21.59 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b3a14b0d-145e-47eb-a0e7-5ccd87896891")
 		)
@@ -24853,6 +24994,15 @@
 				(hide yes)
 			)
 		)
+		(property "P/N" "FIT0586"
+			(at 20.32 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ca008292-5aed-4ebf-85d3-bd6f8171a580")
 		)
@@ -24941,76 +25091,6 @@
 			(project "LV Carrier Board"
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
 					(reference "R32")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 153.67 43.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f9de0d03-8bf8-45a6-b56d-4d85d4c5e263")
-		(property "Reference" "R39"
-			(at 156.21 41.9099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "6.8K"
-			(at 156.21 44.4499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 151.892 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 153.67 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 153.67 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "d9841b84-92be-4c89-adcc-8fb0a7b22d75")
-		)
-		(pin "1"
-			(uuid "9f60489e-508b-400b-ad5d-eaa309849a2f")
-		)
-		(instances
-			(project "LV Carrier Board"
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
-					(reference "R39")
 					(unit 1)
 				)
 			)
@@ -25209,6 +25289,15 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 22.86 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "105309-1104 "
 			(at 22.86 118.11 0)
 			(effects
 				(font
