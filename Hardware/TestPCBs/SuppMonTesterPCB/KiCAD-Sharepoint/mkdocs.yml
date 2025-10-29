@@ -1,0 +1,34 @@
+site_name: KiCad Sharepoint Documentation
+site_description: Common KiCAD library for Longhorn Racing Solar
+site_author: LHR - Solar
+
+theme:
+  name: material
+  favicon: LHRs.ico
+  palette:
+  - scheme: slate
+    primary: blue
+
+nav:
+  - Home: 'README.md'
+  - KiCad Setup: 'KiCad-Setup.md'
+  - PCB Design Guidelines:
+    - Standards: 'Standards.md'
+    - Workflow: 'Workflow.md'
+  - Shared Components:
+    - Common Parts: 'Parts.md'
+    - Design Blocks: 'Blocks.md'
+  - JLC Ordering: 'Ordering.md'
+  - PCB Assembly: 'Assembly.md'
+  - Exporting Designs: 'Export.md'
+  - Resources: 'Resources.md'
+
+plugins:
+  - search:
+      prebuild_index: true
+      lang: en
+  - redirects:
+      redirect_maps: {}
+
+extra_javascript: []
+extra_css: []
