@@ -1,0 +1,1 @@
+openocd -f Embedded-Sharepoint/openocd-stm32g4x.cfg
