@@ -5,12 +5,151 @@
 	(uuid "a0d807a6-b2f3-4414-8610-84dbaf3a6b28")
 	(paper "A4")
 	(lib_symbols
-		(symbol "AP74502HQTA8-7:AP74502HQTA8-7"
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "LV-Carrier:AP74502HQTA8-7"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "IC"
-				(at 29.21 7.62 0)
+				(at 5.08 7.366 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -19,7 +158,7 @@
 				)
 			)
 			(property "Value" "AP74502HQTA8-7"
-				(at 29.21 5.08 0)
+				(at 5.08 4.826 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -27,7 +166,7 @@
 					(justify left top)
 				)
 			)
-			(property "Footprint" "AP74502HQTA87"
+			(property "Footprint" "LV Carrier Library:AP74502HQTA87"
 				(at 29.21 -94.92 0)
 				(effects
 					(font
@@ -66,7 +205,7 @@
 					(hide yes)
 				)
 			)
-			(property "Mouser Part Number" ""
+			(property "P/N" "AP74502HQTA8-7"
 				(at 29.21 -494.92 0)
 				(effects
 					(font
@@ -265,146 +404,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:C"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "C"
-				(at 0.635 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "C"
-				(at 0.635 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0.9652 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Unpolarized capacitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "cap capacitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "C_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "C_0_1"
-				(polyline
-					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "C_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 2.794)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.794)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "NVMFWS1D7N04XMT1G:NVMFWS1D7N04XMT1G"
+		(symbol "LV-Carrier:NVMFWS1D7N04XMT1G"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -455,6 +455,16 @@
 					(hide yes)
 				)
 			)
+			(property "P/N" "NVMFWS1D7N04XMT1G"
+				(at 21.59 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
 			(property "Height" "1.1"
 				(at 21.59 -394.92 0)
 				(effects
@@ -487,16 +497,6 @@
 			)
 			(property "Manufacturer_Name" "onsemi"
 				(at 21.59 -694.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "NVMFWS1D7N04XMT1G"
-				(at 21.59 -794.92 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -886,7 +886,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PowerBoardLib:SMBJ15D-M3I"
+		(symbol "LV-Carrier:SMBJ15D-M3I"
 			(pin_numbers
 				(hide yes)
 			)
@@ -912,7 +912,7 @@
 					)
 				)
 			)
-			(property "Footprint" "SMBJ15D-M3I:P26_DO-214AA_SMB"
+			(property "Footprint" "LV Carrier Library:SMBJ15DM3"
 				(at 0 -2.54 0)
 				(effects
 					(font
@@ -931,6 +931,15 @@
 				)
 			)
 			(property "Description" "Bidirectional TVS Diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "P/N" "SMBJ15D-M3/I "
 				(at 0 0 0)
 				(effects
 					(font
@@ -1155,7 +1164,7 @@
 		(at 124.46 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "212e412b-c155-4629-a49e-fa2c38f4bb55")
+		(uuid "099e79d5-4d54-4fd7-b9f8-8c1eaf6f3e7b")
 	)
 	(junction
 		(at 143.51 83.82)
@@ -1182,34 +1191,22 @@
 		(uuid "4b45ce6a-987a-4046-b4ca-34a3660bbfae")
 	)
 	(junction
+		(at 124.46 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4d955cef-0e8d-4982-b324-3018acedff05")
+	)
+	(junction
 		(at 148.59 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "55dfec07-12a9-4bcd-8f10-696735fb7c2d")
 	)
 	(junction
-		(at 172.72 86.36)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "880686fa-484d-4a96-a080-20e5ef465e19")
-	)
-	(junction
-		(at 172.72 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "aeaed0ec-a429-4566-a40b-41968db33e59")
-	)
-	(junction
 		(at 91.44 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c484c12c-1a55-42a8-9dc4-94ebc4976519")
-	)
-	(junction
-		(at 124.46 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c49a8a69-ef07-48d9-b304-51bdc7df8980")
 	)
 	(junction
 		(at 148.59 74.93)
@@ -1230,10 +1227,32 @@
 		(uuid "d946b86e-1230-4f89-a978-acdd7691db6d")
 	)
 	(junction
+		(at 172.72 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e9676848-701f-4810-9199-17a90092d28b")
+	)
+	(junction
 		(at 167.64 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eef78c00-2b55-48aa-8ad7-bfe4fa85d177")
+	)
+	(junction
+		(at 172.72 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f801ce82-c110-4fc8-8d31-2da76e71f1a9")
+	)
+	(wire
+		(pts
+			(xy 172.72 81.28) (xy 172.72 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07fabcf0-80a7-4fe8-bdf0-ed79775f6cd9")
 	)
 	(wire
 		(pts
@@ -1327,6 +1346,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 86.36) (xy 172.72 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "488e8ee4-9aa3-4338-b001-52e538becc27")
+	)
+	(wire
+		(pts
 			(xy 165.1 106.68) (xy 167.64 106.68)
 		)
 		(stroke
@@ -1347,16 +1376,6 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 83.82) (xy 172.72 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "542b8e96-2eb3-4206-bc16-e850d26744a0")
-	)
-	(wire
-		(pts
 			(xy 153.67 83.82) (xy 153.67 86.36)
 		)
 		(stroke
@@ -1374,26 +1393,6 @@
 			(type default)
 		)
 		(uuid "5a28e037-be73-46f7-a878-dd77635c6895")
-	)
-	(wire
-		(pts
-			(xy 172.72 86.36) (xy 172.72 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5a946125-e523-4a17-9103-3078eb28c026")
-	)
-	(wire
-		(pts
-			(xy 124.46 86.36) (xy 124.46 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c58a887-55f6-4e86-b9f1-3250c9dc4c38")
 	)
 	(wire
 		(pts
@@ -1447,16 +1446,6 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 83.82) (xy 124.46 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "85ae791c-22bc-4b90-bc1e-18903ea11e82")
-	)
-	(wire
-		(pts
 			(xy 153.67 81.28) (xy 153.67 83.82)
 		)
 		(stroke
@@ -1467,17 +1456,17 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 81.28) (xy 124.46 83.82)
+			(xy 172.72 83.82) (xy 172.72 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9dd842ad-e8d6-471e-a857-ed71bbb49693")
+		(uuid "a0a4b395-39d1-4558-bff6-be511bd848e0")
 	)
 	(wire
 		(pts
-			(xy 172.72 81.28) (xy 172.72 83.82)
+			(xy 172.72 78.74) (xy 172.72 81.28)
 		)
 		(stroke
 			(width 0)
@@ -1537,6 +1526,16 @@
 	)
 	(wire
 		(pts
+			(xy 124.46 83.82) (xy 124.46 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd76bbb0-a560-4a19-93ac-919c705017bf")
+	)
+	(wire
+		(pts
 			(xy 165.1 101.6) (xy 193.04 101.6)
 		)
 		(stroke
@@ -1557,6 +1556,16 @@
 	)
 	(wire
 		(pts
+			(xy 124.46 81.28) (xy 124.46 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e76f6eed-4744-40ac-9ade-22263f0521f9")
+	)
+	(wire
+		(pts
 			(xy 148.59 83.82) (xy 143.51 83.82)
 		)
 		(stroke
@@ -1567,13 +1576,13 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 78.74) (xy 172.72 81.28)
+			(xy 124.46 86.36) (xy 124.46 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ec3aff8a-8d65-47a6-8473-3dc86a4b57a0")
+		(uuid "f8136265-cf12-45ec-ad64-980b5ef120cd")
 	)
 	(label "VIN"
 		(at 104.14 83.82 0)
@@ -1814,6 +1823,148 @@
 		)
 	)
 	(symbol
+		(lib_id "LV-Carrier:AP74502HQTA8-7")
+		(at 132.08 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4208eeff-d96b-411f-b1c9-5dddba96e0ab")
+		(property "Reference" "IC1"
+			(at 148.59 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AP74502HQTA8-7"
+			(at 148.59 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LV Carrier Library:AP74502HQTA87"
+			(at 161.29 193.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/datasheet/download/AP74502Q_AP74502HQ.pdf"
+			(at 161.29 293.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power Switch ICs - Power Distribution Ideal Diode Controller SOT28 T&R 3K, 62 A,-40C ~ 125C"
+			(at 132.08 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.1"
+			(at 161.29 493.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "P/N" "AP74502HQTA8-7"
+			(at 161.29 593.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 161.29 693.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Diodes Incorporated"
+			(at 161.29 793.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "AP74502HQTA8-7"
+			(at 161.29 893.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "8"
+			(uuid "624230f7-8f82-4258-988e-44f82f90a5c9")
+		)
+		(pin "3"
+			(uuid "6ebda938-7bb9-41e8-8062-479ab94b8935")
+		)
+		(pin "2"
+			(uuid "d79e9af2-c7af-4fa5-9f44-4fc220de7544")
+		)
+		(pin "5"
+			(uuid "41946cca-b497-44e7-b6f2-5a9e0fcd1812")
+		)
+		(pin "1"
+			(uuid "882cd63b-6772-4b0f-9511-fa02e535a521")
+		)
+		(pin "7"
+			(uuid "bb0464df-75f3-434d-a6bc-739c79c7f94c")
+		)
+		(pin "4"
+			(uuid "d7c32bb9-a3fc-45c4-a1fe-0eb90c2e9815")
+		)
+		(pin "6"
+			(uuid "68bcdc3c-2049-430e-a1b9-4e598481e96d")
+		)
+		(instances
+			(project ""
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/43d57115-5e1b-4cd6-9a42-d8d2dd9ec7f7"
+					(reference "IC2")
+					(unit 1)
+				)
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e/235a5f78-79bc-442b-9f8f-94d7d41f7629"
+					(reference "IC1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 99.06 91.44 0)
 		(unit 1)
@@ -1885,170 +2036,16 @@
 		)
 	)
 	(symbol
-		(lib_id "NVMFWS1D7N04XMT1G:NVMFWS1D7N04XMT1G")
-		(at 133.35 82.55 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "488d0270-419b-4577-ab3d-da219339fa61")
-		(property "Reference" "Q5"
-			(at 133.477 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "NVMFWS1D7N04XMT1G"
-			(at 133.477 91.44 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LV Carrier Library:NVMFWS3D0P04M8LT1G"
-			(at 228.27 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NVMFWS1D7N04XM-D.PDF"
-			(at 328.27 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "Small Footprint (5x6 mm); Low RDS(on); Low QG and Capacitance; Wettable Flank Option; AECQ101 Qualified and PPAP Capable; RoHS Compliant"
-			(at 114.3 81.788 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "1.1"
-			(at 528.27 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 628.27 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 728.27 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "onsemi"
-			(at 828.27 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "NVMFWS1D7N04XMT1G"
-			(at 928.27 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "P/N" "NVMFWS1D7N04XMT1G"
-			(at 133.35 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "22ad4f9e-8ca2-45a5-b4a8-9f7817ed3ccf")
-		)
-		(pin "7"
-			(uuid "67f46d8e-0b57-49c1-8ce1-1f18664f6720")
-		)
-		(pin "5"
-			(uuid "18a776ca-9507-4da4-ada8-e9252dbbe7a8")
-		)
-		(pin "6"
-			(uuid "94ac9394-75c7-4702-a869-9e96e55c5782")
-		)
-		(pin "8"
-			(uuid "02754f30-ac8e-43ae-9115-305e6f429650")
-		)
-		(pin "2"
-			(uuid "95334d59-cff1-4ff1-a342-dd3158376fa3")
-		)
-		(pin "9"
-			(uuid "5219d9ea-f607-437b-971f-ab1e854b1097")
-		)
-		(pin "4"
-			(uuid "ea67ba4a-8bd6-49f8-b98c-a3f665ae2fdc")
-		)
-		(pin "1"
-			(uuid "9ed22305-e495-4ffa-b5d5-b38a1189369f")
-		)
-		(instances
-			(project ""
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/43d57115-5e1b-4cd6-9a42-d8d2dd9ec7f7"
-					(reference "Q7")
-					(unit 1)
-				)
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e/235a5f78-79bc-442b-9f8f-94d7d41f7629"
-					(reference "Q5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "NVMFWS1D7N04XMT1G:NVMFWS1D7N04XMT1G")
+		(lib_id "LV-Carrier:NVMFWS1D7N04XMT1G")
 		(at 163.83 82.55 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5b65e65d-22b9-4cca-ab27-ff8b764a99cf")
+		(uuid "5856005b-68f6-443d-85d6-03e4009a702e")
 		(property "Reference" "Q8"
-			(at 163.703 93.98 90)
+			(at 176.53 72.644 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2056,7 +2053,7 @@
 			)
 		)
 		(property "Value" "NVMFWS1D7N04XMT1G"
-			(at 163.703 91.44 90)
+			(at 176.53 75.184 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2089,6 +2086,16 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "NVMFWS1D7N04XMT1G"
+			(at -631.09 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
 				(hide yes)
 			)
 		)
@@ -2132,51 +2139,32 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "NVMFWS1D7N04XMT1G"
-			(at -631.09 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "P/N" "NVMFWS1D7N04XMT1G"
-			(at 163.83 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "93369b0c-7ebd-4599-9138-376e01948a29")
-		)
 		(pin "7"
-			(uuid "97415da0-e795-4993-8e28-cb6bb1c2e034")
+			(uuid "6dca1246-733b-4b42-ba96-d0b5591cec77")
 		)
 		(pin "5"
-			(uuid "9c6ac9c9-4f1a-4e36-aa8c-b51c343b44a4")
+			(uuid "d1bcd6ba-dd34-43be-9251-2ed894444a53")
 		)
 		(pin "6"
-			(uuid "eb6cb86b-f189-40fe-969d-f781617bd2f1")
-		)
-		(pin "8"
-			(uuid "7cfef74c-beb7-4f14-b108-f9b5737637d4")
-		)
-		(pin "2"
-			(uuid "0fd9ed04-8ccb-4b54-8a05-1cea0a46c93f")
-		)
-		(pin "9"
-			(uuid "1455124a-a3d7-4186-8a14-92d83a738e0e")
+			(uuid "6c5dbe8f-84f5-4222-9016-09d547755977")
 		)
 		(pin "4"
-			(uuid "e388ce85-b8ae-414b-8c6d-0b548c340f34")
+			(uuid "23f82f74-1a4a-49cc-b898-66f0c381e329")
 		)
 		(pin "1"
-			(uuid "6a680b93-9bbd-4c97-87bd-11e050c3dbde")
+			(uuid "64b1f4fc-36a2-4569-86a2-6b96855118f6")
+		)
+		(pin "2"
+			(uuid "466237f3-ed82-4fe7-944e-cc9f120a8d25")
+		)
+		(pin "9"
+			(uuid "566f7ef5-9667-4eb9-a7de-3dce56c91a7b")
+		)
+		(pin "8"
+			(uuid "fe4abf7f-a75e-4f44-a9a4-2c839e3ebbd4")
+		)
+		(pin "3"
+			(uuid "2902cc96-88cc-4aeb-af5a-68a52c9e0de3")
 		)
 		(instances
 			(project "LV Carrier Board"
@@ -2192,157 +2180,7 @@
 		)
 	)
 	(symbol
-		(lib_id "AP74502HQTA8-7:AP74502HQTA8-7")
-		(at 132.08 99.06 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "67c9d357-4747-4d82-be8c-ec11a8a7fedc")
-		(property "Reference" "IC1"
-			(at 148.59 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "AP74502HQTA8-7"
-			(at 148.59 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LV Carrier Library:AP74502HQTA87"
-			(at 161.29 193.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/datasheet/download/AP74502Q_AP74502HQ.pdf"
-			(at 161.29 293.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power Switch ICs - Power Distribution Ideal Diode Controller SOT28 T&R 3K, 62 A,-40C ~ 125C"
-			(at 132.08 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "1.1"
-			(at 161.29 493.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 161.29 593.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 161.29 693.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Diodes Incorporated"
-			(at 161.29 793.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "AP74502HQTA8-7"
-			(at 161.29 893.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "P/N" "AP74502HQTA8-7"
-			(at 132.08 106.426 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "b52d45dc-f86c-4803-b230-605374f8a9a4")
-		)
-		(pin "2"
-			(uuid "4f0394cb-8071-447e-a45e-13275dd9966c")
-		)
-		(pin "4"
-			(uuid "a5d50e26-ac27-4b7d-b73c-6290b23c9742")
-		)
-		(pin "7"
-			(uuid "53c48010-d7de-434c-962b-0ab2b9119f91")
-		)
-		(pin "1"
-			(uuid "61f361aa-a1c1-4283-b168-06b592d5078d")
-		)
-		(pin "6"
-			(uuid "109a6e2e-b288-43b9-85c8-83989bc68946")
-		)
-		(pin "5"
-			(uuid "59c686a5-148c-412e-90d3-da49e22fac43")
-		)
-		(pin "8"
-			(uuid "caeaf7c2-e7c1-4118-86f8-065ada969a00")
-		)
-		(instances
-			(project ""
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/43d57115-5e1b-4cd6-9a42-d8d2dd9ec7f7"
-					(reference "IC2")
-					(unit 1)
-				)
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e/235a5f78-79bc-442b-9f8f-94d7d41f7629"
-					(reference "IC1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PowerBoardLib:SMBJ15D-M3I")
+		(lib_id "LV-Carrier:SMBJ15D-M3I")
 		(at 91.44 87.63 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2366,7 +2204,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PowerBoardLib:P26_DO-214AA_SMB"
+		(property "Footprint" "LV Carrier Library:SMBJ15DM3"
 			(at 93.98 87.63 0)
 			(effects
 				(font
@@ -2411,7 +2249,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "SMBJ33D"
+		(property "P/N" "SMBJ15D-M3/I "
 			(at 91.44 87.63 0)
 			(effects
 				(font
@@ -2615,6 +2453,151 @@
 				)
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e/235a5f78-79bc-442b-9f8f-94d7d41f7629"
 					(reference "#PWR048")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LV-Carrier:NVMFWS1D7N04XMT1G")
+		(at 133.35 82.55 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "da99a8b3-0703-45b7-ab8b-f09820a75cca")
+		(property "Reference" "Q5"
+			(at 120.65 72.644 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "NVMFWS1D7N04XMT1G"
+			(at 120.65 75.184 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LV Carrier Library:NVMFWS3D0P04M8LT1G"
+			(at 228.27 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NVMFWS1D7N04XM-D.PDF"
+			(at 328.27 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Small Footprint (5x6 mm); Low RDS(on); Low QG and Capacitance; Wettable Flank Option; AECQ101 Qualified and PPAP Capable; RoHS Compliant"
+			(at 114.3 81.788 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "NVMFWS1D7N04XMT1G"
+			(at 928.27 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.1"
+			(at 528.27 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 628.27 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 728.27 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "onsemi"
+			(at 828.27 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "3afb93c3-e3de-4aec-b4ae-568bab827109")
+		)
+		(pin "5"
+			(uuid "0c8dc1ab-45bd-469b-b290-ad4f328545b9")
+		)
+		(pin "6"
+			(uuid "a867dd36-961c-40c7-8785-da67e28f54d6")
+		)
+		(pin "4"
+			(uuid "a4a8fd42-f05c-4b24-8213-9373bd7be891")
+		)
+		(pin "1"
+			(uuid "e94be5ab-942a-48ee-ab0f-4cef199c2518")
+		)
+		(pin "2"
+			(uuid "23ac99b2-f091-47d4-a3d0-58631b3a2e2a")
+		)
+		(pin "9"
+			(uuid "c162724b-79d7-4a5e-baf5-3e68b2575332")
+		)
+		(pin "8"
+			(uuid "1a8806bb-cf8e-4cfa-ac52-b338ab5d6dff")
+		)
+		(pin "3"
+			(uuid "179df5be-0c78-4fe7-8f00-a0eca8999b41")
+		)
+		(instances
+			(project "LV Carrier Board"
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/43d57115-5e1b-4cd6-9a42-d8d2dd9ec7f7"
+					(reference "Q7")
+					(unit 1)
+				)
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e/235a5f78-79bc-442b-9f8f-94d7d41f7629"
+					(reference "Q5")
 					(unit 1)
 				)
 			)
