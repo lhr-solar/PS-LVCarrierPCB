@@ -20230,6 +20230,16 @@
 		)
 		(uuid "0d83719f-a26e-445f-a0c1-43324f824d8f")
 	)
+	(text "LTC Signals\n(3.3V)"
+		(exclude_from_sim no)
+		(at 58.42 140.716 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "18e910ed-f069-4900-94a2-1beb9af2d5a4")
+	)
 	(text "Supplemental Battery Input"
 		(exclude_from_sim no)
 		(at 31.242 19.304 0)
@@ -20625,7 +20635,7 @@
 	)
 	(bus
 		(pts
-			(xy 64.77 138.43) (xy 64.77 160.02)
+			(xy 64.77 138.43) (xy 64.77 165.1)
 		)
 		(stroke
 			(width 0)
@@ -20805,7 +20815,7 @@
 	)
 	(bus
 		(pts
-			(xy 142.24 119.38) (xy 142.24 135.89)
+			(xy 142.24 119.38) (xy 142.24 129.54)
 		)
 		(stroke
 			(width 0)
@@ -21015,7 +21025,7 @@
 	)
 	(bus
 		(pts
-			(xy 142.24 137.16) (xy 142.24 153.67)
+			(xy 142.24 137.16) (xy 142.24 149.86)
 		)
 		(stroke
 			(width 0)
@@ -21863,7 +21873,7 @@
 		)
 		(uuid "18f6025a-96a1-493c-9cca-0fa974ba2c9d")
 	)
-	(label "SUPPMON_V1"
+	(label "Supp_ADC"
 		(at 63.5 40.64 0)
 		(effects
 			(font
@@ -21923,7 +21933,7 @@
 		)
 		(uuid "35a4ea68-1f93-4c15-9d5c-e251ddf2295d")
 	)
-	(label "SUPPMON_I1"
+	(label "Supp_I_ADC"
 		(at 63.5 45.72 0)
 		(effects
 			(font
@@ -21993,7 +22003,7 @@
 		)
 		(uuid "49844575-4b74-4648-9833-f2a47173a4fa")
 	)
-	(label "SUPPMON_I2"
+	(label "SuppReg_I_ADC"
 		(at 139.7 129.54 180)
 		(effects
 			(font
@@ -22063,7 +22073,7 @@
 		)
 		(uuid "722fab94-7fd8-405a-b60e-1f4b335ace58")
 	)
-	(label "SUPPMON_V2"
+	(label "SuppReg_ADC"
 		(at 63.5 43.18 0)
 		(effects
 			(font
@@ -22173,7 +22183,7 @@
 		)
 		(uuid "996c8e08-057f-4e32-b8b3-1e81d4a74af6")
 	)
-	(label "SUPPMON_I2"
+	(label "SuppReg_I_ADC"
 		(at 63.5 48.26 0)
 		(effects
 			(font
@@ -22183,7 +22193,7 @@
 		)
 		(uuid "9a69e48b-bc31-4d1d-a302-6c50a0b3a237")
 	)
-	(label "SUPPMON_I1"
+	(label "Supp_I_ADC"
 		(at 139.7 127 180)
 		(effects
 			(font
@@ -22443,7 +22453,7 @@
 		)
 		(uuid "e13b0494-02df-4055-808f-2cb276f8824e")
 	)
-	(label "SUPPMON_V1"
+	(label "Supp_ADC"
 		(at 139.7 121.92 180)
 		(effects
 			(font
@@ -22463,7 +22473,7 @@
 		)
 		(uuid "e52c429c-e471-48aa-9c0b-f5fde9243862")
 	)
-	(label "SUPPMON_V2"
+	(label "SuppReg_ADC"
 		(at 139.7 124.46 180)
 		(effects
 			(font
@@ -26182,7 +26192,7 @@
 				(justify left)
 			)
 		)
-		(pin "SUPPMON_I1" input
+		(pin "Supp_I_ADC" input
 			(at 124.46 127 0)
 			(uuid "dcc5625e-588a-43d9-b170-a276d5ddbdea")
 			(effects
@@ -26192,7 +26202,7 @@
 				(justify right)
 			)
 		)
-		(pin "SUPPMON_V1" input
+		(pin "Supp_ADC" input
 			(at 124.46 121.92 0)
 			(uuid "23c2421b-67a1-4df1-b2a7-b0534cfdc411")
 			(effects
@@ -26202,7 +26212,7 @@
 				(justify right)
 			)
 		)
-		(pin "SUPPMON_V2" input
+		(pin "SuppReg_ADC" input
 			(at 124.46 124.46 0)
 			(uuid "44d9e286-dbfe-4326-be44-328991b3f49f")
 			(effects
@@ -26212,7 +26222,7 @@
 				(justify right)
 			)
 		)
-		(pin "SUPPMON_I2" input
+		(pin "SuppReg_I_ADC" input
 			(at 124.46 129.54 0)
 			(uuid "cbd27a47-f9fc-40dd-9763-aca347a258fb")
 			(effects
@@ -26869,7 +26879,7 @@
 				(justify right)
 			)
 		)
-		(pin "SUPPMON_I2" output
+		(pin "SuppReg_I_ADC" output
 			(at 78.74 48.26 180)
 			(uuid "2791266b-df24-448a-b60f-38e3db74f87b")
 			(effects
@@ -26879,7 +26889,7 @@
 				(justify left)
 			)
 		)
-		(pin "SUPPMON_I1" output
+		(pin "Supp_I_ADC" output
 			(at 78.74 45.72 180)
 			(uuid "b99ba188-c171-479d-9ece-ede03eb1ffc8")
 			(effects
@@ -26889,7 +26899,7 @@
 				(justify left)
 			)
 		)
-		(pin "SUPPMON_V1" output
+		(pin "Supp_ADC" output
 			(at 78.74 40.64 180)
 			(uuid "88730cda-3033-48da-9d88-d560fe85bdc6")
 			(effects
@@ -26899,7 +26909,7 @@
 				(justify left)
 			)
 		)
-		(pin "SUPPMON_V2" output
+		(pin "SuppReg_ADC" output
 			(at 78.74 43.18 180)
 			(uuid "5f32aed0-0d01-41c2-b4f9-4662f6625057")
 			(effects
