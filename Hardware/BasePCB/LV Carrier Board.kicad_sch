@@ -20579,6 +20579,12 @@
 		(uuid "6801f9c6-e993-424f-97ab-fdb9ac0b271b")
 	)
 	(junction
+		(at 156.21 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "85cf0655-84c7-4670-afb5-89a957b7efe7")
+	)
+	(junction
 		(at 76.2 31.75)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -20601,12 +20607,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dfa5079d-571f-4690-a4da-06fdf291898f")
-	)
-	(junction
-		(at 146.05 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e00bc31b-ab6c-4215-b01e-1cc1ff1bf86c")
 	)
 	(junction
 		(at 160.02 54.61)
@@ -20896,6 +20896,16 @@
 	)
 	(wire
 		(pts
+			(xy 153.67 74.93) (xy 156.21 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fa70634-d59f-47c8-8c47-b73833000a54")
+	)
+	(wire
+		(pts
 			(xy 74.93 114.3) (xy 78.74 114.3)
 		)
 		(stroke
@@ -21126,6 +21136,16 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 74.93) (xy 156.21 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51f9b331-a855-4f15-85e5-f1178b847580")
+	)
+	(wire
+		(pts
 			(xy 140.97 39.37) (xy 151.13 39.37)
 		)
 		(stroke
@@ -21266,16 +21286,6 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 74.93) (xy 204.47 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "65e388c9-d04d-4040-8c66-ca3fac517678")
-	)
-	(wire
-		(pts
 			(xy 26.67 55.88) (xy 25.4 55.88)
 		)
 		(stroke
@@ -21403,6 +21413,16 @@
 			(type default)
 		)
 		(uuid "800a9804-0458-42d6-b6a4-db1f50b72672")
+	)
+	(wire
+		(pts
+			(xy 143.51 74.93) (xy 146.05 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83811b48-cb7a-47f2-81d7-2df3c8e975ce")
 	)
 	(wire
 		(pts
@@ -21626,6 +21646,16 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 88.9) (xy 142.24 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a530532b-f5ff-4ddb-9387-4ee02f46481d")
+	)
+	(wire
+		(pts
 			(xy 29.21 91.44) (xy 26.67 91.44)
 		)
 		(stroke
@@ -21696,6 +21726,16 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 74.93) (xy 204.47 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba7a6888-83ea-43fa-8f51-c2d132c3513b")
+	)
+	(wire
+		(pts
 			(xy 146.05 54.61) (xy 160.02 54.61)
 		)
 		(stroke
@@ -21763,16 +21803,6 @@
 			(type default)
 		)
 		(uuid "c49f93c5-17f3-4867-8c58-f018eec1afd8")
-	)
-	(wire
-		(pts
-			(xy 142.24 88.9) (xy 146.05 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c8af00b0-c2b9-4dc3-9c0a-6dbae996926a")
 	)
 	(wire
 		(pts
@@ -21916,16 +21946,6 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 74.93) (xy 146.05 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f2dce336-855d-46ce-95d9-8e65a5742f54")
-	)
-	(wire
-		(pts
 			(xy 67.31 163.83) (xy 78.74 163.83)
 		)
 		(stroke
@@ -21953,16 +21973,6 @@
 			(type default)
 		)
 		(uuid "fa02f453-5d16-42ea-90b4-487ae1deadb0")
-	)
-	(wire
-		(pts
-			(xy 146.05 74.93) (xy 146.05 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fd9e8ed1-abc0-4426-a063-86efaeced78e")
 	)
 	(label "CHL2"
 		(at 204.47 33.02 0)
@@ -24468,6 +24478,100 @@
 			(project "LV Carrier Board"
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
 					(reference "#PWR043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 149.86 74.93 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "768e4d36-d280-4df8-9c0e-417ae0d7a6b6")
+		(property "Reference" "F3"
+			(at 149.86 70.104 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "3568"
+			(at 149.86 72.644 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LV Carrier Library:FUSE_3568"
+			(at 149.86 76.708 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 149.86 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "3568"
+			(at 149.86 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser P/N" "534-3568 "
+			(at 149.86 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey P/N" "36-3568-ND"
+			(at 149.86 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "81d335ea-2370-452e-b2ef-216a011b670e")
+		)
+		(pin "1"
+			(uuid "4df49e37-c79a-4cb7-9427-a5b478c9f34b")
+		)
+		(instances
+			(project "LV Carrier Board"
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
+					(reference "F3")
 					(unit 1)
 				)
 			)
