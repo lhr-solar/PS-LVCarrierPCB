@@ -112,6 +112,119 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Generic:Conn_01x01"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x01"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x01_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:D_Zener"
 			(pin_numbers
 				(hide yes)
@@ -1872,6 +1985,16 @@
 		)
 		(uuid f98818e4-9812-4f70-a147-a9a62bcccaa3)
 	)
+	(text "24V injector"
+		(exclude_from_sim no)
+		(at 202.184 33.274 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6a1dab80-3caa-40bd-bd84-44406e4ade7f")
+	)
 	(text "Connector to SuppMon Hat"
 		(exclude_from_sim no)
 		(at 48.26 97.79 0)
@@ -1931,6 +2054,12 @@
 			(justify bottom)
 		)
 		(uuid "2f16c9ad-988d-440d-b14f-fc4fc154c513")
+	)
+	(junction
+		(at 201.93 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0e73430c-a88d-402b-a28c-203cf7d3ac18")
 	)
 	(junction
 		(at 189.23 43.18)
@@ -2630,6 +2759,16 @@
 	)
 	(wire
 		(pts
+			(xy 196.85 34.29) (xy 201.93 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bc06d95-8ae7-4fca-9fa0-645a5897fe9c")
+	)
+	(wire
+		(pts
 			(xy 34.29 68.58) (xy 34.29 69.85)
 		)
 		(stroke
@@ -2640,7 +2779,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 43.18) (xy 203.2 43.18)
+			(xy 189.23 43.18) (xy 201.93 43.18)
 		)
 		(stroke
 			(width 0)
@@ -2870,6 +3009,16 @@
 	)
 	(wire
 		(pts
+			(xy 201.93 34.29) (xy 201.93 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc4ca0c5-fa9f-453a-880b-06c78344502e")
+	)
+	(wire
+		(pts
 			(xy 40.64 43.18) (xy 49.53 43.18)
 		)
 		(stroke
@@ -2917,6 +3066,16 @@
 			(type default)
 		)
 		(uuid "eeed339e-f0aa-4197-9ab1-c67b0255efa3")
+	)
+	(wire
+		(pts
+			(xy 201.93 43.18) (xy 203.2 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4643acc-1397-4366-859e-d9ec6896ac20")
 	)
 	(wire
 		(pts
@@ -5524,6 +5683,99 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 191.77 34.29 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b6471a0b-6126-4d45-820b-0e9439392806")
+		(property "Reference" "J10"
+			(at 191.77 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "575-4"
+			(at 191.77 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "UTSVT_Connectors:5754"
+			(at 191.77 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 191.77 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 191.77 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "575-4"
+			(at 191.77 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser P/N" "534-575-4"
+			(at 191.77 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey P/N" "36-575-4-ND"
+			(at 191.77 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "95fdbb1e-353d-4a5f-a286-a7b8fa710b77")
+		)
+		(instances
+			(project "LV Carrier Board"
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/d4cbd764-e723-45ee-b4b7-e620455af31e"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 189.23 43.18 0)
 		(unit 1)
@@ -6357,7 +6609,7 @@
 				(justify left top)
 			)
 		)
-		(pin "INP" input
+		(pin "INP" bidirectional
 			(at 107.95 43.18 180)
 			(uuid "8f607d29-8203-48f7-ab4e-e0caf491eb8b")
 			(effects
@@ -6377,7 +6629,7 @@
 				(justify right)
 			)
 		)
-		(pin "INN" output
+		(pin "INN" bidirectional
 			(at 132.08 43.18 0)
 			(uuid "f7d3fcf7-8477-47a3-b1ab-787b046fe6a4")
 			(effects
