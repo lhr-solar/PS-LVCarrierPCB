@@ -20839,6 +20839,16 @@
 	)
 	(wire
 		(pts
+			(xy 26.67 88.9) (xy 46.99 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0db3f5d5-675d-46cd-87df-70272af2ffd0")
+	)
+	(wire
+		(pts
 			(xy 50.8 115.57) (xy 50.8 113.03)
 		)
 		(stroke
@@ -21999,16 +22009,6 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 88.9) (xy 78.74 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d6a159eb-3eb3-4ff1-85a0-be013e4bf4c4")
-	)
-	(wire
-		(pts
 			(xy 204.47 40.64) (xy 215.9 40.64)
 		)
 		(stroke
@@ -22026,6 +22026,16 @@
 			(type default)
 		)
 		(uuid "d73ec3a8-78b6-4d09-b369-832277e0d75d")
+	)
+	(wire
+		(pts
+			(xy 54.61 88.9) (xy 78.74 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8bd96c5-6cf3-4b5a-bd54-ef1c176aab29")
 	)
 	(wire
 		(pts
@@ -26273,6 +26283,101 @@
 			(project "LV Carrier Board"
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
 					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 50.8 88.9 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c92872cb-46b3-4623-89c3-4a03b3168f66")
+		(property "Reference" "F2"
+			(at 50.8 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Fuse"
+			(at 50.8 86.36 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LV Carrier Library:FUSE_05200101Z_LTF"
+			(at 50.8 87.122 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 50.8 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 50.8 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "05200101Z"
+			(at 50.8 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LSCC P/N" ""
+			(at 50.8 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Assemble" "N"
+			(at 50.8 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e7e45eea-c954-4c74-a146-25feb0560095")
+		)
+		(pin "1"
+			(uuid "fbfc9d69-d78d-4200-8fdb-8f3da28b097b")
+		)
+		(instances
+			(project "LV Carrier Board"
+				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b"
+					(reference "F2")
 					(unit 1)
 				)
 			)

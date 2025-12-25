@@ -112,142 +112,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:Fuse"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "F"
-				(at 2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Fuse"
-				(at -1.905 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Fuse"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "fuse"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "*Fuse*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Fuse_0_1"
-				(rectangle
-					(start -0.762 -2.54)
-					(end 0.762 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Fuse_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:LED"
 			(pin_numbers
 				(hide yes)
@@ -1121,7 +985,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 67.31) (xy 85.09 67.31)
+			(xy 82.55 67.31) (xy 109.22 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1208,16 +1072,6 @@
 			(type default)
 		)
 		(uuid "ea8d6827-c7a0-46d4-8451-4abe02a8f05a")
-	)
-	(wire
-		(pts
-			(xy 92.71 67.31) (xy 109.22 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f5d42c38-49ed-4977-9434-c2b4f546a457")
 	)
 	(wire
 		(pts
@@ -2546,101 +2400,6 @@
 			(project "LV Carrier Board"
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/eb5e61c4-fcb9-4f3b-9225-002a6ddfe10f"
 					(reference "TP17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Fuse")
-		(at 88.9 67.31 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c92872cb-46b3-4623-89c3-4a03b3168f66")
-		(property "Reference" "F2"
-			(at 88.9 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Fuse"
-			(at 88.9 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LV Carrier Library:FUSE_05200101Z_LTF"
-			(at 88.9 65.532 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 88.9 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Fuse"
-			(at 88.9 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "05200101Z"
-			(at 88.9 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LSCC P/N" ""
-			(at 88.9 67.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Assemble" "N"
-			(at 88.9 67.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e7e45eea-c954-4c74-a146-25feb0560095")
-		)
-		(pin "1"
-			(uuid "fbfc9d69-d78d-4200-8fdb-8f3da28b097b")
-		)
-		(instances
-			(project "LV Carrier Board"
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/eb5e61c4-fcb9-4f3b-9225-002a6ddfe10f"
-					(reference "F2")
 					(unit 1)
 				)
 			)
