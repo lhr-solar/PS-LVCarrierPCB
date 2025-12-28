@@ -20692,12 +20692,6 @@
 		(uuid "0f52223e-53ee-4437-947d-ac96869bfc1f")
 	)
 	(junction
-		(at 59.69 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "397700a7-4854-4970-9f73-bacd5e0a1d84")
-	)
-	(junction
 		(at 208.28 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -20768,6 +20762,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e8e7ec9c-c505-40b9-bd46-d99164c1f0f1")
+	)
+	(junction
+		(at 72.39 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f0d52c8c-f66d-48d1-9d14-eb9c631b6f29")
 	)
 	(junction
 		(at 60.96 53.34)
@@ -20878,16 +20878,6 @@
 			(type default)
 		)
 		(uuid "0c27c390-432c-4447-b6e3-a9cc0ad5c87b")
-	)
-	(wire
-		(pts
-			(xy 26.67 88.9) (xy 59.69 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0db3f5d5-675d-46cd-87df-70272af2ffd0")
 	)
 	(wire
 		(pts
@@ -21028,16 +21018,6 @@
 			(type default)
 		)
 		(uuid "29e1a627-964a-4052-b88d-291990eb52a4")
-	)
-	(wire
-		(pts
-			(xy 57.15 85.09) (xy 59.69 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2a2e894f-bcd0-4132-a209-8bb3d035b9e0")
 	)
 	(wire
 		(pts
@@ -21358,6 +21338,16 @@
 			(type default)
 		)
 		(uuid "5518b958-0550-45a6-8fc7-8e3cacebbe70")
+	)
+	(wire
+		(pts
+			(xy 72.39 85.09) (xy 72.39 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5630c5e5-b4f1-4b1d-b6b3-fbc64ddc8602")
 	)
 	(wire
 		(pts
@@ -21911,16 +21901,6 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 85.09) (xy 59.69 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b1a48653-9e42-4d6f-8f7f-2264559d43a3")
-	)
-	(wire
-		(pts
 			(xy 41.91 58.42) (xy 44.45 58.42)
 		)
 		(stroke
@@ -21988,6 +21968,16 @@
 			(type default)
 		)
 		(uuid "c2091559-d3fc-4e4f-8b1e-c2dfe0cc83fe")
+	)
+	(wire
+		(pts
+			(xy 72.39 88.9) (xy 78.74 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2784db5-0b2e-46d0-9af7-01e715e40cc6")
 	)
 	(wire
 		(pts
@@ -22101,13 +22091,23 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 88.9) (xy 78.74 88.9)
+			(xy 55.88 88.9) (xy 72.39 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "d8bd96c5-6cf3-4b5a-bd54-ef1c176aab29")
+	)
+	(wire
+		(pts
+			(xy 69.85 85.09) (xy 72.39 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8cd5de8-b936-490f-9ccc-0497d7d96a4c")
 	)
 	(wire
 		(pts
@@ -22191,7 +22191,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 88.9) (xy 62.23 88.9)
+			(xy 26.67 88.9) (xy 48.26 88.9)
 		)
 		(stroke
 			(width 0)
@@ -22279,7 +22279,7 @@
 		)
 		(uuid "18f6025a-96a1-493c-9cca-0fa974ba2c9d")
 	)
-	(label "Supp_ADC"
+	(label "Supp_V_ADC"
 		(at 63.5 40.64 0)
 		(effects
 			(font
@@ -22479,7 +22479,7 @@
 		)
 		(uuid "71cc1383-ec2c-4c8d-9c04-3cd756ca5f16")
 	)
-	(label "SuppReg_ADC"
+	(label "SuppReg_V_ADC"
 		(at 63.5 43.18 0)
 		(effects
 			(font
@@ -22859,7 +22859,7 @@
 		)
 		(uuid "e13b0494-02df-4055-808f-2cb276f8824e")
 	)
-	(label "Supp_ADC"
+	(label "Supp_V_ADC"
 		(at 139.7 121.92 180)
 		(effects
 			(font
@@ -22879,7 +22879,7 @@
 		)
 		(uuid "e52c429c-e471-48aa-9c0b-f5fde9243862")
 	)
-	(label "SuppReg_ADC"
+	(label "SuppReg_V_ADC"
 		(at 139.7 124.46 180)
 		(effects
 			(font
@@ -26311,7 +26311,7 @@
 	)
 	(symbol
 		(lib_id "Device:Fuse")
-		(at 66.04 88.9 270)
+		(at 52.07 88.9 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -26319,7 +26319,7 @@
 		(dnp no)
 		(uuid "c92872cb-46b3-4623-89c3-4a03b3168f66")
 		(property "Reference" "F2"
-			(at 66.04 84.328 90)
+			(at 52.07 84.328 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26327,7 +26327,7 @@
 			)
 		)
 		(property "Value" "5A"
-			(at 66.04 86.868 90)
+			(at 52.07 86.868 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26335,7 +26335,7 @@
 			)
 		)
 		(property "Footprint" "LV Carrier Library:FUSE_05200101Z_LTF"
-			(at 66.04 87.122 90)
+			(at 52.07 87.122 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26344,7 +26344,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 66.04 88.9 0)
+			(at 52.07 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26353,7 +26353,7 @@
 			)
 		)
 		(property "Description" "Fuse"
-			(at 66.04 88.9 0)
+			(at 52.07 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26362,7 +26362,7 @@
 			)
 		)
 		(property "P/N" "05200101Z"
-			(at 66.04 88.9 0)
+			(at 52.07 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26371,7 +26371,7 @@
 			)
 		)
 		(property "Assemble" "N"
-			(at 66.04 88.9 90)
+			(at 52.07 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26555,7 +26555,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x01")
-		(at 52.07 85.09 0)
+		(at 64.77 85.09 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -26565,7 +26565,7 @@
 		(fields_autoplaced yes)
 		(uuid "d18a83b2-ffad-46eb-a98f-df615cdf6f20")
 		(property "Reference" "J14"
-			(at 52.07 78.74 0)
+			(at 64.77 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26573,7 +26573,7 @@
 			)
 		)
 		(property "Value" "BATV-Inject"
-			(at 52.07 81.28 0)
+			(at 64.77 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26581,7 +26581,7 @@
 			)
 		)
 		(property "Footprint" "UTSVT_Connectors:5754"
-			(at 52.07 85.09 0)
+			(at 64.77 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26590,7 +26590,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 52.07 85.09 0)
+			(at 64.77 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26599,7 +26599,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 52.07 85.09 0)
+			(at 64.77 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26608,7 +26608,7 @@
 			)
 		)
 		(property "P/N" "575-4"
-			(at 52.07 85.09 0)
+			(at 64.77 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26617,7 +26617,7 @@
 			)
 		)
 		(property "Mouser P/N" "534-575-4"
-			(at 52.07 85.09 0)
+			(at 64.77 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26626,7 +26626,7 @@
 			)
 		)
 		(property "Digikey P/N" "36-575-4-ND"
-			(at 52.07 85.09 0)
+			(at 64.77 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26635,7 +26635,7 @@
 			)
 		)
 		(property "Assemble" "N"
-			(at 52.07 85.09 0)
+			(at 64.77 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27464,7 +27464,7 @@
 				(justify right)
 			)
 		)
-		(pin "Supp_ADC" input
+		(pin "Supp_V_ADC" input
 			(at 124.46 121.92 0)
 			(uuid "23c2421b-67a1-4df1-b2a7-b0534cfdc411")
 			(effects
@@ -27474,7 +27474,7 @@
 				(justify right)
 			)
 		)
-		(pin "SuppReg_ADC" input
+		(pin "SuppReg_V_ADC" input
 			(at 124.46 124.46 0)
 			(uuid "44d9e286-dbfe-4326-be44-328991b3f49f")
 			(effects
@@ -28171,7 +28171,7 @@
 				(justify left)
 			)
 		)
-		(pin "Supp_ADC" output
+		(pin "Supp_V_ADC" output
 			(at 78.74 40.64 180)
 			(uuid "88730cda-3033-48da-9d88-d560fe85bdc6")
 			(effects
@@ -28181,7 +28181,7 @@
 				(justify left)
 			)
 		)
-		(pin "SuppReg_ADC" output
+		(pin "SuppReg_V_ADC" output
 			(at 78.74 43.18 180)
 			(uuid "5f32aed0-0d01-41c2-b4f9-4662f6625057")
 			(effects
