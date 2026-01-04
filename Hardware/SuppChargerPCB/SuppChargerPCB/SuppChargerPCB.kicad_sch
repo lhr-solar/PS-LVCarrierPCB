@@ -4206,28 +4206,24 @@
 		(uuid "01f2d0e6-4633-4aaf-a8d6-d5668c6e4deb")
 	)
 	(no_connect
-		(at 256.54 99.695)
-		(uuid "0dab7a7c-48ee-492e-a708-ab9407b12b75")
+		(at 256.54 89.535)
+		(uuid "18a78c57-3cf5-4452-b1f7-997282ba07ec")
+	)
+	(no_connect
+		(at 256.54 92.075)
+		(uuid "85da8e96-7068-4869-b9d9-3c822e987c43")
 	)
 	(no_connect
 		(at 256.54 86.995)
-		(uuid "22816863-8baf-47a0-8bcf-1a49e683e77a")
-	)
-	(no_connect
-		(at 256.54 81.915)
-		(uuid "a1a8455b-2147-4986-a3bd-311a6f6ca897")
-	)
-	(no_connect
-		(at 256.54 84.455)
-		(uuid "bb416502-c407-4683-937e-c5d35c2bb195")
-	)
-	(no_connect
-		(at 256.54 79.375)
-		(uuid "c95549d4-442e-4100-8a7c-09b3e0e6bffe")
+		(uuid "948d1781-dd00-4565-86d7-785d371a2ccd")
 	)
 	(no_connect
 		(at 256.54 76.835)
 		(uuid "d7012c0c-8ab1-400d-9138-df6fb5090f1c")
+	)
+	(no_connect
+		(at 256.54 81.915)
+		(uuid "f30802dc-1845-4de5-8ec5-6556b2f515d8")
 	)
 	(wire
 		(pts
@@ -5461,16 +5457,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 160.655) (xy 128.905 160.655)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6ee3a8af-c955-438a-b43d-e195524c84db")
-	)
-	(wire
-		(pts
 			(xy 21.59 37.465) (xy 26.035 37.465)
 		)
 		(stroke
@@ -6141,16 +6127,6 @@
 	)
 	(wire
 		(pts
-			(xy 246.38 92.075) (xy 256.54 92.075)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c0591071-c967-4367-b3f4-6b25ad07a119")
-	)
-	(wire
-		(pts
 			(xy 212.09 33.02) (xy 212.09 40.005)
 		)
 		(stroke
@@ -6188,6 +6164,16 @@
 			(type default)
 		)
 		(uuid "c4eb17a5-0a6e-4251-9cf4-400ccf7f2860")
+	)
+	(wire
+		(pts
+			(xy 249.555 99.695) (xy 256.54 99.695)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c56eba13-3346-4aec-a813-9800f1691ebc")
 	)
 	(wire
 		(pts
@@ -6721,7 +6707,7 @@
 	)
 	(wire
 		(pts
-			(xy 246.38 89.535) (xy 256.54 89.535)
+			(xy 247.015 84.455) (xy 256.54 84.455)
 		)
 		(stroke
 			(width 0)
@@ -7068,7 +7054,7 @@
 		(uuid "441b69da-d9c7-4c91-94bb-3a90906600e7")
 	)
 	(label "SCL"
-		(at 246.38 89.535 0)
+		(at 247.015 84.455 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7169,16 +7155,6 @@
 		)
 		(uuid "5c33e79a-b1e2-4bb1-b7f8-522290ff717d")
 	)
-	(label "SDA"
-		(at 246.38 92.075 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "65e931cf-e65e-44e3-aece-7ad1b4865bca")
-	)
 	(label "LODRV1"
 		(at 151.13 147.955 0)
 		(effects
@@ -7238,16 +7214,6 @@
 			(justify left bottom)
 		)
 		(uuid "7419ec65-f947-429f-b0d8-4c8c89a34294")
-	)
-	(label "VIN"
-		(at 120.65 160.655 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "74dd42bf-3178-4e79-af24-9c32aa8e2088")
 	)
 	(label "STAT2"
 		(at 51.435 107.95 0)
@@ -7438,6 +7404,16 @@
 			(justify left bottom)
 		)
 		(uuid "c32f1a5b-fe74-49a4-b319-46b19ad3876c")
+	)
+	(label "SDA"
+		(at 249.555 99.695 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cad897e2-1cdc-4d66-9fdc-ca8de97e9535")
 	)
 	(label "LODRV2"
 		(at 93.345 160.02 180)
@@ -9408,13 +9384,12 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "VIN"
-			(at 196.85 52.0699 0)
+		(property "Value" "+24V"
+			(at 194.945 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -10534,70 +10509,6 @@
 			(project "SuppChargerPCB"
 				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
 					(reference "#PWR044")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 254.635 52.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "886940bb-52f3-44f7-9978-4305c5d8d437")
-		(property "Reference" "H2"
-			(at 257.302 51.943 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole"
-			(at 257.81 53.3399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 254.635 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 254.635 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 254.635 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "SuppChargerPCB"
-				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
-					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -13661,16 +13572,6 @@
 		(pin "SW2" input
 			(at 128.905 158.115 180)
 			(uuid "dda33125-878a-4d48-8803-43ee6ad0c11f")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "VIN" input
-			(at 128.905 160.655 180)
-			(uuid "4ffbaee6-ad57-4630-827c-74175838bfd2")
 			(effects
 				(font
 					(size 1.27 1.27)
