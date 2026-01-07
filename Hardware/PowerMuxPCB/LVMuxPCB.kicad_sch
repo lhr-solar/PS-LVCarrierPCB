@@ -3248,6 +3248,16 @@
 	)
 	(wire
 		(pts
+			(xy 270.51 148.59) (xy 270.51 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26cbe25b-63b3-4503-801a-5f5f4776249f")
+	)
+	(wire
+		(pts
 			(xy 233.68 99.06) (xy 233.68 85.09)
 		)
 		(stroke
@@ -9919,6 +9929,16 @@
 		)
 		(uuid "d7410c82-3341-45a6-a835-e979b0319ba2")
 	)
+	(label "SHDN"
+		(at 270.51 160.02 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "db15cd7b-c784-4cbd-96ca-f36bc34f9d75")
+	)
 	(label "VALID2"
 		(at 232.41 160.02 90)
 		(effects
@@ -10364,15 +10384,15 @@
 		(fields_autoplaced yes)
 		(uuid "12b0d9b9-6ad0-4ca2-a1c3-6a762dc373f2")
 		(property "Reference" "R43"
-			(at 164.465 34.925 90)
+			(at 164.465 34.29 90)
 			(effects
 				(font
 					(size 1.016 1.016)
 				)
 			)
 		)
-		(property "Value" "1K"
-			(at 164.465 37.465 90)
+		(property "Value" "1k"
+			(at 164.465 36.83 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12340,15 +12360,15 @@
 		(fields_autoplaced yes)
 		(uuid "575e08b1-f335-4d6f-9051-a0683fe6b5cd")
 		(property "Reference" "R26"
-			(at 150.495 29.845 90)
+			(at 150.495 29.21 90)
 			(effects
 				(font
 					(size 1.016 1.016)
 				)
 			)
 		)
-		(property "Value" "1K"
-			(at 150.495 32.385 90)
+		(property "Value" "1k"
+			(at 150.495 31.75 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15783,6 +15803,127 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 270.51 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bacfb68a-53ca-4ff4-aaf8-78f5543aa720")
+		(property "Reference" "TP12"
+			(at 273.05 144.0179 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 273.05 146.5579 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Plated_Hole_D2.0mm"
+			(at 275.59 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 275.59 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 270.51 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" ""
+			(at 270.51 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFG PN" ""
+			(at 270.51 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" ""
+			(at 270.51 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 270.51 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 270.51 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 270.51 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "997e996f-387f-4c44-bc2f-27365a4a3705")
+		)
+		(instances
+			(project "LVMuxPCB"
+				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
+					(reference "TP12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 92.71 161.29 180)
 		(unit 1)
@@ -16446,7 +16587,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Plated_Hole_D2.0mm"
 			(at 186.69 148.59 0)
 			(effects
 				(font
