@@ -3812,6 +3812,16 @@
 	)
 	(wire
 		(pts
+			(xy 24.13 78.74) (xy 24.13 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c0449cf-ef8e-4eb1-8243-3c7bea54e511")
+	)
+	(wire
+		(pts
 			(xy 59.69 177.8) (xy 59.69 180.34)
 		)
 		(stroke
@@ -4689,6 +4699,16 @@
 			(type default)
 		)
 		(uuid "b63f5044-3bca-466d-9869-639b3eb0a894")
+	)
+	(wire
+		(pts
+			(xy 24.13 68.58) (xy 24.13 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b68094ba-1b90-49c8-b672-c722d4cf35c8")
 	)
 	(wire
 		(pts
@@ -11707,7 +11727,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 24.13 73.66 0)
+		(at 24.13 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11715,7 +11735,7 @@
 		(dnp no)
 		(uuid "2b55a51a-c247-4574-981a-c92dab271561")
 		(property "Reference" "#PWR01"
-			(at 24.13 80.01 0)
+			(at 24.13 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11724,7 +11744,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 24.13 77.978 0)
+			(at 24.13 84.328 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11733,7 +11753,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 24.13 73.66 0)
+			(at 24.13 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11742,7 +11762,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 24.13 73.66 0)
+			(at 24.13 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11751,7 +11771,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 24.13 73.66 0)
+			(at 24.13 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18259,6 +18279,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 24.13 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d9cc29b5-7acf-4d5f-943b-a7f823333146")
+		(property "Reference" "C1"
+			(at 27.94 73.6599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 27.94 76.1999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 25.0952 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 24.13 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 24.13 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "C0805C105K5PACTU"
+			(at 24.13 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2e562a76-bf89-45da-a551-5f95cf06e100")
+		)
+		(pin "2"
+			(uuid "d4166146-714d-484e-93c6-5d5c0ec97656")
+		)
+		(instances
+			(project ""
+				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Jumper:Jumper_3_Open")
 		(at 228.6 121.92 90)
 		(unit 1)
@@ -18840,84 +18939,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
-		(at 24.13 71.12 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e9a715b3-ff39-43ea-be9e-d4212e93964b")
-		(property "Reference" "CINTVCC1"
-			(at 14.224 69.342 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1u"
-			(at 19.05 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 24.13 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 24.13 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 24.13 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "C0805C105K5PACTU"
-			(at 24.13 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7f8adcdd-3a4d-4fb0-84ec-ba2315db3169")
-		)
-		(pin "2"
-			(uuid "2e30319a-a15d-4c19-bc05-07259cfb90eb")
-		)
-		(instances
-			(project "LVMuxPCB"
-				(path "/916d27c7-a3aa-4371-b455-8bb87fdd94e2"
-					(reference "CINTVCC1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 232.41 148.59 0)
 		(unit 1)
@@ -19274,7 +19295,7 @@
 				(justify left top)
 			)
 		)
-		(pin "DIS1" input
+		(pin "DIS1" output
 			(at 200.66 24.13 180)
 			(uuid "5eb6f821-daf4-46be-a9cc-205af6984182")
 			(effects
@@ -19284,7 +19305,7 @@
 				(justify left)
 			)
 		)
-		(pin "DIS2" input
+		(pin "DIS2" output
 			(at 222.25 24.13 0)
 			(uuid "9a8f8d52-0345-412b-af58-99f75106a93e")
 			(effects
