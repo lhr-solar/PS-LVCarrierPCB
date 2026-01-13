@@ -3068,7 +3068,7 @@
 	)
 	(rectangle
 		(start 140.97 102.87)
-		(end 219.71 143.51)
+		(end 226.06 143.51)
 		(stroke
 			(width 0)
 			(type default)
@@ -4047,7 +4047,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.915 133.985) (xy 208.915 138.43)
+			(xy 215.9 133.985) (xy 215.9 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4687,6 +4687,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 133.985) (xy 168.91 136.525)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56fda61d-6210-4312-85b6-c941ec2aa5c0")
+	)
+	(wire
+		(pts
 			(xy 167.64 88.265) (xy 172.72 88.265)
 		)
 		(stroke
@@ -5257,7 +5267,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.135 133.985) (xy 191.135 139.065)
+			(xy 198.12 133.985) (xy 198.12 139.065)
 		)
 		(stroke
 			(width 0)
@@ -5394,6 +5404,16 @@
 			(type default)
 		)
 		(uuid "a30a9d8c-f0dc-4de1-9a7d-ef5361c5dfcd")
+	)
+	(wire
+		(pts
+			(xy 180.34 133.35) (xy 180.34 133.985)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3c7e097-792f-41e6-8044-bcf72493fc8c")
 	)
 	(wire
 		(pts
@@ -5654,16 +5674,6 @@
 			(type default)
 		)
 		(uuid "c166d401-9799-4d4b-b998-bdf36227b43a")
-	)
-	(wire
-		(pts
-			(xy 165.1 135.255) (xy 165.1 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c2daf3ac-c0a8-4f70-ba24-c6ed27f86164")
 	)
 	(wire
 		(pts
@@ -6418,7 +6428,7 @@
 		(uuid "18795598-0ecc-4a9c-93a8-f69cd726daad")
 	)
 	(label "FB"
-		(at 191.135 139.065 0)
+		(at 198.12 139.065 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6562,7 +6572,7 @@
 		(uuid "3da794c3-c495-4bf1-8cde-7087c6d37961")
 	)
 	(label "FBG"
-		(at 208.915 138.43 0)
+		(at 215.9 138.43 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7009,6 +7019,16 @@
 		)
 		(uuid "e8a8a0d9-7a63-4714-aa28-e52d629e4964")
 	)
+	(label "REGN"
+		(at 168.91 136.525 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e9dcaafc-dfe8-4930-b6d8-f67a850b8780")
+	)
 	(label "HIDRV1"
 		(at 223.52 158.115 180)
 		(effects
@@ -7204,6 +7224,72 @@
 			(project "SuppChargerPCB"
 				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
 					(reference "Q5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 180.34 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0c067cc9-6410-4512-a907-a80d4f0ff338")
+		(property "Reference" "#PWR015"
+			(at 180.34 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 180.34 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 180.34 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 180.34 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5942babd-9eed-456c-b6b6-eca8fe6454c0")
+		)
+		(instances
+			(project ""
+				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -7702,7 +7788,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopBottom"
 			(at 236.855 52.07 0)
 			(effects
 				(font
@@ -9003,6 +9089,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 180.34 133.985 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "51b24264-a773-4b28-ac10-44007aba58e8")
+		(property "Reference" "OUT4"
+			(at 182.88 137.287 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 182.88 135.763 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
+			(at 185.42 133.985 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 185.42 133.985 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 180.34 133.985 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "32ecc024-585b-4068-9102-ebcec7cc3a47")
+		)
+		(instances
+			(project "SuppChargerPCB"
+				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
+					(reference "OUT4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GNDPWR")
 		(at 78.74 59.055 0)
 		(unit 1)
@@ -9129,73 +9282,6 @@
 			(project ""
 				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
 					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+24V")
-		(at 165.1 133.35 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "55c21503-ce70-4288-8695-fe27ee41b277")
-		(property "Reference" "#PWR052"
-			(at 165.1 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "REGN"
-			(at 165.1 128.905 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 165.1 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 165.1 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+24V\""
-			(at 165.1 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "72b85196-93af-44b3-b348-be73e1d82837")
-		)
-		(instances
-			(project "SuppChargerPCB"
-				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
-					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -9659,7 +9745,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
 			(at 213.36 116.84 0)
 			(effects
 				(font
@@ -9791,7 +9877,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
 			(at 154.94 130.175 0)
 			(effects
 				(font
@@ -9898,8 +9984,8 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 165.1 135.255 0)
-		(mirror x)
+		(at 168.91 133.985 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9907,7 +9993,7 @@
 		(dnp no)
 		(uuid "805ad7a7-96d7-4b6d-abdd-9ade0b8b7f5c")
 		(property "Reference" "OUT3"
-			(at 167.64 138.557 0)
+			(at 166.37 130.683 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9916,7 +10002,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 167.64 137.033 0)
+			(at 166.37 132.207 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9924,8 +10010,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
-			(at 170.18 135.255 0)
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
+			(at 163.83 133.985 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9934,7 +10020,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 170.18 135.255 0)
+			(at 163.83 133.985 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9943,7 +10029,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 165.1 135.255 0)
+			(at 168.91 133.985 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10242,7 +10328,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
 			(at 151.765 116.205 0)
 			(effects
 				(font
@@ -10374,7 +10460,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
 			(at 156.21 118.745 0)
 			(effects
 				(font
@@ -10599,7 +10685,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_TopBottom"
 			(at 266.7 52.07 0)
 			(effects
 				(font
@@ -12198,7 +12284,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 191.135 133.985 0)
+		(at 198.12 133.985 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12207,7 +12293,7 @@
 		(dnp no)
 		(uuid "ca9521e7-332b-428c-91f4-5498e39f9d5e")
 		(property "Reference" "FB1"
-			(at 188.595 130.683 0)
+			(at 195.58 130.683 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12216,7 +12302,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 188.595 132.207 0)
+			(at 195.58 132.207 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12224,8 +12310,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
-			(at 186.055 133.985 0)
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
+			(at 193.04 133.985 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12234,7 +12320,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 186.055 133.985 0)
+			(at 193.04 133.985 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12243,7 +12329,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 191.135 133.985 0)
+			(at 198.12 133.985 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12379,7 +12465,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
 			(at 198.12 116.84 0)
 			(effects
 				(font
@@ -13105,7 +13191,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 208.915 133.985 0)
+		(at 215.9 133.985 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13114,7 +13200,7 @@
 		(dnp no)
 		(uuid "ebf8e3ad-6e1a-40a7-aece-c6513a092847")
 		(property "Reference" "FBG1"
-			(at 206.375 130.683 0)
+			(at 213.36 130.683 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13123,7 +13209,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 206.375 132.207 0)
+			(at 213.36 132.207 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13131,8 +13217,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
-			(at 203.835 133.985 0)
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
+			(at 210.82 133.985 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13141,7 +13227,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 203.835 133.985 0)
+			(at 210.82 133.985 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13150,7 +13236,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 208.915 133.985 0)
+			(at 215.9 133.985 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13430,7 +13516,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5005-5009_Compact"
 			(at 182.245 118.745 0)
 			(effects
 				(font
