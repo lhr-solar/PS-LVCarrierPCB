@@ -112,142 +112,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:Fuse"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "F"
-				(at 2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Fuse"
-				(at -1.905 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Fuse"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "fuse"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "*Fuse*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Fuse_0_1"
-				(rectangle
-					(start -0.762 -2.54)
-					(end 0.762 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Fuse_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:LED"
 			(pin_numbers
 				(hide yes)
@@ -1001,16 +865,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 111.76) (xy 100.33 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "204cbf63-35b9-4402-9e8f-dc81ae320ce7")
-	)
-	(wire
-		(pts
 			(xy 152.4 101.6) (xy 152.4 104.14)
 		)
 		(stroke
@@ -1091,16 +945,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 114.3) (xy 101.6 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6bd71378-db91-4b93-9e31-09526f2f99c8")
-	)
-	(wire
-		(pts
 			(xy 137.16 67.31) (xy 149.86 67.31)
 		)
 		(stroke
@@ -1121,7 +965,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 67.31) (xy 85.09 67.31)
+			(xy 82.55 67.31) (xy 109.22 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1208,16 +1052,6 @@
 			(type default)
 		)
 		(uuid "ea8d6827-c7a0-46d4-8451-4abe02a8f05a")
-	)
-	(wire
-		(pts
-			(xy 92.71 67.31) (xy 109.22 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f5d42c38-49ed-4977-9434-c2b4f546a457")
 	)
 	(wire
 		(pts
@@ -1339,17 +1173,6 @@
 			(justify right)
 		)
 		(uuid "042da430-7526-441c-80a1-d186ad1a7219")
-	)
-	(hierarchical_label "HV_Batt_Unfused"
-		(shape input)
-		(at 101.6 114.3 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0788fbf5-36e6-4780-aa96-846b5738265a")
 	)
 	(hierarchical_label "DCDC_Vout"
 		(shape output)
@@ -1485,6 +1308,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 149.86 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Assemble" "N"
 			(at 149.86 64.77 0)
 			(effects
 				(font
@@ -1633,7 +1465,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet2" "https://www.vicorpower.com/documents/datasheets/ds_110vin-maxi-family.pdf"
+		(property "Assemble" "N"
 			(at 123.19 62.23 0)
 			(effects
 				(font
@@ -1670,74 +1502,6 @@
 			(project "LV Carrier Board"
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/eb5e61c4-fcb9-4f3b-9225-002a6ddfe10f"
 					(reference "U2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 100.33 111.76 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5ca90bc3-1b1f-4418-8e60-77d1fb15344f")
-		(property "Reference" "TP23"
-			(at 102.87 107.1879 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 102.87 109.7279 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
-			(at 105.41 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 105.41 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 100.33 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a662ab03-c56a-4d91-ad4d-f16fcbd1c9bc")
-		)
-		(instances
-			(project "LV Carrier Board"
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/eb5e61c4-fcb9-4f3b-9225-002a6ddfe10f"
-					(reference "TP23")
 					(unit 1)
 				)
 			)
@@ -1791,6 +1555,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 111.76 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Assemble" "N"
 			(at 111.76 96.52 0)
 			(effects
 				(font
@@ -1874,6 +1647,24 @@
 				(hide yes)
 			)
 		)
+		(property "Assemble" "Y"
+			(at 152.4 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LSCS P/N" "C23162"
+			(at 152.4 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f403de51-9a67-45e7-9821-6a97ec043aaf")
 		)
@@ -1945,6 +1736,15 @@
 				(hide yes)
 			)
 		)
+		(property "Assemble" "N"
+			(at 134.62 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5beaabb6-6fd8-4922-82db-9a9601908942")
 		)
@@ -1994,7 +1794,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C7371904.pdf"
+		(property "Datasheet" "~"
 			(at 152.4 107.95 0)
 			(effects
 				(font
@@ -2022,6 +1822,24 @@
 			)
 		)
 		(property "P/N" "XL-1608UBC-06A"
+			(at 152.4 107.95 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Assemble" "Y"
+			(at 152.4 107.95 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LSCS P/N" "C7371904"
 			(at 152.4 107.95 90)
 			(effects
 				(font
@@ -2232,6 +2050,15 @@
 				(hide yes)
 			)
 		)
+		(property "Assemble" "N"
+			(at 135.89 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3aa6158a-e0d7-4f97-9641-db0497ffb945")
 		)
@@ -2292,6 +2119,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 100.33 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Assemble" "N"
 			(at 100.33 96.52 0)
 			(effects
 				(font
@@ -2368,6 +2204,15 @@
 				(hide yes)
 			)
 		)
+		(property "Assemble" "N"
+			(at 123.19 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9ebfd19f-d977-4b5a-afbc-edf0c8fe6e40")
 		)
@@ -2375,81 +2220,6 @@
 			(project "LV Carrier Board"
 				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/eb5e61c4-fcb9-4f3b-9225-002a6ddfe10f"
 					(reference "TP17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Fuse")
-		(at 88.9 67.31 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c92872cb-46b3-4623-89c3-4a03b3168f66")
-		(property "Reference" "F2"
-			(at 88.9 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Fuse"
-			(at 88.9 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LV Carrier Library:FUSE_05200101Z_LTF"
-			(at 88.9 65.532 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 88.9 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 88.9 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "P/N" "05200101Z"
-			(at 88.9 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "e7e45eea-c954-4c74-a146-25feb0560095")
-		)
-		(pin "1"
-			(uuid "fbfc9d69-d78d-4200-8fdb-8f3da28b097b")
-		)
-		(instances
-			(project "LV Carrier Board"
-				(path "/c5c5922b-1600-4b67-acf3-33264cecd75b/eb5e61c4-fcb9-4f3b-9225-002a6ddfe10f"
-					(reference "F2")
 					(unit 1)
 				)
 			)
@@ -2503,6 +2273,15 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 123.19 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Assemble" "N"
 			(at 123.19 96.52 0)
 			(effects
 				(font
