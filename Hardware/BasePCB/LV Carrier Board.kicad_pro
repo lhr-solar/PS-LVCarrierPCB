@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 1.8,
-          "width": 0.55
+          "drill": 0.8,
+          "height": 1.27,
+          "width": 2.54
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -60,35 +60,19 @@
       ],
       "drc_exclusions": [
         [
-          "hole_clearance|116350000|54025000|de0cecb7-8e28-4d7b-95d5-ccc747d2aa54|86ede63b-897d-4880-9882-99af30a4c3aa",
+          "hole_clearance|17850000|111000000|3d8bb3b0-ca4e-4f6f-864e-64b4d6bd02b7|f6db64d6-2c9e-4428-bca4-bd79efb35637",
           ""
         ],
         [
-          "hole_clearance|116350000|63375000|67cc53b4-f627-4d4a-ac81-e5800b121285|a194936d-74ff-41b3-b7b5-c860f3f50f4f",
+          "hole_clearance|17850000|126550000|f37af31a-93e7-4901-b252-5935c4915635|4e7e282d-ea9f-436d-92d9-dc85a2c1915e",
           ""
         ],
         [
-          "hole_clearance|17250000|86500000|4e7e282d-ea9f-436d-92d9-dc85a2c1915e|f37af31a-93e7-4901-b252-5935c4915635",
+          "hole_clearance|17850000|129050000|aefdebe2-3a28-418a-9560-24b2cde93fdc|4e7e282d-ea9f-436d-92d9-dc85a2c1915e",
           ""
         ],
         [
-          "hole_clearance|17250000|89000000|4e7e282d-ea9f-436d-92d9-dc85a2c1915e|aefdebe2-3a28-418a-9560-24b2cde93fdc",
-          ""
-        ],
-        [
-          "hole_clearance|17320000|71500000|f6db64d6-2c9e-4428-bca4-bd79efb35637|3d8bb3b0-ca4e-4f6f-864e-64b4d6bd02b7",
-          ""
-        ],
-        [
-          "hole_clearance|17640000|73520000|f6db64d6-2c9e-4428-bca4-bd79efb35637|c69b6337-0faa-41ae-b309-7ee3ffa56c96",
-          ""
-        ],
-        [
-          "hole_clearance|74200000|106375000|985932ad-b257-4bf1-b31b-453906edc97e|53cacae8-ecfe-499b-94fb-f57435df6b98",
-          ""
-        ],
-        [
-          "hole_clearance|74200000|97025000|a9994d35-eafc-44f6-b68d-61c3fd60bf57|ad9f14ad-b494-41a9-b60c-2c5eb0cd8574",
+          "hole_clearance|18170000|113020000|c69b6337-0faa-41ae-b309-7ee3ffa56c96|f6db64d6-2c9e-4428-bca4-bd79efb35637",
           ""
         ],
         [
@@ -230,7 +214,6 @@
       "track_widths": [
         0.0,
         0.3,
-        0.5,
         1.0
       ],
       "tuning_pattern_settings": {
@@ -621,15 +604,33 @@
           "show": false
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Check_prices",
+          "name": "Check_prices",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Datasheet2",
+          "name": "Datasheet2",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description_1",
+          "name": "Description_1",
           "show": false
         },
         {
@@ -642,6 +643,36 @@
           "group_by": false,
           "label": "Height",
           "name": "Height",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MANUFACTURER",
+          "name": "MANUFACTURER",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MAXIMUM_PACKAGE_HEIGHT",
+          "name": "MAXIMUM_PACKAGE_HEIGHT",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MF",
+          "name": "MF",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MFG PN",
+          "name": "MFG PN",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MP",
+          "name": "MP",
           "show": false
         },
         {
@@ -669,6 +700,12 @@
           "show": false
         },
         {
+          "group_by": false,
+          "label": "Mouser Price/Stock",
+          "name": "Mouser Price/Stock",
+          "show": false
+        },
+        {
           "group_by": true,
           "label": "P/N",
           "name": "P/N",
@@ -676,8 +713,44 @@
         },
         {
           "group_by": false,
+          "label": "PARTREV",
+          "name": "PARTREV",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "PN",
+          "name": "PN",
+          "show": false
+        },
+        {
+          "group_by": false,
           "label": "Package",
           "name": "Package",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Price",
+          "name": "Price",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Purchase-URL",
+          "name": "Purchase-URL",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "SNAPEDA_PN",
+          "name": "SNAPEDA_PN",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "STANDARD",
+          "name": "STANDARD",
           "show": false
         },
         {
@@ -700,6 +773,24 @@
         },
         {
           "group_by": false,
+          "label": "SnapEDA_Link",
+          "name": "SnapEDA_Link",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "p/n",
+          "name": "p/n",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Availability",
+          "name": "Availability",
+          "show": false
+        },
+        {
+          "group_by": false,
           "label": "Description",
           "name": "Description",
           "show": false
@@ -709,26 +800,14 @@
           "label": "#",
           "name": "${ITEM_NUMBER}",
           "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Assemble",
-          "name": "Assemble",
-          "show": true
-        },
-        {
-          "group_by": false,
-          "label": "LSCS P/N",
-          "name": "LSCS P/N",
-          "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
-      "sort_asc": false,
-      "sort_field": "Assemble"
+      "sort_asc": true,
+      "sort_field": "${EXCLUDE_FROM_BOM}"
     },
     "connection_grid_size": 50.0,
     "drawing": {
@@ -802,14 +881,6 @@
     [
       "43d57115-5e1b-4cd6-9a42-d8d2dd9ec7f7",
       "Ideal Diode"
-    ],
-    [
-      "2211b158-7f1f-451b-a5c1-8707612cc5da",
-      "HallEffect1"
-    ],
-    [
-      "e184eab3-4983-4577-888e-244719b62247",
-      "HallEffect"
     ]
   ],
   "text_variables": {}
