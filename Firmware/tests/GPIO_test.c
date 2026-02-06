@@ -24,31 +24,22 @@
 // Port G
 #define PIN_RESET_BTN   GPIO_PIN_10     // Input
 
-// --- 2. DATA STRUCTURE (Inputs Only) ---
-// We use bit-fields (uint8_t) to save space, but standard bool/uint8_t is fine too.
-typedef struct {
-    // Port A
-    uint8_t sdcard_detect;
-    
-    // Port B
-    uint8_t disable1;
-    uint8_t boot_sw1;
-    uint8_t boot_sw2;
-    uint8_t vdl2;
-    uint8_t chl2;
-    uint8_t flt1;
-    uint8_t flt2;
-    uint8_t vdl1;
-    
-    // Port C
-    uint8_t shdn;
-    uint8_t disable_main;
-    
-    // Port G
-    uint8_t reset_btn;
-} InputState_t;
+volatile uint8_t sdcard_detect;
 
-InputState_t current_state;
+volatile uint8_t disable1;
+volatile uint8_t boot_sw1;
+volatile uint8_t boot_sw2;
+volatile uint8_t vdl2;
+volatile uint8_t chl2;
+volatile uint8_t flt1;
+volatile uint8_t flt2;
+volatile uint8_t vdl1;
+
+volatile uint8_t shdn;
+volatile uint8_t disable_main;
+
+volatile uint8_t reset_btn;
+
 
 // --- 3. SYSTEM INITIALIZATION ---
 void Init_System_GPIO(void) {
@@ -87,40 +78,62 @@ void Init_System_GPIO(void) {
     init_config.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOG, &init_config);
 
-    // --- GROUP 5: OUTPUTS (Port B) ---
-    // SR_Data is an Output, so it needs a separate config
-    init_config.Pin = PIN_SR_DATA;
-    init_config.Mode = GPIO_MODE_OUTPUT_PP; // Push-Pull Output
-    init_config.Pull = GPIO_NOPULL;
-    init_config.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(GPIOB, &init_config);
+    // // --- GROUP 5: OUTPUTS (Port B) ---
+    // // SR_Data is an Output, so it needs a separate config
+    // init_config.Pin = PIN_SR_DATA;
+    // init_config.Mode = GPIO_MODE_OUTPUT_PP; // Push-Pull Output
+    // init_config.Pull = GPIO_NOPULL;
+    // init_config.Speed = GPIO_SPEED_FREQ_LOW;
+    // HAL_GPIO_Init(GPIOB, &init_config);
     
-    // Optional: Set default state for Output
-    HAL_GPIO_WritePin(GPIOB, PIN_SR_DATA, GPIO_PIN_RESET);
+    // // Optional: Set default state for Output
+    // HAL_GPIO_WritePin(GPIOB, PIN_SR_DATA, GPIO_PIN_RESET);
 }
+#define READ_PIN_HL(port, pin) \
+    (HAL_GPIO_ReadPin((port), (pin)) == GPIO_PIN_SET)
+
 
 // --- 4. READ FUNCTION ---
-void Read_All_Inputs(InputState_t *state) {
+void Read_GPIO_Debug(void) {
     // Port A
-    state->sdcard_detect = HAL_GPIO_ReadPin(GPIOA, PIN_SDCARD);
+    sdcard_detect = READ_PIN_HL(GPIOA, PIN_SDCARD);
 
     // Port B
-    state->disable1 = HAL_GPIO_ReadPin(GPIOB, PIN_DISABLE1);
-    state->boot_sw1 = HAL_GPIO_ReadPin(GPIOB, PIN_BOOT_SW1);
-    state->boot_sw2 = HAL_GPIO_ReadPin(GPIOB, PIN_BOOT_SW2);
-    state->vdl2     = HAL_GPIO_ReadPin(GPIOB, PIN_VDL2);
-    state->chl2     = HAL_GPIO_ReadPin(GPIOB, PIN_CHL2);
-    state->flt1     = HAL_GPIO_ReadPin(GPIOB, PIN_FLT1);
-    state->flt2     = HAL_GPIO_ReadPin(GPIOB, PIN_FLT2);
-    state->vdl1     = HAL_GPIO_ReadPin(GPIOB, PIN_VDL1);
+    disable1 = READ_PIN_HL(GPIOB, PIN_DISABLE1);
+    boot_sw1 = READ_PIN_HL(GPIOB, PIN_BOOT_SW1);
+    boot_sw2 = READ_PIN_HL(GPIOB, PIN_BOOT_SW2);
+    vdl2     = READ_PIN_HL(GPIOB, PIN_VDL2);
+    chl2     = READ_PIN_HL(GPIOB, PIN_CHL2);
+    flt1     = READ_PIN_HL(GPIOB, PIN_FLT1);
+    flt2     = READ_PIN_HL(GPIOB, PIN_FLT2);
+    vdl1     = READ_PIN_HL(GPIOB, PIN_VDL1);
 
     // Port C
-    state->shdn         = HAL_GPIO_ReadPin(GPIOC, PIN_SHDN);
-    state->disable_main = HAL_GPIO_ReadPin(GPIOC, PIN_DISABLE);
+    shdn         = READ_PIN_HL(GPIOC, PIN_SHDN);
+    disable_main = READ_PIN_HL(GPIOC, PIN_DISABLE);
 
     // Port G
-    state->reset_btn = HAL_GPIO_ReadPin(GPIOG, PIN_RESET_BTN);
+    reset_btn = READ_PIN_HIGH(GPIOG, PIN_RESET_BTN);
 }
+
+void Print_GPIO_Status(void) {
+    printf(
+        "SD=%d | D1=%d BS1=%d BS2=%d VDL2=%d CHL2=%d FLT1=%d FLT2=%d VDL1=%d | SHDN=%d DIS=%d | RST=%d\r\n",
+        sdcard_detect,
+        disable1,
+        boot_sw1,
+        boot_sw2,
+        vdl2,
+        chl2,
+        flt1,
+        flt2,
+        vdl1,
+        shdn,
+        disable_main,
+        reset_btn
+    );
+}
+
 
 // --- MAIN LOOP EXAMPLE ---
 int main(void) {
@@ -131,11 +144,12 @@ int main(void) {
         Read_All_Inputs(&current_state);
 
         // Example: If Reset Button is pressed (assuming Active High), toggle SR_Data output
-        if (current_state.reset_btn == GPIO_PIN_SET) {
-            HAL_GPIO_TogglePin(GPIOB, PIN_SR_DATA);
-            HAL_Delay(200); // Debounce delay
-        }
+        // if (current_state.reset_btn == GPIO_PIN_SET) {
+        //     HAL_GPIO_TogglePin(GPIOB, PIN_SR_DATA);
+        //     HAL_Delay(200); // Debounce delay
+        // }
+        Print_GPIO_Status();
 
-        HAL_Delay(10);
+        HAL_Delay(200);
     }
 }
