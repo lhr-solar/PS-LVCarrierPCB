@@ -30,7 +30,7 @@ int main(){
     
     Clock_Init((uint32_t)HEARTBEAT_LED_PORT);
     HAL_GPIO_Init(HEARTBEAT_LED_PORT, &led_config); // initialize HB_LED_PORT with led_config
-
+    
     
 
     while(1){
