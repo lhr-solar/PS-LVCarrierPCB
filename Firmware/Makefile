@@ -98,6 +98,12 @@ endif
 flash: 	
 	$(MAKE) -C $(BUILD_MAKEFILE_DIR) flash
 
+#-------------------------------
+# Flash over UART
+flash-uart:
+	$(MAKE) -C $(BUILD_MAKEFILE_DIR) flash-uart
+
+
 #-------------- 
 # Documentation
 # .PHONY: docs
