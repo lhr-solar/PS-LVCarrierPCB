@@ -1,10 +1,4 @@
-#pragma once
-
-#include <stdint.h>
-
-// 12-bit ADC lookup table
-// Vref = 3300 mV
-// ADC counts (0–4095) -> millivolts
+#include "adc_lut.h"
 
 const uint16_t adc_counts_to_mv[4096] = {
        0,    1,    2,    2,    3,    4,    5,    6, 

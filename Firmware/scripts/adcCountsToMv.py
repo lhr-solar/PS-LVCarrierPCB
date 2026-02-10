@@ -2,45 +2,46 @@
 
 ADC_BITS = 12
 ADC_MAX_COUNTS = (1 << ADC_BITS) - 1  # 4095
-VREF_MV = 3300                        # reference voltage in millivolts
+VREF_MV = 3300
 
 ARRAY_NAME = "adc_counts_to_mv"
-OUTPUT_FILE = "adcToMilliVolt.h.h"
+H_FILE = "adc_lut.h"
+C_FILE = "adc_lut.c"
 
-def generate_c_lut_file(
-    filename=OUTPUT_FILE,
-    array_name=ARRAY_NAME,
-    vref_mv=VREF_MV
-):
-    with open(filename, "w") as f:
-        f.write("#pragma once\n\n")
-        f.write("#include <stdint.h>\n\n")
-        f.write("// 12-bit ADC lookup table\n")
-        f.write(f"// Vref = {vref_mv} mV\n")
-        f.write(f"// ADC counts (0–{ADC_MAX_COUNTS}) -> millivolts\n\n")
+def generate_adc_mv_lut():
+    # ----- header -----
+    with open(H_FILE, "w") as h:
+        h.write("#pragma once\n\n")
+        h.write("#include <stdint.h>\n\n")
+        h.write("// 12-bit ADC lookup table\n")
+        h.write(f"// Vref = {VREF_MV} mV\n\n")
+        h.write(f"extern const uint16_t {ARRAY_NAME}[{ADC_MAX_COUNTS + 1}];\n")
 
-        f.write(f"const uint16_t {array_name}[{ADC_MAX_COUNTS + 1}] = {{\n")
+    # ----- source -----
+    with open(C_FILE, "w") as c:
+        c.write(f'#include "{H_FILE}"\n\n')
+        c.write(f"const uint16_t {ARRAY_NAME}[{ADC_MAX_COUNTS + 1}] = {{\n")
 
         for count in range(ADC_MAX_COUNTS + 1):
-            mv = int(round((count * vref_mv) / ADC_MAX_COUNTS))
+            mv = int(round((count * VREF_MV) / ADC_MAX_COUNTS))
 
             if count % 8 == 0:
-                f.write("    ")
+                c.write("    ")
 
-            f.write(f"{mv:4d}")
+            c.write(f"{mv:4d}")
 
             if count != ADC_MAX_COUNTS:
-                f.write(", ")
+                c.write(", ")
 
             if count % 8 == 7:
-                f.write("\n")
+                c.write("\n")
 
         if ADC_MAX_COUNTS % 8 != 7:
-            f.write("\n")
+            c.write("\n")
 
-        f.write("};\n")
+        c.write("};\n")
 
-    print(f"Wrote {filename}")
+    print(f"Wrote {H_FILE} and {C_FILE}")
 
 if __name__ == "__main__":
-    generate_c_lut_file()
+    generate_adc_mv_lut()

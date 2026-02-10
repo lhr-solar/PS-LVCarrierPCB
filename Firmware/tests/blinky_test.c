@@ -21,7 +21,6 @@ void Clock_Init(uint32_t port){
 int main(){
     HAL_Init();
 
-    // Heartbeat LED on VCU is PB14
     GPIO_InitTypeDef led_config = {
         .Mode = GPIO_MODE_OUTPUT_PP,
         .Pull = GPIO_NOPULL,

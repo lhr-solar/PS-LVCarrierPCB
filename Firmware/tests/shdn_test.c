@@ -45,7 +45,7 @@ int main(){
 
     while(1){
         HAL_GPIO_TogglePin(HEARTBEAT_LED_PORT, HEARTBEAT_LED_PIN);
-        HAL_Delay(5000);
+        HAL_Delay(1000);
     }
 
     return 0;
