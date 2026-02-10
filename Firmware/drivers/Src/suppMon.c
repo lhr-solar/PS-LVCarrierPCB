@@ -1,5 +1,5 @@
 #include "suppMon.h"
-#include "ADC.h" // Embedded-Sharepoint ADC driver
+#include "ADC.h"
 
 #define ADC1_QUEUE_LENGTH   10
 #define ADC_ITEM_SIZE       sizeof( uint32_t )
@@ -10,7 +10,7 @@ static QueueHandle_t adc1RecvQ;
 
 #define ADC2_QUEUE_LENGTH   10
 
-static uint8_t adc2_static_storage[ADC1_QUEUE_LENGTH * ADC_ITEM_SIZE];
+static uint8_t adc2_static_storage[ADC2_QUEUE_LENGTH * ADC_ITEM_SIZE];
 static StaticQueue_t adc2QueueBuffer;
 static QueueHandle_t adc2RecvQ;
 

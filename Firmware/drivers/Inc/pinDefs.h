@@ -2,6 +2,8 @@
 
 #include "stm32xx_hal.h"
 
+/* Status LEDs */
+
 #define HEARTBEAT_LED_PORT GPIOC
 #define HEARTBEAT_LED_PIN GPIO_PIN_11
 
@@ -11,5 +13,15 @@
 #define LSOM_HEARTBEAT_LED_PORT GPIOC
 #define LSOM_HEARTBEAT_LED_PIN GPIO_PIN_3
 
+/* Low Voltage Enable GPIO */ 
+#define LV_EN_SUPP_PORT GPIOC
+#define LV_EN_SUPP_PIN GPIO_PIN_2
+
+#define LV_EN_POWERSUPPLY_PORT GPIOC
+#define LV_EN_POWERSUPPLY_PIN GPIO_PIN_0
+
+/* LTC4421 GPIO */
+
 #define LTC4421_SHDN_PORT GPIOC
 #define LTC4421_SHDN_PIN GPIO_PIN_12
+
