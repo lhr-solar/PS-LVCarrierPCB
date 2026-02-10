@@ -11,7 +11,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Initialize Submodules
-        run: git submodule update --init --recursive
+        run: git submodule update --init Firmware/Embedded-Sharepoint
 
       - name: Cache Nix
         uses: actions/cache@v3
