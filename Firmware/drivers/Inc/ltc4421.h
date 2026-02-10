@@ -1,7 +1,7 @@
 #pragma once
 #include "stm32xx_hal.h"
 #include "common.h"
-#include "pindefs.h"
+#include "pinDefs.h"
 
 #define LTC4421_SHUTDOWN GPIO_PIN_RESET
 #define LTC4421_ENABLED GPIO_PIN_SET
