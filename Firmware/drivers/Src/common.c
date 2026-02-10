@@ -11,13 +11,13 @@ void gpio_clock_init(GPIO_TypeDef *port){
     }
 }
 
-void gpio_pin_init(GPIO_TypeDef *port, uint32_t pin){
+void gpio_pin_init(GPIO_TypeDef *port, uint32_t pin, pin_mode_t pinMode){
 
     // init the port's clock
     gpio_clock_init(port);
 
     GPIO_InitTypeDef pin_config = {
-        .Mode = GPIO_MODE_OUTPUT_PP,
+        .Mode = pinMode,
         .Pull = GPIO_NOPULL,
         .Pin = pin
     };
