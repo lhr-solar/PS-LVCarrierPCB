@@ -8,22 +8,51 @@
 
 I2C_HandleTypeDef hi2c4;
 
+
 void bq25756e_init() {     
     i2c4_init();
 }
 
 void bq25756e_transmit(message_t message) {  
     if (message == START) {    
-        uint8_t data;
-        uint8_t r_w=0;
-        uint8_t reg_addr=0x0; // read 
+        uint8_t stat;
+        
+        // uint8_t default_addr=0x0; 
+        // data = pack(default_addr, 0);
+        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &data, 1, HAL_MAX_DELAY); 
 
-        data = (r_w << 8) + (reg_addr);
+        uint8_t buffer[1];
 
-        uint8_t stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &data, 1, HAL_MAX_DELAY);
-        if (stat != HAL_OK) {
-            Error_Handler();
-        }
+        uint8_t charge_control_reg=0x17;
+        
+        // READ CHARGE CONTROL REG
+        // write to device & register
+        stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &charge_control_reg, 1, HAL_MAX_DELAY); 
+        // HAL_Delay(100);
+        // sent read request
+        stat = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY); 
+
+        HAL_Delay(500);
+
+        // turn off charge enable
+        // uint8_t data[2]; 
+        // data[0]=charge_control_reg;
+        // data[1]=(buffer[0] & 0b11111110);
+
+        // // WRITE TO CHARGE CONTROL REG
+        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), data, 2, HAL_MAX_DELAY); 
+
+        // HAL_Delay(500);
+
+        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &charge_control_reg, 1, HAL_MAX_DELAY); 
+        // // HAL_Delay(100);
+        // // sent read request
+        // stat = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY); 
+
+        (void)stat;
+        // if (stat != HAL_OK) {
+        //     Error_Handler();
+        // }
     }
 }
 

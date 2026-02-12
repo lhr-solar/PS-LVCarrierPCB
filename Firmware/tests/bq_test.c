@@ -1,17 +1,6 @@
 #include "stm32xx_hal.h"
 #include "bq25756e.h"
 
-void blinky_gpio_init(void)
-{
-    GPIO_InitTypeDef led_config = {
-        .Mode = GPIO_MODE_OUTPUT_PP,
-        .Pull = GPIO_NOPULL,
-        .Pin = LSOM_HEARTBEAT_PIN};
-
-    __HAL_RCC_GPIOC_CLK_ENABLE();
-    HAL_GPIO_Init(LSOM_HEARTBEAT_PORT, &led_config);
-}
-
 int main()
 {
     HAL_Init();
@@ -20,6 +9,20 @@ int main()
     __HAL_RCC_PWR_CLK_ENABLE();
     blinky_gpio_init();
     bq25756e_init();
+
+    // pull Pb4 low --- charge enable pin
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
+
+    /*Configure GPIO pin : PB4 */
+    GPIO_InitStruct.Pin = GPIO_PIN_4;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+    
+
     while (1)
     {
         bq25756e_transmit(START);
