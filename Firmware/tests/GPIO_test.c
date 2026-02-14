@@ -23,6 +23,10 @@
 
 // Port G
 #define PIN_RESET_BTN   GPIO_PIN_10     // Input
+// --- LED ---
+#define STATUS_LED_PORT GPIOC
+#define STATUS_LED_PIN  GPIO_PIN_3
+
 
 volatile uint8_t sdcard_detect;
 
@@ -78,19 +82,34 @@ void Init_System_GPIO(void) {
     init_config.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOG, &init_config);
 
-    // // --- GROUP 5: OUTPUTS (Port B) ---
-    // // SR_Data is an Output, so it needs a separate config
-    // init_config.Pin = PIN_SR_DATA;
-    // init_config.Mode = GPIO_MODE_OUTPUT_PP; // Push-Pull Output
-    // init_config.Pull = GPIO_NOPULL;
-    // init_config.Speed = GPIO_SPEED_FREQ_LOW;
-    // HAL_GPIO_Init(GPIOB, &init_config);
-    
-    // // Optional: Set default state for Output
-    // HAL_GPIO_WritePin(GPIOB, PIN_SR_DATA, GPIO_PIN_RESET);
+    // --- OUTPUT: STATUS LED ---
+    GPIO_InitTypeDef led_config = {0};
+    led_config.Pin = STATUS_LED_PIN;
+    led_config.Mode = GPIO_MODE_OUTPUT_PP;
+    led_config.Pull = GPIO_NOPULL;
+    led_config.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(STATUS_LED_PORT, &led_config);
+
+    // Default OFF
+    HAL_GPIO_WritePin(STATUS_LED_PORT, STATUS_LED_PIN, GPIO_PIN_RESET);
+
 }
 #define READ_PIN_HL(port, pin) \
     (HAL_GPIO_ReadPin((port), (pin)) == GPIO_PIN_SET)
+
+uint8_t Any_Alert_Active(void) {
+    return (vdl1 || vdl2 || chl2 || flt1 || flt2);
+}
+uint8_t Only_VDL1_Active(void) {
+    return (
+        vdl1 &&          // required pin
+        !vdl2 &&
+        !chl2 &&
+        !flt1 &&
+        !flt2
+    );
+}
+
 
 
 // --- 4. READ FUNCTION ---
@@ -113,26 +132,9 @@ void Read_GPIO_Debug(void) {
     disable_main = READ_PIN_HL(GPIOC, PIN_DISABLE);
 
     // Port G
-    reset_btn = READ_PIN_HIGH(GPIOG, PIN_RESET_BTN);
+    reset_btn = READ_PIN_HL(GPIOG, PIN_RESET_BTN);
 }
 
-void Print_GPIO_Status(void) {
-    printf(
-        "SD=%d | D1=%d BS1=%d BS2=%d VDL2=%d CHL2=%d FLT1=%d FLT2=%d VDL1=%d | SHDN=%d DIS=%d | RST=%d\r\n",
-        sdcard_detect,
-        disable1,
-        boot_sw1,
-        boot_sw2,
-        vdl2,
-        chl2,
-        flt1,
-        flt2,
-        vdl1,
-        shdn,
-        disable_main,
-        reset_btn
-    );
-}
 
 
 // --- MAIN LOOP EXAMPLE ---
@@ -141,15 +143,15 @@ int main(void) {
     Init_System_GPIO();
 
     while (1) {
-        Read_All_Inputs(&current_state);
-
-        // Example: If Reset Button is pressed (assuming Active High), toggle SR_Data output
-        // if (current_state.reset_btn == GPIO_PIN_SET) {
-        //     HAL_GPIO_TogglePin(GPIOB, PIN_SR_DATA);
-        //     HAL_Delay(200); // Debounce delay
-        // }
-        Print_GPIO_Status();
-
-        HAL_Delay(200);
+        Read_GPIO_Debug();
+        if (Any_Alert_Active()) {
+            // Blink LED if ANY monitored pin is high
+            HAL_GPIO_TogglePin(STATUS_LED_PORT, STATUS_LED_PIN);
+            HAL_Delay(250);
+        } else {
+            // Solid OFF if no alerts
+            HAL_GPIO_WritePin(STATUS_LED_PORT, STATUS_LED_PIN, GPIO_PIN_RESET);
+            HAL_Delay(250);
+        }
     }
 }
