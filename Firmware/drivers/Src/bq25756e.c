@@ -6,6 +6,10 @@
 // Device Addr --- 0x6A
 #define DEVICE_ADDR 0x6a
 
+#define CHARGE_CONTROL_REG 0x17
+#define CHARGE_STATUS_REG 0x21
+#define FAULT_REG 0x24
+
 I2C_HandleTypeDef hi2c4;
 
 
@@ -13,46 +17,91 @@ void bq25756e_init() {
     i2c4_init();
 }
 
+// void pet_watchdog() {
+//     uint8_t data[2]; 
+//     data[0]=charge_control_reg;
+//     data[1]=(buffer[0] | 0b00100000);
+
+//     // WRITE TO CHARGE CONTROL REG
+//     stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), data, 2, HAL_MAX_DELAY); 
+// }
+
+uint8_t read_reg(uint8_t reg, uint8_t buffer[]) {
+  uint8_t stat;
+  stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &reg, 1, HAL_MAX_DELAY); 
+  stat = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY); 
+  return stat;
+}
+
+uint8_t write_reg(uint8_t reg, uint8_t payload) {
+  // read
+  uint8_t data[2];
+  data[0]=reg;
+  data[1]=payload;
+  uint8_t stat;
+  stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), data, 2, HAL_MAX_DELAY); 
+  return stat;
+}
+
 void bq25756e_transmit(message_t message) {  
     if (message == START) {    
         uint8_t stat;
-        
-        // uint8_t default_addr=0x0; 
-        // data = pack(default_addr, 0);
-        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &data, 1, HAL_MAX_DELAY); 
 
         uint8_t buffer[1];
+        read_reg(CHARGE_STATUS_REG, buffer);
 
-        uint8_t charge_control_reg=0x17;
+        HAL_Delay(100);
         
+        // uint8_t default_addr=0x0; 
+        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &default_addr, 1, HAL_MAX_DELAY); 
+
+        // uint8_t buffer[1];
+
+        // uint8_t charge_control_reg=0x17; 
+        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &charge_control_reg, 1, HAL_MAX_DELAY); 
+        // stat = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY); 
+
+        
+        // uint8_t fault_reg=0x24; 
+        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &fault_reg, 1, HAL_MAX_DELAY); 
+        // stat = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY); 
+
+        // 0x24
         // READ CHARGE CONTROL REG
         // write to device & register
-        stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &charge_control_reg, 1, HAL_MAX_DELAY); 
+        
         // HAL_Delay(100);
         // sent read request
-        stat = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY); 
 
-        HAL_Delay(500);
+        // HAL_Delay(500);
+        // (void)stat;
 
         // turn off charge enable
         // uint8_t data[2]; 
         // data[0]=charge_control_reg;
-        // data[1]=(buffer[0] & 0b11111110);
+        // data[1]=(buffer[0] & ~0b00110000);
 
-        // // WRITE TO CHARGE CONTROL REG
+        // WRITE TO CHARGE CONTROL REG
         // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), data, 2, HAL_MAX_DELAY); 
 
         // HAL_Delay(500);
 
+        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &charge_control_reg, 1, HAL_MAX_DELAY); 
+
+        // data[1]=(data[1] | 0x01);
+
+        // toggle again
+        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), data, 2, HAL_MAX_DELAY); 
+        // HAL_Delay(500);
         // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &charge_control_reg, 1, HAL_MAX_DELAY); 
         // // HAL_Delay(100);
         // // sent read request
         // stat = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY); 
 
         (void)stat;
-        // if (stat != HAL_OK) {
-        //     Error_Handler();
-        // }
+        if (stat != HAL_OK) {
+            Error_Handler();
+        }
     }
 }
 
@@ -110,7 +159,7 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
     */
     GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Pull = GPIO_PULLUP; // GPIO_NOPULL
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF8_I2C4;
     HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
