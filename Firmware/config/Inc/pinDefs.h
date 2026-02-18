@@ -21,7 +21,16 @@
 #define LV_EN_POWERSUPPLY_PIN GPIO_PIN_0
 
 /* LTC4421 GPIO */
-
 #define LTC4421_SHDN_PORT GPIOC
 #define LTC4421_SHDN_PIN GPIO_PIN_12
 
+
+#ifdef LSOM_U // LSOM U version
+    #define USB_UART_CLOCK_PORT GPIOC
+    #define USB_UART_TX GPIO_PIN_10
+    #define USB_UART_RX GPIO_PIN_11
+#elif LSOM_S // LSOM S version
+    #define USB_UART_CLOCK_PORT GPIOB
+    #define USB_UART_TX GPIO_PIN_10
+    #define USB_UART_RX GPIO_PIN_11
+#endif /* USB UART */

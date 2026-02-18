@@ -17,6 +17,8 @@ TEST ?= main
 
 PROJECT_TARGET ?= stm32g473xx
 
+LSOM ?= U
+
 # source and include directories
 PROJECT_C_INCLUDES = $(wildcard */Inc)
 PROJECT_C_SOURCES = $(wildcard */Src/*.c)

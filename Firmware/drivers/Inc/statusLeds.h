@@ -7,7 +7,7 @@
 typedef enum{
     LSOM_HEARTBEAT_LED,
     HEARTBEAT_LED,
-    SUPPBATT_FAULT_LED,
+    SUPPBAT_FAULT_LED,
     NUM_STATUS_LEDs
 }status_leds_t;
 
