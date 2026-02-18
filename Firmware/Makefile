@@ -17,6 +17,8 @@ TEST ?= main
 
 PROJECT_TARGET ?= stm32g473xx
 
+LSOM ?= U
+
 # source and include directories
 PROJECT_C_INCLUDES = $(wildcard */Inc)
 PROJECT_C_SOURCES = $(wildcard */Src/*.c)
@@ -84,12 +86,12 @@ endif
 
 build_code:
 ifneq ($(TEST), main)
-	@echo "Making ${PURPLE}$(PROJECT_TARGET)${NC}build for ${BLUE}TEST=${PURPLE} ${TEST}${NC}"
+	@echo -e "Making ${PURPLE}$(PROJECT_TARGET)${NC}build for ${BLUE}TEST=${PURPLE} ${TEST}${NC}"
 else
-	@echo "Making ${PURPLE}$(PROJECT_TARGET)${NC}build with ${ORANGE}no test.${NC}"
+	@echo -e "Making ${PURPLE}$(PROJECT_TARGET)${NC}build with ${ORANGE}no test.${NC}"
 endif
 	$(BEAR_PREFIX) $(MAKE) -C $(BUILD_MAKEFILE_DIR) all -j
-	@echo "${BLUE}Compiled! Splendid! Jolly Good!!${NC}"
+	@echo -e "${GREEN}Compiled! Splendid! Jolly Good!!${NC}"
 #---------------------------------
 
 
@@ -97,6 +99,12 @@ endif
 # Flash
 flash: 	
 	$(MAKE) -C $(BUILD_MAKEFILE_DIR) flash
+
+#-------------------------------
+# Flash over UART
+flash-uart:
+	$(MAKE) -C $(BUILD_MAKEFILE_DIR) flash-uart
+
 
 #-------------- 
 # Documentation

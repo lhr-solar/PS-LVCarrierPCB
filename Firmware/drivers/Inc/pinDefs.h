@@ -1,9 +1,0 @@
-#pragma once
-
-#include "stm32xx_hal.h"
-
-#define HEARTBEAT_LED_PORT GPIOC
-#define HEARTBEAT_LED_PIN GPIO_PIN_11
-
-#define SUPPBAT_FAULT_PORT GPIOC
-#define SUPPBAT_FAULT_PIN GPIO_PIN_10
