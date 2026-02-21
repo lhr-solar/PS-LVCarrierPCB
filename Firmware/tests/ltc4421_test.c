@@ -33,6 +33,8 @@ void ltc4421Task(void *argument){
         if(channelState == ON){
             printf("Channel 2 is valid\n\r");
         }
+        
+        vTaskDelay(pdMS_TO_TICKS(10));
 
         pin_state_t channelFaultState = ltc4421_read_fault(CHANNEL1);
         if(channelFaultState == ON){

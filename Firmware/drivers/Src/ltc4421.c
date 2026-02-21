@@ -53,13 +53,15 @@ ltc4421_channel_t ltc4421_channel_selected(void){
 
 pin_state_t ltc4421_read_fault(ltc4421_channel_t channel){
 
-    pin_state_t ret = OFF;
+    pin_state_t ret = ON;
+
+    // fault is negative logic
     switch(channel){
         case CHANNEL1:
-            ret = HAL_GPIO_ReadPin(LTC4421_FAULT1_PORT, LTC4421_FAULT1_PIN) == GPIO_PIN_SET ? ON : OFF;
+            ret = HAL_GPIO_ReadPin(LTC4421_FAULT1_PORT, LTC4421_FAULT1_PIN) == GPIO_PIN_SET ? OFF : ON;
             break;
         case CHANNEL2:
-            ret = HAL_GPIO_ReadPin(LTC4421_FAULT2_PORT, LTC4421_FAULT2_PIN) == GPIO_PIN_SET ? ON : OFF;
+            ret = HAL_GPIO_ReadPin(LTC4421_FAULT2_PORT, LTC4421_FAULT2_PIN) == GPIO_PIN_SET ? OFF : ON;
             break;
         default:
             break;
