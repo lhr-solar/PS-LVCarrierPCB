@@ -1,109 +1,131 @@
 #include "bq25756e.h"
-
-// SDA --- I2C4 
-// SCL --- I2C4 
-
-// Device Addr --- 0x6A
-#define DEVICE_ADDR 0x6a
-
-#define CHARGE_CONTROL_REG 0x17
-#define CHARGE_STATUS_REG 0x21
-#define FAULT_REG 0x24
+#include "commandLine.h"
 
 I2C_HandleTypeDef hi2c4;
 
+void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring);
+void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
 
-void bq25756e_init() {     
-    i2c4_init();
+uint8_t bq25756e_charge(message_t MSG) {
+  uint8_t STAT=0;
+  // Main task
+  if (MSG == START) {
+    // bq25756e_pet_wdg();
+    HAL_Delay(50);
+    uint8_t pin_control[1];
+
+    // Disable Charge Limit
+    STAT=bq25756e_read_reg(REG_PIN_CONTROL, pin_control);
+    bq25756e_clear_bits(pin_control, BIT_CHARGE_LIMIT_ENABLE);
+    STAT=bq25756e_write_reg(REG_PIN_CONTROL, pin_control[0]);
+    
+    HAL_Delay(50);
+
+    // Disable Hi Z
+    STAT=bq25756e_read_reg(REG_PIN_CONTROL, pin_control);
+    bq25756e_clear_bits(pin_control, BIT_HIZ_ENABLE);
+    STAT=bq25756e_write_reg(REG_PIN_CONTROL, pin_control[0]);
+
+    HAL_Delay(50);
+
+    // // Disable Temp Sense
+    STAT=bq25756e_read_reg(REG_TEMP, pin_control);
+    bq25756e_clear_bits(pin_control, BIT_TEMP_SENSE_ENABLE);
+    STAT=bq25756e_write_reg(REG_TEMP, pin_control[0]);
+
+    // HAL_Delay(50);
+
+    // Disable Rev Mode 
+    STAT=bq25756e_read_reg(REG_REVERSE_MODE, pin_control);
+    bq25756e_clear_bits(pin_control, BIT_REVERSE_MODE_ENABLE);
+    STAT=bq25756e_write_reg(REG_REVERSE_MODE, pin_control[0]);
+
+    // Enable CE
+    // STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, pin_control);
+    // bq25756e_assert_bits(pin_control, BIT_CHARGE_ENABLE);
+    // STAT=bq25756e_write_reg(REG_PIN_CONTROL, pin_control[0]);
+
+    HAL_Delay(100);
+
+    // Read Charger Status
+    STAT=bq25756e_read_reg(REG_CHARGE_STATUS_1, pin_control);
+    STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, pin_control);
+  }
+
+  return STAT;
 }
 
-// void pet_watchdog() {
-//     uint8_t data[2]; 
-//     data[0]=charge_control_reg;
-//     data[1]=(buffer[0] | 0b00100000);
+uint8_t bq25756e_pet_wdg(void) {
+  uint8_t STAT;
 
-//     // WRITE TO CHARGE CONTROL REG
-//     stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), data, 2, HAL_MAX_DELAY); 
-// }
+  // Read WDG reg
+  uint8_t wdg_reg[1];
+  STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, wdg_reg);
+  bq25756e_assert_bits(wdg_reg, BIT_WDG_RESET);
 
-// void read_reg(uint8_t reg, uint8_t buffer[]) {
-//   uint8_t stat;
-//   stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &reg, 1, HAL_MAX_DELAY); 
-//   stat = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY); 
-//   return stat;
-// }
-
-// uint8_t write_reg(uint8_t reg, uint8_t payload) {
-//   // read
-//   uint8_t data[2];
-//   data[0]=reg;
-//   data[1]=payload;
-//   uint8_t stat;
-//   stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), data, 2, HAL_MAX_DELAY); 
-//   return stat;
-// }
-
-void bq25756e_transmit(message_t message) {  
-    if (message == START) {    
-        uint8_t stat;
-
-        uint8_t buffer[1];
-        read_reg(CHARGE_STATUS_REG, buffer);
-        
-        // uint8_t default_addr=0x0; 
-        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &default_addr, 1, HAL_MAX_DELAY); 
-
-        // uint8_t buffer[1];
-
-        // uint8_t charge_control_reg=0x17; 
-        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &charge_control_reg, 1, HAL_MAX_DELAY); 
-        // stat = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY); 
-
-        
-        // uint8_t fault_reg=0x24; 
-        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &fault_reg, 1, HAL_MAX_DELAY); 
-        // stat = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY); 
-
-        // 0x24
-        // READ CHARGE CONTROL REG
-        // write to device & register
-        
-        // HAL_Delay(100);
-        // sent read request
-
-        // HAL_Delay(500);
-        // (void)stat;
-
-        // turn off charge enable
-        // uint8_t data[2]; 
-        // data[0]=charge_control_reg;
-        // data[1]=(buffer[0] & ~0b00110000);
-
-        // WRITE TO CHARGE CONTROL REG
-        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), data, 2, HAL_MAX_DELAY); 
-
-        // HAL_Delay(500);
-
-        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &charge_control_reg, 1, HAL_MAX_DELAY); 
-
-        // data[1]=(data[1] | 0x01);
-
-        // toggle again
-        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), data, 2, HAL_MAX_DELAY); 
-        // HAL_Delay(500);
-        // stat = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &charge_control_reg, 1, HAL_MAX_DELAY); 
-        // // HAL_Delay(100);
-        // // sent read request
-        // stat = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY); 
-
-        (void)stat;
-        if (stat != HAL_OK) {
-            Error_Handler();
-        }
-    }
+  // Write WDG reg
+  STAT=bq25756e_write_reg(REG_CHARGE_CONTROL, wdg_reg[0]);
+  
+  return STAT;
 }
 
-void i2c4_init(void)
+void bq25756e_write_ce(uint8_t value) {
+  HAL_GPIO_WritePin(BQ25756E_CE_PORT, BQ25756E_CE_PIN, value);
+}
+
+void bq25756e_dump(uint8_t reg) {
+  // Read reg
+  uint8_t contents[1];
+  bq25756e_read_reg(reg, contents);
+
+  // Display over serial
+  printf("Contents: %d", contents[0]);
+}
+
+uint8_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer) {
+  uint8_t STAT;
+
+  // TX
+  STAT = HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), &reg, 1, HAL_MAX_DELAY);
+  // RX
+  STAT = HAL_I2C_Master_Receive(&hi2c4, (DEVICE_ADDR << 1), buffer, 1, HAL_MAX_DELAY);
+
+  return STAT;
+}
+
+uint8_t bq25756e_write_reg(uint8_t reg, uint8_t data) {
+  uint8_t STAT;
+
+  // RX
+  uint8_t payload[2];
+  payload[0]=reg;
+  payload[1]=data;
+  STAT=HAL_I2C_Master_Transmit(&hi2c4, (DEVICE_ADDR << 1), payload, 2, HAL_MAX_DELAY);
+
+  return STAT;
+}
+
+void bq25756e_init(void) {     
+    bq25756e_gpio_init();
+    bq25756e_i2c4_init();
+}
+
+void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring) {
+  *data = (*data  &  ~(bitstring));
+}
+
+void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring) {
+  *data = (*data  |  (bitstring));
+}
+
+void bq25756e_gpio_init(void)
+{
+  // Init Charge Enable pin
+  gpio_clock_init(BQ25756E_CE_PORT);
+  gpio_pin_init(BQ25756E_CE_PORT, BQ25756E_CE_PIN, OUTPUT_PP);
+}
+
+void bq25756e_i2c4_init(void)
 {
   hi2c4.Instance = I2C4;
   hi2c4.Init.Timing = 0x00503D58;

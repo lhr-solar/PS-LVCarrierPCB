@@ -1,0 +1,39 @@
+#pragma once
+
+#include "stm32xx_hal.h"
+
+/* Status LEDs */
+
+#define HEARTBEAT_LED_PORT GPIOC
+#define HEARTBEAT_LED_PIN GPIO_PIN_11
+
+#define SUPPBAT_FAULT_PORT GPIOC
+#define SUPPBAT_FAULT_PIN GPIO_PIN_10
+
+#define LSOM_HEARTBEAT_LED_PORT GPIOC
+#define LSOM_HEARTBEAT_LED_PIN GPIO_PIN_3
+
+/* Low Voltage Enable GPIO */ 
+#define LV_EN_SUPP_PORT GPIOC
+#define LV_EN_SUPP_PIN GPIO_PIN_2
+
+#define LV_EN_POWERSUPPLY_PORT GPIOC
+#define LV_EN_POWERSUPPLY_PIN GPIO_PIN_0
+
+/* LTC4421 GPIO */
+#define LTC4421_SHDN_PORT GPIOC
+#define LTC4421_SHDN_PIN GPIO_PIN_12
+
+/* BQ25756E GPIO */
+#define BQ25756E_CE_PORT GPIOB
+#define BQ25756E_CE_PIN GPIO_PIN_4
+
+#ifdef LSOM_U // LSOM U version
+    #define USB_UART_CLOCK_PORT GPIOC
+    #define USB_UART_TX GPIO_PIN_10
+    #define USB_UART_RX GPIO_PIN_11
+#elif LSOM_S // LSOM S version
+    #define USB_UART_CLOCK_PORT GPIOB
+    #define USB_UART_TX GPIO_PIN_10
+    #define USB_UART_RX GPIO_PIN_11
+#endif /* USB UART */
