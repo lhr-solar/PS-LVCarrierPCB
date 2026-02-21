@@ -1,6 +1,5 @@
 #include "stm32xx_hal.h"
 #include "pinDefs.h"
-#include "UART.h"
 #include "statusLeds.h"
 #include "commandLine.h"
 
