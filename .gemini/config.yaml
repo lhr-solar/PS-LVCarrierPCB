@@ -1,0 +1,18 @@
+# .github/gemini-review-config.yml
+
+# General settings for the Gemini reviewer
+review:
+  # Ignore specific file patterns to save tokens and focus on code
+  exclude:
+    # Ignore all KiCad related files
+    - "**/*.kicad_pcb"
+    - "**/*.kicad_sch"
+    - "**/*.kicad_pro"
+    - "**/*.kicad_dru"
+    - "**/*.kicad_prl"
+    - "**/fp-lib-table"
+    - "**/sym-lib-table"
+    - "**/*.bak"
+    - "**/plots/**"
+    - "**/gerbers/**"
+    
