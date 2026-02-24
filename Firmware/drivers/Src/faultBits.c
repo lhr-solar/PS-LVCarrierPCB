@@ -59,8 +59,8 @@ EventBits_t faultBit_wait(fault_bit_t bit, TickType_t xTicksToWait){
         faultStateBits,
         uxBitsToWaitFor,  // wait for any defined fault
         pdFALSE,          // fault bits are not reset
-        pdFALSE,          // wait for ANY bit
-        xTicksToWait     // wait forever for a fault to be set
+        pdFALSE,          // wait for ANY bit to be set
+        xTicksToWait 
     );
     return pending;
 }

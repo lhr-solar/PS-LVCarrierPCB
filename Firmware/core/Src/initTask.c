@@ -36,6 +36,16 @@ void initThread(){
                     &Task_SuppMon_Buffer
    );
 
+    xTaskCreateStatic(
+                    faultState,
+                    "Fault State Task",
+                    TASK_FAULT_STATE_STACK_SIZE,
+                    (void*)NULL,
+                    TASK_FAULT_STATE_PRIO,
+                    Task_FaultState_Stack_Array, 
+                    &Task_FaultState_Buffer
+   );
+
 
 
    vTaskDelete(NULL);
