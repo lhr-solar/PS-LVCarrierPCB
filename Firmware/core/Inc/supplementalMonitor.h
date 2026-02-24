@@ -9,6 +9,8 @@
 #include "lvEnable.h"
 #include "ltc4421.h"
 #include "tasksConfig.h"
+#include "ADC.h"
+#include "adc_sense.h"
 
 StackType_t Task_SuppMon_Stack_Array[ TASK_SUPP_MON_STACK_SIZE ];
 StaticTask_t Task_SuppMon_Buffer;

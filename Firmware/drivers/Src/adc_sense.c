@@ -1,8 +1,10 @@
-#include "suppMon.h"
+#include "adc_sense.h"
 #include "ADC.h"
 
-#define ADC1_QUEUE_LENGTH   10
 #define ADC_ITEM_SIZE       sizeof( uint32_t )
+
+
+#define ADC1_QUEUE_LENGTH   10
 
 static uint8_t adc1_static_storage[ADC1_QUEUE_LENGTH * ADC_ITEM_SIZE];
 static StaticQueue_t adc1QueueBuffer;
@@ -16,6 +18,8 @@ static QueueHandle_t adc2RecvQ;
 
 
 ADC_InitTypeDef adc_init_1;
+ADC_InitTypeDef adc_init_2;
+
 
 static adc_status_t adc1_init(){
   return ADC_OK;
@@ -26,7 +30,11 @@ static adc_status_t adc2_init(){
   return ADC_OK;
 }
 
-adc_status_t lv_carrier_adc_init(void){
+adc_status_t adc_sense_init(void){
+
+    // ADC_MultiModeTypeDef multimode = {0};
+    // ADC_ChannelConfTypeDef sConfig = {0};
+
     adc1RecvQ = xQueueCreateStatic( ADC1_QUEUE_LENGTH, ADC_ITEM_SIZE, adc1_static_storage, &adc1QueueBuffer);
 
     if (adc1RecvQ == NULL) {
@@ -45,6 +53,11 @@ adc_status_t lv_carrier_adc_init(void){
     return ADC_OK;
 
 }
+
+adc_status_t adc_read_channel(){
+  return ADC_OK;
+
+} 
 
 
 static uint32_t HAL_RCC_ADC12_CLK_ENABLED=0;

@@ -7,4 +7,4 @@
 #include "tmcs1126_lut.h"
 #include "adc_lut.h"
 
-adc_status_t lv_carrier_adc_init(void);
+adc_status_t adc_sense_init(void);
