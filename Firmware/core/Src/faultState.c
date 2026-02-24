@@ -26,7 +26,7 @@ void faultState(){
 }
 
 void runFaultState(EventBits_t pending){
-    
+
     while(1){
         // do some shit
     }

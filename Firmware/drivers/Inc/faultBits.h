@@ -31,8 +31,29 @@ typedef enum
 
 _Static_assert(NUM_FAULTS <= MAX_FAULT_BITS, "Too many fault bits for EventGroup");
 
+
+
+/**
+ * @brief Initializes fault bitmap
+ * 
+ * @param none
+ * @return 0 on failure, 1 on success
+ */
 uint8_t faultBits_init(void);
 
+/**
+ * @brief Set a fault in the fault bitmap
+ * 
+ * @param bit which fault is being set
+ * @return none
+ */
 void set_faultBit(fault_bit_t bit);
 
+/**
+ * @brief Wait for a fault to be set 
+ * 
+ * @param bit which fault to wait for, pass NUM_FAULTS if waiting for any fault
+ * @param xTicksToWaitparam delay when waiting
+ * @return the event bit that was set
+ */
 EventBits_t faultBit_wait(fault_bit_t bit, TickType_t xTicksToWait);
