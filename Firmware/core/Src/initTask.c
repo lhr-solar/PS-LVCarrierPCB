@@ -5,6 +5,7 @@
 #include "pinDefs.h"
 #include "commandLine.h"
 #include "tasksConfig.h"
+#include "faultState.h"
  
 
 void initThread(){
@@ -12,6 +13,8 @@ void initThread(){
     command_line_init();
 
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
+
+    faultBits_init();
 
      xTaskCreateStatic(
                     powerMuxMonitor,
@@ -32,6 +35,8 @@ void initThread(){
                     Task_SuppMon_Stack_Array, 
                     &Task_SuppMon_Buffer
    );
+
+
 
    vTaskDelete(NULL);
 
