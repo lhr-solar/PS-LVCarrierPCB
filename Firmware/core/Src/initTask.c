@@ -31,7 +31,7 @@ void initThread(){
                     "Supplemental Monitor Task",
                     TASK_SUPP_MON_STACK_SIZE,
                     (void*)NULL,
-                    TASK_SUPP_MON_STACK_SIZE,
+                    TASK_SUPP_MON_PRIO,
                     Task_SuppMon_Stack_Array, 
                     &Task_SuppMon_Buffer
    );
