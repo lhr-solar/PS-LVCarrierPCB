@@ -8,10 +8,11 @@
 #include "statusLeds.h"
 #include "commandLine.h"
 
+
 /**
- * @brief Weakly defined hook that's called when a fault state is set
+ * @brief Initialize needed variables for fault state
  * 
- * @param pending    Which event bit is set
+ * @param  none
  * @return none
  */
-__weak void faultState_hook(EventBits_t pending);
+void faultState_init(void);

@@ -5,6 +5,10 @@ StaticTask_t Task_FaultState_Buffer;
 
 void runFaultState(EventBits_t pending);
 
+void faultState_init(void){
+    faultBits_init();
+}
+
 void faultState(){
 
     /*
@@ -16,8 +20,6 @@ void faultState(){
     {
         // wait forever for a fault to be set
         EventBits_t pending = faultBit_wait(NUM_FAULTS, portMAX_DELAY);
-
-        faultState_hook(pending);
 
         printf("chat, we're cooked\n\r");
 
@@ -34,9 +36,4 @@ void runFaultState(EventBits_t pending){
         // do some shit
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
-}
-
-__attribute__((weak)) void faultState_hook(EventBits_t pending){
-     printf("fuck you\n\r");
-    UNUSED(pending);
 }
