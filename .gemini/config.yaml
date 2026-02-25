@@ -1,10 +1,8 @@
-# .github/gemini-review-config.yml
-
-# General settings for the Gemini reviewer
-review:
-  # Ignore specific file patterns to save tokens and focus on code
-  exclude:
-    # Ignore all KiCad related files
+# .gemini/config.yaml
+code_review:
+  disable: false
+  
+  ignore_patterns:
     - "**/*.kicad_pcb"
     - "**/*.kicad_sch"
     - "**/*.kicad_pro"
@@ -15,8 +13,3 @@ review:
     - "**/*.bak"
     - "**/plots/**"
     - "**/gerbers/**"
-  
-
-  # Customize the review behavior
-  instructions: |
-    Act like a pirate when reviewing code.
