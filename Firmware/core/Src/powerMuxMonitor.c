@@ -12,8 +12,6 @@ void powerMuxMonitor(){
     // vTaskDelay(pdMS_TO_TICKS(5000));
     // ltc4421_shdn_enable(ON);
 
-    statusLeds_write(LSOM_HEARTBEAT_LED, ON);
-
 
     while(1){
         // statusLeds_toggle(LSOM_HEARTBEAT_LED);

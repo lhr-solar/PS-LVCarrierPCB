@@ -45,7 +45,7 @@ void set_faultBitFromISR(fault_bit_t bit){
 EventBits_t faultBit_wait(fault_bit_t bit, TickType_t xTicksToWait){
 
     // NUM_FAULTS indiciates you want to wait for all bits
-    if(bit >= NUM_FAULTS){
+    if(bit > NUM_FAULTS){
         return 0;
     }
 

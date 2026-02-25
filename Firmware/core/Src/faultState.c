@@ -19,19 +19,24 @@ void faultState(){
 
         faultState_hook(pending);
 
+        printf("chat, we're cooked\n\r");
+
         if(pending != 0){
             // never return
             runFaultState(pending);
         }
+
     }
 }
 
 void runFaultState(EventBits_t pending){    
     while(1){
         // do some shit
+        vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
 
-__weak void faultState_hook(EventBits_t pending){
+__attribute__((weak)) void faultState_hook(EventBits_t pending){
+     printf("fuck you\n\r");
     UNUSED(pending);
 }

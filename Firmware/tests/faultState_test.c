@@ -23,7 +23,7 @@ void runningThread(){
         threadCounts++;
         
         // enter fault state after around 10 seconds
-        if(threadCounts > threadCountsTillFault){
+        if(threadCounts > threadCountsTillFault && faultStateActivated == 0){
             // enter fault state
             printf("time to fault :D\n\r");
             set_faultBit(FAULT_SUPPBATT_OVERVOLTAGE);
@@ -33,8 +33,7 @@ void runningThread(){
             printf("No faults, we're straight chilling\n\r");
         }
         else{
-            // this indiciates that we did not stay in fault state
-            printf("Left fault and came back \n\r");
+            printf("Left fault state and came back \n\r");
         }
 
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
