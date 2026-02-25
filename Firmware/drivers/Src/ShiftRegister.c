@@ -1,4 +1,4 @@
-#include "ShiftRegister.h"
+#include "shiftRegister.h"
 
 #include "stm32xx_hal.h"
 
@@ -29,7 +29,7 @@ static const uint8_t seven_seg_map[10] = {
     0b01101111   // 9
 };
 
-void ShiftRegister_Init() {
+void shiftRegister_init(void) {
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
@@ -45,7 +45,7 @@ void ShiftRegister_Init() {
   HAL_GPIO_Init(GPIOB, &SR_configB);
 }
 
-void ShiftData_In(uint8_t data) {
+void shiftData_in(uint8_t data) {
   for (int i = 7; i >= 0; i--) {
     GPIO_PinState bit = (data & (1 << i)) ? GPIO_PIN_SET : GPIO_PIN_RESET;
 
@@ -58,23 +58,23 @@ void ShiftData_In(uint8_t data) {
   }
 }
 
-void ShiftData_Latch() {
+void shiftData_latch() {
   HAL_GPIO_WritePin(SR_pins[SR_RCLK].Port, SR_pins[SR_RCLK].Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(SR_pins[SR_RCLK].Port, SR_pins[SR_RCLK].Pin,
                     GPIO_PIN_RESET);
 }
 
 // displays
-void DisplayData_SevenSeg(uint8_t d0, uint8_t d1, uint8_t d2) {
+void display_sevenSeg(uint8_t d0, uint8_t d1, uint8_t d2) {
   uint8_t seg0 = ~seven_seg_map[d0];
   uint8_t seg1 = ~(seven_seg_map[d1] | 0b10000000);  // decimal
   uint8_t seg2 = ~seven_seg_map[d2];
 
-  ShiftData_In(seg2);
-  ShiftData_In(seg1);
-  ShiftData_In(seg0);
+  shiftData_in(seg2);
+  shiftData_in(seg1);
+  shiftData_in(seg0);
 
-  ShiftData_Latch();
+  shiftData_latch();
 }
 
 // SRCLR is tied to GND in hardware, so no clear function.

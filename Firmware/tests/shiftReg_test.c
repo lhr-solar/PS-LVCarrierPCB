@@ -1,10 +1,11 @@
-#include "ShiftRegister.h"
 #include "stm32xx_hal.h"
+#include "shiftRegister.h"
 
 int main(void) {
   HAL_Init();
   SystemClock_Config();
-  ShiftRegister_Init();
+
+  shiftRegister_init();
 
   uint8_t d0, d1, d2;
 
@@ -14,7 +15,7 @@ int main(void) {
       d1 = (val / 10) % 10;
       d2 = val % 10;
 
-      DisplayData_SevenSeg(d0, d1, d2);
+      display_sevenSeg(d0, d1, d2);
 
       HAL_Delay(100);
     }

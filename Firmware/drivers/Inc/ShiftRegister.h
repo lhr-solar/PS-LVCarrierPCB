@@ -1,5 +1,4 @@
-#ifndef SHIFTREGISTER_H
-#define SHIFTREGISTER_H
+#pragma once
 
 #include "stm32xx_hal.h"
 
@@ -24,21 +23,21 @@ typedef enum { SR_SER = 0, SR_SRCLK = 1, SR_RCLK = 2 } pins_t;
  * @param   None
  * @return  None
  */
-void ShiftRegister_Init(void);
+void shiftRegister_init(void);
 
 /**
  * @brief   Shifts one byte of data into the shift register (MSB first)
  * @param   data Byte to be shifted into the register
  * @return  None
  */
-void ShiftData_In(uint8_t data);
+void shiftData_in(uint8_t data);
 
 /**
  * @brief   Latches the shifted data to the shift register outputs
  * @param   None
  * @return  None
  */
-void ShiftData_Latch(void);
+void shiftData_latch(void);
 
 /**
  * @brief   Displays three digits on the seven-segment display using the shift
@@ -49,6 +48,4 @@ void ShiftData_Latch(void);
  * @param   d2 Digit to display on the rightmost display (0–9)
  * @return  None
  */
-void DisplayData_SevenSeg(uint8_t d0, uint8_t d1, uint8_t d2);
-
-#endif  // SHIFTREGISTER_H
+void display_sevenSeg(uint8_t d0, uint8_t d1, uint8_t d2);
