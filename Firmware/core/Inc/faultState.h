@@ -5,6 +5,7 @@
 #include "faultBits.h"
 #include "tasksConfig.h"
 #include "task.h"
+#include "statusLeds.h"
 
 /**
  * @brief Weakly defined hook that's called when a fault state is set

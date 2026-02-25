@@ -20,16 +20,18 @@ void faultState(){
         faultState_hook(pending);
 
         if(pending != 0){
+            // never return
             runFaultState(pending);
         }
     }
 }
 
-void runFaultState(EventBits_t pending){
-
+void runFaultState(EventBits_t pending){    
     while(1){
         // do some shit
     }
 }
 
-void faultState_hook(EventBits_t pending){}
+__weak void faultState_hook(EventBits_t pending){
+    UNUSED(pending);
+}

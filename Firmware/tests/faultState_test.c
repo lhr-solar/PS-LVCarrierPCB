@@ -25,6 +25,7 @@ void runningThread(){
         // enter fault state after around 10 seconds
         if(threadCounts > threadCountsTillFault){
             // enter fault state
+            printf("time to fault :D\n\r");
             set_faultBit(FAULT_SUPPBATT_OVERVOLTAGE);
         }
         

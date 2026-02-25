@@ -16,13 +16,14 @@ uint8_t faultBits_init(void){
 
 void set_faultBit(fault_bit_t bit){
     // not a valid fault
-    if(bit >= NUM_FAULTS){
+    if(bit >= NUM_FAULTS){ 
         return;
     }
 
     // chat we're cooked
     xEventGroupSetBits(faultStateBits, FAULT_BIT(bit));
     // should never return from here
+    taskYIELD();
 }
 
 void set_faultBitFromISR(fault_bit_t bit){
