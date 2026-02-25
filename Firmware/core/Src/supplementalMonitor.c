@@ -10,8 +10,7 @@ void supplementalMonitor(){
     // TODO: start a timer that needs to get reset after a certain amount of time or else we explode
 
     while(1){
-        // statusLeds_toggle(LSOM_HEARTBEAT_LED);
-
+        
         /**
             Psueduocde: 
             start conversion for adc1 or adc2 (block on queue set)
