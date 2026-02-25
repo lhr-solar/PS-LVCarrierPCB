@@ -44,18 +44,14 @@ void set_faultBitFromISR(fault_bit_t bit){
 
 EventBits_t faultBit_wait(fault_bit_t bit, TickType_t xTicksToWait){
 
-    if(bit > NUM_FAULTS){
+    // NUM_FAULTS indiciates you want to wait for all bits
+    if(bit >= NUM_FAULTS){
         return 0;
     }
-    
-    EventBits_t uxBitsToWaitFor;
 
-    if(bit == NUM_FAULTS){
-        uxBitsToWaitFor = ALL_FAULT_BITS;
-    }
-    else{
-        uxBitsToWaitFor = (FAULT_BIT(bit));
-    }
+    // if NUM
+    EventBits_t uxBitsToWaitFor = bit == NUM_FAULTS ? ALL_FAULT_BITS : (FAULT_BIT(bit));
+
     EventBits_t pending = xEventGroupWaitBits(
         faultStateBits,
         uxBitsToWaitFor,  // wait for any defined fault

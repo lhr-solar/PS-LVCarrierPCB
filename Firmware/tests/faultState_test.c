@@ -67,7 +67,7 @@ int main(){
                      "runningThread",
                      configMINIMAL_STACK_SIZE,
                      NULL,
-                     tskIDLE_PRIORITY + 2,
+                     tskIDLE_PRIORITY + 1,
                      runningThreadTaskStack,
                      &runningThreadTaskBuffer);
 

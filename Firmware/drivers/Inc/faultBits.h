@@ -54,7 +54,16 @@ void set_faultBit(fault_bit_t bit);
  * @brief Wait for a fault to be set 
  * 
  * @param bit which fault to wait for, pass NUM_FAULTS if waiting for any fault
- * @param xTicksToWaitparam delay when waiting
+ * @param xTicksToWait delay when waiting
  * @return the event bit that was set
  */
 EventBits_t faultBit_wait(fault_bit_t bit, TickType_t xTicksToWait);
+
+
+/**
+ * @brief Set a fault in the fault bitmap from an ISR
+ * 
+ * @param bit which fault is being set
+ * @return none
+ */
+void set_faultBitFromISR(fault_bit_t bit);

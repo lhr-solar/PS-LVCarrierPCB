@@ -5,10 +5,10 @@
 #include "common.h"
 
 // Task Priority 
-#define TASK_FAULT_STATE_PRIO           tskIDLE_PRIORITY + 1
-#define TASK_INIT_PRIO                  tskIDLE_PRIORITY + 1
-#define TASK_SUPP_MON_PRIO              tskIDLE_PRIORITY + 2
-#define TASK_POWER_MUX_MON_PRIO         tskIDLE_PRIORITY + 4
+#define TASK_FAULT_STATE_PRIO           tskIDLE_PRIORITY + 5
+#define TASK_INIT_PRIO                  tskIDLE_PRIORITY + 2
+#define TASK_SUPP_MON_PRIO              tskIDLE_PRIORITY + 4
+#define TASK_POWER_MUX_MON_PRIO         tskIDLE_PRIORITY + 3
 
 // Task Stack Size 
 #define TASK_FAULT_STATE_STACK_SIZE                     configMINIMAL_STACK_SIZE
