@@ -16,6 +16,7 @@ uint8_t faultStateActivated = 0;
 void runningThread(){
 
     uint8_t threadCountsTillFault = 10;
+    uint8_t threadCounts = 0;
     
     while(1){
 
