@@ -12,5 +12,5 @@
 #include "ADC.h"
 #include "adc_sense.h"
 
-StackType_t Task_SuppMon_Stack_Array[ TASK_SUPP_MON_STACK_SIZE ];
-StaticTask_t Task_SuppMon_Buffer;
+int16_t adc_To_Hall(uint32_t adcCounts);
+uint32_t adc_to_SuppVoltage(uint32_t adcCounts);

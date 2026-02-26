@@ -3,6 +3,8 @@
 #include "adc_sense.h"
 #include "statusLeds.h"
 #include "commandLine.h"
+#include "supplementalMonitor.h"
+#include "tasksConfig.h"
 
 StaticTask_t adcTaskBuffer;
 StackType_t adcTaskStack[configMINIMAL_STACK_SIZE];
@@ -41,7 +43,8 @@ void adcTask(void *argument){
             uint32_t result;
             BaseType_t returnStatus = adc_read_value(SUPPLEMENTAL_BATTERY_VOLTAGE, &result, portMAX_DELAY);
             if(returnStatus == pdTRUE){
-                printf("Succesfully read supp battery voltage: %ld \n\r", result);
+                printf("Supp battery voltage: %ld counts \n\r", result);
+                printf("Supp battery voltage: %ld mV \n\r", adc_to_SuppVoltage(result));
             }
         }
         vTaskDelay(pdMS_TO_TICKS(10));
@@ -51,7 +54,8 @@ void adcTask(void *argument){
             uint32_t result;
             BaseType_t returnStatus = adc_read_value(SUPPLEMENTAL_BATTERY_CURRENT, &result, portMAX_DELAY);
             if(returnStatus == pdTRUE){
-                printf("Succesfully read supp battery current: %ld \n\r", result);
+                printf("Supp battery current: %ld counts \n\r", result);
+                printf("Supp battery current: %d mA \n\r", adc_To_Hall(result));
             }
         }
         vTaskDelay(pdMS_TO_TICKS(10));
@@ -61,7 +65,8 @@ void adcTask(void *argument){
             uint32_t result;
             BaseType_t returnStatus = adc_read_value(REGULATED_BATTERY_VOLTAGE, &result, portMAX_DELAY);
             if(returnStatus == pdTRUE){
-                printf("Succesfully read supp regulated voltage: %ld \n\r", result);
+                printf("Supp regulated voltage: %ld counts \n\r", result);
+                printf("Supp regulated voltage: %ld mV \n\r", adc_to_SuppVoltage(result));
             }
         }
         vTaskDelay(pdMS_TO_TICKS(10));
@@ -71,12 +76,13 @@ void adcTask(void *argument){
             uint32_t result;
             BaseType_t returnStatus = adc_read_value(REGULATED_BATTERY_CURRENT, &result, portMAX_DELAY);
             if(returnStatus == pdTRUE){
-                printf("Succesfully read supp regulated current: %ld \n\r", result);
+                printf("Supp regulated current: %ld counts\n\r", result);
+                printf("Supp regulated current: %d mA\n\r", adc_To_Hall(result));
             }
         }
         printf("=============================================\n\r");
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
-        vTaskDelay(pdMS_TO_TICKS(500));
+        vTaskDelay(pdMS_TO_TICKS(5000));
     }
 }
 
@@ -88,7 +94,6 @@ int main(){
 
     adc_status_t adcInitStat = adc_sense_init();
     if(adcInitStat == ADC_OK){
-        statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
         xTaskCreateStatic(adcTask, 
                      "adcTask",

@@ -93,6 +93,9 @@ static adc_status_t adc1_init(){
     return ADC_INIT_FAIL;
   }
 
+  HAL_ADCEx_Calibration_Start(hadc1, ADC_SINGLE_ENDED);
+
+
   return ADC_OK;
 
 }
@@ -120,6 +123,9 @@ static adc_status_t adc2_init(){
   {
      return ADC_INIT_FAIL;
   }
+
+  HAL_ADCEx_Calibration_Start(hadc2, ADC_SINGLE_ENDED);
+
 
   return ADC_OK;
 }
