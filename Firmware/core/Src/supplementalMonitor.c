@@ -3,6 +3,11 @@
 StackType_t Task_SuppMon_Stack_Array[ TASK_SUPP_MON_STACK_SIZE ];
 StaticTask_t Task_SuppMon_Buffer;
 
+// ADC watchdog timers
+TimerHandle_t adcTimers[NUM_ADC_SENSE_CHANNELS];
+ StaticTimer_t adcTimersBuffers[ NUM_ADC_SENSE_CHANNELS ];
+#define ADC_WATCHDOG_PERIOD pdMS_TO_TICKS(5000)
+
 
 int16_t adc_To_Hall(uint32_t adcCounts){
   adcCounts = adcCounts > 4095 ? 4095 : adcCounts;
@@ -14,6 +19,17 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
   return ((uint32_t)adcCounts * 3300U * 10U) / 4095U; 
 }
 
+ void adcWatchdogTimerCallback( TimerHandle_t xTimer ){
+
+    for(uint8_t i = 0; i < NUM_ADC_SENSE_CHANNELS; i++){
+
+        // see which watchdog timer finished.
+        if(adcTimers[i] == xTimer){
+            // TOOD: fault
+        }
+    }
+ } 
+
 
 void supplementalMonitor(){
 
@@ -22,7 +38,22 @@ void supplementalMonitor(){
         // do some error flag or some shit
     }
 
-    // TODO: start a timer that needs to get reset after a certain amount of time or else we explode
+    // initialize adc watchdog timers
+    for(uint8_t i = 0; i < NUM_ADC_SENSE_CHANNELS; i++){
+        // adcTimers
+        adcTimers[i] = xTimerCreateStatic
+        (
+            "ADC Watchdog Timer",
+            ADC_WATCHDOG_PERIOD,
+            pdFALSE, // one shot timer
+            ( void * ) 0, // stores a count of times the timer has expired
+            adcWatchdogTimerCallback, /* Each timer calls the same callback when it expires. */
+            &adcTimersBuffers[i]
+        );
+
+        // start the watchdog timer
+        xTimerStart(adcTimers[i], portMAX_DELAY);
+    }
 
     while(1){
         

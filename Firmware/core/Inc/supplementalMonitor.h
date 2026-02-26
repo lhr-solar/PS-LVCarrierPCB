@@ -11,6 +11,7 @@
 #include "tasksConfig.h"
 #include "ADC.h"
 #include "adc_sense.h"
+#include "timers.h"
 
 int16_t adc_To_Hall(uint32_t adcCounts);
 uint32_t adc_to_SuppVoltage(uint32_t adcCounts);
