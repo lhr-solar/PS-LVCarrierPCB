@@ -24,4 +24,6 @@ adc_status_t adc_sense_init(void);
 
 adc_status_t adc_start_read(adc_sense_channel_t channel);
 
+BaseType_t adc_read_value(adc_sense_channel_t channel, uint32_t *result, TickType_t delay_ticks);
+
 QueueSetMemberHandle_t adc_wait(adc_sense_channel_t channels[], uint8_t numChannels, adc_status_t *status);

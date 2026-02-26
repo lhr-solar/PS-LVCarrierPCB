@@ -1,5 +1,6 @@
 #include "adc_sense.h"
-#include "ADC.h"
+
+#define ADC_ISR_PRIO configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY
 
 #define ADC_ITEM_SIZE       sizeof( uint32_t )
 
@@ -161,28 +162,49 @@ adc_status_t adc_start_read(adc_sense_channel_t channel)
   switch (channel)
   {
     case SUPPLEMENTAL_BATTERY_VOLTAGE:
-        if (HAL_ADC_ConfigChannel(hadc2, &suppVoltage_adc_cfg) != HAL_OK)
-            return ADC_CHANNEL_CONFIG_FAIL;
         return adc_read(hadc2, &suppVoltage_adc_cfg, suppVoltageRecvQ);
 
     case SUPPLEMENTAL_BATTERY_CURRENT:
-        if (HAL_ADC_ConfigChannel(hadc1, &suppCurrent_adc_cfg) != HAL_OK)
-            return ADC_CHANNEL_CONFIG_FAIL;
         return adc_read(hadc1, &suppCurrent_adc_cfg, suppCurrentRecvQ);
 
     case REGULATED_BATTERY_VOLTAGE:
-        if (HAL_ADC_ConfigChannel(hadc1, &suppReg_adc_cfg) != HAL_OK)
-            return ADC_CHANNEL_CONFIG_FAIL;
         return adc_read(hadc1, &suppReg_adc_cfg, suppRegRecvQ);
 
     case REGULATED_BATTERY_CURRENT:
-        if (HAL_ADC_ConfigChannel(hadc2, &suppRegCurrent_adc_cfg) != HAL_OK)
-            return ADC_CHANNEL_CONFIG_FAIL;
         return adc_read(hadc2, &suppRegCurrent_adc_cfg, suppRegCurrentRecvQ);
 
     default:
         return ADC_CHANNEL_CONFIG_FAIL;
   }
+}
+
+BaseType_t adc_read_value(adc_sense_channel_t channel, uint32_t *result, TickType_t delay_ticks){
+  BaseType_t readStatus = pdFALSE;
+  switch (channel)
+  {
+    case SUPPLEMENTAL_BATTERY_VOLTAGE:
+        readStatus = xQueueReceive(suppVoltageRecvQ, result, delay_ticks);
+        break;
+
+    case SUPPLEMENTAL_BATTERY_CURRENT:
+        readStatus = xQueueReceive(suppCurrentRecvQ, result, delay_ticks);
+        break;
+
+    case REGULATED_BATTERY_VOLTAGE:
+
+        readStatus = xQueueReceive(suppRegRecvQ, result, delay_ticks);
+
+        break;
+
+    case REGULATED_BATTERY_CURRENT:
+        readStatus = xQueueReceive(suppRegCurrentRecvQ, result, delay_ticks);
+        break;
+
+    default:
+        readStatus = pdFALSE;
+  }
+  return readStatus;
+
 }
 
 
@@ -228,7 +250,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     /* ADC1 interrupt Init */
-    HAL_NVIC_SetPriority(ADC1_2_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(ADC1_2_IRQn, ADC_ISR_PRIO, 0);
     HAL_NVIC_EnableIRQ(ADC1_2_IRQn);
   }
   else if(adcHandle->Instance==ADC2)
@@ -266,7 +288,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     /* ADC2 interrupt Init */
-    HAL_NVIC_SetPriority(ADC1_2_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(ADC1_2_IRQn, ADC_ISR_PRIO, 0);
     HAL_NVIC_EnableIRQ(ADC1_2_IRQn);
   }
 }
