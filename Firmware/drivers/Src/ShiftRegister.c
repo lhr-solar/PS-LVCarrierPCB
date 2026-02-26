@@ -1,5 +1,4 @@
 #include "shiftRegister.h"
-
 #include "stm32xx_hal.h"
 
 static GPIO_InitTypeDef SR_configA = {.Mode = GPIO_MODE_OUTPUT_PP,
@@ -12,9 +11,9 @@ static GPIO_InitTypeDef SR_configB = {.Mode = GPIO_MODE_OUTPUT_PP,
                                       .Pin = 0};
 
 const pin_t SR_pins[NUMBER_PINS] = {
-    {GPIO_PIN_5, GPIOB},   // ser data
-    {GPIO_PIN_10, GPIOA},  // srclk
-    {GPIO_PIN_3, GPIOB}};  // status led need rclk
+    {GPIO_PIN_13, GPIOB},   // ser data
+    {GPIO_PIN_15, GPIOB},  // srclk
+    {GPIO_PIN_9, GPIOB}};  // status led need rclk
 
 static const uint8_t seven_seg_map[10] = {
     0b00111111,  // 0
@@ -43,6 +42,12 @@ void shiftRegister_init(void) {
 
   HAL_GPIO_Init(GPIOA, &SR_configA);
   HAL_GPIO_Init(GPIOB, &SR_configB);
+
+  // HAL_GPIO_WritePin(SR_pins[SR_SRCLK].Port, SR_pins[SR_SRCLK].Pin, GPIO_PIN_RESET);
+  // HAL_GPIO_WritePin(SR_pins[SR_RCLK].Port, SR_pins[SR_RCLK].Pin, GPIO_PIN_RESET);
+
+  // display_sevenSeg(0, 0, 0);
+
 }
 
 void shiftData_in(uint8_t data) {
