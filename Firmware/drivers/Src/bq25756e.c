@@ -10,7 +10,7 @@ uint8_t bq25756e_charge(message_t MSG) {
   uint8_t STAT=0;
   // Main task
   if (MSG == START) {
-    // bq25756e_pet_wdg();
+    bq25756e_pet_wdg();
     HAL_Delay(50);
     uint8_t pin_control[1];
 
@@ -18,34 +18,30 @@ uint8_t bq25756e_charge(message_t MSG) {
     STAT=bq25756e_read_reg(REG_PIN_CONTROL, pin_control);
     bq25756e_clear_bits(pin_control, BIT_CHARGE_LIMIT_ENABLE);
     STAT=bq25756e_write_reg(REG_PIN_CONTROL, pin_control[0]);
+
+    // Write Charge Limit
+    // uint8_t field_a[1];
+    // uint8_t field_b[1];
+
+    // STAT=bq25756e_read_reg(REG_CHARGE_CURRENT_LIMIT_B, field_b); // 0x06 
+    // STAT=bq25756e_read_reg(REG_CHARGE_CURRENT_LIMIT_A, field_a); // 0x40 
+    // bq25756e_clear_bits(field_a, BIT_CHARGE_CURRENT_FIELD_A); 
+    // bq25756e_clear_bits(field_b, BIT_CHARGE_CURRENT_FIELD_B);
+    // bq25756e_assert_bits(field_a, BIT_CHARGE_CURRENT_MASK_A);
+    // bq25756e_assert_bits(field_b, BIT_CHARGE_CURRENT_MASK_B);
+    // STAT=bq25756e_write_reg(REG_CHARGE_CURRENT_LIMIT_B, field_b[0]);  
+    // STAT=bq25756e_write_reg(REG_CHARGE_CURRENT_LIMIT_A, field_a[0]); 
+
+    // write 0x64
     
-    HAL_Delay(50);
-
-    // Disable Hi Z
-    STAT=bq25756e_read_reg(REG_PIN_CONTROL, pin_control);
-    bq25756e_clear_bits(pin_control, BIT_HIZ_ENABLE);
-    STAT=bq25756e_write_reg(REG_PIN_CONTROL, pin_control[0]);
-
-    HAL_Delay(50);
-
-    // // Disable Temp Sense
-    STAT=bq25756e_read_reg(REG_TEMP, pin_control);
-    bq25756e_clear_bits(pin_control, BIT_TEMP_SENSE_ENABLE);
-    STAT=bq25756e_write_reg(REG_TEMP, pin_control[0]);
-
-    // HAL_Delay(50);
-
-    // Disable Rev Mode 
-    STAT=bq25756e_read_reg(REG_REVERSE_MODE, pin_control);
-    bq25756e_clear_bits(pin_control, BIT_REVERSE_MODE_ENABLE);
-    STAT=bq25756e_write_reg(REG_REVERSE_MODE, pin_control[0]);
-
-    // Enable CE
-    // STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, pin_control);
-    // bq25756e_assert_bits(pin_control, BIT_CHARGE_ENABLE);
-    // STAT=bq25756e_write_reg(REG_PIN_CONTROL, pin_control[0]);
-
     HAL_Delay(100);
+
+    // // Enable CE
+    // // STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, pin_control);
+    // // bq25756e_assert_bits(pin_control, BIT_CHARGE_ENABLE);
+    // // STAT=bq25756e_write_reg(REG_PIN_CONTROL, pin_control[0]);
+
+    // HAL_Delay(100);
 
     // Read Charger Status
     STAT=bq25756e_read_reg(REG_CHARGE_STATUS_1, pin_control);

@@ -7,6 +7,8 @@
 #define DEVICE_ADDR 0x6a
 
 // Reg Addresses
+#define REG_CHARGE_CURRENT_LIMIT_A 0x02
+#define REG_CHARGE_CURRENT_LIMIT_B 0x03
 #define REG_CHARGE_CONTROL 0x17
 #define REG_PIN_CONTROL  0x18
 #define REG_CHARGE_STATUS_1 0x21
@@ -27,6 +29,16 @@ static const uint8_t BIT_HIZ_ENABLE =   0x40;
 static const uint8_t BIT_EN_CHG_ENABLE =   0x3B;
 static const uint8_t BIT_TEMP_SENSE_ENABLE =    0x01;
 static const uint8_t BIT_REVERSE_MODE_ENABLE =    0x21;
+static const uint8_t BIT_CHARGE_CURRENT_FIELD_B = 0x07; // 0000 0111
+static const uint8_t BIT_CHARGE_CURRENT_FIELD_A = 0xFC; // 1111 1100
+
+// 5amps
+// static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x01; 
+// static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0x90; 
+
+// 2.6 amps
+static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x00; 
+static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0xD0; 
 
 // Host Message Types
 typedef enum {
