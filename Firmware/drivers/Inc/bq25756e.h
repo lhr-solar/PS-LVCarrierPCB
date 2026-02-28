@@ -37,8 +37,13 @@ static const uint8_t BIT_CHARGE_CURRENT_FIELD_A = 0xFC; // 1111 1100
 // static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0x90; 
 
 // 2.6 amps
+// static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x00; 
+// static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0xD0; 
+
+// 1 amps
 static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x00; 
-static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0xD0; 
+static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0x14;
+
 
 // Host Message Types
 typedef enum {
