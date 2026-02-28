@@ -58,7 +58,16 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "hole_clearance|207125000|39655000|6bcdb596-6b84-49bd-b226-27455423e161|b414ba0b-7c61-4b45-9ee7-79c919a0a249",
+          ""
+        ],
+        [
+          "hole_clearance|207125000|49005000|775bd980-d4b5-4987-9795-2dddf86c8111|f8663add-db59-4f59-aecd-84bd167bc18d",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -576,7 +585,7 @@
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -636,7 +645,7 @@
           "group_by": false,
           "label": "P/N",
           "name": "P/N",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -690,6 +699,30 @@
           "group_by": false,
           "label": "#",
           "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Digikey P/N",
+          "name": "Digikey P/N",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC P/N",
+          "name": "LCSC P/N",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "JLC P/N",
+          "name": "JLC P/N",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Mouser P/N",
+          "name": "Mouser P/N",
           "show": false
         }
       ],
