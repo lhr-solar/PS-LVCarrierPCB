@@ -4,22 +4,23 @@
 
 #define ADC_ITEM_SIZE       sizeof( uint32_t )
 
-static uint8_t suppVoltage_static_storage[SUPP_VOLTAGE_ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
+static uint8_t suppVoltage_static_storage[ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
 static StaticQueue_t suppVoltageQueueBuffer;
 static QueueHandle_t suppVoltageRecvQ;
 
-static uint8_t suppReg_static_storage[SUPP_REGULATED_ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
+static uint8_t suppReg_static_storage[ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
 static StaticQueue_t suppRegQueueBuffer;
 static QueueHandle_t suppRegRecvQ;
 
 
-static uint8_t suppCurrent_static_storage[SUPP_HALL_ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
+static uint8_t suppCurrent_static_storage[ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
 static StaticQueue_t suppCurrentQueueBuffer;
 static QueueHandle_t suppCurrentRecvQ;
 
-static uint8_t suppRegCurrent_static_storage[SUPP_REGULATED_HALL_ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
+static uint8_t suppRegCurrent_static_storage[ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
 static StaticQueue_t suppRegCurrentQueueBuffer;
 static QueueHandle_t suppRegCurrentRecvQ;
+
 
 static ADC_ChannelConfTypeDef suppCurrent_adc_cfg = {
     .Channel = ADC_CHANNEL_15,          // PB0
@@ -133,22 +134,22 @@ static adc_status_t adc2_init(){
 adc_status_t adc_sense_init(void){
 
 
-    suppVoltageRecvQ = xQueueCreateStatic( SUPP_VOLTAGE_ADC_QUEUE_LENGTH, ADC_ITEM_SIZE, suppVoltage_static_storage, &suppVoltageQueueBuffer);
+    suppVoltageRecvQ = xQueueCreateStatic( ADC_QUEUE_LENGTH, ADC_ITEM_SIZE, suppVoltage_static_storage, &suppVoltageQueueBuffer);
     if (suppVoltageRecvQ == NULL) {
         return ADC_INIT_FAIL;
     }
 
-    suppRegRecvQ = xQueueCreateStatic( SUPP_REGULATED_ADC_QUEUE_LENGTH, ADC_ITEM_SIZE, suppReg_static_storage, &suppRegQueueBuffer);
+    suppRegRecvQ = xQueueCreateStatic( ADC_QUEUE_LENGTH, ADC_ITEM_SIZE, suppReg_static_storage, &suppRegQueueBuffer);
     if (suppRegRecvQ == NULL) {
         return ADC_INIT_FAIL;
     }
 
-    suppCurrentRecvQ = xQueueCreateStatic( SUPP_HALL_ADC_QUEUE_LENGTH, ADC_ITEM_SIZE, suppCurrent_static_storage, &suppCurrentQueueBuffer);
+    suppCurrentRecvQ = xQueueCreateStatic( ADC_QUEUE_LENGTH, ADC_ITEM_SIZE, suppCurrent_static_storage, &suppCurrentQueueBuffer);
     if (suppCurrentRecvQ == NULL) {
         return ADC_INIT_FAIL;
     }
 
-    suppRegCurrentRecvQ = xQueueCreateStatic( SUPP_REGULATED_HALL_ADC_QUEUE_LENGTH, ADC_ITEM_SIZE, suppRegCurrent_static_storage, &suppRegCurrentQueueBuffer);
+    suppRegCurrentRecvQ = xQueueCreateStatic( ADC_QUEUE_LENGTH, ADC_ITEM_SIZE, suppRegCurrent_static_storage, &suppRegCurrentQueueBuffer);
     if (suppRegCurrentRecvQ == NULL) {
         return ADC_INIT_FAIL;
     }

@@ -7,10 +7,7 @@
 #include "tmcs1126_lut.h"
 #include "adc_lut.h"
 
-#define SUPP_VOLTAGE_ADC_QUEUE_LENGTH                   10
-#define SUPP_REGULATED_ADC_QUEUE_LENGTH                 10
-#define SUPP_HALL_ADC_QUEUE_LENGTH                      10
-#define SUPP_REGULATED_HALL_ADC_QUEUE_LENGTH            10
+#define ADC_QUEUE_LENGTH                   10
 
 typedef enum{
     SUPPLEMENTAL_BATTERY_VOLTAGE,
