@@ -12,7 +12,7 @@ int main(void) {
 
   // uint8_t d0, d1, d2;
 
-  display_sevenSeg(9, 9, 9);
+  display_sevenSeg(1, 3, 6);
 
   while (1) {
     // for (uint16_t val = 0; val <= MAX_NUM; val++) {

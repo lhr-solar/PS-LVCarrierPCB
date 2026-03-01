@@ -43,6 +43,8 @@ void shiftRegister_init(void) {
   HAL_GPIO_Init(GPIOA, &SR_configA);
   HAL_GPIO_Init(GPIOB, &SR_configB);
 
+  // shiftData_latch();
+
   // HAL_GPIO_WritePin(SR_pins[SR_SRCLK].Port, SR_pins[SR_SRCLK].Pin, GPIO_PIN_RESET);
   // HAL_GPIO_WritePin(SR_pins[SR_RCLK].Port, SR_pins[SR_RCLK].Pin, GPIO_PIN_RESET);
 
@@ -79,7 +81,7 @@ void display_sevenSeg(uint8_t d0, uint8_t d1, uint8_t d2) {
   shiftData_in(seg1);
   shiftData_in(seg0);
 
-  shiftData_latch();
+  // shiftData_latch();
 }
 
 // SRCLR is tied to GND in hardware, so no clear function.
