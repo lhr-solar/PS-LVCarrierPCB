@@ -33,16 +33,16 @@ static const uint8_t BIT_CHARGE_CURRENT_FIELD_B = 0x07; // 0000 0111
 static const uint8_t BIT_CHARGE_CURRENT_FIELD_A = 0xFC; // 1111 1100
 
 // 5amps
-// static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x01; 
-// static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0x90; 
+static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x01; 
+static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0x90; 
 
 // 2.6 amps
 // static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x00; 
 // static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0xD0; 
 
 // 1 amps
-static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x00; 
-static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0x14;
+// static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x00; 
+// static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0x14;
 
 
 // Host Message Types
