@@ -20,7 +20,7 @@ void BqTask(void *argument){
     while(1){
         printf("BALLS \r\n");
 
-        // bq25756e_write_ce(HIGH);
+        bq25756e_write_ce(HIGH);
         bq25756e_charge(START);
 
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
@@ -37,9 +37,9 @@ int main()
     statusLeds_init();
     bq25756e_init();
     // command_line_init();
-    // bq25756e_write_ce(LOW);
+    bq25756e_write_ce(LOW);
     // HAL_Delay(50);
-    // bq25756e_write_ce(HIGH);
+    bq25756e_write_ce(HIGH);
     ltc4421_gpio_init();
 
     ltc4421_shdn_enable(OFF);

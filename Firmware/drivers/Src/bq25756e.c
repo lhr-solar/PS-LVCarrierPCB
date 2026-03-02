@@ -88,9 +88,9 @@ uint8_t bq25756e_pet_wdg(void) {
   return STAT;
 }
 
-// void bq25756e_write_ce(uint8_t value) {
-//   HAL_GPIO_WritePin(BQ25756E_CE_PORT, BQ25756E_CE_PIN, value);
-// }
+void bq25756e_write_ce(uint8_t value) {
+  HAL_GPIO_WritePin(BQ25756E_CE_PORT, BQ25756E_CE_PIN, value);
+}
 
 void bq25756e_dump(uint8_t reg) {
   // Read reg
