@@ -1,0 +1,9 @@
+#pragma once
+
+#define MAX_SUPP_BATT_VOLTAGE 30000 // mV
+
+#define MIN_SUPP_BATT_VOLTAGE 18000 // mV
+
+#define MAX_SUPP_REG_VOLTAGE 25000 // mV
+
+#define MIN_SUPP_REG_VOLTAGE 23000 // mV
