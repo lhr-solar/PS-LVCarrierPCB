@@ -22,6 +22,7 @@ static StaticQueue_t suppRegCurrentQueueBuffer;
 static QueueHandle_t suppRegCurrentRecvQ;
 
 
+// ADC1
 static ADC_ChannelConfTypeDef suppCurrent_adc_cfg = {
     .Channel = ADC_CHANNEL_15,          // PB0
     .Rank = ADC_REGULAR_RANK_1,
@@ -31,6 +32,7 @@ static ADC_ChannelConfTypeDef suppCurrent_adc_cfg = {
     .Offset = 0
 };
 
+// ADC1
 static ADC_ChannelConfTypeDef suppReg_adc_cfg = {
     .Channel = ADC_CHANNEL_3,           // PA2
     .Rank = ADC_REGULAR_RANK_1,
@@ -40,6 +42,7 @@ static ADC_ChannelConfTypeDef suppReg_adc_cfg = {
     .Offset = 0
 };
 
+// ADC3
 static ADC_ChannelConfTypeDef suppRegCurrent_adc_cfg = {
     .Channel = ADC_CHANNEL_1,          // PB1
     .Rank = ADC_REGULAR_RANK_1,
@@ -49,6 +52,7 @@ static ADC_ChannelConfTypeDef suppRegCurrent_adc_cfg = {
     .Offset = 0
 };
 
+// ADC2
 static ADC_ChannelConfTypeDef suppVoltage_adc_cfg = {
     .Channel = ADC_CHANNEL_2,           // PA1
     .Rank = ADC_REGULAR_RANK_1,

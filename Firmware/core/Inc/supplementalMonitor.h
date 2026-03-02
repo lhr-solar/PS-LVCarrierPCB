@@ -11,6 +11,7 @@
 #include "tasksConfig.h"
 #include "ADC.h"
 #include "adc_sense.h"
+#include "faultBits.h"
 #include "timers.h"
 
 

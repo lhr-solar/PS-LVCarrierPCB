@@ -25,7 +25,7 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
 
         // see which watchdog timer finished.
         if(adcTimers[i] == xTimer){
-            // TOOD: fault
+            set_faultBit(FAULT_ADC_TIMEOUT);
         }
     }
  } 
@@ -56,7 +56,10 @@ void supplementalMonitor(){
     }
 
     while(1){
-        
+
+        adc_start_read(SUPPLEMENTAL_BATTERY_VOLTAGE); // ADC2
+        adc_start_read(REGULATED_BATTERY_VOLTAGE); // ADC2
+        adc_start_read(SUPPLEMENTAL_BATTERY_VOLTAGE); // ADC1
         /**
             Psueduocde: 
             start conversion for adc1 or adc2 (block on queue set)
