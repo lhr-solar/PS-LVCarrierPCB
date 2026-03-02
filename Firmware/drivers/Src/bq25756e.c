@@ -8,11 +8,14 @@ void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
 
 uint8_t bq25756e_charge(message_t MSG) {
   uint8_t STAT=0;
+
+  // Buffer
+  uint8_t pin_control[1]; 
+
   // Main task
   if (MSG == START) {
     bq25756e_pet_wdg();
     vTaskDelay(pdMS_TO_TICKS(50));
-    uint8_t pin_control[1];
 
     // Disable Charge Limit
     STAT=bq25756e_read_reg(REG_PIN_CONTROL, pin_control);
@@ -61,6 +64,11 @@ uint8_t bq25756e_charge(message_t MSG) {
     STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, pin_control);
     printf("reg charge control: %d\n\r", pin_control[0]);
 
+  } else if (MSG == STOP) {
+    // Disable CE
+    STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, pin_control);
+    bq25756e_clear_bits(pin_control, BIT_CHARGE_ENABLE);
+    STAT=bq25756e_write_reg(REG_CHARGE_CONTROL, pin_control[0]);
   }
 
   return STAT;

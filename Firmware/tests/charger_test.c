@@ -6,8 +6,6 @@
 #include "pinDefs.h"
 #include "faultBits.h"
 
-#define CHARGE_DELAY 0  
-
 StaticTask_t bqTaskBuffer;
 StackType_t bqTaskStack[configMINIMAL_STACK_SIZE];
 
@@ -15,38 +13,42 @@ StaticTask_t faultTaskBuffer;
 StackType_t faultTaskStack[configMINIMAL_STACK_SIZE];
 
 void BqTask(void *argument){
-    uint8_t buffer[1];
-    // Pend on Event Group
-    command_line_init();
     ltc4421_shdn_enable(ON);
     faultBits_init();
 
+    uint8_t buffer[1];
+
     // Pend on fault bitmap
     // faultBit_wait(MAX_FAULT_BITS, portMAX_DELAY);
+
+    bq25756e_write_ce(LOW);
     bq25756e_charge(START);
 
     while (1) {
-        if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, portMAX_DELAY) != pdFALSE) {
-            statusLeds_toggle(LSOM_HEARTBEAT_LED);
+        if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
+            bq25756e_write_ce(HIGH);
+            bq25756e_charge(STOP);
             vTaskDelete(NULL);
-        }   
+        }  
 
-        statusLeds_toggle(LSOM_HEARTBEAT_LED);
+        // Pet watchdog
+        bq25756e_pet_wdg();
 
-        // gets here 
+        // Dump status
         bq25756e_read_reg(REG_CHARGE_STATUS_1, buffer);
         printf("Charge status reg: %d\n\r", buffer[0]);
-        
+
+        statusLeds_toggle(LSOM_HEARTBEAT_LED);
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
 
+
 void FaultTask(void *argument){
     // Pend on Event Group
-    vTaskDelay(pdMS_TO_TICKS(200));
+    vTaskDelay(pdMS_TO_TICKS(10000)); 
     // throw a random fault
     while (1) {  
-        // statusLeds_toggle(LSOM_HEARTBEAT_LED);
         vTaskDelay(pdMS_TO_TICKS(500));
         set_faultBit(FAULT_SUPPREG_UNDERVOLTAGE);  
     }
@@ -58,8 +60,8 @@ int main()
     SystemClock_Config();
     statusLeds_init();
     bq25756e_init();
-    // command_line_init();
-    bq25756e_write_ce(LOW);
+    command_line_init();
+    
     // HAL_Delay(50);
     bq25756e_write_ce(HIGH);
     ltc4421_gpio_init();

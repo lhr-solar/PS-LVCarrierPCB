@@ -3,10 +3,10 @@
 #include "pinDefs.h"
 #include "common.h"
 
-// Chip Device Address
+/**** DEVICE ADDRESSES  ****/
 #define DEVICE_ADDR 0x6a
 
-// Reg Addresses
+/**** REGISTER ADDRESSES  ****/
 #define REG_CHARGE_CURRENT_LIMIT_A 0x02
 #define REG_CHARGE_CURRENT_LIMIT_B 0x03
 #define REG_CHARGE_CONTROL 0x17
@@ -18,17 +18,9 @@
 #define REG_TEMP 0x1c
 #define REG_REVERSE_MODE 0x19
 
-// 0x02 --- charge current limit
-// input current limit
-
-// Event Groups
-#define SUPP_CONNECTED  (1<<0)
-#define LTC_GOOD        (1<<1)
-#define SUPP_MON_GOOD   (1<<2)
-
-// Relevant Bitstrings
+/**** RELEVANT REGISTER MASKS ****/
 static const uint8_t BIT_WDG_RESET =   0x30;
-static const uint8_t BIT_CHARGE_ENABLE =   0x30;
+static const uint8_t BIT_CHARGE_ENABLE =   0x01;
 static const uint8_t BIT_CHARGE_LIMIT_ENABLE =   0x80;
 static const uint8_t BIT_HIZ_ENABLE =   0x40;
 static const uint8_t BIT_EN_CHG_ENABLE =   0x3B;
@@ -37,18 +29,21 @@ static const uint8_t BIT_REVERSE_MODE_ENABLE =    0x21;
 static const uint8_t BIT_CHARGE_CURRENT_FIELD_B = 0x07; // 0000 0111
 static const uint8_t BIT_CHARGE_CURRENT_FIELD_A = 0xFC; // 1111 1100
 
-// 5amps
+/**** CHARGE CURRENT MASKS ****/
+// 5 A
 static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x01; 
 static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0x90; 
 
-// 2.6 amps
+// 2.6 A
 // static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x00; 
 // static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0xD0; 
 
-// 1 amps
+// 1 A
 // static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x00; 
 // static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0x14;
 
+/**** FAULT BITMAP ****/
+static const uint8_t FAULT_BMAP_MASK = 0x90;
 
 // Host Message Types
 typedef enum {
@@ -73,11 +68,12 @@ uint8_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer);
 /* Initializes I2C peripheral */
 void bq25756e_i2c4_init(void);
 
-/* Writes value to CE register to enable or disable charging */
+/* Pulls CE pin in software to low or high (LOW enables charging) */
 void bq25756e_write_ce(uint8_t value);
 
+/* Enables/disables settings on I2C to start charging */
 uint8_t bq25756e_charge(message_t MSG);
 
 uint8_t bq25756e_pet_wdg(void);
-void bq25756e_dump(uint8_t reg);
+
 void bq25756e_gpio_init(void);
