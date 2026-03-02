@@ -21,6 +21,11 @@
 // 0x02 --- charge current limit
 // input current limit
 
+// Event Groups
+#define SUPP_CONNECTED  (1<<0)
+#define LTC_GOOD        (1<<1)
+#define SUPP_MON_GOOD   (1<<2)
+
 // Relevant Bitstrings
 static const uint8_t BIT_WDG_RESET =   0x30;
 static const uint8_t BIT_CHARGE_ENABLE =   0x30;

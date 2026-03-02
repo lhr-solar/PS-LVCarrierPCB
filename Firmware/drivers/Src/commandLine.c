@@ -42,6 +42,7 @@ void HAL_UART_MspGPIOInit(UART_HandleTypeDef *huart)
 #else
 void HAL_UART_MspGPIOInit(UART_HandleTypeDef *huart)
 {
+    // 115200 baud
     GPIO_InitTypeDef init = {0};
     __HAL_RCC_GPIOC_CLK_ENABLE();
     /**USART3 GPIO Configuration

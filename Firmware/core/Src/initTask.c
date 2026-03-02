@@ -13,6 +13,8 @@ void initThread(){
 
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
+    
+
      xTaskCreateStatic(
                     powerMuxMonitor,
                     "Power Mux Monitor Task",

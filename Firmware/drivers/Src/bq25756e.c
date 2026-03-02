@@ -6,6 +6,8 @@ I2C_HandleTypeDef hi2c4;
 void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring);
 void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
 
+// Create Event Group
+
 uint8_t bq25756e_charge(message_t MSG) {
   uint8_t STAT=0;
   // Main task
@@ -72,8 +74,6 @@ uint8_t bq25756e_charge(message_t MSG) {
 }
 
 
-
-
 uint8_t bq25756e_pet_wdg(void) {
   uint8_t STAT;
 
@@ -88,9 +88,9 @@ uint8_t bq25756e_pet_wdg(void) {
   return STAT;
 }
 
-void bq25756e_write_ce(uint8_t value) {
-  HAL_GPIO_WritePin(BQ25756E_CE_PORT, BQ25756E_CE_PIN, value);
-}
+// void bq25756e_write_ce(uint8_t value) {
+//   HAL_GPIO_WritePin(BQ25756E_CE_PORT, BQ25756E_CE_PIN, value);
+// }
 
 void bq25756e_dump(uint8_t reg) {
   // Read reg
