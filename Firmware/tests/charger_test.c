@@ -45,7 +45,7 @@ void BqTask(void *argument){
 
 
 void FaultTask(void *argument){
-    // Pend on Event Group
+    // Trip fault after 10s
     vTaskDelay(pdMS_TO_TICKS(10000)); 
     // throw a random fault
     while (1) {  
