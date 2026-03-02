@@ -17,6 +17,11 @@ void ltc4421_gpio_init(void){
     gpio_pin_init(LTC4421_FAULT1_PORT, LTC4421_FAULT1_PIN, INPUT);
     gpio_pin_init(LTC4421_FAULT2_PORT, LTC4421_FAULT2_PIN, INPUT);
 
+    // disable pins
+    gpio_pin_init(LTC4421_DISABLE1_PORT, LTC4421_DISABLE1_PIN, OUTPUT);
+    gpio_pin_init(LTC4421_DISABLE2_PORT, LTC4421_DISABLE2_PIN, OUTPUT);
+
+
 }
 
 void ltc4421_shdn_enable(pin_state_t newShutDownState){
@@ -53,7 +58,7 @@ ltc4421_channel_t ltc4421_channel_selected(void){
 
 pin_state_t ltc4421_read_fault(ltc4421_channel_t channel){
 
-    pin_state_t ret = ON;
+    pin_state_t ret = OFF;
 
     // fault is negative logic
     switch(channel){
