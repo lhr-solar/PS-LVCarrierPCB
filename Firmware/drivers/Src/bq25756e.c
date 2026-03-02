@@ -6,8 +6,6 @@ I2C_HandleTypeDef hi2c4;
 void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring);
 void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
 
-// Create Event Group
-
 uint8_t bq25756e_charge(message_t MSG) {
   uint8_t STAT=0;
   // Main task
@@ -34,33 +32,28 @@ uint8_t bq25756e_charge(message_t MSG) {
     STAT=bq25756e_write_reg(REG_CHARGE_CURRENT_LIMIT_B, field_b[0]);  
     STAT=bq25756e_write_reg(REG_CHARGE_CURRENT_LIMIT_A, field_a[0]); 
     
-    vTaskDelay(pdMS_TO_TICKS(50));
+    vTaskDelay(pdMS_TO_TICKS(10));
 
     // Disable Hi Z
     STAT=bq25756e_read_reg(REG_PIN_CONTROL, pin_control);
     bq25756e_clear_bits(pin_control, BIT_HIZ_ENABLE);
     STAT=bq25756e_write_reg(REG_PIN_CONTROL, pin_control[0]);
 
-    vTaskDelay(pdMS_TO_TICKS(50));
+    vTaskDelay(pdMS_TO_TICKS(10));
 
     // Disable Temp Sense
     STAT=bq25756e_read_reg(REG_TEMP, pin_control);
     bq25756e_clear_bits(pin_control, BIT_TEMP_SENSE_ENABLE);
     STAT=bq25756e_write_reg(REG_TEMP, pin_control[0]);
 
-    // HAL_Delay(50);
+    vTaskDelay(pdMS_TO_TICKS(10));
 
     // Disable Rev Mode 
     STAT=bq25756e_read_reg(REG_REVERSE_MODE, pin_control);
     bq25756e_clear_bits(pin_control, BIT_REVERSE_MODE_ENABLE);
     STAT=bq25756e_write_reg(REG_REVERSE_MODE, pin_control[0]);
 
-    // // Enable CE
-    // // STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, pin_control);
-    // // bq25756e_assert_bits(pin_control, BIT_CHARGE_ENABLE);
-    // // STAT=bq25756e_write_reg(REG_PIN_CONTROL, pin_control[0]);
-
-    // HAL_Delay(100);
+    vTaskDelay(pdMS_TO_TICKS(10));
 
     // Read Charger Status
     STAT=bq25756e_read_reg(REG_CHARGE_STATUS_1, pin_control);
@@ -88,17 +81,10 @@ uint8_t bq25756e_pet_wdg(void) {
   return STAT;
 }
 
+
 void bq25756e_write_ce(uint8_t value) {
+  // SW write to charge enable pin 
   HAL_GPIO_WritePin(BQ25756E_CE_PORT, BQ25756E_CE_PIN, value);
-}
-
-void bq25756e_dump(uint8_t reg) {
-  // Read reg
-  uint8_t contents[1];
-  bq25756e_read_reg(reg, contents);
-
-  // Display over serial
-  printf("Contents: %d", contents[0]);
 }
 
 uint8_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer) {

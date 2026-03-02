@@ -26,6 +26,7 @@ void initThread(){
                     &Task_PowerMux_Buffer
    );
 
+
     xTaskCreateStatic(
                     supplementalMonitor,
                     "Supplemental Monitor Task",
@@ -34,6 +35,16 @@ void initThread(){
                     TASK_SUPP_MON_PRIO,
                     Task_SuppMon_Stack_Array, 
                     &Task_SuppMon_Buffer
+   );
+
+   xTaskCreateStatic(
+                    powerMuxMonitor,
+                    "Power Mux Monitor Task",
+                    TASK_POWER_MUX_MON_STACK_SIZE,
+                    (void*)NULL,
+                    TASK_POWER_MUX_MON_PRIO,
+                    Task_PowerMux_Stack_Array, 
+                    &Task_PowerMux_Buffer
    );
 
     xTaskCreateStatic(
