@@ -41,7 +41,7 @@ static ADC_ChannelConfTypeDef suppReg_adc_cfg = {
 };
 
 static ADC_ChannelConfTypeDef suppRegCurrent_adc_cfg = {
-    .Channel = ADC_CHANNEL_12,          // PB2
+    .Channel = ADC_CHANNEL_1,          // PB1
     .Rank = ADC_REGULAR_RANK_1,
     .SamplingTime = ADC_SAMPLETIME_2CYCLES_5,
     .SingleDiff = ADC_SINGLE_ENDED,
@@ -130,6 +130,45 @@ static adc_status_t adc2_init(){
   return ADC_OK;
 }
 
+adc_status_t adc3_init(void){
+
+  ADC_MultiModeTypeDef multimode = {0};
+
+  hadc3->Instance = ADC3;
+  hadc3->Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
+  hadc3->Init.Resolution = ADC_RESOLUTION_12B;
+  hadc3->Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc3->Init.GainCompensation = 0;
+  hadc3->Init.ScanConvMode = ADC_SCAN_DISABLE;
+  hadc3->Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc3->Init.LowPowerAutoWait = DISABLE;
+  hadc3->Init.ContinuousConvMode = DISABLE;
+  hadc3->Init.NbrOfConversion = 1;
+  hadc3->Init.DiscontinuousConvMode = DISABLE;
+  hadc3->Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc3->Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc3->Init.DMAContinuousRequests = DISABLE;
+  hadc3->Init.Overrun = ADC_OVR_DATA_PRESERVED;
+  hadc3->Init.OversamplingMode = DISABLE;
+  if (HAL_ADC_Init(hadc3) != HAL_OK)
+  {
+    return ADC_INIT_FAIL;
+  }
+
+  /** Configure the ADC multi-mode
+  */
+  multimode.Mode = ADC_MODE_INDEPENDENT;
+  if (HAL_ADCEx_MultiModeConfigChannel(hadc3, &multimode) != HAL_OK)
+  {
+    return ADC_INIT_FAIL;
+  }
+
+  HAL_ADCEx_Calibration_Start(hadc1, ADC_SINGLE_ENDED);
+
+
+  return ADC_OK;
+}
+
 adc_status_t adc_sense_init(void){
   
     suppVoltageRecvQ = xQueueCreateStatic( ADC_QUEUE_LENGTH, ADC_ITEM_SIZE, suppVoltage_static_storage, &suppVoltageQueueBuffer);
@@ -152,11 +191,17 @@ adc_status_t adc_sense_init(void){
         return ADC_INIT_FAIL;
     }
 
-    if (adc1_init() != ADC_OK)
-        return ADC_INIT_FAIL;
+    if (adc1_init() != ADC_OK){
+      return ADC_INIT_FAIL;
+    }
 
-    if (adc2_init() != ADC_OK)
-        return ADC_INIT_FAIL;
+    if (adc2_init() != ADC_OK){
+      return ADC_INIT_FAIL;
+    }
+
+    if(adc3_init() != ADC_OK){
+      return ADC_INIT_FAIL;
+    }
 
     return ADC_OK;
 
@@ -277,24 +322,44 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     }
 
     __HAL_RCC_GPIOA_CLK_ENABLE();
-    __HAL_RCC_GPIOB_CLK_ENABLE();
     /**ADC2 GPIO Configuration
     PA1     ------> ADC2_IN2
-    PB2     ------> ADC2_IN12
     */
     GPIO_InitStruct.Pin = GPIO_PIN_1;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-    GPIO_InitStruct.Pin = GPIO_PIN_2;
-    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
     /* ADC2 interrupt Init */
     HAL_NVIC_SetPriority(ADC1_2_IRQn, ADC_ISR_PRIO, 0);
     HAL_NVIC_EnableIRQ(ADC1_2_IRQn);
+  /* USER CODE BEGIN ADC2_MspInit 1 */
+
+  /* USER CODE END ADC2_MspInit 1 */
+  }
+  else if(adcHandle->Instance==ADC3)
+  {
+
+  /** Initializes the peripherals clocks
+  */
+    PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC345;
+    PeriphClkInit.Adc345ClockSelection = RCC_ADC345CLKSOURCE_SYSCLK;
+    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    /* ADC3 clock enable */
+    __HAL_RCC_ADC345_CLK_ENABLE();
+
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+    /**ADC3 GPIO Configuration
+    PB1     ------> ADC3_IN1
+    */
+    GPIO_InitStruct.Pin = GPIO_PIN_1;
+    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
   }
 }
 
@@ -303,7 +368,6 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 
   if(adcHandle->Instance==ADC1)
   {
-
     /* Peripheral clock disable */
     HAL_RCC_ADC12_CLK_ENABLED--;
     if(HAL_RCC_ADC12_CLK_ENABLED==0){
@@ -317,7 +381,6 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_2);
 
     HAL_GPIO_DeInit(GPIOB, GPIO_PIN_0);
-
   }
   else if(adcHandle->Instance==ADC2)
   {
@@ -329,10 +392,19 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 
     /**ADC2 GPIO Configuration
     PA1     ------> ADC2_IN2
-    PB2     ------> ADC2_IN12
     */
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_1);
 
-    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_2);
+    /* ADC2 interrupt Deinit */
+  }
+  else if(adcHandle->Instance==ADC3)
+  {
+    /* Peripheral clock disable */
+    __HAL_RCC_ADC345_CLK_DISABLE();
+
+    /**ADC3 GPIO Configuration
+    PB1     ------> ADC3_IN1
+    */
+    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_1);
   }
 }
