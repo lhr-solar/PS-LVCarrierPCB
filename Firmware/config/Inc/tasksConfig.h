@@ -29,3 +29,5 @@ extern StaticTask_t Task_PowerMux_Buffer;
 void initThread();
 void powerMuxMonitor();
 void supplementalMonitor();
+
+#define SUPPLEMENTAL_MONITOR_THREAD_DELAY pdMS_TO_TICKS(5000)

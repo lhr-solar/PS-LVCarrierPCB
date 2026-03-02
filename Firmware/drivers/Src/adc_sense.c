@@ -58,7 +58,6 @@ static ADC_ChannelConfTypeDef suppVoltage_adc_cfg = {
     .Offset = 0
 };
 
-
 static adc_status_t adc1_init(){
   
   ADC_MultiModeTypeDef multimode = {0};
@@ -132,8 +131,7 @@ static adc_status_t adc2_init(){
 }
 
 adc_status_t adc_sense_init(void){
-
-
+  
     suppVoltageRecvQ = xQueueCreateStatic( ADC_QUEUE_LENGTH, ADC_ITEM_SIZE, suppVoltage_static_storage, &suppVoltageQueueBuffer);
     if (suppVoltageRecvQ == NULL) {
         return ADC_INIT_FAIL;
