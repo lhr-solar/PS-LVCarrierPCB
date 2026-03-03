@@ -21,18 +21,18 @@ void BqTask(void *argument){
     // Pend on fault bitmap
     // faultBit_wait(MAX_FAULT_BITS, portMAX_DELAY);
 
-    bq25756e_write_ce(LOW);
-    bq25756e_charge(START);
+    bq25756e_write_ce(BQ25756E_LOGIC_LOW);
+    bq25756e_charge(BQ25756E_CHRG_START);
 
     while (1) {
         if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
-            bq25756e_write_ce(HIGH);
-            bq25756e_charge(STOP);
+            bq25756e_write_ce(BQ25756E_LOGIC_HIGH);
+            bq25756e_charge(BQ25756E_CHRG_STOP);
             vTaskDelete(NULL);
         }  
 
         // Pet watchdog
-        bq25756e_pet_wdg();
+        bq25756e_pet_wdg(&STAT);
 
         // Dump status
         bq25756e_read_reg(REG_CHARGE_STATUS_1, buffer);
@@ -61,11 +61,9 @@ int main()
     statusLeds_init();
     bq25756e_init();
     command_line_init();
-    
-    // HAL_Delay(50);
-    bq25756e_write_ce(HIGH);
     ltc4421_gpio_init();
 
+    bq25756e_write_ce(BQ25756E_LOGIC_HIGH);
     ltc4421_shdn_enable(OFF);
 
     xTaskCreateStatic(BqTask, 
@@ -89,12 +87,6 @@ int main()
     
     while (1)
     {
-        bq25756e_write_ce(HIGH);
-        bq25756e_charge(START);
-
-        HAL_GPIO_TogglePin(LSOM_HEARTBEAT_LED_PORT, LSOM_HEARTBEAT_LED_PIN);
-        HAL_Delay(500);
-
-        // printf("wsp\n");
+        // should never be here
     }
 }

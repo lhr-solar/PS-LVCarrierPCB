@@ -1,94 +1,112 @@
 #include "bq25756e.h"
-#include "commandLine.h"
 
 I2C_HandleTypeDef hi2c4;
 
 void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring);
 void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
 
-uint8_t bq25756e_charge(message_t MSG) {
+void bq25756e_RevMode_disable(uint8_t* STAT, uint8_t buff1[]);
+void bq25756e_TempSense_disable(uint8_t* STAT, uint8_t buff1[]);
+void bq25756e_HiZ_disable(uint8_t* STAT, uint8_t buff1[]);
+void bq25756e_SW_Ichg_enable(uint8_t *STAT, uint8_t buff1[], uint8_t buff2[]);
+void bq25756e_HW_Ichg_disable(uint8_t* STAT, uint8_t buff[]);
+
+
+uint8_t bq25756e_charge(bq25756e_message_t msg) {
   uint8_t STAT=0;
+  // Dummy Data Buffers
+  uint8_t pBuff1, pBuff2[1]; 
 
-  // Buffer
-  uint8_t pin_control[1]; 
-
-  // Main task
-  if (MSG == START) {
-    bq25756e_pet_wdg();
-    vTaskDelay(pdMS_TO_TICKS(50));
-
+  if (msg == BQ25756E_CHRG_START) {
     // Disable Charge Limit
-    STAT=bq25756e_read_reg(REG_PIN_CONTROL, pin_control);
-    bq25756e_clear_bits(pin_control, BIT_CHARGE_LIMIT_ENABLE);
-    STAT=bq25756e_write_reg(REG_PIN_CONTROL, pin_control[0]);
-
+    bq25756e_HW_Ichg_disable(&STAT, pBuff1);
     // Write Charge Limit
-    uint8_t field_a[1];
-    uint8_t field_b[1];
-
-    STAT=bq25756e_read_reg(REG_CHARGE_CURRENT_LIMIT_B, field_b); // 0x06 
-    STAT=bq25756e_read_reg(REG_CHARGE_CURRENT_LIMIT_A, field_a); // 0x40 
-    bq25756e_clear_bits(field_a, BIT_CHARGE_CURRENT_FIELD_A); 
-    bq25756e_clear_bits(field_b, BIT_CHARGE_CURRENT_FIELD_B);
-    bq25756e_assert_bits(field_a, BIT_CHARGE_CURRENT_MASK_A);
-    bq25756e_assert_bits(field_b, BIT_CHARGE_CURRENT_MASK_B);
-    STAT=bq25756e_write_reg(REG_CHARGE_CURRENT_LIMIT_B, field_b[0]);  
-    STAT=bq25756e_write_reg(REG_CHARGE_CURRENT_LIMIT_A, field_a[0]); 
-    
-    vTaskDelay(pdMS_TO_TICKS(10));
-
+    bq25756e_SW_Ichg_enable(&STAT, pBuff1, pBuff2);
     // Disable Hi Z
-    STAT=bq25756e_read_reg(REG_PIN_CONTROL, pin_control);
-    bq25756e_clear_bits(pin_control, BIT_HIZ_ENABLE);
-    STAT=bq25756e_write_reg(REG_PIN_CONTROL, pin_control[0]);
-
-    vTaskDelay(pdMS_TO_TICKS(10));
-
+    bq25756e_HiZ_disable(&STAT, pBuff1);
     // Disable Temp Sense
-    STAT=bq25756e_read_reg(REG_TEMP, pin_control);
-    bq25756e_clear_bits(pin_control, BIT_TEMP_SENSE_ENABLE);
-    STAT=bq25756e_write_reg(REG_TEMP, pin_control[0]);
-
-    vTaskDelay(pdMS_TO_TICKS(10));
-
+    bq25756e_TempSense_disable(&STAT, pBuff1);
     // Disable Rev Mode 
-    STAT=bq25756e_read_reg(REG_REVERSE_MODE, pin_control);
-    bq25756e_clear_bits(pin_control, BIT_REVERSE_MODE_ENABLE);
-    STAT=bq25756e_write_reg(REG_REVERSE_MODE, pin_control[0]);
+    bq25756e_RevMode_disable(&STAT, pBuff1);
 
-    vTaskDelay(pdMS_TO_TICKS(10));
+  } else if (msg == BQ25756E_PET_WDG) {
+    // Pet watchdog
+    bq25756e_pet_wdg(&STAT, pBuff1);
 
-    // Read Charger Status
-    STAT=bq25756e_read_reg(REG_CHARGE_STATUS_1, pin_control);
-    printf("reg charge status 1: %d\n\r", pin_control[0]);
-    STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, pin_control);
-    printf("reg charge control: %d\n\r", pin_control[0]);
+  } else if (msg == BQ25756E_CHRG_DUMP) {
+    // Pretty print status to serial
+    bq25756e_dump_status(&STAT, pBuff1);
 
-  } else if (MSG == STOP) {
+  } else if (msg == BQ25756E_CHRG_STOP) {
     // Disable CE
-    STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, pin_control);
-    bq25756e_clear_bits(pin_control, BIT_CHARGE_ENABLE);
-    STAT=bq25756e_write_reg(REG_CHARGE_CONTROL, pin_control[0]);
+    bq25756e_charge_disable(&STAT, pBuff1);
   }
 
   return STAT;
 }
 
-
-uint8_t bq25756e_pet_wdg(void) {
-  uint8_t STAT;
-
-  // Read WDG reg
-  uint8_t wdg_reg[1];
-  STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, wdg_reg);
-  bq25756e_assert_bits(wdg_reg, BIT_WDG_RESET);
-
-  // Write WDG reg
-  STAT=bq25756e_write_reg(REG_CHARGE_CONTROL, wdg_reg[0]);
-  
-  return STAT;
+void bq25756e_charge_disable(uint8_t* STAT, uint8_t buff[]) {
+  // Charge disable
+  *STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, buff);
+  bq25756e_clear_bits(buff, BIT_CHARGE_ENABLE);
+  *STAT=bq25756e_write_reg(REG_CHARGE_CONTROL, buff[0]);
 }
 
+void bq25756e_dump_status(uint8_t *STAT, uint8_t buff[]){
+  // Dump charger status
+  *STAT=bq25756e_read_reg(REG_CHARGE_STATUS_1, buff);
+  printf("reg charge status 1: %d\n\r", buff[0]);
+  *STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, buff);
+  printf("reg charge control: %d\n\r", buff[0]);
+}
+
+void bq25756e_RevMode_disable(uint8_t* STAT, uint8_t buff[]) {
+  // Disable reverse mode (battery -> input)
+  *STAT=bq25756e_read_reg(REG_REVERSE_MODE, buff);
+  bq25756e_clear_bits(buff, BIT_REVERSE_MODE_ENABLE);
+  *STAT=bq25756e_write_reg(REG_REVERSE_MODE, buff[0]);
+}
+
+void bq25756e_TempSense_disable(uint8_t* STAT, uint8_t buff[]) {
+  // Disables temperature sense (HW temp sense is pulled low)
+  *STAT=bq25756e_read_reg(REG_TEMP, buff);
+  bq25756e_clear_bits(buff, BIT_TEMP_SENSE_ENABLE);
+  *STAT=bq25756e_write_reg(REG_TEMP, buff[0]);
+}
+
+void bq25756e_HiZ_disable(uint8_t* STAT, uint8_t buff[]) {
+  // Disables HiZ mode
+  *STAT=bq25756e_read_reg(REG_PIN_CONTROL, buff);
+  bq25756e_clear_bits(buff, BIT_HIZ_ENABLE);
+  *STAT=bq25756e_write_reg(REG_PIN_CONTROL, buff[0]);
+}
+
+void bq25756e_SW_Ichg_enable(uint8_t *STAT, uint8_t buff1[], uint8_t buff2[]) {
+  // Enables SW charge limit based on macros
+  *STAT=bq25756e_read_reg(REG_CHARGE_CURRENT_LIMIT_B, buff1); // 0x06 
+  *STAT=bq25756e_read_reg(REG_CHARGE_CURRENT_LIMIT_A, buff2); // 0x40 
+
+  bq25756e_clear_bits(buff1, BIT_CHARGE_CURRENT_FIELD_A); 
+  bq25756e_clear_bits(buff2, BIT_CHARGE_CURRENT_FIELD_B);
+  bq25756e_assert_bits(buff1, BIT_CHARGE_CURRENT_MASK_A);
+  bq25756e_assert_bits(buff2, BIT_CHARGE_CURRENT_MASK_B);
+
+  *STAT=bq25756e_write_reg(REG_CHARGE_CURRENT_LIMIT_B, buff1[0]);  
+  *STAT=bq25756e_write_reg(REG_CHARGE_CURRENT_LIMIT_A, buff2[0]); 
+}
+
+void bq25756e_HW_Ichg_disable(uint8_t* STAT, uint8_t buff[]) {
+  // Disables hardware charge limit
+  *STAT=bq25756e_read_reg(REG_PIN_CONTROL, buff);
+  bq25756e_clear_bits(buff, BIT_CHARGE_LIMIT_ENABLE);
+  *STAT=bq25756e_write_reg(REG_PIN_CONTROL, buff[0]);
+}
+
+void bq25756e_pet_wdg(uint8_t* STAT, uint8_t buff[]) {
+  *STAT=bq25756e_read_reg(REG_CHARGE_CONTROL, buff);
+  bq25756e_assert_bits(buff, BIT_WDG_RESET);
+  *STAT=bq25756e_write_reg(REG_CHARGE_CONTROL, buff[0]);
+}
 
 void bq25756e_write_ce(uint8_t value) {
   // SW write to charge enable pin 

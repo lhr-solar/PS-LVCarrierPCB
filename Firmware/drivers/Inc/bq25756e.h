@@ -2,6 +2,7 @@
 #include "stm32xx_hal.h"
 #include "pinDefs.h"
 #include "common.h"
+#include "commandLine.h"
 
 /**** DEVICE ADDRESSES  ****/
 #define DEVICE_ADDR 0x6a
@@ -47,14 +48,17 @@ static const uint8_t FAULT_BMAP_MASK = 0x90;
 
 // Host Message Types
 typedef enum {
-    STOP=0,
-    START
-} message_t;
+    BQ25756E_CHRG_START=0,
+    BQ25756E_CHRG_STOP,
+    BQ25756E_CHRG_DUMP,
+    BQ25756E_PET_WDG
+} bq25756e_message_t;
+
 
 typedef enum {
-    LOW=0,
-    HIGH
-} logic_t;
+    BQ25756E_LOGIC_LOW=0,
+    BQ25756E_LOGIC_HIGH
+} bq25756e_logic_t;
 
 /* Initializes I2C, GPIO, and hardware resources */
 void bq25756e_init(void);
@@ -72,8 +76,8 @@ void bq25756e_i2c4_init(void);
 void bq25756e_write_ce(uint8_t value);
 
 /* Enables/disables settings on I2C to start charging */
-uint8_t bq25756e_charge(message_t MSG);
+uint8_t bq25756e_charge(bq25756e_message_t MSG);
 
-uint8_t bq25756e_pet_wdg(void);
+void bq25756e_pet_wdg(uint8_t* stat);
 
 void bq25756e_gpio_init(void);
