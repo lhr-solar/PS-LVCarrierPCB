@@ -334,7 +334,6 @@ bq25756e_status_t bq25756e_i2c4_init(void)
   }
 
   return BQ25756E_OK;
-
 }
 
 
