@@ -270,6 +270,34 @@ void bq25756e_gpio_init(void)
   gpio_pin_init(BQ25756E_INT_PORT, BQ25756E_INT_PIN, INPUT);
 }
 
+void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    printf("TX!\n\r");
+    
+    xSemaphoreGiveFromISR(control, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    printf("TX!\n\r");
+    
+    xSemaphoreGiveFromISR(control, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+
+void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
+{
+    printf("rip!\n\r");
+
+    // todo
+}
+
 bq25756e_status_t bq25756e_i2c4_init(void)
 {
   HAL_NVIC_SetPriority(I2C4_EV_IRQn, 5, 0);
@@ -309,33 +337,6 @@ bq25756e_status_t bq25756e_i2c4_init(void)
 
 }
 
-void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
-{
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-    printf("TX!\n\r");
-    
-    xSemaphoreGiveFromISR(control, &xHigherPriorityTaskWoken);
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-}
-
-void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
-{
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-    printf("TX!\n\r");
-    
-    xSemaphoreGiveFromISR(control, &xHigherPriorityTaskWoken);
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-}
-
-
-void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
-{
-    printf("rip!\n\r");
-
-    // todo
-}
 
 void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
 {
