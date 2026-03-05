@@ -37,16 +37,6 @@ void initThread(){
                     &Task_SuppMon_Buffer
    );
 
-   xTaskCreateStatic(
-                    powerMuxMonitor,
-                    "Power Mux Monitor Task",
-                    TASK_POWER_MUX_MON_STACK_SIZE,
-                    (void*)NULL,
-                    TASK_POWER_MUX_MON_PRIO,
-                    Task_PowerMux_Stack_Array, 
-                    &Task_PowerMux_Buffer
-   );
-
     xTaskCreateStatic(
                     faultState,
                     "Fault State Task",

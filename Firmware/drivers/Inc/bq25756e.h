@@ -29,22 +29,17 @@ static const uint8_t BIT_TEMP_SENSE_ENABLE =    0x01;
 static const uint8_t BIT_REVERSE_MODE_ENABLE =    0x21;
 static const uint8_t BIT_CHARGE_CURRENT_FIELD_B = 0x07; // 0000 0111
 static const uint8_t BIT_CHARGE_CURRENT_FIELD_A = 0xFC; // 1111 1100
-
-/**** CHARGE CURRENT MASKS ****/
-// 5 A
-static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x01; 
-static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0x90; 
-
-// 2.6 A
-// static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x00; 
-// static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0xD0; 
-
-// 1 A
-// static const uint8_t BIT_CHARGE_CURRENT_MASK_B = 0x00; 
-// static const uint8_t BIT_CHARGE_CURRENT_MASK_A = 0x14;
+static const uint8_t BIT_CHARGE_STAT =    0x07;
 
 /**** FAULT BITMAP ****/
 static const uint8_t FAULT_BMAP_MASK = 0x90;
+
+/**** CHARGE CURRENT MASKS ****/
+typedef enum {
+    BQ25756E_5A_MASK    =   0x0190,
+    BQ25756E_2_6A_MASK  =   0x00D0,
+    BQ25756E_1A_MASK    =   0x0014,
+} bq25756e_chg_current_t;
 
 // Host Message Types
 typedef enum {
@@ -54,30 +49,38 @@ typedef enum {
     BQ25756E_PET_WDG
 } bq25756e_message_t;
 
-
 typedef enum {
     BQ25756E_LOGIC_LOW=0,
     BQ25756E_LOGIC_HIGH
 } bq25756e_logic_t;
 
+typedef enum {
+    BQ25756E_OK,
+    BQ25756E_INIT_FAIL,
+    BQ25756E_READ_FAIL,
+    BQ25756E_WRITE_FAIL,
+    BQ25756E_PIN_FAIL,
+    BQ25756E_TIMEOUT
+} bq25756e_status_t;
+
 /* Initializes I2C, GPIO, and hardware resources */
-void bq25756e_init(void);
+bq25756e_status_t bq25756e_init(void);
 
 /* Write to a register on chip (transmit w/ 2 bytes) */
-uint8_t bq25756e_write_reg(uint8_t reg, uint8_t data);
+bq25756e_status_t bq25756e_write_reg(uint8_t reg, uint8_t data);
 
 /* Read a register on chip (transmit + receive) */
-uint8_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer);
+bq25756e_status_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer);
 
 /* Initializes I2C peripheral */
-void bq25756e_i2c4_init(void);
+bq25756e_status_t bq25756e_i2c4_init(void);
 
 /* Pulls CE pin in software to low or high (LOW enables charging) */
-void bq25756e_write_ce(uint8_t value);
+void bq25756e_write_ce(bq25756e_logic_t val);
 
 /* Enables/disables settings on I2C to start charging */
-uint8_t bq25756e_charge(bq25756e_message_t MSG);
+bq25756e_status_t bq25756e_charge(bq25756e_message_t MSG);
 
-void bq25756e_pet_wdg(uint8_t* stat);
+bq25756e_status_t bq25756e_pet_wdg(uint8_t* buffer);
 
 void bq25756e_gpio_init(void);
