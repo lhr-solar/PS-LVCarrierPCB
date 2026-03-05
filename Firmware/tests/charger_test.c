@@ -18,34 +18,21 @@ StackType_t faultTaskStack[configMINIMAL_STACK_SIZE];
 void BqTask(void *argument){
     ltc4421_shdn_enable(ON);
     faultBits_init();
-    
-    printf("wha\n\r");
-    statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
-    uint8_t buffer[1];
-    bq25756e_status_t stat;
+    faultBit_wait(BQ25756E_PREREQ_LTC_VALID, portMAX_DELAY);
+    faultBit_wait(BQ25756E_PREREQ_SUPP_VALID, portMAX_DELAY);
 
-    // Pend on fault bitmap
-    // faultBit_wait(MAX_FAULT_BITS, portMAX_DELAY);
-
-    // uint8_t STAT;
-    printf("yur!\n\r");
-    stat=bq25756e_charge(BQ25756E_CHRG_START);
-    if (stat != BQ25756E_OK) printf("Cooked:  %d \n\r", stat);
+    bq25756e_charge(BQ25756E_CHRG_START);
 
     while (1) {
-        printf("in her3!\n\r");
+        // todo: check for more faults
         if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
-            bq25756e_write_ce(BQ25756E_LOGIC_HIGH);
             bq25756e_charge(BQ25756E_CHRG_STOP);
             vTaskDelete(NULL);
         }  
 
-        // Dump status
-        bq25756e_read_reg(REG_CHARGE_STATUS_1, buffer);
-        printf("Charge status reg: %d\n\r", buffer[0]);
-
-        printf("toggling!\n\r");
+        // Dump status and continue
+        bq25756e_charge(BQ25756E_CHRG_DUMP);
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
@@ -53,12 +40,16 @@ void BqTask(void *argument){
 
 
 void FaultTask(void *argument){
+    // Signal LTC and supp good
+    xEventGroupSetBits(BQ25756E_preReqBits, FAULT_BIT(BQ25756E_PREREQ_LTC_VALID)); 
+    xEventGroupSetBits(BQ25756E_preReqBits, FAULT_BIT(BQ25756E_PREREQ_SUPP_VALID));
+
     // Trip fault after 10s
     vTaskDelay(pdMS_TO_TICKS(10000)); 
-    // throw a random fault
+    // Throw a random fault
     while (1) {  
         vTaskDelay(pdMS_TO_TICKS(500));
-        set_faultBit(FAULT_SUPPREG_UNDERVOLTAGE);  
+        set_faultBit(FAULT_SUPPREG_UNDERVOLTAGE);      
     }
 }
 

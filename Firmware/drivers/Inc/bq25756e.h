@@ -3,6 +3,7 @@
 #include "pinDefs.h"
 #include "common.h"
 #include "commandLine.h"
+#include "event_groups.h"
 
 /**** DEVICE ADDRESSES  ****/
 #define DEVICE_ADDR 0x6a
@@ -62,6 +63,14 @@ typedef enum {
     BQ25756E_PIN_FAIL,
     BQ25756E_TIMEOUT
 } bq25756e_status_t;
+
+typedef enum {
+    BQ25756E_PREREQ_LTC_VALID,
+    BQ25756E_PREREQ_SUPP_VALID
+} bq25756e_prereqs_t;
+
+extern EventGroupHandle_t BQ25756E_preReqBits;
+extern StaticEventGroup_t BQ25756E_preReqBitsBuffer;
 
 /* Initializes I2C, GPIO, and hardware resources */
 bq25756e_status_t bq25756e_init(void);

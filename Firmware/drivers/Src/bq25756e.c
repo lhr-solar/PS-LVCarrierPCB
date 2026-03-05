@@ -6,6 +6,10 @@ I2C_HandleTypeDef hi2c4;
 SemaphoreHandle_t control = NULL;
 static StaticSemaphore_t xSemaphoreBuffer;
 
+// Prereq Bitmap
+EventGroupHandle_t BQ25756E_preReqBits;
+StaticEventGroup_t BQ25756E_preReqBitsBuffer;
+
 void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring);
 void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
 
@@ -24,13 +28,10 @@ bq25756e_status_t bq25756e_charge(bq25756e_message_t msg) {
 
   if (msg == BQ25756E_CHRG_START) {
     // Disable Charge Limit
-    printf("hi1!\n\r");
     STAT=bq25756e_HW_Ichg_disable(pBuff1);
     // Write Charge Limit
-    printf("hi2!\n\r");
     STAT=bq25756e_SW_Ichg_enable(pBuff1, pBuff2);
     // Disable Hi Z
-    printf("hi3!\n\r");
     STAT=bq25756e_HiZ_disable(pBuff1);
     // Disable Temp Sense
     STAT=bq25756e_TempSense_disable(pBuff1);
@@ -206,22 +207,21 @@ void bq25756e_write_ce(bq25756e_logic_t value) {
 
 bq25756e_status_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer) {
   // TX
-  if (xSemaphoreTake(control, pdMS_TO_TICKS(portMAX_DELAY)) != pdTRUE) {
-      return BQ25756E_TIMEOUT;
-  }
   if ( HAL_I2C_Master_Transmit_IT(&hi2c4, (DEVICE_ADDR << 1), &reg, 1) != HAL_OK) {
     return BQ25756E_READ_FAIL;
   }
-
-  printf("one semaphore taken!\n\r");
-
-  // RX
   if (xSemaphoreTake(control, pdMS_TO_TICKS(portMAX_DELAY)) != pdTRUE) {
       return BQ25756E_TIMEOUT;
   }
+
+  // RX
   if ( HAL_I2C_Master_Receive_IT(&hi2c4, (DEVICE_ADDR << 1), buffer, 1) != HAL_OK) {
     return BQ25756E_READ_FAIL;
   }
+  if (xSemaphoreTake(control, pdMS_TO_TICKS(portMAX_DELAY)) != pdTRUE) {
+      return BQ25756E_TIMEOUT;
+  }
+
   return BQ25756E_OK;
 }
 
@@ -248,7 +248,12 @@ bq25756e_status_t bq25756e_init(void) {
 
   // Init semaphore
   control = xSemaphoreCreateBinaryStatic( &xSemaphoreBuffer );
-  if (control != NULL) xSemaphoreGive( control ); // open for grabs
+
+  // Prereq Bits
+  BQ25756E_preReqBits = xEventGroupCreateStatic( &BQ25756E_preReqBitsBuffer );
+  if(BQ25756E_preReqBits == NULL){
+    STAT=BQ25756E_INIT_FAIL;
+  }
 
   return STAT;
 }
@@ -300,10 +305,6 @@ void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
 
 bq25756e_status_t bq25756e_i2c4_init(void)
 {
-  HAL_NVIC_SetPriority(I2C4_EV_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(I2C4_EV_IRQn);
-  HAL_NVIC_SetPriority(I2C4_ER_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(I2C4_ER_IRQn);
 
   hi2c4.Instance = I2C4;
   hi2c4.Init.Timing = 0x00503D58;
@@ -337,12 +338,16 @@ bq25756e_status_t bq25756e_i2c4_init(void)
 }
 
 
-void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
+void HAL_I2C_MspInit(I2C_HandleTypeDef* hi2c)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
-  if(i2cHandle->Instance==I2C4)
+  if(hi2c->Instance==I2C4)
   {
+    /* USER CODE BEGIN I2C4_MspInit 0 */
+
+    /* USER CODE END I2C4_MspInit 0 */
+
   /** Initializes the peripherals clocks
   */
     PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_I2C4;
@@ -359,21 +364,33 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
     */
     GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
-    GPIO_InitStruct.Pull = GPIO_PULLUP; // GPIO_NOPULL
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.Alternate = GPIO_AF8_I2C4;
     HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-    /* I2C4 clock enable */
+    /* Peripheral clock enable */
     __HAL_RCC_I2C4_CLK_ENABLE();
+    /* I2C4 interrupt Init */
+    HAL_NVIC_SetPriority(I2C4_EV_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(I2C4_EV_IRQn);
+    HAL_NVIC_SetPriority(I2C4_ER_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(I2C4_ER_IRQn);
+    /* USER CODE BEGIN I2C4_MspInit 1 */
+
+    /* USER CODE END I2C4_MspInit 1 */
+
   }
+
 }
 
-void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
+void HAL_I2C_MspDeInit(I2C_HandleTypeDef* hi2c)
 {
-
-  if(i2cHandle->Instance==I2C4)
+  if(hi2c->Instance==I2C4)
   {
+    /* USER CODE BEGIN I2C4_MspDeInit 0 */
+
+    /* USER CODE END I2C4_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_I2C4_CLK_DISABLE();
 
@@ -384,5 +401,27 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
     HAL_GPIO_DeInit(GPIOC, GPIO_PIN_6);
 
     HAL_GPIO_DeInit(GPIOC, GPIO_PIN_7);
+
+    /* I2C4 interrupt DeInit */
+    HAL_NVIC_DisableIRQ(I2C4_EV_IRQn);
+    HAL_NVIC_DisableIRQ(I2C4_ER_IRQn);
+    /* USER CODE BEGIN I2C4_MspDeInit 1 */
+
+    /* USER CODE END I2C4_MspDeInit 1 */
   }
+}
+
+void I2C4_EV_IRQHandler(void)
+{
+  printf("IRQ\n\r");
+  HAL_I2C_EV_IRQHandler(&hi2c4);
+}
+
+/**
+  * @brief This function handles I2C4 error interrupt.
+  */
+void I2C4_ER_IRQHandler(void)
+{
+  printf("IRQ\n\r");
+  HAL_I2C_ER_IRQHandler(&hi2c4);
 }
