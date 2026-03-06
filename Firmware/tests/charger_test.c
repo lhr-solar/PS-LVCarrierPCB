@@ -19,17 +19,17 @@ void BqTask(void *argument){
     ltc4421_shdn_enable(ON);
     faultBits_init();
 
-    faultBit_wait(BQ25756E_PREREQ_LTC_VALID, portMAX_DELAY);
-    faultBit_wait(BQ25756E_PREREQ_SUPP_VALID, portMAX_DELAY);
+    // faultBit_wait(BQ25756E_PREREQ_LTC_VALID, portMAX_DELAY);
+    // faultBit_wait(BQ25756E_PREREQ_SUPP_VALID, portMAX_DELAY);
 
     bq25756e_charge(BQ25756E_CHRG_START);
 
     while (1) {
         // todo: check for more faults
-        if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
-            bq25756e_charge(BQ25756E_CHRG_STOP);
-            vTaskDelete(NULL);
-        }  
+        // if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
+        //     bq25756e_charge(BQ25756E_CHRG_STOP);
+        //     vTaskDelete(NULL);
+        // }  
 
         // Dump status and continue
         bq25756e_charge(BQ25756E_CHRG_DUMP);
@@ -41,8 +41,8 @@ void BqTask(void *argument){
 
 void FaultTask(void *argument){
     // Signal LTC and supp good
-    xEventGroupSetBits(BQ25756E_preReqBits, FAULT_BIT(BQ25756E_PREREQ_LTC_VALID)); 
-    xEventGroupSetBits(BQ25756E_preReqBits, FAULT_BIT(BQ25756E_PREREQ_SUPP_VALID));
+    // xEventGroupSetBits(BQ25756E_preReqBits, FAULT_BIT(BQ25756E_PREREQ_LTC_VALID)); 
+    // xEventGroupSetBits(BQ25756E_preReqBits, FAULT_BIT(BQ25756E_PREREQ_SUPP_VALID));
 
     // Trip fault after 10s
     vTaskDelay(pdMS_TO_TICKS(10000)); 

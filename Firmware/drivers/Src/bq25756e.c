@@ -278,8 +278,6 @@ void bq25756e_gpio_init(void)
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-    printf("TX!\n\r");
     
     xSemaphoreGiveFromISR(control, &xHigherPriorityTaskWoken);
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
@@ -288,8 +286,6 @@ void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-    printf("TX!\n\r");
     
     xSemaphoreGiveFromISR(control, &xHigherPriorityTaskWoken);
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
@@ -298,8 +294,6 @@ void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
 
 void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
 {
-    printf("rip!\n\r");
-
     // todo
 }
 
@@ -413,7 +407,6 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* hi2c)
 
 void I2C4_EV_IRQHandler(void)
 {
-  printf("IRQ\n\r");
   HAL_I2C_EV_IRQHandler(&hi2c4);
 }
 
@@ -422,6 +415,5 @@ void I2C4_EV_IRQHandler(void)
   */
 void I2C4_ER_IRQHandler(void)
 {
-  printf("IRQ\n\r");
   HAL_I2C_ER_IRQHandler(&hi2c4);
 }
