@@ -16,8 +16,8 @@ StaticTask_t faultTaskBuffer;
 StackType_t faultTaskStack[configMINIMAL_STACK_SIZE];
 
 void BqTask(void *argument){
-    ltc4421_shdn_enable(ON);
-    faultBits_init();
+    // ltc4421_shdn_enable(ON);
+    // faultBits_init();
 
     // faultBit_wait(BQ25756E_PREREQ_LTC_VALID, portMAX_DELAY);
     // faultBit_wait(BQ25756E_PREREQ_SUPP_VALID, portMAX_DELAY);
@@ -26,15 +26,15 @@ void BqTask(void *argument){
 
     while (1) {
         // todo: check for more faults
-        // if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
+        // if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(portMAX_DELAY)) != pdFALSE) {
         //     bq25756e_charge(BQ25756E_CHRG_STOP);
         //     vTaskDelete(NULL);
         // }  
 
-        // Dump status and continue
-        bq25756e_charge(BQ25756E_CHRG_DUMP);
-        statusLeds_toggle(LSOM_HEARTBEAT_LED);
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        // // Dump status and continue
+        // bq25756e_charge(BQ25756E_CHRG_DUMP);
+        // statusLeds_toggle(LSOM_HEARTBEAT_LED);
+        // vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
 
@@ -74,13 +74,13 @@ int main()
                      &bqTaskBuffer);
 
 
-    xTaskCreateStatic(FaultTask, 
-                     "Fault test",
-                     configMINIMAL_STACK_SIZE,
-                     NULL,
-                     tskIDLE_PRIORITY + 2,
-                     faultTaskStack,
-                     &faultTaskBuffer);
+    // xTaskCreateStatic(FaultTask, 
+    //                  "Fault test",
+    //                  configMINIMAL_STACK_SIZE,
+    //                  NULL,
+    //                  tskIDLE_PRIORITY + 2,
+    //                  faultTaskStack,
+    //                  &faultTaskBuffer);
 
     vTaskStartScheduler();
     
