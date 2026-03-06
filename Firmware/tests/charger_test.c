@@ -34,7 +34,8 @@ void BqTask(void *argument){
         // // Dump status and continue
         // bq25756e_charge(BQ25756E_CHRG_DUMP);
         // statusLeds_toggle(LSOM_HEARTBEAT_LED);
-        // vTaskDelay(pdMS_TO_TICKS(1000));
+        bq25756e_charge(BQ25756E_CHRG_START);
+        vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
 
