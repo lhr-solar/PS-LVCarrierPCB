@@ -231,11 +231,12 @@ bq25756e_status_t bq25756e_write_reg(uint8_t reg, uint8_t data) {
   payload[0]=reg;
   payload[1]=data;
 
-  if (xSemaphoreTake(control, pdMS_TO_TICKS(portMAX_DELAY)) != pdTRUE) {
-      return BQ25756E_TIMEOUT;
-  }
   if (HAL_I2C_Master_Transmit_IT (&hi2c4, (DEVICE_ADDR << 1), payload, 2) != HAL_OK) {
     return BQ25756E_WRITE_FAIL;
+  }
+
+  if (xSemaphoreTake(control, pdMS_TO_TICKS(portMAX_DELAY)) != pdTRUE) {
+      return BQ25756E_TIMEOUT;
   }
 
   return BQ25756E_OK;
@@ -294,7 +295,12 @@ void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
 
 void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
 {
-    // todo
+    // kinda scuffed cuz if NAK hits this callback so still release
+
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    
+    xSemaphoreGiveFromISR(control, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
 bq25756e_status_t bq25756e_i2c4_init(void)
