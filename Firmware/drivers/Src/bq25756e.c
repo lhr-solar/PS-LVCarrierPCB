@@ -331,6 +331,8 @@ void bq25756e_gpio_init(void)
 
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
+     statusLeds_toggle(LSOM_HEARTBEAT_LED);
+
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
     
     xSemaphoreGiveFromISR(control, &xHigherPriorityTaskWoken);
@@ -339,6 +341,8 @@ void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 
 void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
+     statusLeds_toggle(LSOM_HEARTBEAT_LED);
+
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
     
     xSemaphoreGiveFromISR(control, &xHigherPriorityTaskWoken);
@@ -349,6 +353,7 @@ void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
 void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
 {
     // kinda scuffed cuz if NAK hits this callback so still release
+     statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
     

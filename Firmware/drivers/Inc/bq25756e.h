@@ -4,6 +4,7 @@
 #include "common.h"
 #include "commandLine.h"
 #include "event_groups.h"
+#include "statusLeds.h"
 
 /**** DEVICE ADDRESSES  ****/
 #define DEVICE_ADDR 0x6a
