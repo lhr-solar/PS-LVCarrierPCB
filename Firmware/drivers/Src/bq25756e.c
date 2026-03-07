@@ -15,6 +15,7 @@ bq25756e_status_t bq25756e_HiZ_disable(uint8_t buff1[]);
 bq25756e_status_t bq25756e_SW_Ichg_enable(uint8_t buff1[], uint8_t buff2[]);
 bq25756e_status_t bq25756e_HW_Ichg_disable(uint8_t buff[]);
 bq25756e_status_t bq25756e_dump_status(uint8_t buff[]);
+bq25756e_status_t bq25756e_dump_faults(uint8_t buff[]);
 bq25756e_status_t bq25756e_charge_disable(uint8_t buff[]);
 
 /* PREREQ BITS IMPLEMENTATION */
@@ -90,6 +91,9 @@ bq25756e_status_t bq25756e_charge(bq25756e_message_t msg) {
     // Pretty print status to serial
     STAT=bq25756e_dump_status(pBuff1);
 
+  } else if (msg == BQ25756E_CHRG_DUMP_FAULT) {
+    STAT=bq25756e_dump_faults(pBuff1);
+
   } else if (msg == BQ25756E_CHRG_STOP) {
     // Disable CE
     STAT=bq25756e_charge_disable(pBuff1);
@@ -139,6 +143,16 @@ bq25756e_status_t bq25756e_dump_status(uint8_t buff[]){
       printf("Charge Termination Done. \n\r"); break;
     default: break;
   }
+
+  return BQ25756E_OK;
+}
+
+bq25756e_status_t bq25756e_dump_faults(uint8_t buff[]) {
+  if (bq25756e_read_reg(REG_FAULT_STATUS, buff) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+
+  printf("Faults: %d \n\r", buff[0]);
 
   return BQ25756E_OK;
 }
