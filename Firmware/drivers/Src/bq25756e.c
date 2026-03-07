@@ -6,10 +6,6 @@ I2C_HandleTypeDef hi2c4;
 SemaphoreHandle_t control = NULL;
 static StaticSemaphore_t xSemaphoreBuffer;
 
-// Prereq Bitmap
-EventGroupHandle_t BQ25756E_preReqBits;
-StaticEventGroup_t BQ25756E_preReqBitsBuffer;
-
 void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring);
 void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
 
@@ -20,6 +16,52 @@ bq25756e_status_t bq25756e_SW_Ichg_enable(uint8_t buff1[], uint8_t buff2[]);
 bq25756e_status_t bq25756e_HW_Ichg_disable(uint8_t buff[]);
 bq25756e_status_t bq25756e_dump_status(uint8_t buff[]);
 bq25756e_status_t bq25756e_charge_disable(uint8_t buff[]);
+
+/* PREREQ BITS IMPLEMENTATION */
+
+EventGroupHandle_t BQ25756E_preReqBits;
+StaticEventGroup_t BQ25756E_preReqBitsBuffer;
+
+uint8_t bq25756e_preReqBits_init(void){
+    BQ25756E_preReqBits = xEventGroupCreateStatic( &BQ25756E_preReqBitsBuffer );
+    if(BQ25756E_preReqBits == NULL){
+        return 0;
+    }
+    return 1;
+}
+
+void bq25756e_set_preReqBit(bq25756e_prereqs_t bit){
+    // not a valid fault
+    if(bit >= BQ25756E_NUM_PREREQS){ 
+        return;
+    }
+
+    // chat we're cooked
+    xEventGroupSetBits(BQ25756E_preReqBits, (1 << bit) );
+    // should never return from here
+    taskYIELD();
+}
+
+EventBits_t bq25756e_preReqBit_wait(bq25756e_prereqs_t bit, TickType_t xTicksToWait){
+
+    // NUM_FAULTS indiciates you want to wait for all bits
+    if(bit > BQ25756E_NUM_PREREQS){
+        return 0;
+    }
+
+    // if NUM
+    EventBits_t uxBitsToWaitFor = bit == BQ25756E_NUM_PREREQS ? ((1 << BQ25756E_NUM_PREREQS) - 1) : (1 << bit);
+
+    EventBits_t pending = xEventGroupWaitBits(
+        BQ25756E_preReqBits,
+        uxBitsToWaitFor,  // wait for any defined fault
+        pdFALSE,          // fault bits are not reset
+        pdFALSE,          // wait for ANY bit to be set
+        xTicksToWait 
+    );
+    return pending;
+}
+
 
 bq25756e_status_t bq25756e_charge(bq25756e_message_t msg) {
   bq25756e_status_t STAT=BQ25756E_OK;
@@ -251,10 +293,7 @@ bq25756e_status_t bq25756e_init(void) {
   control = xSemaphoreCreateBinaryStatic( &xSemaphoreBuffer );
 
   // Prereq Bits
-  BQ25756E_preReqBits = xEventGroupCreateStatic( &BQ25756E_preReqBitsBuffer );
-  if(BQ25756E_preReqBits == NULL){
-    STAT=BQ25756E_INIT_FAIL;
-  }
+  bq25756e_preReqBits_init();
 
   return STAT;
 }

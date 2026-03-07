@@ -66,11 +66,18 @@ typedef enum {
 
 typedef enum {
     BQ25756E_PREREQ_LTC_VALID,
-    BQ25756E_PREREQ_SUPP_VALID
+    BQ25756E_PREREQ_SUPP_VALID,
+    BQ25756E_NUM_PREREQS
 } bq25756e_prereqs_t;
 
 extern EventGroupHandle_t BQ25756E_preReqBits;
 extern StaticEventGroup_t BQ25756E_preReqBitsBuffer;
+
+uint8_t bq25756e_preReqBits_init(void);
+
+void bq25756e_set_preReqBit(bq25756e_prereqs_t bit);
+
+EventBits_t bq25756e_preReqBit_wait(bq25756e_prereqs_t bit, TickType_t xTicksToWait);
 
 /* Initializes I2C, GPIO, and hardware resources */
 bq25756e_status_t bq25756e_init(void);
