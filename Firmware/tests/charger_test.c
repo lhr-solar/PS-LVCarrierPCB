@@ -19,12 +19,17 @@ void BqTask(void *argument){
     ltc4421_shdn_enable(ON);
     faultBits_init();
 
+    // bq25756e_charge(BQ25756E_CHRG_STOP);
     vTaskDelay(pdMS_TO_TICKS(1000));
 
+    // bq25756e_charge(BQ25756E_CHRG_STOP);
+    
     bq25756e_preReqBit_wait(BQ25756E_PREREQ_LTC_VALID, portMAX_DELAY);
     // faultBit_wait(BQ25756E_PREREQ_SUPP_VALID, portMAX_DELAY);
 
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
+    // bq25756e_charge(BQ25756E_CHRG_START);
+    // bq25756e_charge(BQ25756E_CHRG_STOP);
     bq25756e_charge(BQ25756E_CHRG_START);
 
     while (1) {
@@ -70,8 +75,9 @@ int main()
     ltc4421_gpio_init();
 
     vTaskDelay(pdMS_TO_TICKS(500));
-    bq25756e_write_ce(BQ25756E_LOGIC_HIGH);
+    bq25756e_write_ce(BQ25756E_LOGIC_LOW);
     // bq25756e_charge(BQ25756E_CHRG_STOP);
+    
     ltc4421_shdn_enable(OFF);
 
     xTaskCreateStatic(BqTask, 
