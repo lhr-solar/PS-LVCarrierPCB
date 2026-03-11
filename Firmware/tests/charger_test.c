@@ -9,6 +9,9 @@
 /* Define Charge Limit */  
 #define CHG_LIM_1   // 1 amp
 
+#define MS_DELAY_100 pdMS_TO_TICKS(100) 
+#define MS_DELAY_500 pdMS_TO_TICKS(500) 
+
 StaticTask_t bqTaskBuffer;
 StackType_t bqTaskStack[configMINIMAL_STACK_SIZE];
 
@@ -16,7 +19,6 @@ StaticTask_t faultTaskBuffer;
 StackType_t faultTaskStack[configMINIMAL_STACK_SIZE];
 
 void BqTask(void *argument){
-    ltc4421_shdn_enable(ON);
     faultBits_init();
 
     // bq25756e_charge(BQ25756E_CHRG_STOP);
@@ -30,7 +32,7 @@ void BqTask(void *argument){
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
     // bq25756e_charge(BQ25756E_CHRG_START);
     // bq25756e_charge(BQ25756E_CHRG_STOP);
-    bq25756e_charge(BQ25756E_CHRG_START);
+    bq25756e_charge(portMAX_DELAY);
 
     while (1) {
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
@@ -41,8 +43,8 @@ void BqTask(void *argument){
         // }  
 
         // // Dump status and continue
-        bq25756e_charge(BQ25756E_CHRG_DUMP);
-        bq25756e_charge(BQ25756E_PET_WDG);
+        bq25756e_dump_status(portMAX_DELAY); 
+        bq25756e_pet_wdg(portMAX_DELAY);
         // bq25756e_charge(BQ25756E_CHRG_START);
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
@@ -72,13 +74,10 @@ int main()
     statusLeds_init();
     bq25756e_init();
     command_line_init();
-    ltc4421_gpio_init();
 
     vTaskDelay(pdMS_TO_TICKS(500));
     bq25756e_write_ce(BQ25756E_LOGIC_LOW);
     // bq25756e_charge(BQ25756E_CHRG_STOP);
-    
-    ltc4421_shdn_enable(OFF);
 
     xTaskCreateStatic(BqTask, 
                      "BQ test",

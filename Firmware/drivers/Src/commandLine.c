@@ -14,8 +14,6 @@ void command_line_init(void)
     husart3->Init.HwFlowCtl = UART_HWCONTROL_NONE;
     husart3->Init.OverSampling = UART_OVERSAMPLING_16;
 
-    HAL_GPIO_TogglePin(LSOM_HEARTBEAT_LED_PORT, LSOM_HEARTBEAT_LED_PIN);
-
     printf_init(husart3);
 }
 

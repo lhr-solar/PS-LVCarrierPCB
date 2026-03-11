@@ -26,7 +26,6 @@ void initThread(){
                     &Task_PowerMux_Buffer
    );
 
-
     xTaskCreateStatic(
                     supplementalMonitor,
                     "Supplemental Monitor Task",

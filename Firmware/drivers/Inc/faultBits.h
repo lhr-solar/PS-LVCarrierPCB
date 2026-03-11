@@ -1,5 +1,4 @@
 #pragma once
-
 #include "FreeRTOS.h"
 #include "stm32xx_hal.h"
 #include "common.h"
