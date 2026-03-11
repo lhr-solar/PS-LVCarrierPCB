@@ -4,23 +4,44 @@
 
 #define ADC_ITEM_SIZE       sizeof( uint32_t )
 
-static uint8_t suppVoltage_static_storage[ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
+#define SUPP_QUEUE_LENGTH  ADC_QUEUE_LENGTH
+#define SUPP_REG_QUEUE_LENGTH   ADC_QUEUE_LENGTH
+
+#define COMBINED_LENGTH ( SUPP_QUEUE_LENGTH + SUPP_REG_QUEUE_LENGTH )
+
+static uint8_t suppVoltage_static_storage[SUPP_QUEUE_LENGTH * ADC_ITEM_SIZE];
 static StaticQueue_t suppVoltageQueueBuffer;
 static QueueHandle_t suppVoltageRecvQ;
 
-static uint8_t suppReg_static_storage[ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
+static uint8_t suppReg_static_storage[SUPP_REG_QUEUE_LENGTH * ADC_ITEM_SIZE];
 static StaticQueue_t suppRegQueueBuffer;
 static QueueHandle_t suppRegRecvQ;
 
 
-static uint8_t suppCurrent_static_storage[ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
+static uint8_t suppCurrent_static_storage[SUPP_QUEUE_LENGTH * ADC_ITEM_SIZE];
 static StaticQueue_t suppCurrentQueueBuffer;
 static QueueHandle_t suppCurrentRecvQ;
 
-static uint8_t suppRegCurrent_static_storage[ADC_QUEUE_LENGTH * ADC_ITEM_SIZE];
+static uint8_t suppRegCurrent_static_storage[SUPP_REG_QUEUE_LENGTH * ADC_ITEM_SIZE];
 static StaticQueue_t suppRegCurrentQueueBuffer;
 static QueueHandle_t suppRegCurrentRecvQ;
 
+
+// Queue Set Definitions
+static QueueSetHandle_t suppQSet;
+static StaticQueue_t static_suppQset;
+static uint8_t suppQSet_static_storage[ COMBINED_LENGTH * ADC_ITEM_SIZE ];
+
+static QueueSetHandle_t suppRegQSet;
+static StaticQueue_t static_suppRegQSet;
+static uint8_t suppRegQSet_static_storage[ COMBINED_LENGTH * ADC_ITEM_SIZE ];
+
+// Semaphores for Queue Set Arbitration
+SemaphoreHandle_t supp_adc_semphr = NULL;
+StaticSemaphore_t supp_semphr_buffer;
+
+SemaphoreHandle_t reg_adc_semphr = NULL;
+StaticSemaphore_t reg_semphr_buffer;
 
 // ADC1
 static ADC_ChannelConfTypeDef suppCurrent_adc_cfg = {
@@ -195,6 +216,27 @@ adc_status_t adc_sense_init(void){
         return ADC_INIT_FAIL;
     }
 
+    // Init Queue Sets
+    suppQSet = xQueueCreateSetStatic( COMBINED_LENGTH, suppQSet_static_storage, &static_suppQset );
+    if (suppQSet == NULL) {
+        return ADC_INIT_FAIL;
+    }
+    suppRegQSet = xQueueCreateSetStatic( COMBINED_LENGTH, suppRegQSet_static_storage, &static_suppRegQSet );
+    if (suppRegQSet == NULL) {
+        return ADC_INIT_FAIL;
+    }
+
+    xQueueAddToSet(suppVoltageRecvQ, suppQSet);
+    xQueueAddToSet(suppCurrentRecvQ, suppQSet);
+
+    xQueueAddToSet(suppRegRecvQ, suppRegQSet);
+    xQueueAddToSet(suppRegCurrentRecvQ, suppRegQSet);
+
+    supp_adc_semphr = xSemaphoreCreateBinaryStatic( &supp_semphr_buffer );
+    reg_adc_semphr = xSemaphoreCreateBinaryStatic( &reg_semphr_buffer );
+    xSemaphoreGive(supp_adc_semphr);
+    xSemaphoreGive(reg_adc_semphr);
+
     if (adc1_init() != ADC_OK){
       return ADC_INIT_FAIL;
     }
@@ -211,20 +253,25 @@ adc_status_t adc_sense_init(void){
 
 }
 
-adc_status_t adc_start_read(adc_sense_channel_t channel)
+adc_status_t adc_start_read(adc_sense_channel_t channel, TickType_t delay_ticks)
 {
   switch (channel)
   {
     case SUPPLEMENTAL_BATTERY_VOLTAGE:
+        xSemaphoreTake(supp_adc_semphr, delay_ticks);
         return adc_read(hadc2, &suppVoltage_adc_cfg, suppVoltageRecvQ);
+        
 
     case SUPPLEMENTAL_BATTERY_CURRENT:
+        xSemaphoreTake(supp_adc_semphr, delay_ticks);
         return adc_read(hadc1, &suppCurrent_adc_cfg, suppCurrentRecvQ);
 
     case REGULATED_BATTERY_VOLTAGE:
+        xSemaphoreTake(reg_adc_semphr, delay_ticks);
         return adc_read(hadc1, &suppReg_adc_cfg, suppRegRecvQ);
 
     case REGULATED_BATTERY_CURRENT:
+        xSemaphoreTake(reg_adc_semphr, delay_ticks);
         return adc_read(hadc2, &suppRegCurrent_adc_cfg, suppRegCurrentRecvQ);
 
     default:
@@ -234,31 +281,70 @@ adc_status_t adc_start_read(adc_sense_channel_t channel)
 
 BaseType_t adc_read_value(adc_sense_channel_t channel, uint32_t *result, TickType_t delay_ticks){
   BaseType_t readStatus = pdFALSE;
-  switch (channel)
-  {
-    case SUPPLEMENTAL_BATTERY_VOLTAGE:
+  QueueSetMemberHandle_t activeQ;
+
+  if (channel == SUPPLEMENTAL_BATTERY_VOLTAGE || channel == SUPPLEMENTAL_BATTERY_CURRENT) {
+    activeQ = xQueueSelectFromSet( suppQSet, delay_ticks );
+    if (activeQ == suppVoltageRecvQ) {
+      
+      if (channel == SUPPLEMENTAL_BATTERY_VOLTAGE) {
+        // signal done conversion
         readStatus = xQueueReceive(suppVoltageRecvQ, result, delay_ticks);
-        break;
+        if (readStatus == pdPASS)  xSemaphoreGive(supp_adc_semphr); 
 
-    case SUPPLEMENTAL_BATTERY_CURRENT:
+      } else {
+        // wait for conversion
         readStatus = xQueueReceive(suppCurrentRecvQ, result, delay_ticks);
-        break;
+        if (readStatus == pdPASS)  xSemaphoreGive(supp_adc_semphr);
+        
+      }
+    } else if (activeQ == suppCurrentRecvQ) {
+     
+      if (channel == SUPPLEMENTAL_BATTERY_CURRENT) {
+        // signal done conversion
+        readStatus = xQueueReceive(suppCurrentRecvQ, result, delay_ticks);
+        if (readStatus == pdPASS) xSemaphoreGive(supp_adc_semphr);
+        
+      } else {
+        // wait for conversion
+        readStatus = xQueueReceive(suppVoltageRecvQ, result, delay_ticks);
+        if (readStatus == pdPASS)  xSemaphoreGive(supp_adc_semphr); 
 
-    case REGULATED_BATTERY_VOLTAGE:
+      }
+    }
 
+  } else if (channel == REGULATED_BATTERY_VOLTAGE || channel == REGULATED_BATTERY_CURRENT) {
+    activeQ = xQueueSelectFromSet( suppRegQSet, delay_ticks );
+    if (activeQ == suppRegRecvQ) {
+
+      if (channel == REGULATED_BATTERY_VOLTAGE) {
+        // signal done conversion
         readStatus = xQueueReceive(suppRegRecvQ, result, delay_ticks);
-
-        break;
-
-    case REGULATED_BATTERY_CURRENT:
+        if (readStatus == pdPASS) xSemaphoreGive(reg_adc_semphr);
+        
+      } else {
+        // wait for conversion
         readStatus = xQueueReceive(suppRegCurrentRecvQ, result, delay_ticks);
-        break;
+        if (readStatus == pdPASS) xSemaphoreGive(reg_adc_semphr);
+      
+      }
+    } else if (activeQ == suppRegCurrentRecvQ) {
+      
+      if (channel == REGULATED_BATTERY_CURRENT) {
+        // signal done conversion
+        readStatus = xQueueReceive(suppRegCurrentRecvQ, result, delay_ticks);
+        if (readStatus == pdPASS) xSemaphoreGive(reg_adc_semphr);
+        
+      } else {
+        // wait for conversion
+        readStatus = xQueueReceive(suppRegRecvQ, result, delay_ticks);
+        if (readStatus == pdPASS) xSemaphoreGive(reg_adc_semphr);
 
-    default:
-        readStatus = pdFALSE;
+      }
+    }
   }
-  return readStatus;
 
+  return readStatus;
 }
 
 

@@ -38,7 +38,7 @@ void adcTask(void *argument){
 
     while(1){
         /* TEST SUPP BATTERY VOLTAGE READING*/
-        readStat = adc_start_read(SUPPLEMENTAL_BATTERY_VOLTAGE);
+        readStat = adc_start_read(SUPPLEMENTAL_BATTERY_VOLTAGE, portMAX_DELAY);
         if(readStat == ADC_OK){
             uint32_t result;
             BaseType_t returnStatus = adc_read_value(SUPPLEMENTAL_BATTERY_VOLTAGE, &result, portMAX_DELAY);
@@ -49,7 +49,7 @@ void adcTask(void *argument){
         }
         vTaskDelay(pdMS_TO_TICKS(10));
          /* TEST SUPP BATTERY CURRENT READING*/
-        readStat = adc_start_read(SUPPLEMENTAL_BATTERY_CURRENT);
+        readStat = adc_start_read(SUPPLEMENTAL_BATTERY_CURRENT, portMAX_DELAY);
         if(readStat == ADC_OK){
             uint32_t result;
             BaseType_t returnStatus = adc_read_value(SUPPLEMENTAL_BATTERY_CURRENT, &result, portMAX_DELAY);
@@ -60,7 +60,7 @@ void adcTask(void *argument){
         }
         vTaskDelay(pdMS_TO_TICKS(10));
         /* TEST SUPP REG VOLTAGE READING*/
-        readStat = adc_start_read(REGULATED_BATTERY_VOLTAGE);
+        readStat = adc_start_read(REGULATED_BATTERY_VOLTAGE, portMAX_DELAY);
         if(readStat == ADC_OK){
             uint32_t result;
             BaseType_t returnStatus = adc_read_value(REGULATED_BATTERY_VOLTAGE, &result, portMAX_DELAY);
@@ -71,7 +71,7 @@ void adcTask(void *argument){
         }
         vTaskDelay(pdMS_TO_TICKS(10));
         /* TEST SUPP REG CURRENT READING*/
-        readStat = adc_start_read(REGULATED_BATTERY_CURRENT);
+        readStat = adc_start_read(REGULATED_BATTERY_CURRENT, portMAX_DELAY);
         if(readStat == ADC_OK){
             uint32_t result;
             BaseType_t returnStatus = adc_read_value(REGULATED_BATTERY_CURRENT, &result, portMAX_DELAY);

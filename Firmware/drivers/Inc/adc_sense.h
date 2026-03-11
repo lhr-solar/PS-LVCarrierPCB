@@ -6,6 +6,7 @@
 #include "stm32xx_hal.h"
 #include "tmcs1126_lut.h"
 #include "adc_lut.h"
+#include "statusLeds.h"
 
 #define ADC_QUEUE_LENGTH 10
 
@@ -31,7 +32,7 @@ adc_status_t adc_sense_init(void);
  * @param channel           ADC channel to read from
  * @return status of the read
  */
-adc_status_t adc_start_read(adc_sense_channel_t channel);
+adc_status_t adc_start_read(adc_sense_channel_t channel, TickType_t delay_ticks);
 
 
 /**

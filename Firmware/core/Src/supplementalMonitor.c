@@ -57,9 +57,9 @@ void supplementalMonitor(){
 
     while(1){
 
-        adc_start_read(SUPPLEMENTAL_BATTERY_VOLTAGE); // ADC2
-        adc_start_read(REGULATED_BATTERY_VOLTAGE); // ADC2
-        adc_start_read(SUPPLEMENTAL_BATTERY_VOLTAGE); // ADC1
+        adc_start_read(SUPPLEMENTAL_BATTERY_VOLTAGE, portMAX_DELAY); // ADC2
+        adc_start_read(REGULATED_BATTERY_VOLTAGE, portMAX_DELAY); // ADC2
+        adc_start_read(SUPPLEMENTAL_BATTERY_VOLTAGE, portMAX_DELAY); // ADC1
         /**
             Psueduocde: 
             start conversion for adc1 or adc2 (block on queue set)
