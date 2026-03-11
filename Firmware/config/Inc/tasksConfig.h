@@ -35,3 +35,6 @@ void initThread();
 void powerMuxMonitor();
 void supplementalMonitor();
 void faultState();
+
+// Task delays
+#define SUPPLEMENTAL_MONITOR_THREAD_DELAY pdMS_TO_TICKS(5000)
