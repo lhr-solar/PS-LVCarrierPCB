@@ -47,9 +47,9 @@ static const uint8_t FAULT_BMAP_MASK = 0x90;
 
 /**** CHARGE CURRENT MASKS ****/
 typedef enum {
-    BQ25756E_5A_MASK    =   0x0190,
-    BQ25756E_2_6A_MASK  =   0x00D0,
-    BQ25756E_1A_MASK    =   0x0014,
+    BQ25756E_5A    =   0x0190,
+    BQ25756E_2_6A  =   0x00D0,
+    BQ25756E_1A    =   0x0014,
 } bq25756e_chg_current_t;
 
 typedef enum {
@@ -81,7 +81,7 @@ bq25756e_status_t bq25756e_init(void);
 /* Initializes I2C peripheral */
 bq25756e_status_t bq25756e_i2c4_init(void);
 
-bq25756e_status_t bq25756e_charge(TickType_t delay);
+bq25756e_status_t bq25756e_charge(TickType_t delay, bq25756e_chg_current_t limit);
 
 bq25756e_status_t bq25756e_pet_wdg(TickType_t delay);
 

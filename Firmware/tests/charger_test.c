@@ -6,9 +6,6 @@
 #include "pinDefs.h"
 #include "faultBits.h"
 
-/* Define Charge Limit */  
-#define CHG_LIM_1   // 1 amp
-
 #define MS_DELAY_100 pdMS_TO_TICKS(100) 
 #define MS_DELAY_500 pdMS_TO_TICKS(500) 
 
@@ -20,23 +17,15 @@ StackType_t faultTaskStack[configMINIMAL_STACK_SIZE];
 
 void BqTask(void *argument){
     faultBits_init();
-
-    // bq25756e_charge(BQ25756E_CHRG_STOP);
     vTaskDelay(pdMS_TO_TICKS(1000));
-
-    // bq25756e_charge(BQ25756E_CHRG_STOP);
     
     bq25756e_preReqBit_wait(BQ25756E_PREREQ_LTC_VALID, portMAX_DELAY);
-    // faultBit_wait(BQ25756E_PREREQ_SUPP_VALID, portMAX_DELAY);
 
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
-    // bq25756e_charge(BQ25756E_CHRG_START);
-    // bq25756e_charge(BQ25756E_CHRG_STOP);
-    bq25756e_charge(portMAX_DELAY);
+    bq25756e_charge(portMAX_DELAY, BQ25756E_1A);
 
     while (1) {
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
-        // todo: check for more faults
         // if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
         //     bq25756e_charge(BQ25756E_CHRG_STOP);
         //     vTaskDelete(NULL);
@@ -45,7 +34,7 @@ void BqTask(void *argument){
         // // Dump status and continue
         bq25756e_dump_status(portMAX_DELAY); 
         bq25756e_pet_wdg(portMAX_DELAY);
-        // bq25756e_charge(BQ25756E_CHRG_START);
+
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }   
@@ -53,17 +42,15 @@ void BqTask(void *argument){
 
 void FaultTask(void *argument){
     // Signal LTC and supp good
-
-    // xEventGroupSetBits(BQ25756E_preReqBits, FAULT_BIT(BQ25756E_PREREQ_LTC_VALID)); 
-    // xEventGroupSetBits(BQ25756E_preReqBits, FAULT_BIT(BQ25756E_PREREQ_SUPP_VALID));
+    vTaskDelay(pdMS_TO_TICKS(1000)); 
+    bq25756e_set_preReqBit(BQ25756E_PREREQ_LTC_VALID);
 
     // Trip fault after 10s
     vTaskDelay(pdMS_TO_TICKS(10000)); 
     // Throw a random fault
     while (1) {  
         vTaskDelay(pdMS_TO_TICKS(500));
-        bq25756e_set_preReqBit(BQ25756E_PREREQ_LTC_VALID);
-        //set_faultBit(FAULT_SUPPREG_UNDERVOLTAGE);      
+        set_faultBit(FAULT_SUPPREG_UNDERVOLTAGE);      
     }
 }
 
@@ -77,7 +64,6 @@ int main()
 
     vTaskDelay(pdMS_TO_TICKS(500));
     bq25756e_write_ce(BQ25756E_LOGIC_LOW);
-    // bq25756e_charge(BQ25756E_CHRG_STOP);
 
     xTaskCreateStatic(BqTask, 
                      "BQ test",

@@ -23,7 +23,7 @@ static bq25756e_status_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer, TickTyp
 static bq25756e_status_t bq25756e_RevMode_disable(TickType_t delay);
 static bq25756e_status_t bq25756e_TempSense_disable(TickType_t delay);
 static bq25756e_status_t bq25756e_HiZ_disable(TickType_t delay);
-static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay);
+static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, bq25756e_chg_current_t limit);
 static bq25756e_status_t bq25756e_HW_Ichg_disable(TickType_t delay);
 
 static void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring);
@@ -31,14 +31,14 @@ static void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
 
 static void bq25756e_gpio_init(void);
 
-bq25756e_status_t bq25756e_charge(TickType_t delay) {
+bq25756e_status_t bq25756e_charge(TickType_t delay, bq25756e_chg_current_t limit) {
     bq25756e_status_t stat=BQ25756E_OK;
 
     // Disable Charge Limit
     stat=bq25756e_HW_Ichg_disable(delay);
     if (stat != BQ25756E_OK) return stat;
     // Write Charge Limit
-    stat=bq25756e_SW_Ichg_enable(delay);
+    stat=bq25756e_SW_Ichg_enable(delay, limit);
     if (stat != BQ25756E_OK) return stat;
     // Disable Hi Z
     stat=bq25756e_HiZ_disable(delay);
@@ -221,7 +221,7 @@ static bq25756e_status_t bq25756e_HiZ_disable(TickType_t delay) {
   return BQ25756E_OK;
 }
 
-static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay) {
+static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, bq25756e_chg_current_t limit) {
   // Enables SW charge limit based on macros
   uint8_t buff1[1], buff2[1];
   if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CURRENT_LIMIT_B, buff1, delay) != BQ25756E_OK) {
@@ -236,15 +236,7 @@ static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay) {
 
   uint8_t mask, mask_b, mask_a; // split among 2 registers 0x03 and 0x02
 
-  #ifdef CHG_LIM_1
-  mask=BQ25756E_1A_MASK;
-  #elif CHG_LIM_2_6
-  mask=BQ25756E_2_6A_MASK;
-  #elif CHG_LIM_5
-  mask=BQ25756E_5A_MASK;
-  #else
-  mask=0; // limit unintended behavior  
-  #endif
+  mask=limit;
   
   mask_b=(uint8_t) (mask >> 0x08);
   mask_a=(uint8_t) (mask & 0xFF);
