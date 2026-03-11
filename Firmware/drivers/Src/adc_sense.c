@@ -288,29 +288,25 @@ BaseType_t adc_read_value(adc_sense_channel_t channel, uint32_t *result, TickTyp
     if (activeQ == suppVoltageRecvQ) {
       
       if (channel == SUPPLEMENTAL_BATTERY_VOLTAGE) {
-        // signal done conversion
         readStatus = xQueueReceive(suppVoltageRecvQ, result, delay_ticks);
-        if (readStatus == pdPASS)  xSemaphoreGive(supp_adc_semphr); 
-
       } else {
-        // wait for conversion
-        readStatus = xQueueReceive(suppCurrentRecvQ, result, delay_ticks);
-        if (readStatus == pdPASS)  xSemaphoreGive(supp_adc_semphr);
         
+        readStatus = xQueueReceive(suppCurrentRecvQ, result, delay_ticks);
       }
+      if (readStatus == pdPASS)  xSemaphoreGive(supp_adc_semphr); 
+
     } else if (activeQ == suppCurrentRecvQ) {
      
       if (channel == SUPPLEMENTAL_BATTERY_CURRENT) {
-        // signal done conversion
+        
         readStatus = xQueueReceive(suppCurrentRecvQ, result, delay_ticks);
-        if (readStatus == pdPASS) xSemaphoreGive(supp_adc_semphr);
         
       } else {
-        // wait for conversion
+
         readStatus = xQueueReceive(suppVoltageRecvQ, result, delay_ticks);
-        if (readStatus == pdPASS)  xSemaphoreGive(supp_adc_semphr); 
 
       }
+      if (readStatus == pdPASS) xSemaphoreGive(supp_adc_semphr);
     }
 
   } else if (channel == REGULATED_BATTERY_VOLTAGE || channel == REGULATED_BATTERY_CURRENT) {
@@ -318,29 +314,26 @@ BaseType_t adc_read_value(adc_sense_channel_t channel, uint32_t *result, TickTyp
     if (activeQ == suppRegRecvQ) {
 
       if (channel == REGULATED_BATTERY_VOLTAGE) {
-        // signal done conversion
+
         readStatus = xQueueReceive(suppRegRecvQ, result, delay_ticks);
-        if (readStatus == pdPASS) xSemaphoreGive(reg_adc_semphr);
         
       } else {
-        // wait for conversion
+
         readStatus = xQueueReceive(suppRegCurrentRecvQ, result, delay_ticks);
-        if (readStatus == pdPASS) xSemaphoreGive(reg_adc_semphr);
       
       }
+      if (readStatus == pdPASS) xSemaphoreGive(reg_adc_semphr);
+
     } else if (activeQ == suppRegCurrentRecvQ) {
       
       if (channel == REGULATED_BATTERY_CURRENT) {
-        // signal done conversion
         readStatus = xQueueReceive(suppRegCurrentRecvQ, result, delay_ticks);
-        if (readStatus == pdPASS) xSemaphoreGive(reg_adc_semphr);
-        
+       
       } else {
-        // wait for conversion
         readStatus = xQueueReceive(suppRegRecvQ, result, delay_ticks);
-        if (readStatus == pdPASS) xSemaphoreGive(reg_adc_semphr);
 
       }
+      if (readStatus == pdPASS) xSemaphoreGive(reg_adc_semphr);
     }
   }
 
