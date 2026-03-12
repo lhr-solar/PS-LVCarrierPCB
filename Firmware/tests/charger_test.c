@@ -22,7 +22,10 @@ void BqTask(void *argument){
     bq25756e_preReqBit_wait(BQ25756E_PREREQ_LTC_VALID, portMAX_DELAY);
 
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
+
     bq25756e_charge(portMAX_DELAY, BQ25756E_1A);
+    
+    statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
     while (1) {
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
@@ -30,6 +33,7 @@ void BqTask(void *argument){
         //     bq25756e_charge(BQ25756E_CHRG_STOP);
         //     vTaskDelete(NULL);
         // }  
+        bq25756e_charge(portMAX_DELAY, BQ25756E_1A);
 
         // // Dump status and continue
         bq25756e_dump_status(portMAX_DELAY); 

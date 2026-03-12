@@ -32,11 +32,13 @@ static void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
 static void bq25756e_gpio_init(void);
 
 bq25756e_status_t bq25756e_charge(TickType_t delay, bq25756e_chg_current_t limit) {
+    // Charge Function
     bq25756e_status_t stat=BQ25756E_OK;
 
     // Disable Charge Limit
     stat=bq25756e_HW_Ichg_disable(delay);
     if (stat != BQ25756E_OK) return stat;
+    
     // Write Charge Limit
     stat=bq25756e_SW_Ichg_enable(delay, limit);
     if (stat != BQ25756E_OK) return stat;
@@ -272,7 +274,7 @@ static bq25756e_status_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer, TickTyp
   if ( HAL_I2C_Master_Transmit_IT(&hi2c4, (DEVICE_ADDR << 1), &reg, BQ_RX_SIZE) != HAL_OK) {
     return BQ25756E_READ_FAIL;
   }
-  if (xSemaphoreTake(bq_i2c_smphr, pdMS_TO_TICKS(delay)) != pdTRUE) {
+  if (xSemaphoreTake(bq_handle->bq_i2c_smphr, pdMS_TO_TICKS(delay)) != pdTRUE) {
       return BQ25756E_TIMEOUT;
   }
 
@@ -280,7 +282,7 @@ static bq25756e_status_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer, TickTyp
   if ( HAL_I2C_Master_Receive_IT(&hi2c4, (DEVICE_ADDR << 1), buffer, BQ_RX_SIZE) != HAL_OK) {
     return BQ25756E_READ_FAIL;
   }
-  if (xSemaphoreTake(bq_i2c_smphr, pdMS_TO_TICKS(delay)) != pdTRUE) {
+  if (xSemaphoreTake(bq_handle->bq_i2c_smphr, pdMS_TO_TICKS(delay)) != pdTRUE) {
       return BQ25756E_TIMEOUT;
   }
 
@@ -297,7 +299,7 @@ static bq25756e_status_t bq25756e_write_reg(uint8_t reg, uint8_t data, TickType_
     return BQ25756E_WRITE_FAIL;
   }
 
-  if (xSemaphoreTake(bq_i2c_smphr, pdMS_TO_TICKS(delay)) != pdTRUE) {
+  if (xSemaphoreTake(bq_handle->bq_i2c_smphr, pdMS_TO_TICKS(delay)) != pdTRUE) {
       return BQ25756E_TIMEOUT;
   }
 
@@ -327,21 +329,21 @@ static void bq25756e_gpio_init(void)
 
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
-     statusLeds_toggle(LSOM_HEARTBEAT_LED);
+    //  statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
     
-    xSemaphoreGiveFromISR(bq_i2c_smphr, &xHigherPriorityTaskWoken);
+    xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
 void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
-     statusLeds_toggle(LSOM_HEARTBEAT_LED);
+    //  statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
     
-    xSemaphoreGiveFromISR(bq_i2c_smphr, &xHigherPriorityTaskWoken);
+    xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
@@ -349,11 +351,11 @@ void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
 void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
 {
     // kinda scuffed cuz if NAK hits this callback so still release
-     statusLeds_toggle(LSOM_HEARTBEAT_LED);
+    //  statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
     
-    xSemaphoreGiveFromISR(bq_i2c_smphr, &xHigherPriorityTaskWoken);
+    xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
