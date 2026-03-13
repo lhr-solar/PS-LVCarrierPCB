@@ -71,7 +71,9 @@ int main()
     bq25756e_init();
     command_line_init();
 
+    // Give the chip a bit to power on
     vTaskDelay(pdMS_TO_TICKS(500));
+    // Start in disabled state to be safeeeee
     bq25756e_write_ce(BQ25756E_LOGIC_LOW);
 
     xTaskCreateStatic(BqTask, 
