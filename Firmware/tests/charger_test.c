@@ -9,6 +9,8 @@
 #define MS_DELAY_100 pdMS_TO_TICKS(100) 
 #define MS_DELAY_500 pdMS_TO_TICKS(500) 
 
+#define FAULT_TEST 0
+
 StaticTask_t bqTaskBuffer;
 StackType_t bqTaskStack[configMINIMAL_STACK_SIZE];
 
@@ -24,15 +26,18 @@ void BqTask(void *argument){
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
     bq25756e_charge(portMAX_DELAY, BQ25756E_1A);
-    
-    statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
     while (1) {
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
-        // if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
-        //     bq25756e_charge(BQ25756E_CHRG_STOP);
-        //     vTaskDelete(NULL);
-        // }  
+
+        #ifdef FAULT_TEST
+        // Only run fault test
+        if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
+            bq25756e_charge(portMAX_DELAY, BQ25756E_1A);
+            vTaskDelete(NULL);
+        }  
+        #endif
+
         bq25756e_charge(portMAX_DELAY, BQ25756E_1A);
 
         // // Dump status and continue

@@ -5,10 +5,11 @@
 #define BQ_TX_SIZE 2
 
 // BQ Handle
-static BQ_HandleTypeDef* bq_handle;
+static BQ_HandleTypeDef bq_handle_instance;
+static BQ_HandleTypeDef* bq_handle = &bq_handle_instance;
 
 // I2C Handle
-I2C_HandleTypeDef hi2c4;
+static I2C_HandleTypeDef hi2c4;
 I2C_HandleTypeDef* bq_i2c_handle=&hi2c4;
 
 // I2C Bus Semaphore
@@ -82,25 +83,34 @@ bq25756e_status_t bq25756e_dump_status(TickType_t delay){
   uint8_t charge_stat = buff[0] & BQ25756E_BIT_CHARGE_STAT;
   switch (charge_stat) {
     case 0:
-      printf("Not charging. \n\r"); break;
+      printf("Not charging. \n\r"); 
+      return BQ25756E_NOT_CHRG; 
     case 1:
-      printf("Trickle Charge. \n\r"); break;
+      printf("Trickle Charge. \n\r"); 
+      return BQ25756E_TRICKLE;
     case 2:
-      printf("Pre-Charge. \n\r"); break;
+      printf("Pre-Charge. \n\r"); 
+      return BQ25756E_PRE;
     case 3:
-      printf("Fast Charge. \n\r"); break;
+      printf("Fast Charge. \n\r"); 
+      return BQ25756E_FAST;
     case 4:
-      printf("Taper Charge. \n\r"); break;
+      printf("Taper Charge. \n\r"); 
+      return BQ25756E_TAPER;
     case 5:
-      printf("y is it here lmao ur cooked. \n\r"); break;
+      printf("y is it here lmao ur cooked. \n\r"); 
+      return _reserved;
     case 6:
-      printf("Top off Timer Charge. \n\r"); break;
+      printf("Top off Timer Charge. \n\r"); 
+      return BQ25756E_TOP_OFF;
     case 7:
-      printf("Charge Termination Done. \n\r"); break;
+      printf("Charge Termination Done. \n\r"); 
+      return BQ25756E_DONE_CHRG;
     default: break;
   }
 
-  return BQ25756E_OK;
+  // shouldn't hit this --- invalid status
+  return BQ25756E_ERR;
 }
 
 bq25756e_status_t bq25756e_dump_faults(TickType_t delay) {
@@ -133,11 +143,12 @@ bq25756e_status_t bq25756e_dump_faults(TickType_t delay) {
     fault_cnt++;
   }
   if (buff[0] & BQ25756E_BIT_DRV_SUP_FAULT) {
-    printf("Thermal Shutdown! \n");
+    printf("Gate supply drive out of range! \n");
     fault_cnt++;
   }
   printf("Num Faults: %d\n-------\n\r", fault_cnt);
 
+  // not doing enum for ts
   return BQ25756E_OK;
 }
 
@@ -164,11 +175,12 @@ bq25756e_status_t bq25756e_init(void) {
   bq25756e_gpio_init();
 
   // init semphr
-  bq_handle->bq_i2c_smphr = xSemaphoreCreateBinaryStatic( &xSemaphoreBuffer );
-  bq_handle->hi2c = bq_i2c_handle;
-  bq_handle->device_id = DEVICE_ADDR;
-
+  
   stat=bq25756e_i2c4_init();
+
+  bq_handle->hi2c = bq_i2c_handle;
+  bq_handle->bq_i2c_smphr = xSemaphoreCreateBinaryStatic( &xSemaphoreBuffer );
+  bq_handle->device_id = DEVICE_ADDR << 1;
 
   // init pre req bits
   bq25756e_preReqBits_init();
@@ -271,7 +283,7 @@ static bq25756e_status_t bq25756e_HW_Ichg_disable(TickType_t delay) {
 static bq25756e_status_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer, TickType_t delay) {
   // TX
   // shift DEVICE_ADDR to have space for R/W bit
-  if ( HAL_I2C_Master_Transmit_IT(&hi2c4, (DEVICE_ADDR << 1), &reg, BQ_RX_SIZE) != HAL_OK) {
+  if ( HAL_I2C_Master_Transmit_IT(bq_handle->hi2c, (bq_handle->device_id), &reg, BQ_RX_SIZE) != HAL_OK) {
     return BQ25756E_READ_FAIL;
   }
   if (xSemaphoreTake(bq_handle->bq_i2c_smphr, pdMS_TO_TICKS(delay)) != pdTRUE) {
@@ -279,7 +291,7 @@ static bq25756e_status_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer, TickTyp
   }
 
   // RX
-  if ( HAL_I2C_Master_Receive_IT(&hi2c4, (DEVICE_ADDR << 1), buffer, BQ_RX_SIZE) != HAL_OK) {
+  if ( HAL_I2C_Master_Receive_IT(bq_handle->hi2c, (bq_handle->device_id), buffer, BQ_RX_SIZE) != HAL_OK) {
     return BQ25756E_READ_FAIL;
   }
   if (xSemaphoreTake(bq_handle->bq_i2c_smphr, pdMS_TO_TICKS(delay)) != pdTRUE) {
@@ -295,7 +307,7 @@ static bq25756e_status_t bq25756e_write_reg(uint8_t reg, uint8_t data, TickType_
   payload[0]=reg;
   payload[1]=data;
 
-  if (HAL_I2C_Master_Transmit_IT (&hi2c4, (DEVICE_ADDR << 1), payload, BQ_TX_SIZE) != HAL_OK) {
+  if (HAL_I2C_Master_Transmit_IT (bq_handle->hi2c, (bq_handle->device_id), payload, BQ_TX_SIZE) != HAL_OK) {
     return BQ25756E_WRITE_FAIL;
   }
 
@@ -306,11 +318,11 @@ static bq25756e_status_t bq25756e_write_reg(uint8_t reg, uint8_t data, TickType_
   return BQ25756E_OK;
 }
 
-void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring) {
+static void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring) {
   *data = (*data  &  ~(bitstring));
 }
 
-void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring) {
+static void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring) {
   *data = (*data  |  (bitstring));
 }
 
@@ -329,34 +341,34 @@ static void bq25756e_gpio_init(void)
 
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
-    //  statusLeds_toggle(LSOM_HEARTBEAT_LED);
+  //  statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-    
-    xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  
+  xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
+  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
 void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
-    //  statusLeds_toggle(LSOM_HEARTBEAT_LED);
+  //  statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-    
-    xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  
+  xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
+  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
 
 void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
 {
-    // kinda scuffed cuz if NAK hits this callback so still release
-    //  statusLeds_toggle(LSOM_HEARTBEAT_LED);
+  // kinda scuffed cuz if NAK hits this callback so still release
+  //  statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-    
-    xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  
+  xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
+  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
 bq25756e_status_t bq25756e_i2c4_init(void)
@@ -469,7 +481,7 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* hi2c)
 
 void I2C4_EV_IRQHandler(void)
 {
-  HAL_I2C_EV_IRQHandler(&hi2c4);
+  HAL_I2C_EV_IRQHandler(bq_handle->hi2c);
 }
 
 /**
@@ -477,5 +489,5 @@ void I2C4_EV_IRQHandler(void)
   */
 void I2C4_ER_IRQHandler(void)
 {
-  HAL_I2C_ER_IRQHandler(&hi2c4);
+  HAL_I2C_ER_IRQHandler(bq_handle->hi2c);
 }
