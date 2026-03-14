@@ -18,7 +18,7 @@ void runningThread(){
     uint8_t threadCountsTillFault = 10;
     uint8_t threadCounts = 0;
     
-    while(1) {
+    while(1){
 
         threadCounts++;
         

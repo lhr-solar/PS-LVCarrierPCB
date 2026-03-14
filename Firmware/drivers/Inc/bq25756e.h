@@ -90,9 +90,10 @@ typedef enum {
     BQ25756E_1A    =   0x0014,
 } bq25756e_chg_current_t;
 
+// Pin enables are active low [negative logic]
 typedef enum {
-    BQ25756E_LOGIC_LOW=0,
-    BQ25756E_LOGIC_HIGH
+    BQ25756E_LOGIC_HIGH=0,
+    BQ25756E_LOGIC_LOW
 } bq25756e_logic_t;
 
 typedef enum {
@@ -116,13 +117,19 @@ typedef enum {
     BQ25756E_PRE,
     BQ25756E_FAST,
     BQ25756E_TAPER,
-    _reserved,
+    BQ25756E_RESERVED,
     BQ25756E_TOP_OFF,
     BQ25756E_DONE_CHRG
 } bq25756e_charge_status_t;
 
+/* Enable serial output when dumping status or faults */
+typedef enum {
+    BQ25756E_SERIAL_DISABLE=0,
+    BQ25756E_SERIAL_ENABLE 
+} bq25756e_serial_config_t;
+
 typedef struct {
-    uint32_t device_id;
+    uint32_t device_id; // address is shifted by 1
     I2C_HandleTypeDef* hi2c;
     SemaphoreHandle_t bq_i2c_smphr;
 } BQ_HandleTypeDef;
@@ -130,26 +137,97 @@ typedef struct {
 /* Pulls CE pin in software to low or high (LOW enables charging) */
 void bq25756e_write_ce(bq25756e_logic_t val);
 
-/* Initializes I2C, GPIO, and hardware resources */
-bq25756e_status_t bq25756e_init(void);
+/**
+ * @brief Initializes the BQ25756E driver and GPIO/I2C resources.
+ *
+ * Configures the internal driver handle, initializes the CE and STAT pins,
+ * and sets up a binary semaphore for asynchronous I2C communication.  
+ * Prepares the driver for all subsequent operations.
+ *
+ * @param _bq_handle Pointer to the BQ25756E driver handle structure.
+ * @param bq_i2c_handle Pointer to the HAL I2C handle used for communication.
+ *
+ * @return bq25756e_status_t Returns BQ25756E_OK on success,
+ *                           or BQ25756E_ERR if handle creation fails.
+ */
+bq25756e_status_t bq25756e_init(BQ_HandleTypeDef *bq_handle, I2C_HandleTypeDef *bq_i2c_handle);
 
-/* Initializes I2C peripheral */
-bq25756e_status_t bq25756e_i2c4_init(void);
-
+/**
+ * @brief Enables battery charging with a software charge current limit.
+ *
+ * This function:
+ * - Disables the hardware charge limit.
+ * - Sets the requested software charge limit across registers 0x02/0x03.
+ * - Disables HiZ, TempSense, and Reverse Mode.
+ * - Asserts the CE pin to start charging.
+ *
+ * @param delay Maximum wait time for I2C transactions (in FreeRTOS ticks).
+ * @param limit Desired charge current limit of type bq25756e_chg_current_t.
+ *
+ * @return bq25756e_status_t Returns BQ25756E_OK if charging was successfully enabled,
+ *                           or an error code on I2C failure.
+ */
 bq25756e_status_t bq25756e_charge(TickType_t delay, bq25756e_chg_current_t limit);
 
 /**
- * On POR, device starts in watchdog timer expired state (WD_STAT = 1).
- * 
- * [] Function writes to WD_RST bit to reset timer. 
- * [] If watchdog timer expires, chip stops charging.
- * [] Watchdog must be pet every 160 seconds to ensure it doesn't expire.
- * 
+ * @brief Resets the BQ25756E watchdog timer to prevent charge interruption.
+ *
+ * On POR, the device starts in a watchdog-expired state.  
+ * Writing to the WD_RST bit clears the timer. Must be called
+ * periodically (<= 160 seconds) to maintain charging.
+ *
+ * @param delay Maximum wait time for I2C transactions (in FreeRTOS ticks).
+ *
+ * @return bq25756e_status_t Returns BQ25756E_OK if the watchdog was reset,
+ *                           BQ25756E_READ_FAIL if the control register could not be read,
+ *                           BQ25756E_WRITE_FAIL if writing fails.
  */
 bq25756e_status_t bq25756e_pet_wdg(TickType_t delay);
 
-bq25756e_status_t bq25756e_dump_status(TickType_t delay);
+/**
+ * @brief Reads and optionally prints the current charger status.
+ *
+ * Retrieves CHARGE_STATUS_1 register and maps the status bits
+ * to the bq25756e_charge_status_t enum.
+ * Can print the status to serial if requested.
+ *
+ * @param charge_state Pointer to store the parsed charge state.
+ * @param serial Enable or disable serial printing of the status.
+ * @param delay Maximum wait time for I2C transactions (in FreeRTOS ticks).
+ *
+ * @return bq25756e_status_t Returns BQ25756E_OK if status was read,
+ *                           BQ25756E_READ_FAIL if I2C read fails,
+ *                           or BQ25756E_ERR if an invalid status is detected.
+ */
+bq25756e_status_t bq25756e_dump_status(bq25756e_charge_status_t *charge_state, bq25756e_serial_config_t serial, TickType_t delay);
 
-bq25756e_status_t bq25756e_dump_faults(TickType_t delay);
+/**
+ * @brief Reads and optionally prints charger fault conditions.
+ *
+ * Retrieves FAULT_STATUS register and maps all fault bits.
+ * Optionally prints human-readable fault messages via serial.
+ * Returns BQ25756E_ERR if any faults are active.
+ *
+ * @param fault_state Pointer to store raw fault register value.
+ * @param serial Enable or disable serial printing of fault messages.
+ * @param delay Maximum wait time for I2C transactions (in FreeRTOS ticks).
+ *
+ * @return bq25756e_status_t Returns BQ25756E_OK if no faults detected,
+ *                           BQ25756E_ERR if one or more faults exist,
+ *                           or BQ25756E_READ_FAIL if register read fails.
+ */
+bq25756e_status_t bq25756e_dump_faults(uint8_t *fault_state, bq25756e_serial_config_t serial, TickType_t delay);
 
+/**
+ * @brief Disables battery charging and clears the CE pin.
+ *
+ * Clears the CHARGE_ENABLE bit in CHARGE_CONTROL register and
+ * drives the CE pin low to stop charging.
+ *
+ * @param delay Maximum wait time for I2C transactions (in FreeRTOS ticks).
+ *
+ * @return bq25756e_status_t Returns BQ25756E_OK if charging was successfully disabled,
+ *                           BQ25756E_READ_FAIL if reading CHARGE_CONTROL fails,
+ *                           BQ25756E_WRITE_FAIL if writing fails.
+ */
 bq25756e_status_t bq25756e_charge_disable(TickType_t delay);

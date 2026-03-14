@@ -17,10 +17,10 @@ void bq25756e_set_preReqBit(bq25756e_prereqs_t bit){
         return;
     }
 
-    // chat we're cooked
+    // lakshays cooked
     xEventGroupSetBits(BQ25756E_preReqBits, BQ25756E_PREREQ(bit) );
-    // should never return from here
-    taskYIELD();
+
+    taskYIELD(); 
 }
 
 EventBits_t bq25756e_preReqBit_wait(bq25756e_prereqs_t bit, TickType_t xTicksToWait){
