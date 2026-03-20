@@ -7,6 +7,17 @@
 #include "event_groups.h"
 #include "statusLeds.h"
 
+/* I2C Driver */
+#define BQ25756E_I2C_PERIPH     I2C4
+// Greater priority than default RTOS interrupt
+#define I2C4_NVIC_PRIO  configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY + 1
+
+#define BQ25756E_I2C_PORT       GPIOC
+
+#define BQ25756E_I2C_SDA_PIN    GPIO_PIN_7
+#define BQ25756E_I2C_SCL_PIN    GPIO_PIN_6
+#define BQ25756E_I2C_AF         GPIO_AF8_I2C4
+
 /**** DEVICE ADDRESSES  ****/
 #define DEVICE_ADDR 0x6a // not shifted
 

@@ -25,7 +25,7 @@ void bq25756e_set_preReqBit(bq25756e_prereqs_t bit){
 
 EventBits_t bq25756e_preReqBit_wait(bq25756e_prereqs_t bit, TickType_t xTicksToWait){
 
-    // NUM_FAULTS indiciates you want to wait for all bits
+    // NUM_PREREQS indicates you want to wait for all bits
     if(bit > BQ25756E_NUM_PREREQS){
         return 0;
     }
