@@ -9,7 +9,7 @@
 
 /* I2C Driver */
 #define BQ25756E_I2C_PERIPH     I2C4
-// Greater priority than default RTOS interrupt
+// Lesser priority than default RTOS interrupt
 #define I2C4_NVIC_PRIO  configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY + 1
 
 #define BQ25756E_I2C_PORT       GPIOC
@@ -94,13 +94,6 @@
 #define BQ25756E_BIT_CHRG_TIMER_FAULT       (1 << 2)
 #define BQ25756E_BIT_DRV_SUP_FAULT          (1 << 1)
 
-/**** CHARGE CURRENT MASKS ****/
-typedef enum {
-    BQ25756E_5A    =   0x0190,
-    BQ25756E_2_6A  =   0x00D0,
-    BQ25756E_1A    =   0x0014,
-} bq25756e_chg_current_t;
-
 // Pin enables are active low [negative logic]
 typedef enum {
     BQ25756E_LOGIC_HIGH=0,
@@ -123,7 +116,7 @@ typedef enum {
 } bq25756e_status_t;
 
 typedef enum {
-    BQ25756E_NOT_CHRG,
+    BQ25756E_NOT_STARTED,
     BQ25756E_TRICKLE,
     BQ25756E_PRE,
     BQ25756E_FAST,
@@ -140,7 +133,7 @@ typedef enum {
 } bq25756e_serial_config_t;
 
 typedef struct {
-    uint32_t device_id; // address is shifted by 1
+    uint8_t device_id; // address is shifted by 1
     I2C_HandleTypeDef* hi2c;
     SemaphoreHandle_t bq_i2c_smphr;
 } BQ_HandleTypeDef;
@@ -178,7 +171,7 @@ bq25756e_status_t bq25756e_init(BQ_HandleTypeDef *bq_handle, I2C_HandleTypeDef *
  * @return bq25756e_status_t Returns BQ25756E_OK if charging was successfully enabled,
  *                           or an error code on I2C failure.
  */
-bq25756e_status_t bq25756e_charge(TickType_t delay, bq25756e_chg_current_t limit);
+bq25756e_status_t bq25756e_charge(TickType_t delay, uint32_t limit);
 
 /**
  * @brief Resets the BQ25756E watchdog timer to prevent charge interruption.

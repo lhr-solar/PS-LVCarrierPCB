@@ -35,8 +35,8 @@ void BqTask(void *argument){
 
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
-    bq25756e_charge_status_t charge_state=BQ25756E_NOT_CHRG;
-    bq25756e_charge(portMAX_DELAY, BQ25756E_2_6A);
+    bq25756e_charge_status_t charge_state=BQ25756E_NOT_STARTED;
+    bq25756e_charge(portMAX_DELAY, 2000);
 
     while (1) {
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
@@ -80,7 +80,6 @@ int main()
     statusLeds_init();
     bq25756e_init(&bq_handle, &hi2c);
     command_line_init();
-    
 
     xTaskCreateStatic(BqTask, 
                      "BQ test",

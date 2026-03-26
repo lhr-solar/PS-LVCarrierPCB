@@ -19,8 +19,10 @@ static bq25756e_status_t bq25756e_read_reg(uint8_t reg, uint8_t* buffer, TickTyp
 static bq25756e_status_t bq25756e_RevMode_disable(TickType_t delay);
 static bq25756e_status_t bq25756e_TempSense_disable(TickType_t delay);
 static bq25756e_status_t bq25756e_HiZ_disable(TickType_t delay);
-static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, bq25756e_chg_current_t limit);
+static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, uint32_t limit);
 static bq25756e_status_t bq25756e_HW_Ichg_disable(TickType_t delay);
+
+static uint16_t bq25756e_current_lim_to_mask(uint32_t charge_current);
 
 static void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring);
 static void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
@@ -28,7 +30,7 @@ static void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
 static void bq25756e_gpio_init(void);
 static bq25756e_status_t bq25756e_i2c_init(void);
 
-bq25756e_status_t bq25756e_charge(TickType_t delay, bq25756e_chg_current_t limit) {
+bq25756e_status_t bq25756e_charge(TickType_t delay, uint32_t limit) {
     // Charge Function
     bq25756e_status_t stat=BQ25756E_OK;
 
@@ -85,7 +87,7 @@ bq25756e_status_t bq25756e_dump_status(bq25756e_charge_status_t *charge_state,
   switch (charge_stat) {
     case 0:
       if (serial==BQ25756E_SERIAL_ENABLE) printf("Not charging. \n\r"); 
-      *charge_state = BQ25756E_NOT_CHRG; 
+      *charge_state = BQ25756E_NOT_STARTED; 
       break;
     case 1:
       if (serial==BQ25756E_SERIAL_ENABLE) printf("Trickle Charge. \n\r"); 
@@ -255,7 +257,7 @@ static bq25756e_status_t bq25756e_HiZ_disable(TickType_t delay) {
   return BQ25756E_OK;
 }
 
-static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, bq25756e_chg_current_t limit) {
+static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, uint32_t limit) {
   // Enables SW charge limit based on macros
   uint8_t buff1[1], buff2[1] = {0};
 
@@ -268,6 +270,9 @@ static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, bq25756e_chg_
    * 
    *  Masks were precalculated for common limit values w/ type `bq25756e_chg_current_t`
    */
+
+  uint32_t scaled_limit=bq25756e_current_lim_to_mask(limit);
+  
 
   if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CURRENT_LIMIT_B, buff2, delay) != BQ25756E_OK) {
     return BQ25756E_READ_FAIL;
@@ -282,7 +287,7 @@ static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, bq25756e_chg_
   uint16_t mask;
   uint8_t mask_b, mask_a; // split among 2 registers 0x03 and 0x02
 
-  mask=limit;
+  mask=scaled_limit;
   
   // Shift 0x03 register mask to the top byte position [15:8]
   mask_b=(uint8_t) (mask >> 0x08);
@@ -351,6 +356,15 @@ static bq25756e_status_t bq25756e_write_reg(uint8_t reg, uint8_t data, TickType_
   }
 
   return BQ25756E_OK;
+}
+
+static uint16_t bq25756e_current_lim_to_mask(uint32_t charge_current) {
+  // (8h - 190h) ---> (400 mA - 20000 mA)
+  uint16_t scaled=(uint16_t) (((charge_current) * 1311) >> 16);  // dividing by 50 
+  uint8_t reg_b = (scaled>>8)&(0x07); // 3 bits
+  uint8_t reg_a = (scaled)&(0x3F); // 6 bits
+  uint16_t mask=(reg_b<<8)+reg_a; // desired format
+  return mask;
 }
 
 static void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring) {
