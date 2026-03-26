@@ -10,7 +10,7 @@
 #define MS_DELAY_500 pdMS_TO_TICKS(500) 
 
 // Run test w/ arbitrary fault after ~10s
-#define PLEASE_SPEED_I_NEED_THIS_TO_FAULT
+#define USING_FAULT_TEST
 
 /* BQ Driver Setup */
 // User's BQ Handle
@@ -41,7 +41,7 @@ void BqTask(void *argument){
     while (1) {
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
-        #ifdef PLEASE_SPEED_I_NEED_THIS_TO_FAULT
+        #ifdef USING_FAULT_TEST
         // Only run fault test
         if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
             bq25756e_charge_status_t disabled=bq25756e_charge_disable(portMAX_DELAY);
