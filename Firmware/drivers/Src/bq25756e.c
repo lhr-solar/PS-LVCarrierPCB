@@ -202,6 +202,9 @@ bq25756e_status_t bq25756e_init(BQ_HandleTypeDef *_bq_handle, I2C_HandleTypeDef 
   // init pre req bits
   bq25756e_preReqBits_init();
 
+  // Start in disabled state to be safeeeee
+  bq25756e_write_ce(BQ25756E_LOGIC_LOW);
+
   return stat;
 }
 

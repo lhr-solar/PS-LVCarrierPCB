@@ -10,7 +10,7 @@
 #define MS_DELAY_500 pdMS_TO_TICKS(500) 
 
 // Run test w/ arbitrary fault after ~10s
-#define RAVI_SHAH_IS_GAY_ASF
+#define PLEASE_SPEED_I_NEED_THIS_TO_FAULT
 
 /* BQ Driver Setup */
 // User's BQ Handle
@@ -41,7 +41,7 @@ void BqTask(void *argument){
     while (1) {
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
-        #ifdef RAVI_SHAH_IS_GAY_ASF
+        #ifdef PLEASE_SPEED_I_NEED_THIS_TO_FAULT
         // Only run fault test
         if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
             bq25756e_charge_status_t disabled=bq25756e_charge_disable(portMAX_DELAY);
@@ -81,8 +81,6 @@ int main()
     bq25756e_init(&bq_handle, &hi2c);
     command_line_init();
     
-    // Start in disabled state to be safeeeee
-    bq25756e_write_ce(BQ25756E_LOGIC_LOW);
 
     xTaskCreateStatic(BqTask, 
                      "BQ test",
