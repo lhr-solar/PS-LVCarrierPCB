@@ -10,7 +10,7 @@
 #define MS_DELAY_500 pdMS_TO_TICKS(500) 
 
 // Run test w/ arbitrary fault after ~10s
-#define FAULT_TEST
+#define RAVI_SHAH_IS_GAY_ASF
 
 /* BQ Driver Setup */
 // User's BQ Handle
@@ -29,27 +29,25 @@ StackType_t faultTaskStack[configMINIMAL_STACK_SIZE];
 void BqTask(void *argument){
     faultBits_init();
     // give chip a bit to power on
-    vTaskDelay(pdMS_TO_TICKS(1000));
+    vTaskDelay(pdMS_TO_TICKS(5000));
     
     bq25756e_preReqBit_wait(BQ25756E_PREREQ_LTC_VALID, portMAX_DELAY);
 
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
     bq25756e_charge_status_t charge_state=BQ25756E_NOT_CHRG;
-    bq25756e_charge(portMAX_DELAY, BQ25756E_1A);
+    bq25756e_charge(portMAX_DELAY, BQ25756E_2_6A);
 
     while (1) {
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
-        #ifdef FAULT_TEST
+        #ifdef RAVI_SHAH_IS_GAY_ASF
         // Only run fault test
         if (faultBit_wait(FAULT_SUPPREG_UNDERVOLTAGE, pdMS_TO_TICKS(200)) != pdFALSE) {
-            bq25756e_charge(portMAX_DELAY, BQ25756E_1A);
-            vTaskDelete(NULL);
+            bq25756e_charge_status_t disabled=bq25756e_charge_disable(portMAX_DELAY);
+            if (disabled) vTaskDelete(NULL);
         }  
         #endif
-
-        bq25756e_charge(portMAX_DELAY, BQ25756E_1A);
 
         // // Dump status and continue
         bq25756e_dump_status(&charge_state, BQ25756E_SERIAL_ENABLE, portMAX_DELAY); 
