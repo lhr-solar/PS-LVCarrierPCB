@@ -1442,7 +1442,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Simulation_SPICE:NMOS"
+		(symbol "Simulation_SPICE:PMOS"
 			(pin_numbers
 				(hide yes)
 			)
@@ -1461,7 +1461,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "NMOS"
+			(property "Value" "PMOS"
 				(at 5.08 -1.27 0)
 				(effects
 					(font
@@ -1488,7 +1488,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "N-MOSFET transistor, drain/source/gate"
+			(property "Description" "P-MOSFET transistor, drain/source/gate"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1497,7 +1497,7 @@
 					(hide yes)
 				)
 			)
-			(property "Sim.Device" "NMOS"
+			(property "Sim.Device" "PMOS"
 				(at 0 -17.145 0)
 				(effects
 					(font
@@ -1524,7 +1524,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET simulation"
+			(property "ki_keywords" "transistor PMOS P-MOS P-MOSFET simulation"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1533,7 +1533,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "NMOS_0_1"
+			(symbol "PMOS_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -1572,6 +1572,18 @@
 				)
 				(polyline
 					(pts
+						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
 						(xy 0.762 0.508) (xy 0.762 -0.508)
 					)
 					(stroke
@@ -1594,30 +1606,6 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
 				(circle
 					(center 1.651 0)
 					(radius 2.794)
@@ -1627,6 +1615,18 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
 					)
 				)
 				(polyline
@@ -1677,7 +1677,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
 					)
 					(stroke
 						(width 0)
@@ -1689,7 +1689,7 @@
 				)
 				(polyline
 					(pts
-						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
 					)
 					(stroke
 						(width 0)
@@ -1700,7 +1700,7 @@
 					)
 				)
 			)
-			(symbol "NMOS_1_1"
+			(symbol "PMOS_1_1"
 				(pin input line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -3291,12 +3291,6 @@
 		(uuid "2ae8d008-f377-4024-88ed-34acb71c25c8")
 	)
 	(junction
-		(at 114.3 111.125)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2ae9c17a-fe66-475a-8718-33a420f127c8")
-	)
-	(junction
 		(at 195.58 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4564,6 +4558,16 @@
 	)
 	(wire
 		(pts
+			(xy 59.69 179.07) (xy 59.69 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e0d3617-dc42-458f-9c64-49595a9ff4ac")
+	)
+	(wire
+		(pts
 			(xy 51.435 95.25) (xy 47.625 95.25)
 		)
 		(stroke
@@ -4754,7 +4758,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.095 115.57) (xy 125.095 111.125)
+			(xy 127 125.095) (xy 127 127.635)
 		)
 		(stroke
 			(width 0)
@@ -5594,7 +5598,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.095 123.19) (xy 125.095 130.175)
+			(xy 127 117.475) (xy 127 110.49)
 		)
 		(stroke
 			(width 0)
@@ -5941,16 +5945,6 @@
 			(type default)
 		)
 		(uuid "e1aed959-174c-4f11-b503-fb3cdacece72")
-	)
-	(wire
-		(pts
-			(xy 125.095 111.125) (xy 114.3 111.125)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e1ec9660-c4c1-4f0e-8631-2b4495cc3a35")
 	)
 	(wire
 		(pts
@@ -6323,12 +6317,12 @@
 		(uuid "122c8c26-0eda-4a99-8d0d-deda86f27f84")
 	)
 	(label "*CE"
-		(at 125.095 130.175 0)
+		(at 127 110.49 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "12d48cb0-22f8-4402-95de-842164cfe260")
 	)
@@ -6683,7 +6677,7 @@
 		(uuid "8cc14b85-7e4d-4999-bd2b-c432c8148410")
 	)
 	(label "*PG"
-		(at 59.69 177.8 270)
+		(at 59.69 179.07 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6991,115 +6985,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Simulation_SPICE:NMOS")
-		(at 103.505 177.8 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0adc1e83-66d6-44ac-983b-c50d9c9c83f8")
-		(property "Reference" "Q5"
-			(at 109.22 176.5299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NMOS"
-			(at 109.22 179.0699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Components:SOT95P237X112-3N"
-			(at 108.585 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 103.505 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 103.505 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NMOS"
-			(at 103.505 194.945 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 103.505 196.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 103.505 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "IRLML0030TRPBF"
-			(at 103.505 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "edc22871-5bb7-41d8-b8b2-395a7044ee07")
-		)
-		(pin "1"
-			(uuid "c1ace884-dd5a-4456-b222-75f25c3249e1")
-		)
-		(pin "3"
-			(uuid "11fae431-2671-4fb3-8dcb-e65d3c9a658a")
-		)
-		(instances
-			(project "SuppChargerPCB"
-				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
-					(reference "Q5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3V3")
 		(at 180.34 133.35 0)
 		(unit 1)
@@ -7238,115 +7123,6 @@
 			(project "SuppChargerPCB"
 				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
 					(reference "C9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Simulation_SPICE:NMOS")
-		(at 64.77 177.8 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "14f08af7-7b8c-4b4b-ab3c-a66db0e72582")
-		(property "Reference" "Q3"
-			(at 71.12 176.5299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NMOS"
-			(at 71.12 179.0699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Components:SOT95P237X112-3N"
-			(at 69.85 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 64.77 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 64.77 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NMOS"
-			(at 64.77 194.945 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 64.77 196.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 64.77 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "IRLML0030TRPBF"
-			(at 64.77 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "33b7229d-c6c0-49d3-9a6f-348e2fdb10bb")
-		)
-		(pin "1"
-			(uuid "1d323629-9261-49a1-82cc-96933c9717f2")
-		)
-		(pin "3"
-			(uuid "004c8fbc-8e0b-469a-8e2b-50faf5719318")
-		)
-		(instances
-			(project "SuppChargerPCB"
-				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
-					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -9061,6 +8837,115 @@
 		)
 	)
 	(symbol
+		(lib_id "Simulation_SPICE:PMOS")
+		(at 46.355 177.165 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "52fe5f61-48f6-4a7f-a0a5-0299c860b9f5")
+		(property "Reference" "Q2"
+			(at 52.705 175.8949 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PMOS"
+			(at 52.705 178.4349 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 51.435 174.625 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://diotec.com/request/datasheet/mmftp84.pdf"
+			(at 46.355 189.865 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-MOSFET transistor, drain/source/gate"
+			(at 46.355 177.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "PMOS"
+			(at 46.355 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 46.355 196.215 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 46.355 192.405 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "MMFTP84"
+			(at 46.355 177.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cacc8230-06ca-408a-ae5d-2e629cef536c")
+		)
+		(pin "2"
+			(uuid "22f11979-bfab-4698-a8af-3a78e358ae21")
+		)
+		(pin "3"
+			(uuid "546909c2-4a2a-45ec-8ecc-63bff0efd4f9")
+		)
+		(instances
+			(project "SuppChargerPCB"
+				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GNDPWR")
 		(at 78.74 59.055 0)
 		(unit 1)
@@ -10406,6 +10291,115 @@
 		)
 	)
 	(symbol
+		(lib_id "Simulation_SPICE:PMOS")
+		(at 83.82 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "88ac1836-09d9-4188-8dd5-37a0118af141")
+		(property "Reference" "Q4"
+			(at 90.17 176.5299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PMOS"
+			(at 90.17 179.0699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 88.9 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://diotec.com/request/datasheet/mmftp84.pdf"
+			(at 83.82 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-MOSFET transistor, drain/source/gate"
+			(at 83.82 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "PMOS"
+			(at 83.82 194.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 83.82 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 83.82 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "MMFTP84"
+			(at 83.82 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c728df3f-053b-40a5-9c58-2eb3a1cc5412")
+		)
+		(pin "2"
+			(uuid "4484dc8f-81b5-4938-a0a5-97310dd4a402")
+		)
+		(pin "3"
+			(uuid "4a2cba4b-e0fc-45b8-b430-11f82c81e4d9")
+		)
+		(instances
+			(project "SuppChargerPCB"
+				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
+					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 161.29 118.745 180)
 		(unit 1)
@@ -10466,6 +10460,115 @@
 			(project "SuppChargerPCB"
 				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
 					(reference "+24V2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:PMOS")
+		(at 103.505 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8cab1ad3-90e1-4b45-8325-2ab2b88350c0")
+		(property "Reference" "Q5"
+			(at 109.855 176.5299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PMOS"
+			(at 109.855 179.0699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 108.585 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://diotec.com/request/datasheet/mmftp84.pdf"
+			(at 103.505 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-MOSFET transistor, drain/source/gate"
+			(at 103.505 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "PMOS"
+			(at 103.505 194.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 103.505 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 103.505 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "MMFTP84"
+			(at 103.505 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4c8ef2b6-a25e-4cc8-8e9f-976e35bc92c3")
+		)
+		(pin "2"
+			(uuid "65941f6e-6802-46b9-bbe0-5b0c3f587c00")
+		)
+		(pin "3"
+			(uuid "b02a124f-3388-4f80-a01b-a475f6aa24e8")
+		)
+		(instances
+			(project "SuppChargerPCB"
+				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
+					(reference "Q5")
 					(unit 1)
 				)
 			)
@@ -11281,6 +11384,71 @@
 	)
 	(symbol
 		(lib_id "power:GNDPWR")
+		(at 127 127.635 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a105cc4c-098e-4dfc-86b7-bc44dd3539f1")
+		(property "Reference" "#PWR045"
+			(at 127 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PGND"
+			(at 126.873 131.318 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 128.905 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 128.905 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 127 127.635 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7dd7590b-8048-4910-bf8a-20a771d3217c")
+		)
+		(instances
+			(project "SuppChargerPCB"
+				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
+					(reference "#PWR045")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
 		(at 140.335 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12042,115 +12210,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Simulation_SPICE:NMOS")
-		(at 46.355 177.165 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c09dc253-dd6c-4670-84b7-1030ad34141d")
-		(property "Reference" "Q2"
-			(at 52.07 175.8949 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NMOS"
-			(at 52.07 178.4349 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Components:SOT95P237X112-3N"
-			(at 51.435 174.625 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 46.355 189.865 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 46.355 177.165 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NMOS"
-			(at 46.355 194.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 46.355 196.215 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 46.355 192.405 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "IRLML0030TRPBF"
-			(at 46.355 177.165 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "077772b2-c546-43f5-8d54-43ce821fd8a1")
-		)
-		(pin "1"
-			(uuid "b0178d50-717c-44d8-8f3d-26df9805c29d")
-		)
-		(pin "3"
-			(uuid "438ccaed-42f4-428e-8dff-1bf5afb2e41a")
-		)
-		(instances
-			(project "SuppChargerPCB"
-				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
-					(reference "Q2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 202.565 79.375 90)
 		(unit 1)
@@ -12288,6 +12347,115 @@
 			(project "SuppChargerPCB"
 				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
 					(reference "FB1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:PMOS")
+		(at 64.77 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cdab454b-671d-454b-a8dd-5adfb62cc1f3")
+		(property "Reference" "Q3"
+			(at 71.12 176.5299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PMOS"
+			(at 71.12 179.0699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 69.85 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://diotec.com/request/datasheet/mmftp84.pdf"
+			(at 64.77 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-MOSFET transistor, drain/source/gate"
+			(at 64.77 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "PMOS"
+			(at 64.77 194.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 64.77 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 64.77 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "MMFTP84"
+			(at 64.77 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "51d0a612-5095-4095-84c2-587aba82266c")
+		)
+		(pin "2"
+			(uuid "9bdac81d-1ece-4fa5-bac2-f68ccdba888f")
+		)
+		(pin "3"
+			(uuid "e1aa2b80-ca6e-4a0b-a15e-318de9743693")
+		)
+		(instances
+			(project "SuppChargerPCB"
+				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -12449,115 +12617,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Simulation_SPICE:NMOS")
-		(at 26.67 176.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d7522f07-d28c-4e8a-b8e7-3064d15c2d59")
-		(property "Reference" "Q1"
-			(at 32.385 175.2599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NMOS"
-			(at 32.385 177.7999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Components:SOT95P237X112-3N"
-			(at 31.75 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 26.67 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 26.67 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NMOS"
-			(at 26.67 193.675 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 26.67 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 26.67 191.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "IRLML0030TRPBF"
-			(at 26.67 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "4a6d1001-69ae-4577-973c-e2928f6b5237")
-		)
-		(pin "1"
-			(uuid "7360fe61-d2d6-4791-aa07-8b70c70fcce9")
-		)
-		(pin "3"
-			(uuid "9d0e77cb-0761-430c-b3dc-42212a41e17c")
-		)
-		(instances
-			(project ""
-				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GNDPWR")
 		(at 149.86 133.35 0)
 		(unit 1)
@@ -12624,7 +12683,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 125.095 119.38 0)
+		(at 127 121.285 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12632,7 +12691,7 @@
 		(dnp no)
 		(uuid "defe0de7-3df3-421a-8b6e-2ad7c0d290d1")
 		(property "Reference" "R51"
-			(at 126.365 118.11 0)
+			(at 125.73 122.555 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12641,7 +12700,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 126.365 120.142 0)
+			(at 125.73 120.523 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12650,7 +12709,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 123.317 119.38 90)
+			(at 128.778 121.285 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12659,7 +12718,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 125.095 119.38 0)
+			(at 127 121.285 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12668,7 +12727,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 125.095 119.38 0)
+			(at 127 121.285 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12677,7 +12736,7 @@
 			)
 		)
 		(property "P/N" "CRCW06034K70FKEA"
-			(at 125.095 119.38 0)
+			(at 127 121.285 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12773,115 +12832,6 @@
 			(project "SuppChargerPCB"
 				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
 					(reference "R50")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Simulation_SPICE:NMOS")
-		(at 83.82 177.8 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e0aaee1e-c6eb-4cd1-9398-dc2985f37afe")
-		(property "Reference" "Q4"
-			(at 90.17 176.5299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NMOS"
-			(at 90.17 179.0699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Components:SOT95P237X112-3N"
-			(at 88.9 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 83.82 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 83.82 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NMOS"
-			(at 83.82 194.945 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 83.82 196.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 83.82 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "IRLML0030TRPBF"
-			(at 83.82 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "7d62ea5a-a417-4181-bc0d-cfd0ec5e5b56")
-		)
-		(pin "1"
-			(uuid "7b8fa90f-0b5d-4b11-9108-2bba63d3fb40")
-		)
-		(pin "3"
-			(uuid "4e3d2f4a-5efb-44ac-97af-170381e48953")
-		)
-		(instances
-			(project "SuppChargerPCB"
-				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
-					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -13359,6 +13309,115 @@
 			(project "SuppChargerPCB"
 				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
 					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:PMOS")
+		(at 26.67 176.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f2d9e008-ddbe-4917-af34-fe79ba23757c")
+		(property "Reference" "Q1"
+			(at 33.02 175.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "PMOS"
+			(at 33.02 177.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 31.75 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://diotec.com/request/datasheet/mmftp84.pdf"
+			(at 26.67 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-MOSFET transistor, drain/source/gate"
+			(at 26.67 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "PMOS"
+			(at 26.67 193.675 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 26.67 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 26.67 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "MMFTP84"
+			(at 26.67 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5806c74d-6e33-4fee-a1d5-8d414f65088a")
+		)
+		(pin "2"
+			(uuid "33b7780d-1622-4b73-b8ac-6ffb533ef5af")
+		)
+		(pin "3"
+			(uuid "1755963d-eef6-42a2-9c4b-64259d8dcca4")
+		)
+		(instances
+			(project ""
+				(path "/ef3612d5-925d-4729-8ba2-cd35f149d39a"
+					(reference "Q1")
 					(unit 1)
 				)
 			)

@@ -1,3 +1,4 @@
+#include "pinDefs.h"
 #include "common.h"
 
 void gpio_clock_init(GPIO_TypeDef *port){

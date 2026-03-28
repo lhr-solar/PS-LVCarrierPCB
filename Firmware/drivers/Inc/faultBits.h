@@ -1,5 +1,4 @@
 #pragma once
-
 #include "FreeRTOS.h"
 #include "stm32xx_hal.h"
 #include "common.h"
@@ -21,7 +20,23 @@ typedef enum
     FAULT_SUPPBATT_UNDERVOLTAGE,
     FAULT_SUPPREG_OVERVOLTAGE,
     FAULT_SUPPREG_UNDERVOLTAGE,
-    FAULT_SUPPCHARGER,
+
+    // Supp Charger Faults
+    /* DC Input Undervoltage 20V */ 
+    FAULT_SUPPCHARGER_IN_UNDERVOLTAGE,
+    /* DC Input Overvoltages 30V */ 
+    FAULT_SUPPCHARGER_IN_OVERVOLTAGE,
+    /* Charge current max is 5.25A */ 
+    FAULT_SUPPCHARGER_OVERCURRENT,
+    /* Thrown if battery voltage exceeds 28.7V */
+    FAULT_SUPPCHARGER_BATT_OVERVOLTAGE,
+    /* Chip Thermal Shutdown (~150 C) */
+    FAULT_SUPPCHARGER_BATT_TSHUT,
+    /* If charging for more than 12 hours */
+    FAULT_SUPPCHARGER_TIMER,
+    /* DRV SUP pin out of the range (gate supply) */
+    FAULT_SUPPCHARGER_DRV_SUP,      
+    
     FAULT_ADC_TIMEOUT,
     FAULT_LTC4421_FAULT,
     NUM_FAULTS

@@ -17,7 +17,7 @@ int main(){
     
     statusLeds_init();
 
-     xTaskCreateStatic(
+    xTaskCreateStatic(
                     initThread,
                     "Init Task",
                     TASK_INIT_STACK_SIZE,
