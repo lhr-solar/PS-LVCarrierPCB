@@ -56,7 +56,7 @@ can_status_t canbus_send(uint32_t id, uint8_t dlc, uint8_t data[], TickType_t de
         return CAN_ERR;
     }
 
-    FDCAN_TxHeaderTypeDef tx_header;
+    FDCAN_TxHeaderTypeDef tx_header = {0};
 
     tx_header.Identifier = id;
     tx_header.IdType = FDCAN_STANDARD_ID;
