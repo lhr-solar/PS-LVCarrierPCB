@@ -10,3 +10,5 @@ typedef enum pinMode {OUTPUT = GPIO_MODE_OUTPUT_PP, INPUT = GPIO_MODE_INPUT} pin
 void gpio_clock_init(GPIO_TypeDef *port);
 
 void gpio_pin_init(GPIO_TypeDef *port, uint32_t pin, pin_mode_t pinMode);
+
+void SystemClock_Config(void);
