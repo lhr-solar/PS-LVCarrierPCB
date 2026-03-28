@@ -18,13 +18,13 @@ void suppCharger(){
      // give chip a bit to power on
     vTaskDelay(pdMS_TO_TICKS(1000));
 
-
     while(1){
 
         // todo, make all of these not port max delay
         bq25756e_preReqBit_wait(BQ25756E_NUM_PREREQS, portMAX_DELAY);
 
         // start charging at 2A
+        // todo, start the charging at a lower current
         bq25756e_charge(portMAX_DELAY, 2000);
 
         bq25756e_dump_status(&charge_state, BQ25756E_SERIAL_ENABLE, portMAX_DELAY); 

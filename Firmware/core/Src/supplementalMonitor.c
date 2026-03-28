@@ -16,7 +16,7 @@ int16_t adc_To_Hall(uint32_t adcCounts){
 
 uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
   adcCounts = adcCounts > 4095 ? 4095 : adcCounts;
-  return ((uint32_t)adcCounts * 3300U * 10U) / 4095U; 
+  return ((uint32_t)adcCounts * 3300U * 11U) / 4095U; 
 }
 
  void adcWatchdogTimerCallback( TimerHandle_t xTimer ){
