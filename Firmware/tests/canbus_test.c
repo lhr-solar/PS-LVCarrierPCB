@@ -1,13 +1,14 @@
 #include "canbus.h"
 #include "stm32xx_hal.h"
 #include "statusLeds.h"
+#include "CarCAN_can_msgs.h"
 
 StaticTask_t task_buffer;
 StackType_t task_stack[512];
 
 static void task(void *pvParameters){
 
-    int test_id = 0x321;
+    int test_id = CAN_ID_SUPP_BATTERY_STATUS;
     
     // send x1234 to 0x11
     uint8_t tx_data[8] = {0};
