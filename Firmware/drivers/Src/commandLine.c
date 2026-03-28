@@ -49,4 +49,3 @@ void HAL_UART_MspGPIOInit(UART_HandleTypeDef *huart){
 
 }
 #endif
-
