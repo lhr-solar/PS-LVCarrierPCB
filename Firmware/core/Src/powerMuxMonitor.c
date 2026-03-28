@@ -1,5 +1,8 @@
 #include "powerMuxMonitor.h"
 
+StaticTask_t Task_PowerMux_Buffer;
+StackType_t Task_PowerMux_Stack_Array[ TASK_POWER_MUX_MON_STACK_SIZE ];
+
 void powerMuxMonitor(){
         
     // initialize pins for the power mux

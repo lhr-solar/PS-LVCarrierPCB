@@ -5,7 +5,7 @@ ADC_MAX_COUNTS = (1 << ADC_BITS) - 1
 VREF_MV = 3300
 
 SENSITIVITY_MV_PER_A = 100.0
-CURRENT_MIN_A = -2.3
+ZERO_CURRENT_MV = 330
 
 ARRAY_NAME = "adc_counts_to_ma_tmcs1126"
 H_FILE = "tmcs1126_lut.h"
@@ -29,7 +29,8 @@ def generate_tmcs1126_lut():
 
         for count in range(ADC_MAX_COUNTS + 1):
             mv = (count * VREF_MV) / ADC_MAX_COUNTS
-            current_a = (mv / SENSITIVITY_MV_PER_A) + CURRENT_MIN_A
+            mv_sense = mv - ZERO_CURRENT_MV
+            current_a = (mv_sense / SENSITIVITY_MV_PER_A)
             current_ma = int(round(current_a * 1000.0))
 
             if count % 8 == 0:
