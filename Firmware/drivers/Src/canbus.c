@@ -15,7 +15,7 @@ can_status_t canbus_init(){
     carfdcan->Init.ClockDivider = FDCAN_CLOCK_DIV1;
     carfdcan->Init.FrameFormat = FDCAN_FRAME_CLASSIC;
     carfdcan->Init.Mode = FDCAN_MODE_NORMAL;
-    carfdcan->Init.AutoRetransmission = DISABLE;
+    carfdcan->Init.AutoRetransmission = ENABLE;
     carfdcan->Init.TransmitPause = DISABLE;
     carfdcan->Init.ProtocolException = DISABLE;
     carfdcan->Init.NominalPrescaler = 20;
@@ -51,7 +51,7 @@ can_status_t canbus_init(){
     return CAN_OK;
 }
 
-can_status_t canbus_send(uint32_t id, uint8_t data[], TickType_t delay_ticks){
+can_status_t canbus_send(uint32_t id, uint8_t dlc, uint8_t data[], TickType_t delay_ticks){
     if(carfdcan == NULL){
         return CAN_ERR;
     }
@@ -61,7 +61,7 @@ can_status_t canbus_send(uint32_t id, uint8_t data[], TickType_t delay_ticks){
     tx_header.Identifier = id;
     tx_header.IdType = FDCAN_STANDARD_ID;
     tx_header.TxFrameType = FDCAN_DATA_FRAME;
-    tx_header.DataLength = FDCAN_DLC_BYTES_8;
+    tx_header.DataLength = dlc;
     tx_header.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
     tx_header.BitRateSwitch = FDCAN_BRS_OFF;
     tx_header.FDFormat = FDCAN_CLASSIC_CAN;

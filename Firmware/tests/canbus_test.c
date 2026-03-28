@@ -2,6 +2,7 @@
 #include "stm32xx_hal.h"
 #include "statusLeds.h"
 #include "CarCAN_can_msgs.h"
+#include "common.h"
 
 StaticTask_t task_buffer;
 StackType_t task_stack[512];
@@ -23,12 +24,14 @@ static void task(void *pvParameters){
     
     while(1){
 
-        if (canbus_send(test_id, tx_data, portMAX_DELAY) == CAN_ERR){
+        if (canbus_send(test_id, 8, tx_data, portMAX_DELAY) == CAN_ERR){
             Error_Handler();
         }
         else{
             statusLeds_toggle(LSOM_HEARTBEAT_LED);
         }
+
+        vTaskDelay(pdMS_TO_TICKS(1000));
 
     }
 }
