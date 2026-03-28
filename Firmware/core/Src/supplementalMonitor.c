@@ -76,7 +76,7 @@ void supplementalMonitor(){
             }
          */
 
-        vTaskDelay(SUPPLEMENTAL_MONITOR_THREAD_DELAY);
+        vTaskDelay(SUPPLEMENTAL_MONITOR_THREAD_DELAY_TICKS);
     }
     
 }
