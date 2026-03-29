@@ -124,6 +124,10 @@ bq25756e_status_t bq25756e_dump_status(bq25756e_charge_status_t *charge_state,
   return BQ25756E_ERR;
 }
 
+// bq25756e_status_t bq25756e_dump_charge_current() {
+
+// }
+
 bq25756e_status_t bq25756e_dump_faults(uint8_t *fault_state,
                                        bq25756e_serial_config_t serial, 
                                        TickType_t delay ) {

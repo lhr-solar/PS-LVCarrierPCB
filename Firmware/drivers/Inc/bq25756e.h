@@ -61,6 +61,10 @@
 #define BQ25756E_REG_CHARGE_STATUS_3 0x23
 #define BQ25756E_REG_FAULT_STATUS 0x24
 
+// Battery Current
+#define BQ25756E_REG_IBAT_A     0x30
+#define BQ25756E_REG_IBAT_B     0x2F
+
 // ADC / measurement
 #define BQ25756E_REG_ADC_CONTROL 0x2B
 #define BQ25756E_REG_VBAT_ADC 0x33
