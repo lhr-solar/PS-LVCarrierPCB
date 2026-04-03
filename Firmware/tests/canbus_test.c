@@ -9,7 +9,9 @@ StackType_t task_stack[512];
 
 void can_error_handler(){
     while(1){
-        statusLeds_write(SUPPBAT_FAULT_LED, ON);
+        // rapidly toggle
+        statusLeds_toggle(LSOM_HEARTBEAT_LED);
+        HAL_Delay(500);
     }
 }
 

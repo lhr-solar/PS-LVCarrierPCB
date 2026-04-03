@@ -6,24 +6,44 @@ FDCAN_HandleTypeDef* carfdcan;
 
 
 can_status_t canbus_init(){
-    carfdcan = hfdcan1;
-    carfdcan->Instance = FDCAN1;
+    carfdcan = hfdcan3;
 
+    // carfdcan->Init.ClockDivider = FDCAN_CLOCK_DIV1;
+    // carfdcan->Init.FrameFormat = FDCAN_FRAME_CLASSIC;
+    // carfdcan->Init.Mode = FDCAN_MODE_NORMAL;
+    // carfdcan->Init.AutoRetransmission = DISABLE;
+    // carfdcan->Init.TransmitPause = DISABLE;
+    // carfdcan->Init.ProtocolException = DISABLE;
+    // carfdcan->Init.NominalPrescaler = 20;
+    // carfdcan->Init.NominalSyncJumpWidth = 1;
+    // carfdcan->Init.NominalTimeSeg1 = 13;
+    // carfdcan->Init.NominalTimeSeg2 = 2;
+    // carfdcan->Init.DataPrescaler = 1;
+    // carfdcan->Init.DataSyncJumpWidth = 1;
+    // carfdcan->Init.DataTimeSeg1 = 1;
+    // carfdcan->Init.DataTimeSeg2 = 1;
+    // carfdcan->Init.StdFiltersNbr = 0;
+    // carfdcan->Init.ExtFiltersNbr = 0;
+    // carfdcan->Init.TxFifoQueueMode = FDCAN_TX_FIFO_OPERATION;
+
+    // CubeMX gen'ed
+    
+    carfdcan->Instance = FDCAN3;
     carfdcan->Init.ClockDivider = FDCAN_CLOCK_DIV1;
     carfdcan->Init.FrameFormat = FDCAN_FRAME_CLASSIC;
     carfdcan->Init.Mode = FDCAN_MODE_NORMAL;
-    carfdcan->Init.AutoRetransmission = ENABLE;
+    carfdcan->Init.AutoRetransmission = DISABLE;
     carfdcan->Init.TransmitPause = DISABLE;
     carfdcan->Init.ProtocolException = DISABLE;
-    carfdcan->Init.NominalPrescaler = 20;
+    carfdcan->Init.NominalPrescaler = 16;
     carfdcan->Init.NominalSyncJumpWidth = 1;
-    carfdcan->Init.NominalTimeSeg1 = 13;
-    carfdcan->Init.NominalTimeSeg2 = 2;
+    carfdcan->Init.NominalTimeSeg1 = 1;
+    carfdcan->Init.NominalTimeSeg2 = 1;
     carfdcan->Init.DataPrescaler = 1;
     carfdcan->Init.DataSyncJumpWidth = 1;
     carfdcan->Init.DataTimeSeg1 = 1;
     carfdcan->Init.DataTimeSeg2 = 1;
-    carfdcan->Init.StdFiltersNbr = 1;
+    carfdcan->Init.StdFiltersNbr = 0;
     carfdcan->Init.ExtFiltersNbr = 0;
     carfdcan->Init.TxFifoQueueMode = FDCAN_TX_FIFO_OPERATION;
 
@@ -116,8 +136,12 @@ void HAL_FDCAN_MspInit(FDCAN_HandleTypeDef* fdcanHandle)
     HAL_NVIC_EnableIRQ(FDCAN1_IT1_IRQn);
   }
 
-  else if(fdcanHandle->Instance==FDCAN3)
+  if(hfdcan->Instance==FDCAN3)
   {
+    /* USER CODE BEGIN FDCAN3_MspInit 0 */
+
+    /* USER CODE END FDCAN3_MspInit 0 */
+
   /** Initializes the peripherals clocks
   */
     PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_FDCAN;
@@ -127,11 +151,8 @@ void HAL_FDCAN_MspInit(FDCAN_HandleTypeDef* fdcanHandle)
       Error_Handler();
     }
 
-    /* FDCAN3 clock enable */
-    HAL_RCC_FDCAN_CLK_ENABLED++;
-    if(HAL_RCC_FDCAN_CLK_ENABLED==1){
-      __HAL_RCC_FDCAN_CLK_ENABLE();
-    }
+    /* Peripheral clock enable */
+    __HAL_RCC_FDCAN_CLK_ENABLE();
 
     __HAL_RCC_GPIOA_CLK_ENABLE();
     /**FDCAN3 GPIO Configuration
@@ -145,13 +166,12 @@ void HAL_FDCAN_MspInit(FDCAN_HandleTypeDef* fdcanHandle)
     GPIO_InitStruct.Alternate = GPIO_AF11_FDCAN3;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-    /* FDCAN3 interrupt Init */
-    HAL_NVIC_SetPriority(FDCAN3_IT0_IRQn, FDCAN_NVIC_PRIO, 0);
-    HAL_NVIC_EnableIRQ(FDCAN3_IT0_IRQn);
-    HAL_NVIC_SetPriority(FDCAN3_IT1_IRQn, FDCAN_NVIC_PRIO, 0);
-    HAL_NVIC_EnableIRQ(FDCAN3_IT1_IRQn);
+    /* USER CODE BEGIN FDCAN3_MspInit 1 */
+
+    /* USER CODE END FDCAN3_MspInit 1 */
 
   }
+
 }
 
 void HAL_FDCAN_MspDeInit(FDCAN_HandleTypeDef* fdcanHandle)
