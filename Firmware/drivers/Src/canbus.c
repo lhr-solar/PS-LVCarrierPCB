@@ -6,7 +6,7 @@ FDCAN_HandleTypeDef* carfdcan;
 
 
 can_status_t canbus_init(){
-    carfdcan = hfdcan3;
+    carfdcan = hfdcan1;
     carfdcan->Instance = FDCAN1;
 
     carfdcan->Init.ClockDivider = FDCAN_CLOCK_DIV1;
@@ -99,8 +99,8 @@ void HAL_FDCAN_MspInit(FDCAN_HandleTypeDef* fdcanHandle)
 
     __HAL_RCC_GPIOA_CLK_ENABLE();
     /**FDCAN1 GPIO Configuration
-    PC11     ------> FDCAN1_RX
-    PC10     ------> FDCAN1_TX
+    PA11     ------> FDCAN1_RX
+    PA12     ------> FDCAN1_TX
     */ 
     GPIO_InitStruct.Pin = GPIO_PIN_11|GPIO_PIN_12;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -190,7 +190,7 @@ void HAL_FDCAN_MspDeInit(FDCAN_HandleTypeDef* fdcanHandle)
         HAL_GPIO_DeInit(GPIOA, GPIO_PIN_8|GPIO_PIN_15);
 
         /* FDCAN3 interrupt Deinit */
-        HAL_NVIC_DisableIRQ(FDCAN3_IT0_IRQn);
+        HAL_NVIC_DisableIRQ(FDCAN3_IT0_IRQn); 
         HAL_NVIC_DisableIRQ(FDCAN3_IT1_IRQn);
     }
 }
