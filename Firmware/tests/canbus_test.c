@@ -7,6 +7,13 @@
 StaticTask_t task_buffer;
 StackType_t task_stack[512];
 
+void can_error_handler(){
+    while(1){
+        statusLeds_write(SUPPBAT_FAULT_LED, ON);
+    }
+}
+
+
 static void task(void *pvParameters){
 
     int test_id = CAN_ID_SUPP_BATTERY_STATUS;
@@ -25,7 +32,7 @@ static void task(void *pvParameters){
     while(1){
 
         if (canbus_send(test_id, 8, tx_data, portMAX_DELAY) == CAN_ERR){
-            Error_Handler();
+            can_error_handler();
         }
         else{
             statusLeds_toggle(LSOM_HEARTBEAT_LED);
@@ -36,11 +43,6 @@ static void task(void *pvParameters){
     }
 }
 
-void can_error_handler(){
-    while(1){
-        statusLeds_write(SUPPBAT_FAULT_LED, ON);
-    }
-}
 
 int main(){
     HAL_Init();
