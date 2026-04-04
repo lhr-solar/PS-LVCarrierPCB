@@ -58,7 +58,16 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "hole_clearance|207125000|39655000|6bcdb596-6b84-49bd-b226-27455423e161|b414ba0b-7c61-4b45-9ee7-79c919a0a249",
+          ""
+        ],
+        [
+          "hole_clearance|207125000|49005000|775bd980-d4b5-4987-9795-2dddf86c8111|f8663add-db59-4f59-aecd-84bd167bc18d",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -102,13 +111,13 @@
         "shorting_items": "error",
         "silk_edge_clearance": "warning",
         "silk_over_copper": "warning",
-        "silk_overlap": "warning",
+        "silk_overlap": "ignore",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
         "text_height": "warning",
         "text_on_edge_cuts": "error",
-        "text_thickness": "warning",
+        "text_thickness": "ignore",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
         "track_angle": "error",
@@ -188,6 +197,8 @@
       ],
       "track_widths": [
         0.0,
+        0.2,
+        0.3,
         0.4
       ],
       "tuning_pattern_settings": {
@@ -445,8 +456,8 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
-      "power_pin_not_driven": "error",
+      "pin_to_pin": "ignore",
+      "power_pin_not_driven": "ignore",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
       "similar_labels": "warning",
@@ -505,7 +516,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Supplemental_Monitoring_PCB.step",
       "svg": "",
       "vrml": ""
     },
@@ -574,7 +585,7 @@
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -634,7 +645,7 @@
           "group_by": false,
           "label": "P/N",
           "name": "P/N",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -688,6 +699,30 @@
           "group_by": false,
           "label": "#",
           "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Digikey P/N",
+          "name": "Digikey P/N",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC P/N",
+          "name": "LCSC P/N",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "JLC P/N",
+          "name": "JLC P/N",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Mouser P/N",
+          "name": "Mouser P/N",
           "show": false
         }
       ],
@@ -744,20 +779,32 @@
       "Root"
     ],
     [
-      "e6ad27a4-998d-404c-8222-a3ba4eac724d",
-      "CurrentAfter"
+      "21cea0c4-3108-440d-90a8-000f9a94754c",
+      "SevenSegmentDisplay1"
     ],
     [
-      "1c9c40d1-9135-4b24-beff-d2d4ce45e42f",
-      "CurrentBefore"
+      "67c13057-36d1-4aa6-8a7b-beb0b0f79c38",
+      "currentSense"
     ],
     [
-      "bd92b964-6bfd-4964-9fc2-8b10bf975ec3",
-      "Voltage"
+      "fde7fbac-7a41-40f6-9688-9165cc967b3b",
+      "SevenSegmentDisplay2"
     ],
     [
       "6aefca84-d4ae-4551-964f-8e4c2683e527",
       "Seven Segment"
+    ],
+    [
+      "e4aa775b-f2e6-4e6c-971d-97857cb536f5",
+      "VoltageSense"
+    ],
+    [
+      "5a941b28-710c-477b-a7f8-9a9e4dbef24e",
+      "SevenSegmentDisplay"
+    ],
+    [
+      "829d58ef-0b93-46e0-b833-6473bb9a5c9b",
+      "dualUnityGain"
     ]
   ],
   "text_variables": {}

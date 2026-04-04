@@ -9,6 +9,24 @@
 #include "lvEnable.h"
 #include "ltc4421.h"
 #include "tasksConfig.h"
+#include "ADC.h"
+#include "adc_sense.h"
+#include "faultBits.h"
+#include "timers.h"
 
-StackType_t Task_SuppMon_Stack_Array[ TASK_SUPP_MON_STACK_SIZE ];
-StaticTask_t Task_SuppMon_Buffer;
+
+/**
+ * @brief Converts adc counts to current measurement for the tmcs1126 Hall effect
+ * 
+ * @param adcCounts     ADC value between 0 to 4095
+ * @return signed integer value for current measurement
+ */
+int16_t adc_To_Hall(uint32_t adcCounts);
+
+/**
+ * @brief Converts adc counts to voltage measurement
+ * 
+ * @param adcCounts     ADC value between 0 to 4095
+ * @return unsigned integer value for voltage measurement
+ */
+uint32_t adc_to_SuppVoltage(uint32_t adcCounts);
