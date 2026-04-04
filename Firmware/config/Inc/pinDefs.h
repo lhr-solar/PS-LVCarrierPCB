@@ -65,6 +65,15 @@
 #define BQ25756E_INT_PORT GPIOB
 #define BQ25756E_INT_PIN GPIO_PIN_4
 
+#define SR_DATA_PORT GPIOB
+#define SR_DATA_PIN GPIO_PIN_15
+
+#define SR_CLK_PORT GPIOB
+#define SR_CLK_PIN GPIO_PIN_9
+
+#define R_CLK_PORT GPIOB
+#define R_CLK_PIN GPIO_PIN_13
+
 #ifdef LSOM_U // LSOM U version
     #define USB_UART_CLOCK_PORT GPIOC
     #define USB_UART_TX GPIO_PIN_10
