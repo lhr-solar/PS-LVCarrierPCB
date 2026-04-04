@@ -1,4 +1,5 @@
 #include "canbus.h"
+#include "statusLeds.h"
 
 #define FDCAN_NVIC_PRIO configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY + 5
 
@@ -31,14 +32,18 @@ can_status_t canbus_init(){
     carfdcan->Instance = FDCAN3;
     carfdcan->Init.ClockDivider = FDCAN_CLOCK_DIV1;
     carfdcan->Init.FrameFormat = FDCAN_FRAME_CLASSIC;
-    carfdcan->Init.Mode = FDCAN_MODE_NORMAL;
+
+    // external loop back + auto retry enable
+    carfdcan->Init.Mode = FDCAN_MODE_EXTERNAL_LOOPBACK;
+
+    // carfdcan->Init.Mode = FDCAN_MODE_NORMAL;
     carfdcan->Init.AutoRetransmission = DISABLE;
     carfdcan->Init.TransmitPause = DISABLE;
     carfdcan->Init.ProtocolException = DISABLE;
-    carfdcan->Init.NominalPrescaler = 16;
+    carfdcan->Init.NominalPrescaler = 20;
     carfdcan->Init.NominalSyncJumpWidth = 1;
-    carfdcan->Init.NominalTimeSeg1 = 1;
-    carfdcan->Init.NominalTimeSeg2 = 1;
+    carfdcan->Init.NominalTimeSeg1 = 13;
+    carfdcan->Init.NominalTimeSeg2 = 2;
     carfdcan->Init.DataPrescaler = 1;
     carfdcan->Init.DataSyncJumpWidth = 1;
     carfdcan->Init.DataTimeSeg1 = 1;
@@ -64,6 +69,8 @@ can_status_t canbus_init(){
     if(can_fd_start(carfdcan) != CAN_OK){
        return CAN_ERR;
     }
+
+    HAL_FDCAN_ActivateNotification(carfdcan, FDCAN_IT_BUS_OFF, 0);
 
     return CAN_OK;
 }
@@ -134,9 +141,11 @@ void HAL_FDCAN_MspInit(FDCAN_HandleTypeDef* fdcanHandle)
     HAL_NVIC_EnableIRQ(FDCAN1_IT0_IRQn);
     HAL_NVIC_SetPriority(FDCAN1_IT1_IRQn, FDCAN_NVIC_PRIO, 0);
     HAL_NVIC_EnableIRQ(FDCAN1_IT1_IRQn);
+
+    
   }
 
-  if(hfdcan->Instance==FDCAN3)
+  if(fdcanHandle->Instance==FDCAN3)
   {
     /* USER CODE BEGIN FDCAN3_MspInit 0 */
 
@@ -166,12 +175,12 @@ void HAL_FDCAN_MspInit(FDCAN_HandleTypeDef* fdcanHandle)
     GPIO_InitStruct.Alternate = GPIO_AF11_FDCAN3;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+
     /* USER CODE BEGIN FDCAN3_MspInit 1 */
 
     /* USER CODE END FDCAN3_MspInit 1 */
 
   }
-
 }
 
 void HAL_FDCAN_MspDeInit(FDCAN_HandleTypeDef* fdcanHandle)
@@ -213,4 +222,17 @@ void HAL_FDCAN_MspDeInit(FDCAN_HandleTypeDef* fdcanHandle)
         HAL_NVIC_DisableIRQ(FDCAN3_IT0_IRQn); 
         HAL_NVIC_DisableIRQ(FDCAN3_IT1_IRQn);
     }
+}
+
+void HAL_FDCAN_ErrorStatusCallback(FDCAN_HandleTypeDef *hfdcan, uint32_t ErrorStatusITs)
+{
+    FDCAN_ProtocolStatusTypeDef protocol_status;
+    HAL_FDCAN_GetProtocolStatus(hfdcan, &protocol_status);
+
+    if (protocol_status.BusOff != 0)  // If Bus-Off error occurred
+    {
+        CLEAR_BIT(hfdcan->Instance->CCCR, FDCAN_CCCR_INIT);  // Clear INIT bit to recover from Bus-Off
+    }
+
+    statusLeds_write(HEARTBEAT_LED, 1);
 }
