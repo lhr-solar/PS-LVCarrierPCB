@@ -222,16 +222,3 @@ void HAL_FDCAN_MspDeInit(FDCAN_HandleTypeDef* fdcanHandle)
         HAL_NVIC_DisableIRQ(FDCAN3_IT1_IRQn);
     }
 }
-
-void HAL_FDCAN_ErrorStatusCallback(FDCAN_HandleTypeDef *hfdcan, uint32_t ErrorStatusITs)
-{
-    FDCAN_ProtocolStatusTypeDef protocol_status;
-    HAL_FDCAN_GetProtocolStatus(hfdcan, &protocol_status);
-
-    if (protocol_status.BusOff != 0)  // If Bus-Off error occurred
-    {
-        CLEAR_BIT(hfdcan->Instance->CCCR, FDCAN_CCCR_INIT);  // Clear INIT bit to recover from Bus-Off
-    }
-
-    statusLeds_write(HEARTBEAT_LED, 1);
-}
