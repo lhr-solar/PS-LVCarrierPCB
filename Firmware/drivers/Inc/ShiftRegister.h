@@ -1,6 +1,7 @@
 #pragma once
 
 #include "stm32xx_hal.h"
+#include "pinDefs.h"
 
 #define NUMBER_PINS 3
 #define NUMBER_DISPLAYS 3

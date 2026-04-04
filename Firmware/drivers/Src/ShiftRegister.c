@@ -11,9 +11,9 @@ static GPIO_InitTypeDef SR_configB = {.Mode = GPIO_MODE_OUTPUT_PP,
                                       .Pin = 0};
 
 const pin_t SR_pins[NUMBER_PINS] = {
-    {GPIO_PIN_13, GPIOB},   // ser data
-    {GPIO_PIN_15, GPIOB},  // srclk
-    {GPIO_PIN_9, GPIOB}};  // status led need rclk
+    {SR_DATA_PIN, SR_DATA_PORT},    // ser data
+    {SR_CLK_PIN, SR_CLK_PORT},      // srclk
+    {R_CLK_PIN, R_CLK_PORT}};       // status led need rclk
 
 static const uint8_t seven_seg_map[10] = {
     0b00111111,  // 0
