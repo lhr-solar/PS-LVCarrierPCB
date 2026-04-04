@@ -5,6 +5,7 @@
 #include "ltc4421.h"
 #include "pinDefs.h"
 #include "faultBits.h"
+#include "suppCharger.h"
 
 #define MS_DELAY_100 pdMS_TO_TICKS(100) 
 #define MS_DELAY_500 pdMS_TO_TICKS(500) 
@@ -12,12 +13,6 @@
 // Run test w/ arbitrary fault after ~10s
 #define USING_FAULT_TEST
 
-/* BQ Driver Setup */
-// User's BQ Handle
-static BQ_HandleTypeDef bq_handle;
-
-// I2C Handle
-I2C_HandleTypeDef hi2c;
 
 // Task buffers
 StaticTask_t bqTaskBuffer;

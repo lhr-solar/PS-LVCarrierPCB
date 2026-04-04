@@ -46,7 +46,15 @@ void initThread(){
                     &Task_FaultState_Buffer
    );
 
-
+    xTaskCreateStatic(
+                    suppCharger,
+                    "Supplemental Battery Charger Task",
+                    TASK_SUPP_CHARGING_STACK_SIZE,
+                    (void*)NULL,
+                    TASK_SUPP_CHARGING_PRIO,
+                    Task_SuppCharger_Stack_Array, 
+                    &Task_SuppCharger_Buffer
+   );
 
    vTaskDelete(NULL);
 
