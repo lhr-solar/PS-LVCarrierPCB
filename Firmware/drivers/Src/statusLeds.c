@@ -4,8 +4,13 @@
 void statusLeds_init(void){
 
     gpio_pin_init(HEARTBEAT_LED_PORT, HEARTBEAT_LED_PIN, OUTPUT); // initialize heartbeat led on OBBB
+    statusLeds_write(HEARTBEAT_LED, GPIO_PIN_RESET);
+    
     gpio_pin_init(SUPPBAT_FAULT_PORT, SUPPBAT_FAULT_PIN, OUTPUT); // initialize suppBat fault led on OBBB
+    statusLeds_write(SUPPBAT_FAULT_LED, GPIO_PIN_RESET);
+    
     gpio_pin_init(LSOM_HEARTBEAT_LED_PORT, LSOM_HEARTBEAT_LED_PIN, OUTPUT); // initialize heartbeat led on LSOM
+    statusLeds_write(LSOM_HEARTBEAT_LED, GPIO_PIN_RESET);
 
 }
 
