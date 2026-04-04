@@ -35,7 +35,6 @@ can_status_t canbus_init(){
 
     // external loop back + auto retry enable
     carfdcan->Init.Mode = FDCAN_MODE_EXTERNAL_LOOPBACK;
-
     // carfdcan->Init.Mode = FDCAN_MODE_NORMAL;
     carfdcan->Init.AutoRetransmission = DISABLE;
     carfdcan->Init.TransmitPause = DISABLE;
