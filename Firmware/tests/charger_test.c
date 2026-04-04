@@ -38,6 +38,8 @@ void BqTask(void *argument){
     bq25756e_charge_status_t charge_state=BQ25756E_NOT_STARTED;
     bq25756e_charge(portMAX_DELAY, 2000);
 
+    int16_t charge_current;
+
     while (1) {
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
@@ -51,6 +53,8 @@ void BqTask(void *argument){
 
         // // Dump status and continue
         bq25756e_dump_status(&charge_state, BQ25756E_SERIAL_ENABLE, portMAX_DELAY); 
+        bq25756e_dump_charge_current(&charge_current, BQ25756E_SERIAL_ENABLE, portMAX_DELAY); 
+        
         bq25756e_pet_wdg(portMAX_DELAY);
 
         vTaskDelay(pdMS_TO_TICKS(1000));

@@ -124,9 +124,28 @@ bq25756e_status_t bq25756e_dump_status(bq25756e_charge_status_t *charge_state,
   return BQ25756E_ERR;
 }
 
-// bq25756e_status_t bq25756e_dump_charge_current() {
+bq25756e_status_t bq25756e_dump_charge_current(int16_t* reading,  
+                                               bq25756e_serial_config_t serial,
+                                               TickType_t delay) {
+  // Measure IBat register value
+  uint8_t buff1[1], buff2[1];
+  buff1[0]=0; // msb
+  buff2[0]=0; // lsb
 
-// }
+  if (bq25756e_read_reg(BQ25756E_REG_IBAT_A, buff1, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+  if (bq25756e_read_reg(BQ25756E_REG_IBAT_B, buff2, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+
+  int16_t ibat_reading= ~( ( buff1[0] << 8 ) + buff2[0] ) + 1; // pack + 2's comp
+  *reading=ibat_reading;
+
+  if (serial==BQ25756E_SERIAL_ENABLE) printf("Charge current: %d mA \n\r", ibat_reading);
+ 
+  return BQ25756E_OK;
+}
 
 bq25756e_status_t bq25756e_dump_faults(uint8_t *fault_state,
                                        bq25756e_serial_config_t serial, 
