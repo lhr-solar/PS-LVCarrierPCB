@@ -3,11 +3,13 @@
 StackType_t Task_SuppCharger_Stack_Array[ TASK_SUPP_CHARGING_STACK_SIZE ];
 StaticTask_t Task_SuppCharger_Buffer;
 
+/* BQ Driver Setup */
 // User's BQ Handle
-static BQ_HandleTypeDef bq_handle;
+BQ_HandleTypeDef bq_handle;
 
 // I2C Handle
 I2C_HandleTypeDef hi2c;
+
 
 void suppCharger(){
 
