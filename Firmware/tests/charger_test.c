@@ -5,7 +5,6 @@
 #include "ltc4421.h"
 #include "pinDefs.h"
 #include "faultBits.h"
-#include "suppCharger.h"
 
 #define MS_DELAY_100 pdMS_TO_TICKS(100) 
 #define MS_DELAY_500 pdMS_TO_TICKS(500) 
@@ -13,6 +12,12 @@
 // Run test w/ arbitrary fault after ~10s
 #define USING_FAULT_TEST
 
+/* BQ Driver Setup */
+// User's BQ Handle
+static BQ_HandleTypeDef bq_handle;
+
+// I2C Handle
+I2C_HandleTypeDef hi2c;
 
 // Task buffers
 StaticTask_t bqTaskBuffer;
@@ -33,6 +38,8 @@ void BqTask(void *argument){
     bq25756e_charge_status_t charge_state=BQ25756E_NOT_STARTED;
     bq25756e_charge(portMAX_DELAY, 2000);
 
+    int16_t charge_current;
+
     while (1) {
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
@@ -46,6 +53,8 @@ void BqTask(void *argument){
 
         // // Dump status and continue
         bq25756e_dump_status(&charge_state, BQ25756E_SERIAL_ENABLE, portMAX_DELAY); 
+        bq25756e_dump_charge_current(&charge_current, BQ25756E_SERIAL_ENABLE, portMAX_DELAY); 
+        
         bq25756e_pet_wdg(portMAX_DELAY);
 
         vTaskDelay(pdMS_TO_TICKS(1000));
