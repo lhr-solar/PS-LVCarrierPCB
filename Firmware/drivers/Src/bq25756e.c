@@ -21,6 +21,7 @@ static bq25756e_status_t bq25756e_TempSense_disable(TickType_t delay);
 static bq25756e_status_t bq25756e_HiZ_disable(TickType_t delay);
 static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, uint32_t limit);
 static bq25756e_status_t bq25756e_HW_Ichg_disable(TickType_t delay);
+static bq25756e_status_t bq25756e_charge_enable(TickType_t delay);
 
 static uint16_t bq25756e_current_lim_to_mask(uint32_t charge_current);
 
@@ -51,7 +52,8 @@ bq25756e_status_t bq25756e_charge(TickType_t delay, uint32_t limit) {
     stat=bq25756e_RevMode_disable(delay);
     if (stat != BQ25756E_OK) return stat;
     // Assert CE Pin to start charging
-    bq25756e_write_ce(BQ25756E_LOGIC_HIGH);
+
+    bq25756e_charge_enable(portMAX_DELAY);
 
     return stat;
 }
@@ -216,6 +218,23 @@ void bq25756e_write_ce(bq25756e_logic_t value) {
 }
 
 /****************************** STATIC DRIVER HELPERS ********************************/
+static bq25756e_status_t bq25756e_charge_enable(TickType_t delay) {
+  uint8_t buff[1]={0};
+
+  // Charge disable
+  if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CONTROL, buff, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+  bq25756e_assert_bits(buff, BQ25756E_BIT_CHARGE_ENABLE);
+  if (bq25756e_write_reg(BQ25756E_REG_CHARGE_CONTROL, buff[0], delay) != BQ25756E_OK) {
+    return BQ25756E_WRITE_FAIL;
+  }
+
+  // Disable CE
+  bq25756e_write_ce(BQ25756E_LOGIC_HIGH);
+
+  return BQ25756E_OK;
+}
 
 static bq25756e_status_t bq25756e_RevMode_disable(TickType_t delay) {
   // Disable reverse mode (battery -> input)
