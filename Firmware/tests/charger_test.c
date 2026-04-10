@@ -6,6 +6,12 @@
 #include "pinDefs.h"
 #include "faultBits.h"
 
+
+/** TODO
+ * Power sequence must be LSOM on, running code, and then 24v on
+ */
+
+
 #define MS_DELAY_100 pdMS_TO_TICKS(100) 
 #define MS_DELAY_500 pdMS_TO_TICKS(500) 
 

@@ -22,6 +22,8 @@ static bq25756e_status_t bq25756e_HiZ_disable(TickType_t delay);
 static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, uint32_t limit);
 static bq25756e_status_t bq25756e_HW_Ichg_disable(TickType_t delay);
 static bq25756e_status_t bq25756e_charge_enable(TickType_t delay);
+static bq25756e_status_t bq25756e_adc_enable(TickType_t delay);
+static bq25756e_status_t bq25756e_adc_disable(TickType_t delay);
 
 static uint16_t bq25756e_current_lim_to_mask(uint32_t charge_current);
 
@@ -196,6 +198,9 @@ bq25756e_status_t bq25756e_dump_faults(uint8_t *fault_state,
 bq25756e_status_t bq25756e_charge_disable(TickType_t delay) {
   uint8_t buff[1]={0};
 
+  // disable current sense adc
+  bq25756e_adc_disable(delay);
+
   // Charge disable
   if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CONTROL, buff, delay) != BQ25756E_OK) {
     return BQ25756E_READ_FAIL;
@@ -241,8 +246,38 @@ void bq25756e_write_ce(bq25756e_logic_t value) {
 }
 
 /****************************** STATIC DRIVER HELPERS ********************************/
+static bq25756e_status_t bq25756e_adc_disable(TickType_t delay) {
+  uint8_t buff[1]={0};
+
+  if (bq25756e_read_reg(BQ25756E_REG_ADC_CONTROL, buff, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+  bq25756e_clear_bits(buff, BQ25756E_BIT_ADC_ENABLE);
+  if (bq25756e_write_reg(BQ25756E_REG_ADC_CONTROL, buff[0], delay) != BQ25756E_OK) {
+    return BQ25756E_WRITE_FAIL;
+  }
+
+  return BQ25756E_OK;
+} 
+
+static bq25756e_status_t bq25756e_adc_enable(TickType_t delay) {
+  uint8_t buff[1]={0};
+
+  if (bq25756e_read_reg(BQ25756E_REG_ADC_CONTROL, buff, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+  bq25756e_assert_bits(buff, BQ25756E_BIT_ADC_ENABLE);
+  if (bq25756e_write_reg(BQ25756E_REG_ADC_CONTROL, buff[0], delay) != BQ25756E_OK) {
+    return BQ25756E_WRITE_FAIL;
+  }
+
+  return BQ25756E_OK;
+} 
+
 static bq25756e_status_t bq25756e_charge_enable(TickType_t delay) {
   uint8_t buff[1]={0};
+
+  bq25756e_adc_enable(delay);
 
   // Charge disable
   if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CONTROL, buff, delay) != BQ25756E_OK) {
