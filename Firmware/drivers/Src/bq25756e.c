@@ -143,7 +143,9 @@ bq25756e_status_t bq25756e_dump_charge_current(int16_t* reading,
     return BQ25756E_READ_FAIL;
   }
 
-  int16_t ibat_reading= ~( ( buff1[0] << 8 ) + buff2[0] ) + 1; // pack + 2's comp
+  // Values from -20000 mA to 20000 mA
+  // Bit step is 2 mA
+  int16_t ibat_reading= ( ( buff1[0] << 8 ) + buff2[0] ) * 2; 
   *reading=ibat_reading;
 
   if (serial==BQ25756E_SERIAL_ENABLE) printf("Charge current: %d mA \n\r", ibat_reading);
@@ -199,7 +201,7 @@ bq25756e_status_t bq25756e_charge_disable(TickType_t delay) {
   uint8_t buff[1]={0};
 
   // disable current sense adc
-  bq25756e_adc_disable(delay);
+  if(0)bq25756e_adc_disable(delay);
 
   // Charge disable
   if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CONTROL, buff, delay) != BQ25756E_OK) {
@@ -267,6 +269,7 @@ static bq25756e_status_t bq25756e_adc_enable(TickType_t delay) {
     return BQ25756E_READ_FAIL;
   }
   bq25756e_assert_bits(buff, BQ25756E_BIT_ADC_ENABLE);
+  bq25756e_clear_bits(buff, BQ25756E_BIT_ADC_CONTINUOUS_ENABLE);
   if (bq25756e_write_reg(BQ25756E_REG_ADC_CONTROL, buff[0], delay) != BQ25756E_OK) {
     return BQ25756E_WRITE_FAIL;
   }

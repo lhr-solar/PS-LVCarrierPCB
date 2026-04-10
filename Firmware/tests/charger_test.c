@@ -6,7 +6,6 @@
 #include "pinDefs.h"
 #include "faultBits.h"
 
-
 /** TODO
  * Power sequence must be LSOM on, running code, and then 24v on
  */
@@ -58,8 +57,12 @@ void BqTask(void *argument){
         #endif
 
         // // Dump status and continue
+        printf("============= \n\r");
+
         bq25756e_dump_status(&charge_state, BQ25756E_SERIAL_ENABLE, portMAX_DELAY); 
         bq25756e_dump_charge_current(&charge_current, BQ25756E_SERIAL_ENABLE, portMAX_DELAY); 
+
+        printf("============= \n\r");
         
         bq25756e_pet_wdg(portMAX_DELAY);
 
