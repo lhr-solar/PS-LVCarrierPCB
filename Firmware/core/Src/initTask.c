@@ -6,6 +6,7 @@
 #include "commandLine.h"
 #include "tasksConfig.h"
 #include "faultState.h"
+#include "canbus.h"
  
 
 void initThread(){
@@ -15,6 +16,8 @@ void initThread(){
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
     faultBits_init();
+
+    canbus_init();
 
      xTaskCreateStatic(
                     powerMuxMonitor,

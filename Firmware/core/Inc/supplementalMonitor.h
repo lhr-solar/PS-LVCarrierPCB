@@ -13,6 +13,9 @@
 #include "adc_sense.h"
 #include "faultBits.h"
 #include "timers.h"
+#include "CarCAN_can_msgs.h"
+#include "string.h"
+#include "canbus.h"
 
 
 /**

@@ -12,11 +12,12 @@ int main(){
     statusLeds_init();
 
     ltc4421_shdn_enable(OFF);
-    HAL_Delay(5000);
+    HAL_Delay(2000);
     ltc4421_shdn_enable(ON);
     
     while(1){
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
+        ltc4421_shdn_enable(ON);
         HAL_Delay(1000);
     }
 
