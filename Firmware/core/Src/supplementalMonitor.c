@@ -165,7 +165,7 @@ void supplementalMonitor(){
     uint32_t supplementalBatteryVoltage;
     uint32_t supplementalBatteryVoltageCounts;
 
-     uint32_t supplementalBatteryCurrent;
+    uint32_t supplementalBatteryCurrent;
     uint32_t supplementalBatteryCurrentCounts;
 
 
