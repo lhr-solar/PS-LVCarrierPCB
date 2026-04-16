@@ -97,6 +97,37 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
     }
     return pdPASS;
  }
+ 
+ static BaseType_t readSupplementalCurrent(uint32_t *suppCurrent, uint32_t *counts, TickType_t delay_ms){
+
+    if(suppCurrent == NULL || counts == NULL){
+        return pdFAIL;
+    }
+
+    BaseType_t readStat;
+    adc_status_t startStat;
+
+    // start the ADC for reading the supplemental battery current
+    startStat = adc_start_read(SUPPLEMENTAL_BATTERY_CURRENT, delay_ms);
+
+    if(startStat == ADC_OK){
+        readStat = adc_read_value(SUPPLEMENTAL_BATTERY_CURRENT, counts, delay_ms);
+
+        // if a new ADC reading was recieved
+        if(readStat == pdTRUE){
+            *suppCurrent = adc_To_Hall(*counts);
+        }
+        else{
+            return pdFAIL;
+        }
+    }
+    else{
+        return pdFAIL;
+    }
+
+    return pdPASS;
+ }
+
 
 void supplementalMonitor(){
 
@@ -129,8 +160,13 @@ void supplementalMonitor(){
 
     BaseType_t readStat;
 
+
+    // TODO: be consistent about data sizes
     uint32_t supplementalBatteryVoltage;
     uint32_t supplementalBatteryVoltageCounts;
+
+     uint32_t supplementalBatteryCurrent;
+    uint32_t supplementalBatteryCurrentCounts;
 
 
     uint8_t suppStatusMsgData[8] = {0};
@@ -153,6 +189,17 @@ void supplementalMonitor(){
 
             // TODO: set faults
         }  
+
+        readStat = readSupplementalCurrent(&supplementalBatteryCurrent, &supplementalBatteryCurrentCounts, ADC_TIMEOUT_MS);
+
+        if(readStat == pdPASS){
+            suppBattStatus.Supplemental_Battery_Current = supplementalBatteryCurrent;
+
+            // TODO: convert this from counts to mV
+            suppRawMeasurements.Supp_Battery_Current_RawV = supplementalBatteryCurrentCounts;
+
+            // TODO: set faults
+        }
 
         // sync frame IDs between messages
         suppBattStatus.FrameID_Supp = suppMeasurementsFrameID;
