@@ -44,14 +44,15 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
     // byte 0 is the supplemental battery fault
     msgArr[0] = suppBattStatus.Supplemental_Battery_Fault;
 
-    // 2nd and 3rd(msb) bytes are supp voltage
+    // 1st and 2nd(msb) bytes are supp voltage
     memcpy(&msgArr[1], &(suppBattStatus.Supplemental_Battery_Voltage), sizeof(uint16_t));
 
-    // 3rd and 4th(msb) bytes are supp voltage
+    // 3rd and 4th(msb) bytes are supp current
     memcpy(&msgArr[3], &(suppBattStatus.Supplemental_Battery_Current), sizeof(uint16_t));
 
     // byte 5 is the frame ID
-    msgArr[4] = suppBattStatus.FrameID_Supp;
+    msgArr[5] = suppBattStatus.FrameID_Supp;
+
     return 1;
  }
 
