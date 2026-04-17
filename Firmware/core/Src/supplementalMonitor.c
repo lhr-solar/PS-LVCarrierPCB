@@ -221,10 +221,13 @@ void supplementalMonitor(){
         if(xLastPrintTime + SUPP_MEASUREMENTS_PRINTOUT_PERIOD_TICKS <= xTaskGetTickCount()){
             xLastPrintTime = xTaskGetTickCount();
         }
-        vTaskDelayUntil(&xLastWakeTime, SUPPLEMENTAL_MONITOR_THREAD_DELAY_TICKS);
 
         // increment (and wrap) the frame ID
         suppMeasurementsFrameID = ((suppMeasurementsFrameID + 1) % 255);
+        
+        statusLeds_toggle(LSOM_HEARTBEAT_LED);
+
+        vTaskDelayUntil(&xLastWakeTime, SUPPLEMENTAL_MONITOR_THREAD_DELAY_TICKS);
     }
 
 }

@@ -6,8 +6,7 @@
 #include "commandLine.h"
 #include "tasksConfig.h"
 #include "faultState.h"
-#include "canbus.h"
- 
+#include "canbus.h" 
 
 void initThread(){
 
@@ -39,25 +38,25 @@ void initThread(){
                     &Task_SuppMon_Buffer
    );
 
-    xTaskCreateStatic(
-                    faultState,
-                    "Fault State Task",
-                    TASK_FAULT_STATE_STACK_SIZE,
-                    (void*)NULL,
-                    TASK_FAULT_STATE_PRIO,
-                    Task_FaultState_Stack_Array, 
-                    &Task_FaultState_Buffer
-   );
+//     xTaskCreateStatic(
+//                     faultState,
+//                     "Fault State Task",
+//                     TASK_FAULT_STATE_STACK_SIZE,
+//                     (void*)NULL,
+//                     TASK_FAULT_STATE_PRIO,
+//                     Task_FaultState_Stack_Array, 
+//                     &Task_FaultState_Buffer
+//    );
 
-    xTaskCreateStatic(
-                    suppCharger,
-                    "Supplemental Battery Charger Task",
-                    TASK_SUPP_CHARGING_STACK_SIZE,
-                    (void*)NULL,
-                    TASK_SUPP_CHARGING_PRIO,
-                    Task_SuppCharger_Stack_Array, 
-                    &Task_SuppCharger_Buffer
-   );
+//     xTaskCreateStatic(
+//                     suppCharger,
+//                     "Supplemental Battery Charger Task",
+//                     TASK_SUPP_CHARGING_STACK_SIZE,
+//                     (void*)NULL,
+//                     TASK_SUPP_CHARGING_PRIO,
+//                     Task_SuppCharger_Stack_Array, 
+//                     &Task_SuppCharger_Buffer
+//    );
 
    vTaskDelete(NULL);
 
