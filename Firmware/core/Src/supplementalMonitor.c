@@ -8,8 +8,10 @@ TimerHandle_t adcTimers[NUM_ADC_SENSE_CHANNELS];
 StaticTimer_t adcTimersBuffers[ NUM_ADC_SENSE_CHANNELS ];
 
 
-#define ADC_WATCHDOG_PERIOD_MS  pdMS_TO_TICKS(5000)
-#define ADC_TIMEOUT_MS          pdMS_TO_TICKS(200)
+#define ADC_WATCHDOG_PERIOD_TICKS  pdMS_TO_TICKS(5000)
+#define ADC_TIMEOUT_TICKS          pdMS_TO_TICKS(200)
+
+#define SUPP_MEASUREMENTS_PRINTOUT_PERIOD_TICKS pdMS_TO_TICKS(5000)
 
 int16_t adc_To_Hall(uint32_t adcCounts){
   adcCounts = adcCounts > 4095 ? 4095 : adcCounts;
@@ -69,7 +71,7 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
     return 1;
  }
 
- static BaseType_t readSupplementalVoltage(uint32_t *suppVoltage, uint32_t *counts, TickType_t delay_ms){
+ static BaseType_t readSupplementalVoltage(uint32_t *suppVoltage, uint32_t *counts, TickType_t delay_ticks){
 
     if(suppVoltage == NULL || counts == NULL){
         return pdFAIL;
@@ -79,10 +81,10 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
     adc_status_t startStat;
 
     // start the ADC for reading the supplemental battery voltage
-    startStat = adc_start_read(SUPPLEMENTAL_BATTERY_VOLTAGE, delay_ms);
+    startStat = adc_start_read(SUPPLEMENTAL_BATTERY_VOLTAGE, delay_ticks);
 
     if(startStat == ADC_OK){
-        readStat = adc_read_value(SUPPLEMENTAL_BATTERY_VOLTAGE, counts, delay_ms);
+        readStat = adc_read_value(SUPPLEMENTAL_BATTERY_VOLTAGE, counts, delay_ticks);
 
         // if a new ADC reading was recieved
         if(readStat == pdTRUE){
@@ -145,7 +147,7 @@ void supplementalMonitor(){
         adcTimers[i] = xTimerCreateStatic
         (
             "ADC Watchdog Timer",
-            ADC_WATCHDOG_PERIOD_MS,
+            ADC_WATCHDOG_PERIOD_TICKS,
             pdFALSE, // one shot timer
             ( void * ) 0, // stores a count of times the timer has expired
             adcWatchdogTimerCallback, /* Each timer calls the same callback when it expires. */
@@ -157,6 +159,8 @@ void supplementalMonitor(){
     }
 
     TickType_t xLastWakeTime = xTaskGetTickCount();
+
+    TickType_t xLastPrintTime = xTaskGetTickCount();
 
     BaseType_t readStat;
 
@@ -177,11 +181,16 @@ void supplementalMonitor(){
 
     while(1){
 
+         // sync frame IDs between messages
+        suppBattStatus.FrameID_Supp = suppMeasurementsFrameID;
+        suppRawMeasurements.FrameID_Supp = suppMeasurementsFrameID;
+
         // TODO: make sure i'm consistent about ticks vs ms
-        readStat = readSupplementalVoltage(&supplementalBatteryVoltage, &supplementalBatteryVoltageCounts, ADC_TIMEOUT_MS);
+        readStat = readSupplementalVoltage(&supplementalBatteryVoltage, &supplementalBatteryVoltageCounts, ADC_TIMEOUT_TICKS);
 
         // supp voltage was read succesfully
         if(readStat == pdPASS){
+
             suppBattStatus.Supplemental_Battery_Voltage = supplementalBatteryVoltage;
 
             // TODO: convert this from counts to mV
@@ -190,7 +199,7 @@ void supplementalMonitor(){
             // TODO: set faults
         }  
 
-        readStat = readSupplementalCurrent(&supplementalBatteryCurrent, &supplementalBatteryCurrentCounts, ADC_TIMEOUT_MS);
+        readStat = readSupplementalCurrent(&supplementalBatteryCurrent, &supplementalBatteryCurrentCounts, ADC_TIMEOUT_TICKS);
 
         if(readStat == pdPASS){
             suppBattStatus.Supplemental_Battery_Current = supplementalBatteryCurrent;
@@ -201,18 +210,17 @@ void supplementalMonitor(){
             // TODO: set faults
         }
 
-        // sync frame IDs between messages
-        suppBattStatus.FrameID_Supp = suppMeasurementsFrameID;
-        suppRawMeasurements.FrameID_Supp = suppMeasurementsFrameID;
-
         // pack the supplemental battery voltage and current into a CAN message
         packSuppBatteryStatusMessage(suppBattStatus, suppStatusMsgData);
-        canbus_send(CAN_ID_SUPP_BATTERY_STATUS, CAN_DLC_SUPP_BATTERY_STATUS, suppStatusMsgData, ADC_TIMEOUT_MS);
+        canbus_send(CAN_ID_SUPP_BATTERY_STATUS, CAN_DLC_SUPP_BATTERY_STATUS, suppStatusMsgData, ADC_TIMEOUT_TICKS);
 
         // pack the raw ADC data for supp battery into a CAN message
         packSuppBatteryRawMeasurementsMessage(suppRawMeasurements, suppRawMeasurementsData);
-        canbus_send(CAN_ID_SUPP_MEASUREMENTS_RAWV, CAN_DLC_SUPP_MEASUREMENTS_RAWV, suppRawMeasurementsData, ADC_TIMEOUT_MS);
-        
+        canbus_send(CAN_ID_SUPP_MEASUREMENTS_RAWV, CAN_DLC_SUPP_MEASUREMENTS_RAWV, suppRawMeasurementsData, ADC_TIMEOUT_TICKS);
+
+        if(xLastPrintTime + SUPP_MEASUREMENTS_PRINTOUT_PERIOD_TICKS <= xTaskGetTickCount()){
+            xLastPrintTime = xTaskGetTickCount();
+        }
         vTaskDelayUntil(&xLastWakeTime, SUPPLEMENTAL_MONITOR_THREAD_DELAY_TICKS);
 
         // increment (and wrap) the frame ID

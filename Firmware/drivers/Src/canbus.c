@@ -5,7 +5,6 @@
 
 FDCAN_HandleTypeDef* carfdcan;
 
-
 can_status_t canbus_init(){
     
     carfdcan = hfdcan3;
@@ -27,7 +26,7 @@ can_status_t canbus_init(){
     carfdcan->Init.DataSyncJumpWidth = 1;
     carfdcan->Init.DataTimeSeg1 = 1;
     carfdcan->Init.DataTimeSeg2 = 1;
-    carfdcan->Init.StdFiltersNbr = 0;
+    carfdcan->Init.StdFiltersNbr = 1;
     carfdcan->Init.ExtFiltersNbr = 0;
     carfdcan->Init.TxFifoQueueMode = FDCAN_TX_FIFO_OPERATION;
 

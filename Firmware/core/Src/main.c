@@ -3,8 +3,6 @@
 #include "common.h"
 #include "statusLeds.h"
 #include "pinDefs.h"
-#include "ltc4421.h"
-#include "lvEnable.h"
 #include "tasksConfig.h"
 
 StaticTask_t initTaskBuffer;

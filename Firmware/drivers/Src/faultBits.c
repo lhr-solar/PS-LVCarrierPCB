@@ -16,7 +16,7 @@ uint8_t faultBits_init(void){
 
 void set_faultBit(fault_bit_t bit){
     // not a valid fault
-    if(bit >= NUM_FAULTS){ 
+    if(bit >= NUM_FAULTS || faultStateBits == NULL){ 
         return;
     }
 
@@ -29,7 +29,7 @@ void set_faultBit(fault_bit_t bit){
 void set_faultBitFromISR(fault_bit_t bit){
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
-    if(bit >= NUM_FAULTS){
+    if(bit >= NUM_FAULTS || faultStateBits == NULL){
         return;
     }
 
@@ -45,7 +45,7 @@ void set_faultBitFromISR(fault_bit_t bit){
 EventBits_t faultBit_wait(fault_bit_t bit, TickType_t xTicksToWait){
 
     // NUM_FAULTS indiciates you want to wait for all bits
-    if(bit > NUM_FAULTS){
+    if(bit > NUM_FAULTS || faultStateBits == NULL){
         return 0;
     }
 

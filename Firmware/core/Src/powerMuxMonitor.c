@@ -11,9 +11,11 @@ void powerMuxMonitor(){
     // initialize pins to read the state of the LV enable signals
     lvEnable_gpio_init();
 
-    // // turn on shutdown after 5 seconds
-    // vTaskDelay(pdMS_TO_TICKS(5000));
-    // ltc4421_shdn_enable(ON);
+    ltc4421_shdn_enable(OFF);
+
+    // turn on shutdown after 1 second
+    vTaskDelay(pdMS_TO_TICKS(1000));
+    ltc4421_shdn_enable(ON);
 
     while(1){
         // statusLeds_toggle(LSOM_HEARTBEAT_LED);
