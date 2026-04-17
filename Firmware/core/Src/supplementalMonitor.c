@@ -220,7 +220,14 @@ void supplementalMonitor(){
         canbus_send(CAN_ID_SUPP_MEASUREMENTS_RAWV, CAN_DLC_SUPP_MEASUREMENTS_RAWV, suppRawMeasurementsData, ADC_TIMEOUT_TICKS);
 
         if(xLastPrintTime + SUPP_MEASUREMENTS_PRINTOUT_PERIOD_TICKS <= xTaskGetTickCount()){
+
             xLastPrintTime = xTaskGetTickCount();
+
+            printf("Supp battery voltage: %ld counts \n\r", suppRawMeasurements.Supp_Battery_Voltage_RawV);
+            printf("Supp battery voltage: %ld mV \n\r", adc_to_SuppVoltage(suppBattStatus.Supplemental_Battery_Voltage));
+
+            printf("Supp battery current: %ld counts \n\r", suppRawMeasurements.Supp_Battery_Current_RawV);
+            printf("Supp battery current: %d mA \n\r", adc_To_Hall(suppBattStatus.Supplemental_Battery_Current));
         }
 
         // increment (and wrap) the frame ID
