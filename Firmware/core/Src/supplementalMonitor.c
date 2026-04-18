@@ -22,7 +22,7 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
   adcCounts = adcCounts > 4095 ? 4095 : adcCounts;
 
   // todo: have this read the vref of the ADC instead hard coding it.
-  return ((uint32_t)adcCounts * 3000U * 11U) / 4095U; 
+  return (uint32_t)((adcCounts * 3045U) / 4095U) * 11U;
 }
 
  void adcWatchdogTimerCallback( TimerHandle_t xTimer ){
@@ -186,7 +186,6 @@ void supplementalMonitor(){
         suppBattStatus.FrameID_Supp = suppMeasurementsFrameID;
         suppRawMeasurements.FrameID_Supp = suppMeasurementsFrameID;
 
-        // TODO: make sure i'm consistent about ticks vs ms
         readStat = readSupplementalVoltage(&supplementalBatteryVoltage, &supplementalBatteryVoltageCounts, ADC_TIMEOUT_TICKS);
 
         // supp voltage was read succesfully
