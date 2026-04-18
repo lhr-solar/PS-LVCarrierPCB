@@ -74,9 +74,8 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
     return 1;
  }
 
- static BaseType_t readSupplementalVoltage(uint32_t *suppVoltage, uint32_t *counts, TickType_t delay_ticks){
-
-    if(suppVoltage == NULL || counts == NULL){
+ static BaseType_t readVoltage(adc_sense_channel_t channel, uint32_t *voltage, uint32_t *counts, TickType_t delay_ticks){
+    if(voltage == NULL || counts == NULL){
         return pdFAIL;
     }
 
@@ -84,14 +83,14 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
     adc_status_t startStat;
 
     // start the ADC for reading the supplemental battery voltage
-    startStat = adc_start_read(SUPPLEMENTAL_BATTERY_VOLTAGE, delay_ticks);
+    startStat = adc_start_read(channel, delay_ticks);
 
     if(startStat == ADC_OK){
-        readStat = adc_read_value(SUPPLEMENTAL_BATTERY_VOLTAGE, counts, delay_ticks);
+        readStat = adc_read_value(channel, counts, delay_ticks);
 
         // if a new ADC reading was recieved
         if(readStat == pdTRUE){
-            *suppVoltage = adc_to_SuppVoltage(*counts);
+            *voltage = adc_to_SuppVoltage(*counts);
         }
         else{
             return pdFAIL;
@@ -103,24 +102,24 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
     return pdPASS;
  }
 
- static BaseType_t readVicorVoltage(uint32_t *vicorVoltage, uint32_t *counts, TickType_t delay_ticks){
-
-    if(vicorVoltage == NULL || counts == NULL){
+  static BaseType_t readCurrent(adc_sense_channel_t channel, uint32_t *current, uint32_t *counts, TickType_t delay_ticks){
+    
+    if(current == NULL || counts == NULL){
         return pdFAIL;
     }
 
     BaseType_t readStat;
     adc_status_t startStat;
 
-    // start the ADC for reading the supplemental battery voltage
-    startStat = adc_start_read(REGULATED_BATTERY_VOLTAGE, delay_ticks);
+    // start the ADC read
+    startStat = adc_start_read(channel, delay_ticks);
 
     if(startStat == ADC_OK){
-        readStat = adc_read_value(REGULATED_BATTERY_VOLTAGE, counts, delay_ticks);
+        readStat = adc_read_value(channel, counts, delay_ticks);
 
         // if a new ADC reading was recieved
         if(readStat == pdTRUE){
-            *vicorVoltage = adc_to_SuppVoltage(*counts);
+            *current = adc_To_Hall(*counts);
         }
         else{
             return pdFAIL;
@@ -131,37 +130,6 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
     }
     return pdPASS;
  }
- 
- static BaseType_t readSupplementalCurrent(uint32_t *suppCurrent, uint32_t *counts, TickType_t delay_ms){
-
-    if(suppCurrent == NULL || counts == NULL){
-        return pdFAIL;
-    }
-
-    BaseType_t readStat;
-    adc_status_t startStat;
-
-    // start the ADC for reading the supplemental battery current
-    startStat = adc_start_read(SUPPLEMENTAL_BATTERY_CURRENT, delay_ms);
-
-    if(startStat == ADC_OK){
-        readStat = adc_read_value(SUPPLEMENTAL_BATTERY_CURRENT, counts, delay_ms);
-
-        // if a new ADC reading was recieved
-        if(readStat == pdTRUE){
-            *suppCurrent = adc_To_Hall(*counts);
-        }
-        else{
-            return pdFAIL;
-        }
-    }
-    else{
-        return pdFAIL;
-    }
-
-    return pdPASS;
- }
-
 
 void supplementalMonitor(){
 
@@ -191,6 +159,9 @@ void supplementalMonitor(){
     uint32_t vicorVoltage;
     uint32_t vicorVoltageCounts;
 
+    uint32_t vicorCurrent;
+    uint32_t vicorCurrentCounts;
+
 
     uint8_t suppStatusMsgData[8] = {0};
     uint8_t suppRawMeasurementsData[8] = {0};
@@ -205,7 +176,7 @@ void supplementalMonitor(){
         suppBattStatus.FrameID_Supp = suppMeasurementsFrameID;
         suppRawMeasurements.FrameID_Supp = suppMeasurementsFrameID;
 
-        readStat = readSupplementalVoltage(&supplementalBatteryVoltage, &supplementalBatteryVoltageCounts, ADC_TIMEOUT_TICKS);
+        readStat = readVoltage(SUPPLEMENTAL_BATTERY_VOLTAGE, &supplementalBatteryVoltage, &supplementalBatteryVoltageCounts, ADC_TIMEOUT_TICKS);
 
         // supp voltage was read succesfully
         if(readStat == pdPASS){
@@ -218,7 +189,7 @@ void supplementalMonitor(){
             // TODO: set faults
         }  
 
-        readStat = readSupplementalCurrent(&supplementalBatteryCurrent, &supplementalBatteryCurrentCounts, ADC_TIMEOUT_TICKS);
+        readStat = readCurrent(SUPPLEMENTAL_BATTERY_CURRENT, &supplementalBatteryCurrent, &supplementalBatteryCurrentCounts, ADC_TIMEOUT_TICKS);
 
         if(readStat == pdPASS){
             suppBattStatus.Supplemental_Battery_Current = supplementalBatteryCurrent;
@@ -229,12 +200,23 @@ void supplementalMonitor(){
             // TODO: set faults
         }
 
-        readStat = readVicorVoltage(&vicorVoltage, &vicorVoltageCounts, ADC_TIMEOUT_TICKS);
+
+        readStat = readVoltage(REGULATED_BATTERY_VOLTAGE, &vicorVoltage, &vicorVoltageCounts, ADC_TIMEOUT_TICKS);
 
         if(readStat == pdPASS){
 
             // TODO: convert this from counts to mV
             suppVicorMeasurements.Supp_Vicor_Voltage_RawV = vicorVoltageCounts;
+
+            // TODO: set faults
+        }
+
+        readStat = readCurrent(REGULATED_BATTERY_CURRENT, &vicorCurrent, &vicorCurrentCounts, ADC_TIMEOUT_TICKS);
+
+        if(readStat == pdPASS){
+
+            // TODO: convert this from counts to mV
+            suppVicorMeasurements.Supp_Vicor_Current_RawV = vicorCurrentCounts;
 
             // TODO: set faults
         }
