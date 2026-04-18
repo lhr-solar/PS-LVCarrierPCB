@@ -11,7 +11,7 @@ StaticTimer_t adcTimersBuffers[ NUM_ADC_SENSE_CHANNELS ];
 #define ADC_WATCHDOG_PERIOD_TICKS  pdMS_TO_TICKS(5000)
 #define ADC_TIMEOUT_TICKS          pdMS_TO_TICKS(200)
 
-#define SUPP_MEASUREMENTS_PRINTOUT_PERIOD_TICKS pdMS_TO_TICKS(5000)
+#define SUPP_MEASUREMENTS_PRINTOUT_PERIOD_TICKS pdMS_TO_TICKS(2500)
 
 int16_t adc_To_Hall(uint32_t adcCounts){
   adcCounts = adcCounts > 4095 ? 4095 : adcCounts;
@@ -24,17 +24,6 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
   // todo: have this read the vref of the ADC instead hard coding it.
   return (uint32_t)((adcCounts * 3045U) / 4095U) * 11U;
 }
-
- void adcWatchdogTimerCallback( TimerHandle_t xTimer ){
-
-    for(uint8_t i = 0; i < NUM_ADC_SENSE_CHANNELS; i++){
-        // see which watchdog timer finished.
-        if(adcTimers[i] == xTimer){
-            set_faultBit(FAULT_ADC_TIMEOUT);
-        }
-    }
- } 
-
 
  uint8_t packSuppBatteryStatusMessage(supp_battery_status_t suppBattStatus, uint8_t msgArr[8]){
     if(msgArr == NULL){
@@ -72,6 +61,19 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
     return 1;
  }
 
+ uint8_t packSuppVicorRawMeasurements(supp_vicor_measurements_rawv_t suppVicorMeasurements, uint8_t msgArr[8]){
+    if(msgArr == NULL){
+        return 0;
+    }
+
+    memcpy(&msgArr[0], &(suppVicorMeasurements.Supp_Vicor_Voltage_RawV), sizeof(uint16_t));
+    memcpy(&msgArr[2], &(suppVicorMeasurements.Supp_Vicor_Current_RawV), sizeof(uint16_t));
+
+    msgArr[4] = suppVicorMeasurements.FrameID_Supp_Vicor;
+
+    return 1;
+ }
+
  static BaseType_t readSupplementalVoltage(uint32_t *suppVoltage, uint32_t *counts, TickType_t delay_ticks){
 
     if(suppVoltage == NULL || counts == NULL){
@@ -90,6 +92,35 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
         // if a new ADC reading was recieved
         if(readStat == pdTRUE){
             *suppVoltage = adc_to_SuppVoltage(*counts);
+        }
+        else{
+            return pdFAIL;
+        }
+    }
+    else{
+        return pdFAIL;
+    }
+    return pdPASS;
+ }
+
+ static BaseType_t readVicorVoltage(uint32_t *vicorVoltage, uint32_t *counts, TickType_t delay_ticks){
+
+    if(vicorVoltage == NULL || counts == NULL){
+        return pdFAIL;
+    }
+
+    BaseType_t readStat;
+    adc_status_t startStat;
+
+    // start the ADC for reading the supplemental battery voltage
+    startStat = adc_start_read(REGULATED_BATTERY_VOLTAGE, delay_ticks);
+
+    if(startStat == ADC_OK){
+        readStat = adc_read_value(REGULATED_BATTERY_VOLTAGE, counts, delay_ticks);
+
+        // if a new ADC reading was recieved
+        if(readStat == pdTRUE){
+            *vicorVoltage = adc_to_SuppVoltage(*counts);
         }
         else{
             return pdFAIL;
@@ -141,23 +172,7 @@ void supplementalMonitor(){
 
     supp_battery_status_t suppBattStatus;
     supp_measurements_rawv_t suppRawMeasurements;
-
-    // initialize adc watchdog timers
-    for(uint8_t i = 0; i < NUM_ADC_SENSE_CHANNELS; i++){
-        // adcTimers
-        adcTimers[i] = xTimerCreateStatic
-        (
-            "ADC Watchdog Timer",
-            ADC_WATCHDOG_PERIOD_TICKS,
-            pdFALSE, // one shot timer
-            ( void * ) 0, // stores a count of times the timer has expired
-            adcWatchdogTimerCallback, /* Each timer calls the same callback when it expires. */
-            &adcTimersBuffers[i]
-        );
-
-        // start the watchdog timer
-        xTimerStart(adcTimers[i], portMAX_DELAY);
-    }
+    supp_vicor_measurements_rawv_t suppVicorMeasurements;
 
     TickType_t xLastWakeTime = xTaskGetTickCount();
 
@@ -173,9 +188,13 @@ void supplementalMonitor(){
     uint32_t supplementalBatteryCurrent;
     uint32_t supplementalBatteryCurrentCounts;
 
+    uint32_t vicorVoltage;
+    uint32_t vicorVoltageCounts;
+
 
     uint8_t suppStatusMsgData[8] = {0};
     uint8_t suppRawMeasurementsData[8] = {0};
+    uint8_t vicorRawMeasurementsData[8] = {0};
 
     uint8_t suppMeasurementsFrameID = 0;
 
@@ -210,6 +229,16 @@ void supplementalMonitor(){
             // TODO: set faults
         }
 
+        readStat = readVicorVoltage(&vicorVoltage, &vicorVoltageCounts, ADC_TIMEOUT_TICKS);
+
+        if(readStat == pdPASS){
+
+            // TODO: convert this from counts to mV
+            suppVicorMeasurements.Supp_Vicor_Voltage_RawV = vicorVoltageCounts;
+
+            // TODO: set faults
+        }
+
         // pack the supplemental battery voltage and current into a CAN message
         packSuppBatteryStatusMessage(suppBattStatus, suppStatusMsgData);
         canbus_send(CAN_ID_SUPP_BATTERY_STATUS, CAN_DLC_SUPP_BATTERY_STATUS, suppStatusMsgData, ADC_TIMEOUT_TICKS);
@@ -218,15 +247,22 @@ void supplementalMonitor(){
         packSuppBatteryRawMeasurementsMessage(suppRawMeasurements, suppRawMeasurementsData);
         canbus_send(CAN_ID_SUPP_MEASUREMENTS_RAWV, CAN_DLC_SUPP_MEASUREMENTS_RAWV, suppRawMeasurementsData, ADC_TIMEOUT_TICKS);
 
+        packSuppVicorRawMeasurements(suppVicorMeasurements, vicorRawMeasurementsData);
+        canbus_send(CAN_ID_SUPP_VICOR_MEASUREMENTS_RAWV, CAN_DLC_SUPP_VICOR_MEASUREMENTS_RAWV, vicorRawMeasurementsData, ADC_TIMEOUT_TICKS);
+
         if(xLastPrintTime + SUPP_MEASUREMENTS_PRINTOUT_PERIOD_TICKS <= xTaskGetTickCount()){
 
             xLastPrintTime = xTaskGetTickCount();
 
-            printf("Supp battery voltage: %ld counts \n\r", suppRawMeasurements.Supp_Battery_Voltage_RawV);
-            printf("Supp battery voltage: %ld mV \n\r", adc_to_SuppVoltage(suppBattStatus.Supplemental_Battery_Voltage));
+            printf("Supp battery voltage: %ld counts \n\r", supplementalBatteryVoltageCounts);
+            printf("Supp battery voltage: %ld mV \n\r", suppBattStatus.Supplemental_Battery_Voltage);
 
-            printf("Supp battery current: %ld counts \n\r", suppRawMeasurements.Supp_Battery_Current_RawV);
-            printf("Supp battery current: %d mA \n\r", adc_To_Hall(suppBattStatus.Supplemental_Battery_Current));
+            printf("Supp battery current: %ld counts \n\r", supplementalBatteryCurrentCounts);
+            printf("Supp battery current: %d mA \n\r", suppBattStatus.Supplemental_Battery_Current);
+
+            printf("Vicor output voltage: %ld counts \n\r", vicorVoltageCounts);
+            printf("Vicor output voltage: %ld mv \n\r", adc_to_SuppVoltage(vicorVoltageCounts));
+
         }
 
         // increment (and wrap) the frame ID
