@@ -29,7 +29,6 @@ void suppCharger(){
 
     while(1){
 
-        uint8_t suppChargerEnabled = 0;
 
         // check if we're able to charge
         EventBits_t bitsSet = bq25756e_preReqBit_wait(BQ25756E_NUM_PREREQS, 0);
@@ -39,11 +38,9 @@ void suppCharger(){
             // supp vicor quiescent current is about 400mA
             bq25756e_charge(MAX_BQ25756E_DELAY_TICKS, 400);
 
-            suppChargerEnabled = 1;
         }
         else{
             bq25756e_charge(MAX_BQ25756E_DELAY_TICKS, 0);
-            suppChargerEnabled = 0;
         }
 
         bq25756e_serial_config_t printEnabled = BQ25756E_SERIAL_DISABLE;
@@ -52,7 +49,8 @@ void suppCharger(){
             printEnabled = BQ25756E_SERIAL_ENABLE;
         }
 
-        
+
+
         bq25756e_dump_status(&charge_state, printEnabled, MAX_BQ25756E_DELAY_TICKS); 
         bq25756e_dump_charge_current(&charge_current, printEnabled, MAX_BQ25756E_DELAY_TICKS); 
 
