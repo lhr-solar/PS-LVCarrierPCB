@@ -23,6 +23,17 @@ void bq25756e_set_preReqBit(bq25756e_prereqs_t bit){
     taskYIELD(); 
 }
 
+void bq25756e_clear_preReqBit(bq25756e_prereqs_t bit) {
+    if(bit >= BQ25756E_NUM_PREREQS || BQ25756E_preReqBits == NULL){ 
+        return;
+    }
+
+    xEventGroupClearBits(BQ25756E_preReqBits, BQ25756E_PREREQ(bit) );
+    
+    taskYIELD(); 
+}
+
+
 EventBits_t bq25756e_preReqBit_wait(bq25756e_prereqs_t bit, TickType_t xTicksToWait){
 
     // NUM_PREREQS indicates you want to wait for all bits

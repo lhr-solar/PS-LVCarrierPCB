@@ -43,6 +43,9 @@ uint8_t bq25756e_preReqBits_init(void);
  */
 void bq25756e_set_preReqBit(bq25756e_prereqs_t bit);
 
+/* Clear bit in BQ event group */
+void bq25756e_clear_preReqBit(bq25756e_prereqs_t bit);
+
 /**
  * @brief Waits for a pre-requisite bit to be set.
  *
