@@ -71,6 +71,8 @@ void powerMuxMonitor(){
 
         statusLeds_toggle(HEARTBEAT_LED);
 
+        bq25756e_set_preReqBit(BQ25756E_PREREQ_LTC_VALID);
+
         updateLtcStatus(&status);
 
         packLvCarrierStatusMsg(status, lvCarrierStatusMsgData);

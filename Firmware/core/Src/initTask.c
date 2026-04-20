@@ -7,6 +7,8 @@
 #include "tasksConfig.h"
 #include "faultState.h"
 #include "canbus.h" 
+#include "bq25756e_preReqBits.h"
+
 
 void initThread(){
 
@@ -17,6 +19,9 @@ void initThread(){
     faultBits_init();
 
     canbus_init();
+
+   // init pre req bits for the supp charger
+   bq25756e_preReqBits_init();
 
      xTaskCreateStatic(
                     powerMuxMonitor,
@@ -38,15 +43,15 @@ void initThread(){
                     &Task_SuppMon_Buffer
    );
 
-//     xTaskCreateStatic(
-//                     faultState,
-//                     "Fault State Task",
-//                     TASK_FAULT_STATE_STACK_SIZE,
-//                     (void*)NULL,
-//                     TASK_FAULT_STATE_PRIO,
-//                     Task_FaultState_Stack_Array, 
-//                     &Task_FaultState_Buffer
-//    );
+    xTaskCreateStatic(
+                    faultState,
+                    "Fault State Task",
+                    TASK_FAULT_STATE_STACK_SIZE,
+                    (void*)NULL,
+                    TASK_FAULT_STATE_PRIO,
+                    Task_FaultState_Stack_Array, 
+                    &Task_FaultState_Buffer
+   );
 
 //     xTaskCreateStatic(
 //                     suppCharger,

@@ -7,6 +7,8 @@
 #include "event_groups.h"
 #include "statusLeds.h"
 
+#define BQ25756E_I2C_ERROR 1
+
 /* I2C Driver */
 #define BQ25756E_I2C_PERIPH     I2C4
 // Lesser priority than default RTOS interrupt
@@ -134,7 +136,7 @@ typedef enum {
 
 /* Enable serial output when dumping status or faults */
 typedef enum {
-    BQ25756E_SERIAL_DISABLE=0,
+    BQ25756E_SERIAL_DISABLE = 0,
     BQ25756E_SERIAL_ENABLE 
 } bq25756e_serial_config_t;
 
@@ -262,3 +264,10 @@ bq25756e_status_t bq25756e_dump_charge_current(int16_t* reading, bq25756e_serial
  *                           BQ25756E_WRITE_FAIL if writing fails.
  */
 bq25756e_status_t bq25756e_charge_disable(TickType_t delay);
+
+/**
+ * @brief Returns if there was an I2C error
+ *
+ * @return Returns BQ25756E_I2C_ERROR if there is an I2C error
+ */
+uint8_t get_i2c_error_status();

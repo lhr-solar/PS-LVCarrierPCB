@@ -11,6 +11,8 @@ static StaticSemaphore_t xSemaphoreBuffer;
 #define BQ_RX_SIZE 1
 #define BQ_TX_SIZE 2
 
+static uint8_t bq25756e_i2c_error = !BQ25756E_I2C_ERROR;
+
 /* Write to a register on chip (transmit w/ 2 bytes) */
 static bq25756e_status_t bq25756e_write_reg(uint8_t reg, uint8_t data, TickType_t delay);
 /* Read a register on chip (transmit + receive) */
@@ -223,6 +225,8 @@ bq25756e_status_t bq25756e_charge_disable(TickType_t delay) {
 bq25756e_status_t bq25756e_init(BQ_HandleTypeDef *_bq_handle, I2C_HandleTypeDef *bq_i2c_handle) {   
   bq25756e_status_t stat = BQ25756E_OK;
   bq25756e_gpio_init();
+
+  bq25756e_i2c_error = !BQ25756E_I2C_ERROR;
   
   _bq_handle->hi2c = bq_i2c_handle;
   _bq_handle->bq_i2c_smphr = xSemaphoreCreateBinaryStatic( &xSemaphoreBuffer );
@@ -231,12 +235,10 @@ bq25756e_status_t bq25756e_init(BQ_HandleTypeDef *_bq_handle, I2C_HandleTypeDef 
   if (_bq_handle->bq_i2c_smphr == NULL) return BQ25756E_ERR;
   
   // Set global in driver to point to newly created handle
-  bq_handle=_bq_handle;
+  bq_handle = _bq_handle;
 
   bq25756e_i2c_init();
 
-  // init pre req bits
-  bq25756e_preReqBits_init();
 
   // Start in disabled state to be safeeeee
   bq25756e_write_ce(BQ25756E_LOGIC_LOW);
@@ -634,11 +636,17 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* hi2c)
   }
 }
 
+uint8_t get_i2c_error_status(){
+  return bq25756e_i2c_error;
+}
+
 /****************************** I2C CALLBACKS ********************************/
 
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+  bq25756e_i2c_error = !BQ25756E_I2C_ERROR;
   
   xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
@@ -647,6 +655,8 @@ void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+  bq25756e_i2c_error = !BQ25756E_I2C_ERROR;
   
   xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
@@ -658,6 +668,8 @@ void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
   // kinda scuffed cuz if NAK -> hits this callback so still release
 
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+  bq25756e_i2c_error = BQ25756E_I2C_ERROR;
   
   xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
