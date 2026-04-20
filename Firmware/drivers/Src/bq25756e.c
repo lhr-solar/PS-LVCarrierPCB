@@ -57,7 +57,7 @@ bq25756e_status_t bq25756e_charge(TickType_t delay, uint32_t limit) {
     if (stat != BQ25756E_OK) return stat;
     // Assert CE Pin to start charging
 
-    bq25756e_charge_enable(portMAX_DELAY);
+    bq25756e_charge_enable(delay);
 
     return stat;
 }
