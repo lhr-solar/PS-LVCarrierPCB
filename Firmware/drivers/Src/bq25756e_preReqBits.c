@@ -29,7 +29,7 @@ void bq25756e_clear_preReqBit(bq25756e_prereqs_t bit) {
     }
 
     xEventGroupClearBits(BQ25756E_preReqBits, BQ25756E_PREREQ(bit) );
-    
+
     taskYIELD(); 
 }
 

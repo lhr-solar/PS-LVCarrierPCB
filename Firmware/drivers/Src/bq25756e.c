@@ -39,6 +39,8 @@ bq25756e_status_t bq25756e_charge(TickType_t delay, uint32_t limit) {
     // Charge Function
     bq25756e_status_t stat = BQ25756E_OK;
 
+    if (limit <= 0) return BQ25756E_ERR;
+
     // Disable Charge Limit
     stat = bq25756e_HW_Ichg_disable(delay);
     if (stat != BQ25756E_OK) return stat;
