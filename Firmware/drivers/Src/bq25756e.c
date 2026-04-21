@@ -287,7 +287,7 @@ static bq25756e_status_t bq25756e_charge_enable(TickType_t delay) {
   uint8_t buff[1] = {0};
 
   bq25756e_adc_enable(delay);
-
+  
   // Charge disable
   if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CONTROL, buff, delay) != BQ25756E_OK) {
     return BQ25756E_READ_FAIL;
@@ -296,7 +296,7 @@ static bq25756e_status_t bq25756e_charge_enable(TickType_t delay) {
   if (bq25756e_write_reg(BQ25756E_REG_CHARGE_CONTROL, buff[0], delay) != BQ25756E_OK) {
     return BQ25756E_WRITE_FAIL;
   }
-
+  
   // Disable CE
   bq25756e_write_ce(BQ25756E_LOGIC_HIGH);
 
@@ -376,7 +376,7 @@ static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, uint32_t limi
   mask=scaled_limit;
   
   // Shift 0x03 register mask to the top byte position [15:8]
-  mask_b=(uint8_t) (mask >> 0x08);
+  mask_b=(uint8_t) ( (mask >> 0x08) & 0xFF );
   // Only get bottom byte of 0x02 register mask [7:0]
   mask_a=(uint8_t) (mask & 0xFF);
   bq25756e_assert_bits(buff1, mask_a);
@@ -447,11 +447,13 @@ static bq25756e_status_t bq25756e_write_reg(uint8_t reg, uint8_t data, TickType_
 static uint16_t bq25756e_current_lim_to_mask(uint32_t charge_current) {
   // (8h - 190h) ---> (400 mA - 20000 mA)
   
+  if (charge_current < 400) charge_current = 400;
+  if (charge_current > 20000) charge_current = 20000;
+
   // current set points are in 50mA steps
-  uint16_t scaled = (uint16_t)(charge_current / 50);
-  uint8_t reg_b = (scaled>>8)&(0x07); // 3 bits
-  uint8_t reg_a = (scaled)&(0x3F); // 6 bits
-  uint16_t mask=(reg_b<<8)+reg_a; // desired format
+  uint16_t scaled = (uint16_t) (charge_current / 50);
+  uint16_t mask = (scaled << 2);
+
   return mask;
 }
 
