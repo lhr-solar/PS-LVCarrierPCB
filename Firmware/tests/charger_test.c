@@ -20,29 +20,47 @@ StackType_t faultTaskStack[configMINIMAL_STACK_SIZE];
 
 void BqTask(void *argument){
     faultBits_init();
+    int16_t  charge_current;
+    uint8_t  frame_id = 0;
+    uint16_t charge_limit = 450;
+    uint8_t  wdg=0;
+
     // give chip a bit to power on
     vTaskDelay(pdMS_TO_TICKS(5000));
-    
 
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
-    bq25756e_charge_status_t charge_state = BQ25756E_NOT_STARTED;
-    bq25756e_charge(portMAX_DELAY, 450);
+    bq25756e_charger_can_msg* msg = {0};
 
-    int16_t charge_current;
+    bq25756e_charge_status_t charge_state = BQ25756E_NOT_STARTED;
+    bq25756e_charge(portMAX_DELAY, charge_limit);
 
     while (1) {
         statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
-        // // Dump status and continue
+        // Dump status and continue
         printf("============= \n\r");
 
         bq25756e_dump_status(&charge_state, BQ25756E_SERIAL_ENABLE, portMAX_DELAY); 
         bq25756e_dump_charge_current(&charge_current, BQ25756E_SERIAL_ENABLE, portMAX_DELAY); 
+        bq25756e_dump_wdg(&wdg, BQ25756E_SERIAL_ENABLE, portMAX_DELAY); 
 
         printf("============= \n\r");
         
         bq25756e_pet_wdg(portMAX_DELAY);
+
+        /* Read CAN params and run send */
+        // error status
+        // watchdog
+        
+        msg->charge_status = charge_state;
+        msg->charge_current = charge_current;
+        msg->charge_limit = charge_limit;
+        msg->frame_id = frame_id;
+        bq25756e_can_send_status(msg);
+        
+        frame_id++;
+        if (frame_id > 255) frame_id = 0;
 
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
@@ -69,7 +87,6 @@ int main()
     SystemClock_Config();
 
     statusLeds_init();
-
 
     ltc4421_gpio_init();
     ltc4421_shdn_enable(OFF);
