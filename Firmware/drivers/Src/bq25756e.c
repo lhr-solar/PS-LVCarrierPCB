@@ -11,6 +11,8 @@ static StaticSemaphore_t xSemaphoreBuffer;
 #define BQ_RX_SIZE 1
 #define BQ_TX_SIZE 2
 
+static uint8_t bq25756e_i2c_error = !BQ25756E_I2C_ERROR;
+
 /* Write to a register on chip (transmit w/ 2 bytes) */
 static bq25756e_status_t bq25756e_write_reg(uint8_t reg, uint8_t data, TickType_t delay);
 /* Read a register on chip (transmit + receive) */
@@ -21,8 +23,13 @@ static bq25756e_status_t bq25756e_TempSense_disable(TickType_t delay);
 static bq25756e_status_t bq25756e_HiZ_disable(TickType_t delay);
 static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, uint32_t limit);
 static bq25756e_status_t bq25756e_HW_Ichg_disable(TickType_t delay);
+static bq25756e_status_t bq25756e_charge_enable(TickType_t delay);
+static bq25756e_status_t bq25756e_adc_enable(TickType_t delay);
+static bq25756e_status_t bq25756e_adc_disable(TickType_t delay);
 
 static uint16_t bq25756e_current_lim_to_mask(uint32_t charge_current);
+
+static void packChargerCommand(bq25756e_charger_can_msg* msg, uint8_t tx_data[8]);
 
 static void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring);
 static void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
@@ -32,26 +39,29 @@ static bq25756e_status_t bq25756e_i2c_init(void);
 
 bq25756e_status_t bq25756e_charge(TickType_t delay, uint32_t limit) {
     // Charge Function
-    bq25756e_status_t stat=BQ25756E_OK;
+    bq25756e_status_t stat = BQ25756E_OK;
+
+    if (limit <= 0) return BQ25756E_ERR;
 
     // Disable Charge Limit
-    stat=bq25756e_HW_Ichg_disable(delay);
+    stat = bq25756e_HW_Ichg_disable(delay);
     if (stat != BQ25756E_OK) return stat;
     
     // Write Charge Limit
-    stat=bq25756e_SW_Ichg_enable(delay, limit);
+    stat = bq25756e_SW_Ichg_enable(delay, limit);
     if (stat != BQ25756E_OK) return stat;
     // Disable Hi Z
-    stat=bq25756e_HiZ_disable(delay);
+    stat = bq25756e_HiZ_disable(delay);
     if (stat != BQ25756E_OK) return stat;
     // Disable Temp Sense
-    stat=bq25756e_TempSense_disable(delay);
+    stat = bq25756e_TempSense_disable(delay);
     if (stat != BQ25756E_OK) return stat;
     // Disable Rev Mode 
-    stat=bq25756e_RevMode_disable(delay);
+    stat = bq25756e_RevMode_disable(delay);
     if (stat != BQ25756E_OK) return stat;
     // Assert CE Pin to start charging
-    bq25756e_write_ce(BQ25756E_LOGIC_HIGH);
+
+    bq25756e_charge_enable(delay);
 
     return stat;
 }
@@ -69,6 +79,25 @@ bq25756e_status_t bq25756e_pet_wdg(TickType_t delay) {
   if (bq25756e_write_reg(BQ25756E_REG_CHARGE_CONTROL, buff[0], delay) != BQ25756E_OK) {
     return BQ25756E_WRITE_FAIL;
   }
+  return BQ25756E_OK;
+}
+
+bq25756e_status_t bq25756e_dump_wdg(uint8_t* wdg,
+                                    bq25756e_serial_config_t serial, 
+                                    TickType_t delay ) {
+  uint8_t buff[1]={0};
+  // Read charge control register [0x17]
+  if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CONTROL, buff, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+  *wdg = (buff[0] & BQ25756E_BIT_WDG_RESET);
+
+  if (serial==BQ25756E_SERIAL_ENABLE) {
+    printf("Watchdog: ");
+    if (wdg) printf("Ok \n\r");
+    else printf("Expired \n\r");
+  }
+
   return BQ25756E_OK;
 }
 
@@ -124,6 +153,33 @@ bq25756e_status_t bq25756e_dump_status(bq25756e_charge_status_t *charge_state,
   return BQ25756E_ERR;
 }
 
+bq25756e_status_t bq25756e_dump_charge_current(int16_t* reading,  
+                                               bq25756e_serial_config_t serial,
+                                               TickType_t delay) {
+  // Measure IBat register value
+  uint8_t buff1[1], buff2[1];
+  buff1[0] = 0; // msb
+  buff2[0] = 0; // lsb
+
+  if (bq25756e_read_reg(BQ25756E_REG_IBAT_A, buff1, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+  if (bq25756e_read_reg(BQ25756E_REG_IBAT_B, buff2, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+
+  // Values from -20000 mA to 20000 mA
+  // Bit step is 2 mA
+  int16_t ibat_reading = ( ( buff1[0] << 8 ) | buff2[0] ) * 2; 
+  *reading= ibat_reading;
+
+  if (serial == BQ25756E_SERIAL_ENABLE) {
+    printf("Charge current: %d mA \n\r", ibat_reading);
+  }
+ 
+  return BQ25756E_OK;
+}
+
 bq25756e_status_t bq25756e_dump_faults(uint8_t *fault_state,
                                        bq25756e_serial_config_t serial, 
                                        TickType_t delay ) {
@@ -171,6 +227,9 @@ bq25756e_status_t bq25756e_dump_faults(uint8_t *fault_state,
 bq25756e_status_t bq25756e_charge_disable(TickType_t delay) {
   uint8_t buff[1]={0};
 
+  // disable current sense adc
+  if(0)bq25756e_adc_disable(delay);
+
   // Charge disable
   if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CONTROL, buff, delay) != BQ25756E_OK) {
     return BQ25756E_READ_FAIL;
@@ -189,6 +248,8 @@ bq25756e_status_t bq25756e_charge_disable(TickType_t delay) {
 bq25756e_status_t bq25756e_init(BQ_HandleTypeDef *_bq_handle, I2C_HandleTypeDef *bq_i2c_handle) {   
   bq25756e_status_t stat = BQ25756E_OK;
   bq25756e_gpio_init();
+
+  bq25756e_i2c_error = !BQ25756E_I2C_ERROR;
   
   _bq_handle->hi2c = bq_i2c_handle;
   _bq_handle->bq_i2c_smphr = xSemaphoreCreateBinaryStatic( &xSemaphoreBuffer );
@@ -197,17 +258,30 @@ bq25756e_status_t bq25756e_init(BQ_HandleTypeDef *_bq_handle, I2C_HandleTypeDef 
   if (_bq_handle->bq_i2c_smphr == NULL) return BQ25756E_ERR;
   
   // Set global in driver to point to newly created handle
-  bq_handle=_bq_handle;
+  bq_handle = _bq_handle;
 
   bq25756e_i2c_init();
 
-  // init pre req bits
-  bq25756e_preReqBits_init();
 
   // Start in disabled state to be safeeeee
   bq25756e_write_ce(BQ25756E_LOGIC_LOW);
 
   return stat;
+}
+
+bq25756e_status_t bq25756e_can_send_status(bq25756e_charger_can_msg* msg) {
+  // Pack charger data to pack CAN 
+  uint8_t tx_header[8];
+  packChargerCommand(msg, tx_header);
+
+  if (canbus_send(BQ25756E_CHARGER_STATUS_CAN_ID, 
+                  CAN_DLC_SUPP_CHARGING_STATUS, 
+                  tx_header, 
+                  BQ25756E_CAN_DELAY) == CAN_OK) {
+    return BQ25756E_CAN_FAIL;
+  }
+  
+  return BQ25756E_OK;
 }
 
 void bq25756e_write_ce(bq25756e_logic_t value) {
@@ -216,6 +290,54 @@ void bq25756e_write_ce(bq25756e_logic_t value) {
 }
 
 /****************************** STATIC DRIVER HELPERS ********************************/
+static bq25756e_status_t bq25756e_adc_disable(TickType_t delay) {
+  uint8_t buff[1]={0};
+
+  if (bq25756e_read_reg(BQ25756E_REG_ADC_CONTROL, buff, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+  bq25756e_clear_bits(buff, BQ25756E_BIT_ADC_ENABLE);
+  if (bq25756e_write_reg(BQ25756E_REG_ADC_CONTROL, buff[0], delay) != BQ25756E_OK) {
+    return BQ25756E_WRITE_FAIL;
+  }
+
+  return BQ25756E_OK;
+} 
+
+static bq25756e_status_t bq25756e_adc_enable(TickType_t delay) {
+  uint8_t buff[1]={0};
+
+  if (bq25756e_read_reg(BQ25756E_REG_ADC_CONTROL, buff, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+  bq25756e_assert_bits(buff, BQ25756E_BIT_ADC_ENABLE);
+  bq25756e_clear_bits(buff, BQ25756E_BIT_ADC_CONTINUOUS_ENABLE);
+  if (bq25756e_write_reg(BQ25756E_REG_ADC_CONTROL, buff[0], delay) != BQ25756E_OK) {
+    return BQ25756E_WRITE_FAIL;
+  }
+
+  return BQ25756E_OK;
+} 
+
+static bq25756e_status_t bq25756e_charge_enable(TickType_t delay) {
+  uint8_t buff[1] = {0};
+
+  bq25756e_adc_enable(delay);
+  
+  // Charge disable
+  if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CONTROL, buff, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+  bq25756e_assert_bits(buff, BQ25756E_BIT_CHARGE_ENABLE);
+  if (bq25756e_write_reg(BQ25756E_REG_CHARGE_CONTROL, buff[0], delay) != BQ25756E_OK) {
+    return BQ25756E_WRITE_FAIL;
+  }
+  
+  // Disable CE
+  bq25756e_write_ce(BQ25756E_LOGIC_HIGH);
+
+  return BQ25756E_OK;
+}
 
 static bq25756e_status_t bq25756e_RevMode_disable(TickType_t delay) {
   // Disable reverse mode (battery -> input)
@@ -271,7 +393,7 @@ static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, uint32_t limi
    *  Masks were precalculated for common limit values w/ type `bq25756e_chg_current_t`
    */
 
-  uint32_t scaled_limit=bq25756e_current_lim_to_mask(limit);
+  uint32_t scaled_limit = bq25756e_current_lim_to_mask(limit);
   
 
   if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CURRENT_LIMIT_B, buff2, delay) != BQ25756E_OK) {
@@ -290,7 +412,7 @@ static bq25756e_status_t bq25756e_SW_Ichg_enable(TickType_t delay, uint32_t limi
   mask=scaled_limit;
   
   // Shift 0x03 register mask to the top byte position [15:8]
-  mask_b=(uint8_t) (mask >> 0x08);
+  mask_b=(uint8_t) ( (mask >> 0x08) & 0xFF );
   // Only get bottom byte of 0x02 register mask [7:0]
   mask_a=(uint8_t) (mask & 0xFF);
   bq25756e_assert_bits(buff1, mask_a);
@@ -359,12 +481,32 @@ static bq25756e_status_t bq25756e_write_reg(uint8_t reg, uint8_t data, TickType_
 }
 
 static uint16_t bq25756e_current_lim_to_mask(uint32_t charge_current) {
-  // (8h - 190h) ---> (400 mA - 20000 mA)
-  uint16_t scaled=(uint16_t) (((charge_current) * 1311) >> 16);  // dividing by 50 
-  uint8_t reg_b = (scaled>>8)&(0x07); // 3 bits
-  uint8_t reg_a = (scaled)&(0x3F); // 6 bits
-  uint16_t mask=(reg_b<<8)+reg_a; // desired format
+  // (8h - 190h) ---> (400 mA - 20000 mA)  
+  
+  if (charge_current < 400) charge_current = 400;
+  if (charge_current > 20000) charge_current = 20000;
+
+  // current set points are in 50mA steps
+  uint16_t scaled = (uint16_t) (charge_current / 50); 
+  uint16_t mask = (scaled << 2);
+
   return mask;
+}
+
+
+static void packChargerCommand(bq25756e_charger_can_msg* msg, uint8_t tx_data[8]) {
+  uint8_t first_byte = ( msg->error_status | (msg->watchdog << 7) );
+  // Error Status [1 byte unsigned (0:6) ]
+  memcpy(&tx_data[0], &first_byte, sizeof(uint8_t));
+  // Supp Charger Status [1 bit (7:7) ]
+  memcpy(&tx_data[1], &msg->charge_status, sizeof(uint8_t));
+  // Supp Charger Current [2 bytes signed]
+  memcpy(&tx_data[2], &msg->charge_current, sizeof(int16_t));
+  // Supp Charge Current Limit [2 bytes unsigned]
+  memcpy(&tx_data[4], &msg->charge_limit, sizeof(uint16_t));
+  // Frame ID [1 byte unsigned]
+  memcpy(&tx_data[6], &msg->frame_id, sizeof(uint8_t));
+  tx_data[7] = 0;
 }
 
 static void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring) {
@@ -550,11 +692,17 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* hi2c)
   }
 }
 
+uint8_t get_i2c_error_status(){
+  return bq25756e_i2c_error;
+}
+
 /****************************** I2C CALLBACKS ********************************/
 
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+  bq25756e_i2c_error = !BQ25756E_I2C_ERROR;
   
   xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
@@ -563,6 +711,8 @@ void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c)
 {
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+  bq25756e_i2c_error = !BQ25756E_I2C_ERROR;
   
   xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
@@ -574,6 +724,8 @@ void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
   // kinda scuffed cuz if NAK -> hits this callback so still release
 
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+  bq25756e_i2c_error = BQ25756E_I2C_ERROR;
   
   xSemaphoreGiveFromISR(bq_handle->bq_i2c_smphr, &xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);

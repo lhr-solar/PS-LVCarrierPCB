@@ -6,6 +6,9 @@
 #include "commandLine.h"
 #include "event_groups.h"
 #include "statusLeds.h"
+#include "canbus.h"
+
+#define BQ25756E_I2C_ERROR 1
 
 /* I2C Driver */
 #define BQ25756E_I2C_PERIPH     I2C4
@@ -17,6 +20,10 @@
 #define BQ25756E_I2C_SDA_PIN    GPIO_PIN_7
 #define BQ25756E_I2C_SCL_PIN    GPIO_PIN_6
 #define BQ25756E_I2C_AF         GPIO_AF8_I2C4
+
+#define BQ25756E_CHARGER_STATUS_CAN_ID  0x301
+#define BQ25756E_CAN_DELAY              pdMS_TO_TICKS(200)
+#define CAN_DLC_SUPP_CHARGING_STATUS    6
 
 /**** DEVICE ADDRESSES  ****/
 #define DEVICE_ADDR 0x6a // not shifted
@@ -61,6 +68,10 @@
 #define BQ25756E_REG_CHARGE_STATUS_3 0x23
 #define BQ25756E_REG_FAULT_STATUS 0x24
 
+// Battery Current
+#define BQ25756E_REG_IBAT_A     0x30
+#define BQ25756E_REG_IBAT_B     0x2F
+
 // ADC / measurement
 #define BQ25756E_REG_ADC_CONTROL 0x2B
 #define BQ25756E_REG_VBAT_ADC 0x33
@@ -85,6 +96,8 @@
 #define BQ25756E_BIT_CHARGE_CURRENT_FIELD_B (0x07) // 0000 0111
 #define BQ25756E_BIT_CHARGE_CURRENT_FIELD_A (0xFC) // 1111 1100
 #define BQ25756E_BIT_CHARGE_STAT            (0x07)
+#define BQ25756E_BIT_ADC_ENABLE             (0x80)
+#define BQ25756E_BIT_ADC_CONTINUOUS_ENABLE  (0x40)
 
 #define BQ25756E_BIT_INPUT_UV_FAULT         (1 << 7)
 #define BQ25756E_BIT_INPUT_OV_FAULT         (1 << 6)
@@ -112,7 +125,9 @@ typedef enum {
     /* write_reg did not run successfully */
     BQ25756E_WRITE_FAIL,
     /* rtos calls that block exited without returning */
-    BQ25756E_TIMEOUT
+    BQ25756E_TIMEOUT,
+    /* can error */
+    BQ25756E_CAN_FAIL
 } bq25756e_status_t;
 
 typedef enum {
@@ -126,9 +141,70 @@ typedef enum {
     BQ25756E_DONE_CHRG
 } bq25756e_charge_status_t;
 
+typedef enum {
+    BQ25756E_ERROR_NO_FAULT,
+    BQ25756E_ERROR_I2C_ERROR,
+    BQ25756E_ERROR_INPUT_OV,
+    BQ25756E_ERROR_BATT_OC,
+    BQ25756E_ERROR_BATT_OV,
+    BQ25756E_ERROR_TSHDN
+} bq25756e_error_status_t;  
+
+typedef struct {
+    /**
+     *  Error Status
+        0 = no fault
+        1 = i2c_error
+        2 = Input under voltage
+        3 = Input over voltage
+        4 = Battery over current
+        5 = Battery over voltage
+        6 = Device thermal shutdown
+     */
+    bq25756e_error_status_t error_status;
+
+    /**
+     * Watchdog 
+       0 = Normal
+       1 = Watchdog Expired
+     */
+    uint8_t watchdog;
+
+    /**
+     * Supp Charger Status 
+       0 = Not charging
+       1 = Trickle
+       2 = Precharge
+       3 = Fast Charge
+       4 = Taper
+       5 = Error
+       6 = Top Off
+       7 = Done Chrg
+     */
+    bq25756e_charge_status_t charge_status;
+
+    /**
+     * Supp Charger Current (16 bits signed)
+       -2000mA to 20000mA
+     */
+    int16_t charge_current;
+
+    /**
+     * Supp Charger Current (16 bits signed)
+       400mA to 20000mA
+     */
+    uint16_t charge_limit;
+
+    /* Frame ID
+       0 - 255 (1 byte unsigned)
+    */
+   uint8_t frame_id;
+
+} bq25756e_charger_can_msg;
+
 /* Enable serial output when dumping status or faults */
 typedef enum {
-    BQ25756E_SERIAL_DISABLE=0,
+    BQ25756E_SERIAL_DISABLE = 0,
     BQ25756E_SERIAL_ENABLE 
 } bq25756e_serial_config_t;
 
@@ -222,6 +298,27 @@ bq25756e_status_t bq25756e_dump_status(bq25756e_charge_status_t *charge_state, b
  */
 bq25756e_status_t bq25756e_dump_faults(uint8_t *fault_state, bq25756e_serial_config_t serial, TickType_t delay);
 
+
+/**
+ * @brief Reads and optionally prints the measured battery charge current.
+ *
+ * Retrieves the IBAT measurement registers (0x2F/0x30), combines the raw
+ * ADC values, and converts them into a signed current reading.
+ * The result represents the instantaneous battery charge/discharge current.
+ * Can print the value to serial if requested.
+ *
+ * @param reading Pointer to store the parsed battery current (signed 16-bit).
+ *                Positive typically indicates charging current, negative
+ *                indicates discharging (depending on device convention).
+ * @param serial Enable or disable serial printing of the current reading.
+ * @param delay Maximum wait time for I2C transactions (in FreeRTOS ticks).
+ *
+ * @return bq25756e_status_t Returns BQ25756E_OK if the current was successfully read,
+ *                           BQ25756E_READ_FAIL if I2C read fails,
+ *                           or BQ25756E_ERR if data parsing is invalid.
+ */
+bq25756e_status_t bq25756e_dump_charge_current(int16_t* reading, bq25756e_serial_config_t serial, TickType_t delay);
+
 /**
  * @brief Disables battery charging and clears the CE pin.
  *
@@ -235,3 +332,15 @@ bq25756e_status_t bq25756e_dump_faults(uint8_t *fault_state, bq25756e_serial_con
  *                           BQ25756E_WRITE_FAIL if writing fails.
  */
 bq25756e_status_t bq25756e_charge_disable(TickType_t delay);
+
+
+bq25756e_status_t bq25756e_can_send_status(bq25756e_charger_can_msg* msg);
+
+bq25756e_status_t bq25756e_dump_wdg(uint8_t* wdg, bq25756e_serial_config_t serial, TickType_t delay );
+
+/**
+ * @brief Returns if there was an I2C error
+ *
+ * @return Returns BQ25756E_I2C_ERROR if there is an I2C error
+ */
+uint8_t get_i2c_error_status();
