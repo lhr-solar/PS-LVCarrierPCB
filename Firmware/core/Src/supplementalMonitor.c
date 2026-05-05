@@ -45,31 +45,31 @@ uint32_t adc_to_SuppVoltage(uint32_t adcCounts){
     return 1;
  }
 
- uint8_t packSuppBatteryRawMeasurementsMessage(supp_measurements_rawv_t rawMeasurements, uint8_t msgArr[8]){
+ uint8_t packSuppBatteryRawMeasurementsMessage(supp_measurements_adc_t rawMeasurements, uint8_t msgArr[8]){
     if(msgArr == NULL){
         return 0;
     }
 
     // 0th and 1st(msb) bytes are supp voltage
-    memcpy(&msgArr[0], &(rawMeasurements.Supp_Battery_Voltage_RawV), sizeof(uint16_t));
+    memcpy(&msgArr[0], &(rawMeasurements.Supp_Battery_Voltage_ADC), sizeof(uint16_t));
 
     // 0th and 1st(msb) bytes are supp current
-    memcpy(&msgArr[2], &(rawMeasurements.Supp_Battery_Current_RawV), sizeof(int16_t));
+    memcpy(&msgArr[2], &(rawMeasurements.Supp_Battery_Current_ADC), sizeof(int16_t));
 
     msgArr[4] = rawMeasurements.FrameID_Supp;
 
     return 1;
  }
 
- uint8_t packSuppVicorRawMeasurements(supp_vicor_measurements_rawv_t suppVicorMeasurements, uint8_t msgArr[8]){
+ uint8_t packSuppVicorRawMeasurements(supp_vicor_measurements_adc_t suppVicorMeasurements, uint8_t msgArr[8]){
     if(msgArr == NULL){
         return 0;
     }
 
-    memcpy(&msgArr[0], &(suppVicorMeasurements.Supp_Vicor_Voltage_RawV), sizeof(uint16_t));
-    memcpy(&msgArr[2], &(suppVicorMeasurements.Supp_Vicor_Current_RawV), sizeof(uint16_t));
+    memcpy(&msgArr[0], &(suppVicorMeasurements.Supp_Vicor_Voltage_ADC), sizeof(uint16_t));
+    memcpy(&msgArr[2], &(suppVicorMeasurements.Supp_Vicor_Current_ADC), sizeof(uint16_t));
 
-    msgArr[4] = suppVicorMeasurements.FrameID_Supp_Vicor;
+    msgArr[4] = suppVicorMeasurements.FrameID_Supp_Charger;
 
     return 1;
  }
@@ -139,8 +139,8 @@ void supplementalMonitor(){
     }
 
     supp_battery_status_t suppBattStatus;
-    supp_measurements_rawv_t suppRawMeasurements;
-    supp_vicor_measurements_rawv_t suppVicorMeasurements;
+    supp_measurements_adc_t suppRawMeasurements;
+    supp_vicor_measurements_adc_t suppVicorMeasurements;
 
     TickType_t xLastWakeTime = xTaskGetTickCount();
 
@@ -185,19 +185,19 @@ void supplementalMonitor(){
 
             suppBattStatus.Supplemental_Battery_Voltage = supplementalBatteryVoltage;
 
-            // TODO: convert this from counts to mV
-            suppRawMeasurements.Supp_Battery_Voltage_RawV = supplementalBatteryVoltageCounts;
+            suppRawMeasurements.Supp_Battery_Voltage_ADC = supplementalBatteryVoltageCounts;
 
             // TODO: set faults
         }  
+
+        
 
         readStat = readCurrent(SUPPLEMENTAL_BATTERY_CURRENT, &supplementalBatteryCurrent, &supplementalBatteryCurrentCounts, ADC_TIMEOUT_TICKS);
 
         if(readStat == pdPASS){
             suppBattStatus.Supplemental_Battery_Current = supplementalBatteryCurrent;
 
-            // TODO: convert this from counts to mV
-            suppRawMeasurements.Supp_Battery_Current_RawV = supplementalBatteryCurrentCounts;
+            suppRawMeasurements.Supp_Battery_Current_ADC = supplementalBatteryCurrentCounts;
 
             // TODO: set faults
         }
@@ -207,20 +207,14 @@ void supplementalMonitor(){
 
         if(readStat == pdPASS){
 
-            // TODO: convert this from counts to mV
-            suppVicorMeasurements.Supp_Vicor_Voltage_RawV = vicorVoltageCounts;
-
-            // TODO: set faults
+            suppVicorMeasurements.Supp_Vicor_Voltage_ADC = vicorVoltageCounts;
         }
 
         readStat = readCurrent(REGULATED_BATTERY_CURRENT, &vicorCurrent, &vicorCurrentCounts, ADC_TIMEOUT_TICKS);
 
         if(readStat == pdPASS){
 
-            // TODO: convert this from counts to mV
-            suppVicorMeasurements.Supp_Vicor_Current_RawV = vicorCurrentCounts;
-
-            // TODO: set faults
+            suppVicorMeasurements.Supp_Vicor_Current_ADC = vicorCurrentCounts;
         }
 
         // pack the supplemental battery voltage and current into a CAN message
@@ -229,10 +223,10 @@ void supplementalMonitor(){
 
         // pack the raw ADC data for supp battery into a CAN message
         packSuppBatteryRawMeasurementsMessage(suppRawMeasurements, suppRawMeasurementsData);
-        canbus_send(CAN_ID_SUPP_MEASUREMENTS_RAWV, CAN_DLC_SUPP_MEASUREMENTS_RAWV, suppRawMeasurementsData, ADC_TIMEOUT_TICKS);
+        canbus_send(CAN_ID_SUPP_MEASUREMENTS_ADC, CAN_DLC_SUPP_MEASUREMENTS_ADC, suppRawMeasurementsData, ADC_TIMEOUT_TICKS);
 
         packSuppVicorRawMeasurements(suppVicorMeasurements, vicorRawMeasurementsData);
-        canbus_send(CAN_ID_SUPP_VICOR_MEASUREMENTS_RAWV, CAN_DLC_SUPP_VICOR_MEASUREMENTS_RAWV, vicorRawMeasurementsData, ADC_TIMEOUT_TICKS);
+        canbus_send(CAN_ID_SUPP_VICOR_MEASUREMENTS_ADC, CAN_DLC_SUPP_VICOR_MEASUREMENTS_ADC, vicorRawMeasurementsData, ADC_TIMEOUT_TICKS);
 
         if(xLastPrintTime + SUPP_MEASUREMENTS_PRINTOUT_PERIOD_TICKS <= xTaskGetTickCount()){
 

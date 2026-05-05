@@ -29,7 +29,6 @@ static bq25756e_status_t bq25756e_adc_disable(TickType_t delay);
 
 static uint16_t bq25756e_current_lim_to_mask(uint32_t charge_current);
 
-static void packChargerCommand(bq25756e_charger_can_msg* msg, uint8_t tx_data[8]);
 
 static void bq25756e_assert_bits(uint8_t* data, uint8_t bitstring);
 static void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring);
@@ -85,17 +84,22 @@ bq25756e_status_t bq25756e_pet_wdg(TickType_t delay) {
 bq25756e_status_t bq25756e_dump_wdg(uint8_t* wdg,
                                     bq25756e_serial_config_t serial, 
                                     TickType_t delay ) {
-  uint8_t buff[1]={0};
+  uint8_t buff[1] = {0};
+
   // Read charge control register [0x17]
   if (bq25756e_read_reg(BQ25756E_REG_CHARGE_CONTROL, buff, delay) != BQ25756E_OK) {
     return BQ25756E_READ_FAIL;
   }
   *wdg = (buff[0] & BQ25756E_BIT_WDG_RESET);
 
-  if (serial==BQ25756E_SERIAL_ENABLE) {
+  if (serial == BQ25756E_SERIAL_ENABLE) {
     printf("Watchdog: ");
-    if (wdg) printf("Ok \n\r");
-    else printf("Expired \n\r");
+    if (wdg) {
+      printf("Ok \n\r");
+    }
+    else {
+      printf("Expired \n\r");
+    }
   }
 
   return BQ25756E_OK;
@@ -104,46 +108,54 @@ bq25756e_status_t bq25756e_dump_wdg(uint8_t* wdg,
 bq25756e_status_t bq25756e_dump_status(bq25756e_charge_status_t *charge_state,
                                        bq25756e_serial_config_t serial, 
                                        TickType_t delay ) {
-  uint8_t buff[1]={0};
+  uint8_t buff[1] = {0};
 
   // Dump charger status
   if (bq25756e_read_reg(BQ25756E_REG_CHARGE_STATUS_1, buff, delay) != BQ25756E_OK) {
     return BQ25756E_READ_FAIL;
   }
   
-  if (serial==BQ25756E_SERIAL_ENABLE) printf("Charge Status: ");
+  if (serial == BQ25756E_SERIAL_ENABLE) printf("Charge Status: ");
   uint8_t charge_stat = buff[0] & BQ25756E_BIT_CHARGE_STAT;
   switch (charge_stat) {
     case 0:
-      if (serial==BQ25756E_SERIAL_ENABLE) printf("Not charging. \n\r"); 
+      if (serial == BQ25756E_SERIAL_ENABLE) printf("Not charging. \n\r"); 
       *charge_state = BQ25756E_NOT_STARTED; 
       break;
     case 1:
-      if (serial==BQ25756E_SERIAL_ENABLE) printf("Trickle Charge. \n\r"); 
+      if (serial == BQ25756E_SERIAL_ENABLE) printf("Trickle Charge. \n\r"); 
       *charge_state = BQ25756E_TRICKLE;
       break;
     case 2:
-      if (serial==BQ25756E_SERIAL_ENABLE) printf("Pre-Charge. \n\r"); 
+      if (serial == BQ25756E_SERIAL_ENABLE) printf("Pre-Charge. \n\r"); 
       *charge_state = BQ25756E_PRE;
       break;
     case 3:
-      if (serial==BQ25756E_SERIAL_ENABLE) printf("Fast Charge. \n\r"); 
+      if (serial == BQ25756E_SERIAL_ENABLE) printf("Fast Charge. \n\r"); 
       *charge_state = BQ25756E_FAST;
       break;
     case 4:
-      if (serial==BQ25756E_SERIAL_ENABLE) printf("Taper Charge. \n\r"); 
+      if (serial == BQ25756E_SERIAL_ENABLE) {
+        printf("Taper Charge. \n\r"); 
+      }
       *charge_state = BQ25756E_TAPER;
       break;
     case 5:
-      if (serial==BQ25756E_SERIAL_ENABLE) printf("y is it here lmao ur cooked. \n\r"); 
+      if (serial == BQ25756E_SERIAL_ENABLE) {
+        printf("y is it here lmao ur cooked. \n\r"); 
+      }
       *charge_state = BQ25756E_RESERVED;
       break;
     case 6:
-      if (serial==BQ25756E_SERIAL_ENABLE) printf("Top off Timer Charge. \n\r"); 
+      if (serial == BQ25756E_SERIAL_ENABLE) {
+        printf("Top off Timer Charge. \n\r"); 
+      }
       *charge_state = BQ25756E_TOP_OFF;
       break;
     case 7:
-      if (serial==BQ25756E_SERIAL_ENABLE) printf("Charge Termination Done. \n\r"); 
+      if (serial == BQ25756E_SERIAL_ENABLE) {
+        printf("Charge Termination Done. \n\r"); 
+      }
       *charge_state = BQ25756E_DONE_CHRG;
       break;
     default: break;
@@ -267,21 +279,6 @@ bq25756e_status_t bq25756e_init(BQ_HandleTypeDef *_bq_handle, I2C_HandleTypeDef 
   bq25756e_write_ce(BQ25756E_LOGIC_LOW);
 
   return stat;
-}
-
-bq25756e_status_t bq25756e_can_send_status(bq25756e_charger_can_msg* msg) {
-  // Pack charger data to pack CAN 
-  uint8_t tx_header[8];
-  packChargerCommand(msg, tx_header);
-
-  if (canbus_send(BQ25756E_CHARGER_STATUS_CAN_ID, 
-                  CAN_DLC_SUPP_CHARGING_STATUS, 
-                  tx_header, 
-                  BQ25756E_CAN_DELAY) == CAN_OK) {
-    return BQ25756E_CAN_FAIL;
-  }
-  
-  return BQ25756E_OK;
 }
 
 void bq25756e_write_ce(bq25756e_logic_t value) {
@@ -483,8 +480,12 @@ static bq25756e_status_t bq25756e_write_reg(uint8_t reg, uint8_t data, TickType_
 static uint16_t bq25756e_current_lim_to_mask(uint32_t charge_current) {
   // (8h - 190h) ---> (400 mA - 20000 mA)  
   
-  if (charge_current < 400) charge_current = 400;
-  if (charge_current > 20000) charge_current = 20000;
+  if (charge_current < MIN_SW_ICH_LIMIT_MA){ 
+    charge_current = MIN_SW_ICH_LIMIT_MA;
+  }
+  else if (charge_current > MAX_SW_ICH_LIMIT_MA){ 
+    charge_current = MAX_SW_ICH_LIMIT_MA;
+  }
 
   // current set points are in 50mA steps
   uint16_t scaled = (uint16_t) (charge_current / 50); 
@@ -493,21 +494,6 @@ static uint16_t bq25756e_current_lim_to_mask(uint32_t charge_current) {
   return mask;
 }
 
-
-static void packChargerCommand(bq25756e_charger_can_msg* msg, uint8_t tx_data[8]) {
-  uint8_t first_byte = ( msg->error_status | (msg->watchdog << 7) );
-  // Error Status [1 byte unsigned (0:6) ]
-  memcpy(&tx_data[0], &first_byte, sizeof(uint8_t));
-  // Supp Charger Status [1 bit (7:7) ]
-  memcpy(&tx_data[1], &msg->charge_status, sizeof(uint8_t));
-  // Supp Charger Current [2 bytes signed]
-  memcpy(&tx_data[2], &msg->charge_current, sizeof(int16_t));
-  // Supp Charge Current Limit [2 bytes unsigned]
-  memcpy(&tx_data[4], &msg->charge_limit, sizeof(uint16_t));
-  // Frame ID [1 byte unsigned]
-  memcpy(&tx_data[6], &msg->frame_id, sizeof(uint8_t));
-  tx_data[7] = 0;
-}
 
 static void bq25756e_clear_bits(uint8_t* data, uint8_t bitstring) {
   *data = (*data  &  ~(bitstring));

@@ -36,7 +36,8 @@
 #define CAN_ID_MPPT_C_SETOUTPUTVOLTAGELIMIT 0x251
 #define CAN_ID_MPPT_C_SETOUTPUTCURRENTLIMIT 0x252
 #define CAN_ID_SUPP_BATTERY_STATUS 0x300
-#define CAN_ID_SUPP_CHARGING_STATUS 0x301
+#define CAN_ID_SUPP_CHARGER_STATUS 0x301
+#define CAN_ID_SUPP_VICOR_STATS 0x302
 #define CAN_ID_PDU_STATUS_ARR 0x350
 #define CAN_ID_PDU_SET_SWITCH_ARR 0x351
 #define CAN_ID_PDU_SET_CURRENT_LIMIT_ARR 0x352
@@ -48,11 +49,11 @@
 #define CAN_ID_BRAKE_PRESSURE_2 0x651
 #define CAN_ID_DISPLAY_STATUS 0x680
 #define CAN_ID_TELEMETRY_STATUS 0x700
-#define CAN_ID_BPS_TEMP_RAWV_AGGREGATE_ARR 0x750
-#define CAN_ID_SUPP_MEASUREMENTS_RAWV 0x751
-#define CAN_ID_SUPP_VICOR_MEASUREMENTS_RAWV 0x752
-#define CAN_ID_PEDAL_BRAKE_RAWV 0x753
-#define CAN_ID_PEDAL_ACCEL_RAWV 0x754
+#define CAN_ID_BPS_TEMP_ADC_AGGREGATE_ARR 0x750
+#define CAN_ID_SUPP_MEASUREMENTS_ADC 0x751
+#define CAN_ID_SUPP_VICOR_MEASUREMENTS_ADC 0x752
+#define CAN_ID_PEDAL_BRAKE_ADC 0x753
+#define CAN_ID_PEDAL_ACCEL_ADC 0x754
 
 /* ================= CAN Length Macros ================= */
 
@@ -88,7 +89,8 @@
 #define CAN_DLC_MPPT_C_SETOUTPUTVOLTAGELIMIT 2
 #define CAN_DLC_MPPT_C_SETOUTPUTCURRENTLIMIT 2
 #define CAN_DLC_SUPP_BATTERY_STATUS 6
-#define CAN_DLC_SUPP_CHARGING_STATUS 6
+#define CAN_DLC_SUPP_CHARGER_STATUS 6
+#define CAN_DLC_SUPP_VICOR_STATS 5
 #define CAN_DLC_PDU_STATUS_ARR 5
 #define CAN_DLC_PDU_SET_SWITCH_ARR 1
 #define CAN_DLC_PDU_SET_CURRENT_LIMIT_ARR 3
@@ -100,11 +102,11 @@
 #define CAN_DLC_BRAKE_PRESSURE_2 5
 #define CAN_DLC_DISPLAY_STATUS 2
 #define CAN_DLC_TELEMETRY_STATUS 8
-#define CAN_DLC_BPS_TEMP_RAWV_AGGREGATE_ARR 4
-#define CAN_DLC_SUPP_MEASUREMENTS_RAWV 5
-#define CAN_DLC_SUPP_VICOR_MEASUREMENTS_RAWV 5
-#define CAN_DLC_PEDAL_BRAKE_RAWV 5
-#define CAN_DLC_PEDAL_ACCEL_RAWV 5
+#define CAN_DLC_BPS_TEMP_ADC_AGGREGATE_ARR 4
+#define CAN_DLC_SUPP_MEASUREMENTS_ADC 5
+#define CAN_DLC_SUPP_VICOR_MEASUREMENTS_ADC 5
+#define CAN_DLC_PEDAL_BRAKE_ADC 5
+#define CAN_DLC_PEDAL_ACCEL_ADC 5
 
 
 /* ================= Value Table Enums ================= */
@@ -739,11 +741,30 @@ typedef enum {
 } supp_battery_status_supplemental_battery_fault_e;
 
 typedef enum {
-    SUPP_CHARGING_STATUS_SUPPLEMENTAL_CHARGING_STATUS_CHARGE_DISABLED = 0,
-    SUPP_CHARGING_STATUS_SUPPLEMENTAL_CHARGING_STATUS_CHARGE_COMPLETE = 1,
-    SUPP_CHARGING_STATUS_SUPPLEMENTAL_CHARGING_STATUS_CHARGING_ = 2,
-    SUPP_CHARGING_STATUS_SUPPLEMENTAL_CHARGING_STATUS_FAULT = 3,
-} supp_charging_status_supplemental_charging_status_e;
+    SUPP_CHARGER_STATUS_SUPPLEMENTAL_CHARGER_STATUS_CHARGE_DISABLED = 0,
+    SUPP_CHARGER_STATUS_SUPPLEMENTAL_CHARGER_STATUS_TRICKLE_CHARGING = 1,
+    SUPP_CHARGER_STATUS_SUPPLEMENTAL_CHARGER_STATUS_PRECHARGE = 2,
+    SUPP_CHARGER_STATUS_SUPPLEMENTAL_CHARGER_STATUS_FAST_CHARGING = 3,
+    SUPP_CHARGER_STATUS_SUPPLEMENTAL_CHARGER_STATUS_TAPER = 4,
+    SUPP_CHARGER_STATUS_SUPPLEMENTAL_CHARGER_STATUS_ERROR = 5,
+    SUPP_CHARGER_STATUS_SUPPLEMENTAL_CHARGER_STATUS_TOPPING_OFF = 6,
+    SUPP_CHARGER_STATUS_SUPPLEMENTAL_CHARGER_STATUS_DONE = 7,
+} supp_charger_status_supplemental_charger_status_e;
+
+typedef enum {
+    SUPP_CHARGER_STATUS_BQ25756E_ERROR_OK = 0,
+    SUPP_CHARGER_STATUS_BQ25756E_ERROR_I2C_ERROR = 1,
+    SUPP_CHARGER_STATUS_BQ25756E_ERROR_INPUT_UV = 2,
+    SUPP_CHARGER_STATUS_BQ25756E_ERROR_INPUT_OV = 3,
+    SUPP_CHARGER_STATUS_BQ25756E_ERROR_BATTERY_OC = 4,
+    SUPP_CHARGER_STATUS_BQ25756E_ERROR_BATTERY_OV = 5,
+    SUPP_CHARGER_STATUS_BQ25756E_ERROR_OVER_TEMPERATURE = 6,
+} supp_charger_status_bq25756e_error_e;
+
+typedef enum {
+    SUPP_CHARGER_STATUS_BQ25756E_WATCHDOG_NOT_OK = 0,
+    SUPP_CHARGER_STATUS_BQ25756E_WATCHDOG_OK = 1,
+} supp_charger_status_bq25756e_watchdog_e;
 
 typedef enum {
     PDU_STATUS_ARR_HSS_CHANNEL_IDX_VCU = 0,
@@ -1144,11 +1165,19 @@ typedef struct {
 } supp_battery_status_t;
 
 typedef struct {
-    uint8_t Supplemental_Charging_Status;
+    uint8_t Supplemental_Charger_Status;
+    uint8_t BQ25756E_Error;
+    uint8_t BQ25756E_Watchdog;
+    int16_t Supplemental_Charge_Current;
+    uint16_t Supp_Charge_Current_Limit;
+    uint8_t FrameID_Supp_Charger;
+} supp_charger_status_t;
+
+typedef struct {
     uint16_t Supplemental_Vicor_Voltage;
     int16_t Supplemental_Vicor_Current;
-    uint8_t FrameID_Supp_Vicor;
-} supp_charging_status_t;
+    uint8_t FrameID_Supp_Charger;
+} supp_vicor_stats_t;
 
 typedef struct {
     uint8_t HSS_Channel_idx;
@@ -1200,13 +1229,13 @@ typedef struct {
 
 typedef struct {
     uint16_t Brake_Pressure;
-    uint16_t Brake_Pressure_RawV;
+    uint16_t Brake_Pressure_ADC;
     uint8_t FrameID_Pedals;
 } brake_pressure_1_t;
 
 typedef struct {
     uint16_t Brake_Pressure;
-    uint16_t Brake_Pressure_RawV;
+    uint16_t Brake_Pressure_ADC;
     uint8_t FrameID_Pedals;
 } brake_pressure_2_t;
 
@@ -1222,31 +1251,31 @@ typedef struct {
 
 typedef struct {
     uint8_t BPS_Tap_idx;
-    uint16_t BPS_Temperature_Tap_RawV;
+    uint16_t BPS_Temperature_Tap_ADC;
     uint8_t FrameID_BPS_Temperature;
-} bps_temp_rawv_aggregate_arr_t;
+} bps_temp_adc_aggregate_arr_t;
 
 typedef struct {
-    uint16_t Supp_Battery_Voltage_RawV;
-    int16_t Supp_Battery_Current_RawV;
+    uint16_t Supp_Battery_Voltage_ADC;
+    int16_t Supp_Battery_Current_ADC;
     uint8_t FrameID_Supp;
-} supp_measurements_rawv_t;
+} supp_measurements_adc_t;
 
 typedef struct {
-    uint16_t Supp_Vicor_Voltage_RawV;
-    int16_t Supp_Vicor_Current_RawV;
-    uint8_t FrameID_Supp_Vicor;
-} supp_vicor_measurements_rawv_t;
+    uint16_t Supp_Vicor_Voltage_ADC;
+    uint16_t Supp_Vicor_Current_ADC;
+    uint8_t FrameID_Supp_Charger;
+} supp_vicor_measurements_adc_t;
 
 typedef struct {
-    uint16_t BrakePedal_Main_RawV;
-    uint16_t BrakePedal_Redundant_RawV;
+    uint16_t BrakePedal_Main_ADC;
+    uint16_t BrakePedal_Redundant_ADC;
     uint8_t FrameID_Pedals;
-} pedal_brake_rawv_t;
+} pedal_brake_adc_t;
 
 typedef struct {
-    uint16_t AccelPedal_Main_RawV;
-    uint16_t AccelPedal_Redundant_RawV;
+    uint16_t AccelPedal_Main_ADC;
+    uint16_t AccelPedal_Redundant_ADC;
     uint8_t FrameID_Pedals;
-} pedal_accel_rawv_t;
+} pedal_accel_adc_t;
 
