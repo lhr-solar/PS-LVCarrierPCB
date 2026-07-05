@@ -192,6 +192,33 @@ bq25756e_status_t bq25756e_dump_charge_current(int16_t* reading,
   return BQ25756E_OK;
 }
 
+bq25756e_status_t bq25756e_dump_batt_voltage(uint16_t* reading,
+                                             bq25756e_serial_config_t serial,
+                                             TickType_t delay) {
+  // Measure VBAT_ADC register value
+  uint8_t buff_lsb[1], buff_msb[1];
+  buff_lsb[0] = 0;
+  buff_msb[0] = 0;
+
+  // Per datasheet: read LSB (0x33) then MSB (0x34)
+  if (bq25756e_read_reg(BQ25756E_REG_VBAT_ADC_A, buff_lsb, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+  if (bq25756e_read_reg(BQ25756E_REG_VBAT_ADC_B, buff_msb, delay) != BQ25756E_OK) {
+    return BQ25756E_READ_FAIL;
+  }
+
+  // Range: 0mV - 60000mV, unsigned, bit step 2mV
+  uint16_t vbat_reading = ( ( (uint16_t)buff_msb[0] << 8 ) | buff_lsb[0] ) * 2;
+  *reading = vbat_reading;
+
+  if (serial == BQ25756E_SERIAL_ENABLE) {
+    printf("Battery voltage: %u mV \n\r", vbat_reading);
+  }
+
+  return BQ25756E_OK;
+}
+
 bq25756e_status_t bq25756e_dump_faults(uint8_t *fault_state,
                                        bq25756e_serial_config_t serial, 
                                        TickType_t delay ) {

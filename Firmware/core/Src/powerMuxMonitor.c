@@ -33,8 +33,7 @@ void packLvCarrierStatusMsg(lv_carrier_status_t status, uint8_t msgArr[8]){
         return;
     }
 
-
-    msgArr[0] |= ((uint8_t)(status.LV_EN_PowerSupply                   & 0x01) << 7);
+    msgArr[0] = ((uint8_t)(status.LV_EN_PowerSupply                    & 0x01) << 7);
     msgArr[0] |= ((uint8_t)(status.LV_EN_SupplementalBattery           & 0x01) << 6);
     msgArr[0] |= ((uint8_t)(status.LTC4421_SuppBatt_Valid              & 0x01) << 5);
     msgArr[0] |= ((uint8_t)(status.LTC4421_SuppBatt_Fault              & 0x01) << 4);
@@ -42,6 +41,7 @@ void packLvCarrierStatusMsg(lv_carrier_status_t status, uint8_t msgArr[8]){
     msgArr[0] |= ((uint8_t)(status.LTC4421_HVDCDC_Valid                & 0x01) << 2);
     msgArr[0] |= ((uint8_t)(status.LTC4421_HVDCDC_Fault                & 0x01) << 1);
     msgArr[0] |= ((uint8_t)(status.LTC4421_HVDCDC_Selected             & 0x01) << 0);
+
 }
 
 
@@ -61,8 +61,9 @@ void powerMuxMonitor(){
 
 
     // turn on shutdown after 1 second
-    vTaskDelay(pdMS_TO_TICKS(1000));
+    vTaskDelay(pdMS_TO_TICKS(500));
     ltc4421_shdn_enable(ON);
+    printf("LTC SHDN Disabled\n\r");
 
     lv_carrier_status_t status;
     uint8_t lvCarrierStatusMsgData[8] = {0};

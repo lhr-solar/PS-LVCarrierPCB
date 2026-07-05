@@ -11,12 +11,12 @@ I2C_HandleTypeDef hi2c;
 
 #define MAX_BQ25756E_DELAY_TICKS pdMS_TO_TICKS(100)
 
-#define BQ25756E_PRINT_DELAY pdMS_TO_TICKS(2000)
+#define BQ25756E_PRINT_DELAY_TICKS pdMS_TO_TICKS(2000)
 
 static void packSuppChargerStatus(supp_charger_status_t suppChargerMsg, uint8_t msgArr[8]){
 
     // Supp Charger Status is bits 0-3 of byte 0
-    msgArr[0] |= (suppChargerMsg.Supplemental_Charger_Status & 0x0F);
+    msgArr[0] = (suppChargerMsg.Supplemental_Charger_Status & 0x0F);
 
     // BQ25756E_Error is bits 4-6 of byte 0
     msgArr[0] |= ((suppChargerMsg.BQ25756E_Error << 4) & 0x70);
@@ -35,38 +35,6 @@ static void packSuppChargerStatus(supp_charger_status_t suppChargerMsg, uint8_t 
     // FrameID_Supp_Charger is bits 40-47
     msgArr[5] = suppChargerMsg.FrameID_Supp_Charger & 0xFF;
 }
-
-// static void setSuppChargerStatusFaults(supp_charger_status_t* suppChargerMsg, bq25756e_error_status_t err){
-
-//     if(suppChargerMsg == NULL){
-//         return;
-//     }
-
-//     supp_charger_status_bq25756e_error_e error = SUPP_CHARGER_STATUS_BQ25756E_ERROR_OK;
-//     switch (err){
-//         case BQ25756E_ERROR_NO_FAULT:
-//             error = SUPP_CHARGER_STATUS_BQ25756E_ERROR_OK;
-//             break;
-//         case BQ25756E_ERROR_I2C_ERROR:
-//             error = SUPP_CHARGER_STATUS_BQ25756E_ERROR_I2C_ERROR;
-//             break;
-//         case BQ25756E_ERROR_INPUT_UV:
-//             error = SUPP_CHARGER_STATUS_BQ25756E_ERROR_INPUT_UV;
-//             break;
-//         case BQ25756E_ERROR_BATT_OC:
-//             error = SUPP_CHARGER_STATUS_BQ25756E_ERROR_BATTERY_OC;
-//             break;
-//         case BQ25756E_ERROR_BATT_OV:
-//             error = SUPP_CHARGER_STATUS_BQ25756E_ERROR_BATTERY_OV;
-//             break;
-//         case BQ25756E_ERROR_TSHDN:
-//             error = SUPP_CHARGER_STATUS_BQ25756E_ERROR_OVER_TEMPERATURE;
-//             break;
-//         default:
-//             break;
-//     }
-//     suppChargerMsg->BQ25756E_Error = error;
-// }
 
 static void setSuppChargingStatus(supp_charger_status_t* suppChargerMsg, bq25756e_charge_status_t charge_state){
     if(suppChargerMsg == NULL){
@@ -116,7 +84,7 @@ void suppCharger(){
 
     int16_t charge_current;
 
-    supp_charger_status_t suppChargerMsg;
+    supp_charger_status_t suppChargerMsg = {0};
     uint8_t suppChargerMsgData[8] = {0};
 
     uint32_t chargeCurrentLimit_Ma = 0;
@@ -131,21 +99,26 @@ void suppCharger(){
 
         if(bitsSet == BQ25756E_ALL_PREREQ_BITS){
             // supp vicor quiescent current is about 400mA
-            chargeCurrentLimit_Ma = 400;
+            chargeCurrentLimit_Ma = 450;
+            bq25756e_charge(MAX_BQ25756E_DELAY_TICKS, chargeCurrentLimit_Ma);
         }
         else{
+
             chargeCurrentLimit_Ma = 0;
+            bq25756e_charge_disable(MAX_BQ25756E_DELAY_TICKS);
         }
 
         // set the charge current of the supp charger
-        suppChargerMsg.Supplemental_Charge_Current = chargeCurrentLimit_Ma;
+        suppChargerMsg.Supp_Charge_Current_Limit = chargeCurrentLimit_Ma;
         bq25756e_charge(MAX_BQ25756E_DELAY_TICKS, chargeCurrentLimit_Ma);
 
-        // only print the status every BQ25756E_SERIAL_DISABLE ticks
+        // only print the status every BQ25756E_PRINT_DELAY ticks
         bq25756e_serial_config_t printEnabled = BQ25756E_SERIAL_DISABLE;
-        if(xLastPrintTime + BQ25756E_PRINT_DELAY <= xTaskGetTickCount()){
+        if(xLastPrintTime + BQ25756E_PRINT_DELAY_TICKS <= xTaskGetTickCount()){
             xLastPrintTime = xTaskGetTickCount();
             printEnabled = BQ25756E_SERIAL_ENABLE;
+
+            printf("Supp Charge Current Setpoint: %d mA\n\r", chargeCurrentLimit_Ma);
         }
 
         // read the charge status and pack it into the CAN message struct
@@ -154,6 +127,8 @@ void suppCharger(){
 
         // read the charge current
         bq25756e_dump_charge_current(&charge_current, printEnabled, MAX_BQ25756E_DELAY_TICKS); 
+        suppChargerMsg.Supplemental_Charge_Current = charge_current;
+
 
         // read if there was a watchdog trip
         uint8_t watchdogOk = 0;
@@ -163,7 +138,7 @@ void suppCharger(){
         // pet the bq25756e watchdog
         bq25756e_pet_wdg(MAX_BQ25756E_DELAY_TICKS);
 
-        frameID = (frameID + 1) % 256;
+        frameID = (frameID + 1) % 255;
         suppChargerMsg.FrameID_Supp_Charger = frameID;
 
         // pack the supp charger status CAN messaage into a byte array
