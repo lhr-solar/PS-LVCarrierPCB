@@ -10,3 +10,5 @@ extern BQ_HandleTypeDef bq_handle;
 
 // I2C Handle
 extern I2C_HandleTypeDef hi2c;
+
+uint8_t get_supp_vbat( bool *valid);

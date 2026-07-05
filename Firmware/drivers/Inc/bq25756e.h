@@ -81,6 +81,9 @@
 #define BQ25756E_REG_TS_ADC 0x37
 #define BQ25756E_REG_VFB_ADC 0x39
 
+#define BQ25756E_REG_VBAT_ADC_A    0x33   // VBAT_ADC[7:0]  (LSB)
+#define BQ25756E_REG_VBAT_ADC_B    0x34   // VBAT_ADC[15:8] (MSB)
+
 // Gate driver configuration
 #define BQ25756E_REG_GATE_DRIVER_STRENGTH 0x3B
 #define BQ25756E_REG_GATE_DRIVER_DEAD_TIME 0x3C
@@ -183,12 +186,8 @@ void bq25756e_write_ce(bq25756e_logic_t val);
  */
 bq25756e_status_t bq25756e_init(BQ_HandleTypeDef *bq_handle, I2C_HandleTypeDef *bq_i2c_handle);
 
-#define BQ25756E_REG_VBAT_ADC_A    0x33   // VBAT_ADC[7:0]  (LSB)
-#define BQ25756E_REG_VBAT_ADC_B    0x34   // VBAT_ADC[15:8] (MSB)
 /* Reads the 16-bit VBAT ADC register and reports battery voltage in mV */
-bq25756e_status_t bq25756e_dump_batt_voltage(uint16_t* reading,
-                                              bq25756e_serial_config_t serial,
-                                              TickType_t delay);
+bq25756e_status_t bq25756e_dump_batt_voltage(uint16_t* reading, bq25756e_serial_config_t serial, TickType_t delay);
 
 /**
  * @brief Enables battery charging with a software charge current limit.

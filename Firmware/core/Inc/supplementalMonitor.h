@@ -17,6 +17,7 @@
 #include "string.h"
 #include "canbus.h"
 #include "bq25756e_preReqBits.h"
+#include "suppCharger.h"
 
 
 /**

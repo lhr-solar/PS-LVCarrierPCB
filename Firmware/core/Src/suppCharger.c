@@ -9,6 +9,10 @@ BQ_HandleTypeDef bq_handle;
 // I2C Handle
 I2C_HandleTypeDef hi2c;
 
+uint16_t supp_vbat_mv = 0;
+
+static bool supp_vbat_valid = false;
+
 #define MAX_BQ25756E_DELAY_TICKS pdMS_TO_TICKS(100)
 
 #define BQ25756E_PRINT_DELAY_TICKS pdMS_TO_TICKS(2000)
@@ -24,13 +28,19 @@ static void packSuppChargerStatus(supp_charger_status_t suppChargerMsg, uint8_t 
     // BQ25756E_Watchdog is bit 7 of byte 0
     msgArr[0] |= ((suppChargerMsg.BQ25756E_Watchdog << 7) & 0x80);
 
-    // Supplemental_Charge_Current is bits 8-23
-    msgArr[1] = (suppChargerMsg.Supplemental_Charge_Current >> 8) & 0xFF; // high byte
-    msgArr[2] = suppChargerMsg.Supplemental_Charge_Current & 0xFF; // low byte
+    // // Supplemental_Charge_Current is bits 8-23
+    // msgArr[1] = (suppChargerMsg.Supplemental_Charge_Current >> 8) & 0xFF; // high byte
+    // msgArr[2] = suppChargerMsg.Supplemental_Charge_Current & 0xFF; // low byte
 
-    // Supp_Charge_Current_Limit is bits 24-39
-    msgArr[3] = (suppChargerMsg.Supp_Charge_Current_Limit >> 8) & 0xFF; // high byte
-    msgArr[4] = suppChargerMsg.Supp_Charge_Current_Limit & 0xFF; // low byte
+    // // Supp_Charge_Current_Limit is bits 24-39
+    // msgArr[3] = (suppChargerMsg.Supp_Charge_Current_Limit >> 8) & 0xFF; // high byte
+    // msgArr[4] = suppChargerMsg.Supp_Charge_Current_Limit & 0xFF; // low byte
+
+    msgArr[1] = suppChargerMsg.Supplemental_Charge_Current & 0xFF;         // low byte first
+    msgArr[2] = (suppChargerMsg.Supplemental_Charge_Current >> 8) & 0xFF;  // high byte second
+
+    msgArr[3] = suppChargerMsg.Supp_Charge_Current_Limit & 0xFF;         // low byte first
+    msgArr[4] = (suppChargerMsg.Supp_Charge_Current_Limit >> 8) & 0xFF;  // high byte second
 
     // FrameID_Supp_Charger is bits 40-47
     msgArr[5] = suppChargerMsg.FrameID_Supp_Charger & 0xFF;
@@ -70,6 +80,19 @@ static void setSuppChargingStatus(supp_charger_status_t* suppChargerMsg, bq25756
     suppChargerMsg->Supplemental_Charger_Status = chargeStatus;
 }
 
+uint8_t get_supp_vbat( bool *valid){
+    if(valid != NULL){
+        *valid = supp_vbat_valid;
+    }
+
+    return supp_vbat_mv;
+}
+void update_supp_vbat_valid(bool valid){
+    portENTER_CRITICAL();
+    supp_vbat_valid = valid;
+    portEXIT_CRITICAL();
+}
+
 void suppCharger(){
 
     bq25756e_init(&bq_handle, &hi2c);
@@ -91,6 +114,8 @@ void suppCharger(){
 
     uint8_t frameID = 0;
 
+
+
     while(1){
 
 
@@ -98,9 +123,11 @@ void suppCharger(){
         EventBits_t bitsSet = bq25756e_preReqBit_wait(BQ25756E_NUM_PREREQS, 0);
 
         if(bitsSet == BQ25756E_ALL_PREREQ_BITS){
+
             // supp vicor quiescent current is about 400mA
-            chargeCurrentLimit_Ma = 450;
+            chargeCurrentLimit_Ma = 600;
             bq25756e_charge(MAX_BQ25756E_DELAY_TICKS, chargeCurrentLimit_Ma);
+
         }
         else{
 
@@ -146,6 +173,19 @@ void suppCharger(){
 
         // send Supp Charger Status CAN message
         canbus_send(CAN_ID_SUPP_CHARGER_STATUS, CAN_DLC_SUPP_CHARGER_STATUS, suppChargerMsgData, MAX_BQ25756E_DELAY_TICKS);
+
+        /*
+            Due to hardware bugs in the voltage sense for supp batt, we're using the VBAT_ADC register of suppCharger to read the voltage
+            SuppBatt is also powered by the HVDCDC output, so this method only works while HVDCDC is enabled.
+            If the bq25756e is not able to read the VBAT_ADC register, we will fall back to the original voltage sense method of reading the voltage from the supp batt sense resistor.
+        */
+        if(bq25756e_dump_batt_voltage(&supp_vbat_mv, printEnabled, MAX_BQ25756E_DELAY_TICKS) == BQ25756E_OK){
+            supp_vbat_valid = true;
+        }
+        else{
+            supp_vbat_valid = false;
+        }
+
 
         vTaskDelayUntil(&xLastWakeTime, SUPPLEMENTAL_CHARGER_THREAD_DELAY_TICKS);
     }

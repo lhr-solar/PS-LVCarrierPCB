@@ -190,7 +190,15 @@ void supplementalMonitor(){
             // TODO: set faults
         }  
 
-        
+        // if the bq25756e has a valid reading, use that for the supplemental battery voltage instead of the ADC reading
+        // there is a hardware bug that causes the ADC reading to be inaccurate
+        // the bq25756e is only active while the HVDCDC is active, so we fallback to the ADC reading when the HVDCDC is not active
+        bool bq25756e_valid_reading = false;
+        // uint16_t bq25756e_vbat_mv = get_supp_vbat(&bq25756e_valid_reading);
+        if(bq25756e_valid_reading){
+            // suppBattStatus.Supplemental_Battery_Voltage = bq25756e_vbat_mv;
+        }
+
 
         readStat = readCurrent(SUPPLEMENTAL_BATTERY_CURRENT, &supplementalBatteryCurrent, &supplementalBatteryCurrentCounts, ADC_TIMEOUT_TICKS);
 
@@ -233,7 +241,7 @@ void supplementalMonitor(){
             xLastPrintTime = xTaskGetTickCount();
 
             printf("Supp battery voltage: %ld counts \n\r", supplementalBatteryVoltageCounts);
-            printf("Supp battery voltage: %ld mV \n\r", suppBattStatus.Supplemental_Battery_Voltage);
+            printf("Supp battery voltage: %ld mV, using: %s \n\r", suppBattStatus.Supplemental_Battery_Voltage, bq25756e_valid_reading ? "BQ25756E" : "ADC");
 
             printf("Supp battery current: %ld counts \n\r", supplementalBatteryCurrentCounts);
             printf("Supp battery current: %d mA \n\r", suppBattStatus.Supplemental_Battery_Current);
