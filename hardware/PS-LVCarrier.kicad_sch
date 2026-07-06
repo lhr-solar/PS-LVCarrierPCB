@@ -308,6 +308,50 @@
 			(embedded_fonts no)
 		)
 	)
+	(rectangle
+		(start 300.99 104.775)
+		(end 403.86 164.465)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "d9a08d4c-86ec-4325-9a8c-4c35c035a18b")
+	)
+	(rectangle
+		(start 300.99 169.545)
+		(end 403.86 247.65)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "f2d2641b-65b9-4f27-8627-c093b6e53ff6")
+	)
+	(text "Application Notes\n"
+		(exclude_from_sim no)
+		(at 312.928 173.482 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "65bcd0dd-6d95-4617-b573-83efb73561f5")
+	)
+	(text "RevB Notes"
+		(exclude_from_sim no)
+		(at 309.118 108.204 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a012dc78-9d1c-45dd-9663-161d4171cb20")
+	)
 	(bus
 		(pts
 			(xy 151.13 88.9) (xy 176.53 88.9)
@@ -317,6 +361,16 @@
 			(type default)
 		)
 		(uuid "535948d1-6ea9-4d5c-b8cb-7b9270eea86f")
+	)
+	(wire
+		(pts
+			(xy 232.41 54.61) (xy 256.54 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53a9b5f5-5245-4ccf-8337-cfa3fd0b4445")
 	)
 	(wire
 		(pts
@@ -661,6 +715,16 @@
 				(justify left)
 			)
 		)
+		(pin "24V_VOUT" output
+			(at 232.41 54.61 0)
+			(uuid "911f1227-9249-4c61-a86b-8f4c35593470")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
@@ -671,7 +735,7 @@
 	)
 	(sheet
 		(at 256.54 49.53)
-		(size 39.37 41.91)
+		(size 36.195 41.91)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
