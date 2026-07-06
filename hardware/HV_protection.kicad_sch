@@ -1037,10 +1037,22 @@
 		(uuid "98a37e5b-c761-4cb7-b104-6779e8b950ca")
 	)
 	(junction
+		(at 99.06 54.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3dc4c05b-501d-4c79-a992-6b291bed595f")
+	)
+	(junction
 		(at 58.42 62.1072)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "522239a6-d9be-43d5-bcdd-802a3ce89516")
+	)
+	(junction
+		(at 111.76 54.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f78f04a3-6a13-4832-b699-fb459f0c9d0f")
 	)
 	(wire
 		(pts
@@ -1051,6 +1063,16 @@
 			(type default)
 		)
 		(uuid "02a4bac9-95f7-467a-a04c-6ae3a86e1fcf")
+	)
+	(wire
+		(pts
+			(xy 111.76 64.77) (xy 111.76 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08116633-c3fb-40a5-b254-e0b6efef419e")
 	)
 	(wire
 		(pts
@@ -1074,13 +1096,23 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 54.61) (xy 153.67 54.61)
+			(xy 76.2 54.61) (xy 99.06 54.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "57e19e2a-0d26-4b8d-b466-c8b80a18916f")
+	)
+	(wire
+		(pts
+			(xy 99.06 64.77) (xy 111.76 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77221945-1026-4b57-b5d5-ef0fb4e20e09")
 	)
 	(wire
 		(pts
@@ -1091,6 +1123,36 @@
 			(type default)
 		)
 		(uuid "7fd0141c-c877-4bbb-8d61-48ae9f802d1a")
+	)
+	(wire
+		(pts
+			(xy 111.76 54.61) (xy 111.76 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b911e93a-935a-42a5-bd0d-911a1a8fb06e")
+	)
+	(wire
+		(pts
+			(xy 111.76 54.61) (xy 153.67 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3cb0a90-6d07-498b-8f24-3144483d9ea2")
+	)
+	(wire
+		(pts
+			(xy 99.06 54.61) (xy 111.76 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1e7df74-1ae8-4d18-85ac-5427e0e4c045")
 	)
 	(hierarchical_label "GND_HV_ISO"
 		(shape input)
@@ -1196,7 +1258,7 @@
 	)
 	(symbol
 		(lib_id "Simulation_SPICE:NMOS")
-		(at 101.6 63.5 180)
+		(at 96.52 59.69 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1207,7 +1269,7 @@
 		(fields_autoplaced yes)
 		(uuid "632ef20e-210d-4efa-a655-213cc967b38a")
 		(property "Reference" "Q1"
-			(at 95.25 62.2299 0)
+			(at 102.87 58.4199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1218,7 +1280,7 @@
 			)
 		)
 		(property "Value" "NMOS"
-			(at 95.25 64.7699 0)
+			(at 102.87 60.9599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1229,7 +1291,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 66.04 0)
+			(at 101.6 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1240,7 +1302,7 @@
 			)
 		)
 		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 101.6 50.8 0)
+			(at 96.52 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1251,7 +1313,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 101.6 63.5 0)
+			(at 96.52 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1262,7 +1324,7 @@
 			)
 		)
 		(property "Sim.Device" "NMOS"
-			(at 101.6 46.355 0)
+			(at 96.52 76.835 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1273,7 +1335,7 @@
 			)
 		)
 		(property "Sim.Type" "VDMOS"
-			(at 101.6 44.45 0)
+			(at 96.52 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1284,7 +1346,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 101.6 48.26 0)
+			(at 96.52 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1394,7 +1456,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Zener")
-		(at 120.65 63.5 180)
+		(at 111.76 59.69 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1405,27 +1467,29 @@
 		(fields_autoplaced yes)
 		(uuid "8ef37329-607e-4bb3-b5d8-08a008b707e7")
 		(property "Reference" "D1"
-			(at 120.65 57.15 0)
+			(at 114.3 58.4199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "D_Zener"
-			(at 120.65 59.69 0)
+			(at 114.3 60.9599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 120.65 63.5 0)
+			(at 111.76 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1436,7 +1500,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 63.5 0)
+			(at 111.76 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1447,7 +1511,7 @@
 			)
 		)
 		(property "Description" "Zener diode"
-			(at 120.65 63.5 0)
+			(at 111.76 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1545,6 +1609,84 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/15bd96d1-bcc5-4574-85cc-8a06ea28d2c6"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
+		(at 91.44 59.69 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f3a3325b-949a-425c-aafd-52757c5ba0f0")
+		(property "Reference" "#PWR048"
+			(at 91.44 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDPWR"
+			(at 91.313 63.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 91.44 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a1783d04-139f-4bb3-8018-ccac3f48dc14")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/15bd96d1-bcc5-4574-85cc-8a06ea28d2c6"
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
