@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "729a13ec-63a0-4dd1-b3fb-a0c6005fbad6")
-	(paper "A4")
+	(paper "A5")
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x02"
 			(pin_names
@@ -817,10 +817,197 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:GNDPWR"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GNDPWR"
+				(at 0 -3.302 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GNDPWR_0_1"
+				(polyline
+					(pts
+						(xy -1.016 -1.27) (xy -1.27 -2.032) (xy -1.27 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 -1.27) (xy -0.762 -2.032) (xy -0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 0 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy -0.254 -2.032) (xy -0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 -1.27) (xy 0.254 -2.032) (xy 0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27) (xy -1.016 -1.27) (xy -1.016 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27) (xy 0.762 -2.032) (xy 0.762 -2.032) (xy 0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GNDPWR_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
-	(text "HV (120V nominal)\nmin and max?\n"
+	(text "HV (120V nominal)"
 		(exclude_from_sim no)
-		(at 42.418 35.56 0)
+		(at 46.736 45.212 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -828,9 +1015,9 @@
 		)
 		(uuid "26c4801e-b016-4fd9-8f06-b5df7d6403ef")
 	)
-	(text "Todo:\nHV sensing\nTVS?"
+	(text "Todo:\nHV sensing\nTVS?\nfind battery voltage range\nRPP"
 		(exclude_from_sim no)
-		(at 36.068 65.278 0)
+		(at 44.704 76.708 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -841,7 +1028,7 @@
 	)
 	(text "spec for 300W draw, ltc is a priority switch\n"
 		(exclude_from_sim no)
-		(at 82.804 36.322 0)
+		(at 81.534 45.212 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -850,14 +1037,24 @@
 		(uuid "98a37e5b-c761-4cb7-b104-6779e8b950ca")
 	)
 	(junction
-		(at 59.69 55.88)
+		(at 58.42 62.1072)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "736be565-213a-422c-980e-c89e445d0237")
+		(uuid "522239a6-d9be-43d5-bcdd-802a3ce89516")
 	)
 	(wire
 		(pts
-			(xy 57.15 45.72) (xy 69.85 45.72)
+			(xy 58.42 57.15) (xy 58.42 62.1072)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02a4bac9-95f7-467a-a04c-6ae3a86e1fcf")
+	)
+	(wire
+		(pts
+			(xy 55.88 54.61) (xy 68.58 54.61)
 		)
 		(stroke
 			(width 0)
@@ -867,17 +1064,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 59.69) (xy 59.69 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "39af7831-2e5e-4df8-918a-fd6fda3a4637")
-	)
-	(wire
-		(pts
-			(xy 59.69 48.26) (xy 57.15 48.26)
+			(xy 58.42 57.15) (xy 55.88 57.15)
 		)
 		(stroke
 			(width 0)
@@ -887,7 +1074,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 45.72) (xy 119.38 45.72)
+			(xy 76.2 54.61) (xy 153.67 54.61)
 		)
 		(stroke
 			(width 0)
@@ -897,38 +1084,39 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 55.88) (xy 59.69 48.26)
+			(xy 58.42 62.1072) (xy 58.42 62.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a1668ef9-8918-42bd-a2e3-e62dc354bb00")
-	)
-	(wire
-		(pts
-			(xy 59.69 55.88) (xy 119.38 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d41d884b-1c1e-4b84-a73a-0df998b98bb0")
+		(uuid "7fd0141c-c877-4bbb-8d61-48ae9f802d1a")
 	)
 	(hierarchical_label "GND_HV_ISO"
 		(shape input)
-		(at 59.69 59.69 180)
+		(at 58.42 62.23 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "ab232c65-61fb-40b3-a3a6-b5d615cb737a")
 	)
+	(hierarchical_label "HV_PROTECTED"
+		(shape output)
+		(at 153.67 54.61 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b313f49a-937f-48bd-a969-5c6e1525849f")
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 52.07 48.26 180)
+		(at 50.8 57.15 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -939,7 +1127,7 @@
 		(fields_autoplaced yes)
 		(uuid "112b0264-8347-4109-a754-0b3ff627b47d")
 		(property "Reference" "J1"
-			(at 52.07 39.37 0)
+			(at 50.8 48.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -949,7 +1137,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 52.07 41.91 0)
+			(at 50.8 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -959,7 +1147,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 52.07 48.26 0)
+			(at 50.8 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -970,7 +1158,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 52.07 48.26 0)
+			(at 50.8 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -981,7 +1169,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 52.07 48.26 0)
+			(at 50.8 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1008,7 +1196,7 @@
 	)
 	(symbol
 		(lib_id "Simulation_SPICE:NMOS")
-		(at 85.09 71.12 180)
+		(at 101.6 63.5 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1019,7 +1207,7 @@
 		(fields_autoplaced yes)
 		(uuid "632ef20e-210d-4efa-a655-213cc967b38a")
 		(property "Reference" "Q1"
-			(at 78.74 69.8499 0)
+			(at 95.25 62.2299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1030,7 +1218,7 @@
 			)
 		)
 		(property "Value" "NMOS"
-			(at 78.74 72.3899 0)
+			(at 95.25 64.7699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1041,7 +1229,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 80.01 73.66 0)
+			(at 96.52 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1052,7 +1240,7 @@
 			)
 		)
 		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 85.09 58.42 0)
+			(at 101.6 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1063,7 +1251,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 85.09 71.12 0)
+			(at 101.6 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1074,7 +1262,7 @@
 			)
 		)
 		(property "Sim.Device" "NMOS"
-			(at 85.09 53.975 0)
+			(at 101.6 46.355 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1085,7 +1273,7 @@
 			)
 		)
 		(property "Sim.Type" "VDMOS"
-			(at 85.09 52.07 0)
+			(at 101.6 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1096,7 +1284,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 85.09 55.88 0)
+			(at 101.6 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1126,7 +1314,7 @@
 	)
 	(symbol
 		(lib_id "Device:Fuse")
-		(at 73.66 45.72 90)
+		(at 72.39 54.61 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1137,7 +1325,7 @@
 		(fields_autoplaced yes)
 		(uuid "731e7424-0568-418b-8e06-77b7613bb640")
 		(property "Reference" "F1"
-			(at 73.66 39.37 90)
+			(at 72.39 48.26 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1147,7 +1335,7 @@
 			)
 		)
 		(property "Value" "Fuse"
-			(at 73.66 41.91 90)
+			(at 72.39 50.8 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1157,7 +1345,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 73.66 47.498 90)
+			(at 72.39 56.388 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1168,7 +1356,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 73.66 45.72 0)
+			(at 72.39 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1179,7 +1367,7 @@
 			)
 		)
 		(property "Description" "Fuse"
-			(at 73.66 45.72 0)
+			(at 72.39 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1206,7 +1394,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Zener")
-		(at 97.79 67.31 180)
+		(at 120.65 63.5 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1217,7 +1405,7 @@
 		(fields_autoplaced yes)
 		(uuid "8ef37329-607e-4bb3-b5d8-08a008b707e7")
 		(property "Reference" "D1"
-			(at 97.79 60.96 0)
+			(at 120.65 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1227,7 +1415,7 @@
 			)
 		)
 		(property "Value" "D_Zener"
-			(at 97.79 63.5 0)
+			(at 120.65 59.69 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1237,7 +1425,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 97.79 67.31 0)
+			(at 120.65 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1248,7 +1436,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 97.79 67.31 0)
+			(at 120.65 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1259,7 +1447,7 @@
 			)
 		)
 		(property "Description" "Zener diode"
-			(at 97.79 67.31 0)
+			(at 120.65 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1279,6 +1467,84 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/15bd96d1-bcc5-4574-85cc-8a06ea28d2c6"
 					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
+		(at 58.42 62.1072 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a84fe620-e766-4828-acbb-17eddf758749")
+		(property "Reference" "#PWR03"
+			(at 58.42 67.1872 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDPWR"
+			(at 58.293 65.9172 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 58.42 63.3772 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 63.3772 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 58.42 62.1072 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3bb88e87-3088-4bf5-9ed1-245f14cd4853")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/15bd96d1-bcc5-4574-85cc-8a06ea28d2c6"
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
