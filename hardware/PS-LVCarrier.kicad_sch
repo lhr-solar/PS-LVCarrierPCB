@@ -5,6 +5,145 @@
 	(uuid "9bab2d9d-20f3-40ef-8545-e1299efec47e")
 	(paper "A3")
 	(lib_symbols
+		(symbol "power:+24V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+24V"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+24V\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+24V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+24V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -334,7 +473,7 @@
 	)
 	(text "Application Notes\n"
 		(exclude_from_sim no)
-		(at 312.928 173.482 0)
+		(at 313.436 174.498 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -342,9 +481,9 @@
 		)
 		(uuid "65bcd0dd-6d95-4617-b573-83efb73561f5")
 	)
-	(text "RevB Notes"
+	(text "Next Revision Notes\n"
 		(exclude_from_sim no)
-		(at 309.118 108.204 0)
+		(at 313.944 109.22 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -352,19 +491,41 @@
 		)
 		(uuid "a012dc78-9d1c-45dd-9663-161d4171cb20")
 	)
-	(bus
+	(junction
+		(at 182.753 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7736399c-8f71-4815-ab75-12c527be59a2")
+	)
+	(junction
+		(at 175.133 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d81b7831-f0a5-4f01-a32d-f19aba955816")
+	)
+	(wire
 		(pts
-			(xy 142.24 152.4) (xy 160.02 152.4)
+			(xy 184.023 196.85) (xy 190.373 196.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "15d4b0d6-2e5c-4394-8d70-dd2c8cf4064e")
+		(uuid "4887c511-d7a4-4c45-992c-b745ad71db54")
 	)
 	(wire
 		(pts
-			(xy 232.41 54.61) (xy 256.54 54.61)
+			(xy 190.373 208.28) (xy 190.5 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ac4171d-5738-42b2-a062-7b8917a4f528")
+	)
+	(wire
+		(pts
+			(xy 269.24 43.18) (xy 294.513 43.18)
 		)
 		(stroke
 			(width 0)
@@ -374,7 +535,17 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 54.61) (xy 176.53 54.61)
+			(xy 148.463 162.56) (xy 190.373 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "540a4a72-d178-442f-b115-774ac36de19a")
+	)
+	(wire
+		(pts
+			(xy 154.813 43.18) (xy 182.753 43.18)
 		)
 		(stroke
 			(width 0)
@@ -384,37 +555,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 59.69) (xy 176.53 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6b6c6a46-fe1c-49ea-a048-ca9dda1ed3ca")
-	)
-	(bus
-		(pts
-			(xy 160.02 152.4) (xy 160.02 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "749cd4b3-57b3-4650-889a-d67e2ca6191e")
-	)
-	(wire
-		(pts
-			(xy 135.89 92.71) (xy 135.89 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7effe200-3e86-4dfb-be5d-75723eb1e8d6")
-	)
-	(wire
-		(pts
-			(xy 45.72 64.77) (xy 40.64 64.77)
+			(xy 55.753 53.34) (xy 50.673 53.34)
 		)
 		(stroke
 			(width 0)
@@ -422,39 +563,29 @@
 		)
 		(uuid "88788284-ce10-4ced-ae4b-2ead61e1ce23")
 	)
-	(bus
+	(wire
 		(pts
-			(xy 157.48 104.14) (xy 176.53 104.14)
+			(xy 182.753 142.24) (xy 182.753 43.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "88ea15e0-578c-4afe-afeb-547613c315aa")
-	)
-	(bus
-		(pts
-			(xy 157.48 104.14) (xy 157.48 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8c441f08-1f57-4cc6-ae98-18d7aa1f3604")
-	)
-	(bus
-		(pts
-			(xy 160.02 106.68) (xy 176.53 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "967587ff-9fbf-486a-bde6-c98e6072d1f4")
+		(uuid "8c000b2d-4cec-4a1c-9f87-7563664d3daf")
 	)
 	(wire
 		(pts
-			(xy 76.2 92.71) (xy 90.17 92.71)
+			(xy 190.373 217.17) (xy 190.5 217.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95aea341-4b50-4dee-8dbd-47c4ab60f280")
+	)
+	(wire
+		(pts
+			(xy 86.233 81.28) (xy 107.823 81.28)
 		)
 		(stroke
 			(width 0)
@@ -464,7 +595,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 54.61) (xy 90.17 54.61)
+			(xy 86.233 43.18) (xy 107.823 43.18)
 		)
 		(stroke
 			(width 0)
@@ -474,7 +605,37 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 92.71) (xy 135.89 92.71)
+			(xy 190.373 220.98) (xy 190.5 220.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e4b654d-f28b-4b7e-b84c-8cd407dcccae")
+	)
+	(wire
+		(pts
+			(xy 182.753 43.18) (xy 193.04 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aec9c237-6b86-47fd-8fc7-ac1386e7cc3f")
+	)
+	(wire
+		(pts
+			(xy 190.373 142.24) (xy 182.753 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b039c997-4174-4852-9f27-bcbf45bbc525")
+	)
+	(wire
+		(pts
+			(xy 154.813 81.28) (xy 175.133 81.28)
 		)
 		(stroke
 			(width 0)
@@ -482,19 +643,19 @@
 		)
 		(uuid "b2066d1e-c7ae-4dc6-89aa-11774b836fbf")
 	)
-	(bus
+	(wire
 		(pts
-			(xy 142.24 149.86) (xy 157.48 149.86)
+			(xy 190.373 149.86) (xy 175.133 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c5bf2a44-7f65-4c53-9670-ce3ec0d425f4")
+		(uuid "bc7c4daa-0bc6-4bfc-b23b-e61192aca41a")
 	)
 	(wire
 		(pts
-			(xy 40.64 102.87) (xy 40.64 104.14)
+			(xy 50.673 91.44) (xy 50.673 92.71)
 		)
 		(stroke
 			(width 0)
@@ -504,7 +665,7 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 64.77) (xy 40.64 66.04)
+			(xy 50.673 53.34) (xy 50.673 54.61)
 		)
 		(stroke
 			(width 0)
@@ -514,7 +675,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 102.87) (xy 40.64 102.87)
+			(xy 55.753 91.44) (xy 50.673 91.44)
 		)
 		(stroke
 			(width 0)
@@ -522,9 +683,39 @@
 		)
 		(uuid "d64ab21b-45a1-4982-80ba-0ae61b05cf9a")
 	)
+	(wire
+		(pts
+			(xy 175.133 81.28) (xy 193.04 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de16b30d-12c2-47af-a5ad-2ded8ff6c97e")
+	)
+	(wire
+		(pts
+			(xy 190.373 204.47) (xy 190.5 204.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f55005c1-ed39-4bc0-a2b9-f6600dbcb0eb")
+	)
+	(wire
+		(pts
+			(xy 175.133 149.86) (xy 175.133 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6a4fc28-f3df-48fe-bf77-c4e2e3a90cf0")
+	)
 	(symbol
 		(lib_id "power:GNDPWR")
-		(at 40.64 66.04 0)
+		(at 50.673 54.61 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -534,7 +725,7 @@
 		(dnp no)
 		(uuid "0d949d89-d2f6-45cd-be43-0aebcb80eb29")
 		(property "Reference" "#PWR05"
-			(at 40.64 71.12 0)
+			(at 50.673 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -545,7 +736,7 @@
 			)
 		)
 		(property "Value" "HV_GND"
-			(at 40.64 70.104 0)
+			(at 50.673 58.674 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -555,7 +746,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 40.64 67.31 0)
+			(at 50.673 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -566,7 +757,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 40.64 67.31 0)
+			(at 50.673 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -577,7 +768,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 40.64 66.04 0)
+			(at 50.673 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -601,7 +792,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 40.64 104.14 0)
+		(at 50.673 92.71 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -612,7 +803,7 @@
 		(fields_autoplaced yes)
 		(uuid "11e5ac28-62ce-4474-9296-474494e38053")
 		(property "Reference" "#PWR018"
-			(at 40.64 110.49 0)
+			(at 50.673 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -623,7 +814,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 40.64 109.22 0)
+			(at 50.673 97.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -633,7 +824,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 40.64 104.14 0)
+			(at 50.673 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -644,7 +835,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 40.64 104.14 0)
+			(at 50.673 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -655,7 +846,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 40.64 104.14 0)
+			(at 50.673 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -677,9 +868,87 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "power:+24V")
+		(at 184.023 196.85 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "991f912f-cde9-4353-8cc0-a2c917535964")
+		(property "Reference" "#PWR044"
+			(at 184.023 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+24V"
+			(at 184.023 191.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 184.023 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 184.023 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+24V\""
+			(at 184.023 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f2931ffd-315c-4887-9e8f-0d901258315d")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
+					(reference "#PWR044")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(sheet
-		(at 176.53 48.26)
-		(size 55.88 66.04)
+		(at 193.04 36.83)
+		(size 76.2 67.945)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -694,7 +963,7 @@
 		)
 		(uuid "072644d0-f801-4006-a9bd-a5565fd84c40")
 		(property "Sheetname" "Priority Combiner"
-			(at 176.53 47.5484 0)
+			(at 193.04 36.1184 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -705,7 +974,7 @@
 			)
 		)
 		(property "Sheetfile" "prioritycombiner.kicad_sch"
-			(at 176.53 114.8846 0)
+			(at 193.04 105.3596 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -716,7 +985,7 @@
 			)
 		)
 		(pin "HV_24V" input
-			(at 176.53 54.61 180)
+			(at 193.04 43.18 180)
 			(uuid "1c2e64c5-a580-4581-af9f-af22d200a8c5")
 			(effects
 				(font
@@ -726,7 +995,7 @@
 			)
 		)
 		(pin "LV_24V" input
-			(at 176.53 59.69 180)
+			(at 193.04 81.28 180)
 			(uuid "8ebd5ac3-f663-4438-82eb-c5bb493a2f6e")
 			(effects
 				(font
@@ -736,27 +1005,27 @@
 			)
 		)
 		(pin "{CTRL_INPUTS}" input
-			(at 176.53 104.14 180)
+			(at 269.24 93.98 0)
 			(uuid "7ccfe431-4dd7-476b-88ef-8f0df3b43254")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(pin "{STATS_OUTPUTS}" input
-			(at 176.53 106.68 180)
+			(at 269.24 96.52 0)
 			(uuid "869d451d-14d2-4b3d-98a0-58c23e42fcc3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(pin "24V_VOUT" output
-			(at 232.41 54.61 0)
+			(at 269.24 43.18 0)
 			(uuid "911f1227-9249-4c61-a86b-8f4c35593470")
 			(effects
 				(font
@@ -774,8 +1043,8 @@
 		)
 	)
 	(sheet
-		(at 256.54 49.53)
-		(size 36.195 41.91)
+		(at 294.513 39.37)
+		(size 60.96 41.91)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -790,7 +1059,7 @@
 		)
 		(uuid "10a2a81d-fff8-4091-b6ef-9685e4bd9514")
 		(property "Sheetname" "Ouputs"
-			(at 256.54 48.8184 0)
+			(at 294.513 38.6584 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -801,7 +1070,7 @@
 			)
 		)
 		(property "Sheetfile" "outputs.kicad_sch"
-			(at 256.54 92.0246 0)
+			(at 294.513 81.8646 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -809,6 +1078,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "PDU_IN" input
+			(at 294.513 43.18 180)
+			(uuid "489eb047-db48-4090-9aca-19d76ad3ebe3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -820,7 +1099,7 @@
 		)
 	)
 	(sheet
-		(at 45.72 49.53)
+		(at 55.753 38.1)
 		(size 30.48 20.32)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -836,7 +1115,7 @@
 		)
 		(uuid "15bd96d1-bcc5-4574-85cc-8a06ea28d2c6")
 		(property "Sheetname" "HV Input Protection"
-			(at 45.72 48.8184 0)
+			(at 55.753 37.3884 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -847,7 +1126,7 @@
 			)
 		)
 		(property "Sheetfile" "HV_protection.kicad_sch"
-			(at 45.72 70.4346 0)
+			(at 55.753 59.0046 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -858,7 +1137,7 @@
 			)
 		)
 		(pin "GND_HV_ISO" input
-			(at 45.72 64.77 180)
+			(at 55.753 53.34 180)
 			(uuid "3f24ee34-ec39-458e-a9e9-46a29561b66a")
 			(effects
 				(font
@@ -868,7 +1147,7 @@
 			)
 		)
 		(pin "HV_PROTECTED" output
-			(at 76.2 54.61 0)
+			(at 86.233 43.18 0)
 			(uuid "44477974-4f4a-4729-8870-ae96d32c49bc")
 			(effects
 				(font
@@ -886,8 +1165,94 @@
 		)
 	)
 	(sheet
-		(at 68.58 146.05)
-		(size 73.66 97.79)
+		(at 190.373 136.271)
+		(size 72.517 37.719)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "194a8848-c0d2-44dd-9e5b-1946509490d6")
+		(property "Sheetname" "24V -> 3.3V"
+			(at 190.373 135.5594 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "auxpower.kicad_sch"
+			(at 190.373 174.5746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "BUCK_OUT" output
+			(at 190.373 162.56 180)
+			(uuid "cc87d62f-19b1-4bc2-b30c-288cf3a59115")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GND" input
+			(at 262.89 162.56 0)
+			(uuid "ca06052a-411e-43e4-b402-b36414bc9f97")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "HV_V" input
+			(at 190.373 142.24 180)
+			(uuid "17131c85-f03c-4f9b-880d-6f51cae30f3a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LV_V" input
+			(at 190.373 149.86 180)
+			(uuid "cf598a69-6497-4b0b-a5d2-0c9154973425")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 64.643 120.65)
+		(size 83.82 118.11)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -902,7 +1267,7 @@
 		)
 		(uuid "91fef7fd-6fee-4cc6-8387-2fcfef7b7bdf")
 		(property "Sheetname" "MCU"
-			(at 68.58 145.3384 0)
+			(at 64.643 119.9384 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -913,7 +1278,7 @@
 			)
 		)
 		(property "Sheetfile" "MCU.kicad_sch"
-			(at 68.58 244.4246 0)
+			(at 64.643 239.3446 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -932,7 +1297,7 @@
 		)
 	)
 	(sheet
-		(at 45.72 87.63)
+		(at 55.753 76.2)
 		(size 30.48 20.32)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -948,7 +1313,7 @@
 		)
 		(uuid "a5bb0fbd-5072-4239-af04-5df171469b26")
 		(property "Sheetname" "LV Input Protection"
-			(at 45.72 86.9184 0)
+			(at 55.753 75.4884 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -959,7 +1324,7 @@
 			)
 		)
 		(property "Sheetfile" "LV_protection.kicad_sch"
-			(at 45.72 108.5346 0)
+			(at 55.753 97.1046 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -970,7 +1335,7 @@
 			)
 		)
 		(pin "GND_LV" input
-			(at 45.72 102.87 180)
+			(at 55.753 91.44 180)
 			(uuid "6162a312-4368-44d0-8270-9a679452f4c7")
 			(effects
 				(font
@@ -980,7 +1345,7 @@
 			)
 		)
 		(pin "LV_PROTECTED" output
-			(at 76.2 92.71 0)
+			(at 86.233 81.28 0)
 			(uuid "9fbcac5f-096b-483e-9006-801536aa27b8")
 			(effects
 				(font
@@ -998,54 +1363,8 @@
 		)
 	)
 	(sheet
-		(at 175.26 143.51)
-		(size 72.39 49.53)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "df607830-b586-456a-8cb2-1cf878f21ebe")
-		(property "Sheetname" "Power Monitoring"
-			(at 175.26 142.7984 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "powermonitoring.kicad_sch"
-			(at 175.26 193.6246 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(page "9")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 90.17 87.63)
-		(size 40.64 22.86)
+		(at 107.823 76.2)
+		(size 46.99 29.21)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1060,7 +1379,7 @@
 		)
 		(uuid "e0c5a289-8887-4c36-a5fa-f362f3575485")
 		(property "Sheetname" "LV -> 24V"
-			(at 90.17 86.9184 0)
+			(at 107.823 75.4884 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1071,7 +1390,7 @@
 			)
 		)
 		(property "Sheetfile" "LV_converter.kicad_sch"
-			(at 90.17 111.0746 0)
+			(at 107.823 105.9946 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1082,7 +1401,7 @@
 			)
 		)
 		(pin "LV_PROTECTED" input
-			(at 90.17 92.71 180)
+			(at 107.823 81.28 180)
 			(uuid "f16e0dfe-e683-4967-a08c-f5ea2d9c5da8")
 			(effects
 				(font
@@ -1092,7 +1411,7 @@
 			)
 		)
 		(pin "LV_REGULATED" output
-			(at 130.81 92.71 0)
+			(at 154.813 81.28 0)
 			(uuid "85ca8032-73a9-4323-8bfd-8344975437d2")
 			(effects
 				(font
@@ -1110,8 +1429,8 @@
 		)
 	)
 	(sheet
-		(at 175.26 201.93)
-		(size 72.39 48.26)
+		(at 190.373 187.96)
+		(size 72.39 40.64)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1126,7 +1445,7 @@
 		)
 		(uuid "f9fba8b7-0cf3-4419-9ae4-4e9c55277e07")
 		(property "Sheetname" "Fans + Temp Control"
-			(at 175.26 201.2184 0)
+			(at 190.373 187.2484 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1137,7 +1456,7 @@
 			)
 		)
 		(property "Sheetfile" "tempcontrol.kicad_sch"
-			(at 175.26 250.7746 0)
+			(at 190.373 229.1846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1145,6 +1464,56 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "FAN+" input
+			(at 190.373 196.85 180)
+			(uuid "5cdbd764-934b-4d22-b8ea-09a44c3c9e83")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FANA_PWM" input
+			(at 190.373 204.47 180)
+			(uuid "bbc22aee-5074-4178-a1d2-ffb4f3644d3e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FANA_TACH" output
+			(at 190.373 208.28 180)
+			(uuid "f8e9493a-dd22-40f9-960e-4e60330fd9f0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FANB_PWM" input
+			(at 190.373 217.17 180)
+			(uuid "329b4079-ca77-42ca-98f4-8f7adccbf987")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FANB_TACH" output
+			(at 190.373 220.98 180)
+			(uuid "f6b3b945-6083-450b-b40b-1455dc31c73a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -1156,8 +1525,8 @@
 		)
 	)
 	(sheet
-		(at 90.17 49.53)
-		(size 40.64 22.86)
+		(at 107.823 38.1)
+		(size 46.99 29.21)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1172,7 +1541,7 @@
 		)
 		(uuid "fb835669-ee1e-4b3d-a364-7caeae7b290b")
 		(property "Sheetname" "HV -> 24V"
-			(at 90.17 48.8184 0)
+			(at 107.823 37.3884 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1183,7 +1552,7 @@
 			)
 		)
 		(property "Sheetfile" "HV_converter.kicad_sch"
-			(at 90.17 72.9746 0)
+			(at 107.823 67.8946 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1194,7 +1563,7 @@
 			)
 		)
 		(pin "HV_PROTECTED" input
-			(at 90.17 54.61 180)
+			(at 107.823 43.18 180)
 			(uuid "3088fd08-cf70-4de6-a95c-ca940acaa84b")
 			(effects
 				(font
@@ -1204,7 +1573,7 @@
 			)
 		)
 		(pin "DCDC_OUT" output
-			(at 130.81 54.61 0)
+			(at 154.813 43.18 0)
 			(uuid "874bbd75-17af-4ee7-b5f1-8c863767668f")
 			(effects
 				(font

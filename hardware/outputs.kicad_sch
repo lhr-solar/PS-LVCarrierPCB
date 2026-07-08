@@ -163,145 +163,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+24V"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "+24V"
-				(at 0 3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+24V\""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "+24V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+24V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -418,9 +279,19 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Tu PDU"
+		(exclude_from_sim no)
+		(at 105.156 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "648e38d9-6a8c-422d-acea-b878a0321663")
+	)
 	(wire
 		(pts
-			(xy 118.11 64.77) (xy 124.46 64.77)
+			(xy 93.98 67.31) (xy 100.33 67.31)
 		)
 		(stroke
 			(width 0)
@@ -430,7 +301,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 62.23) (xy 124.46 62.23)
+			(xy 95.25 64.77) (xy 100.33 64.77)
 		)
 		(stroke
 			(width 0)
@@ -438,87 +309,20 @@
 		)
 		(uuid "c119bed3-6f48-4326-a9cf-9ee6f5e1edd6")
 	)
-	(symbol
-		(lib_id "power:+24V")
-		(at 118.11 62.23 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "751dbe55-2e97-4a52-81cb-e200b70f68b5")
-		(property "Reference" "#PWR050"
-			(at 118.11 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(hierarchical_label "PDU_IN"
+		(shape input)
+		(at 95.25 64.77 180)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(property "Value" "+24V"
-			(at 118.11 57.15 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 118.11 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 118.11 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+24V\""
-			(at 118.11 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7afa0da0-63d1-407d-95ea-243a4ca60712")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/10a2a81d-fff8-4091-b6ef-9685e4bd9514"
-					(reference "#PWR050")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "cb76a4fd-4865-42e6-96b2-9ac8c3710d62")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 129.54 62.23 0)
+		(at 105.41 64.77 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -529,7 +333,7 @@
 		(fields_autoplaced yes)
 		(uuid "e66fd77c-c84a-4874-87c9-016b64ff8804")
 		(property "Reference" "J4"
-			(at 132.08 62.2299 0)
+			(at 107.95 64.7699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -540,7 +344,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 132.08 64.7699 0)
+			(at 107.95 67.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -551,7 +355,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 129.54 62.23 0)
+			(at 105.41 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -562,7 +366,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 62.23 0)
+			(at 105.41 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -573,7 +377,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 129.54 62.23 0)
+			(at 105.41 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -600,7 +404,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 118.11 64.77 0)
+		(at 93.98 67.31 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -610,7 +414,7 @@
 		(dnp no)
 		(uuid "eb2bdc4d-8238-4721-a3f5-f28fa8cb3461")
 		(property "Reference" "#PWR049"
-			(at 118.11 71.12 0)
+			(at 93.98 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -621,7 +425,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 118.11 69.342 0)
+			(at 93.98 71.882 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -631,7 +435,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 118.11 64.77 0)
+			(at 93.98 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -642,7 +446,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 118.11 64.77 0)
+			(at 93.98 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -653,7 +457,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 118.11 64.77 0)
+			(at 93.98 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
