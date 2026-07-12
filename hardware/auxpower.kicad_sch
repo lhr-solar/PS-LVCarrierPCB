@@ -248,129 +248,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:TestPoint"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.762)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "test point"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -1667,6 +1544,12 @@
 		(uuid "129768ff-dff6-4335-aac9-57db2a5858b4")
 	)
 	(junction
+		(at 128.27 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2b79494a-6f8e-41a9-9c13-8447a0f7f517")
+	)
+	(junction
 		(at 69.85 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1685,10 +1568,10 @@
 		(uuid "697c870a-f3c1-4a87-9c0c-52058e9b4693")
 	)
 	(junction
-		(at 127 59.69)
+		(at 128.27 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7207d674-c0f1-4d34-b51a-5190a71b929c")
+		(uuid "6a0cdfff-9af2-433d-8628-21cd692393da")
 	)
 	(junction
 		(at 130.81 59.69)
@@ -1759,16 +1642,6 @@
 			(type default)
 		)
 		(uuid "1f73fa70-240a-4827-87ef-6cd91eb958b7")
-	)
-	(wire
-		(pts
-			(xy 127 59.69) (xy 130.81 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "24aa3d0f-27c2-4a63-aa76-3d3d8b4f9569")
 	)
 	(wire
 		(pts
@@ -1862,16 +1735,6 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 127.508) (xy 62.23 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6a434ef8-0988-4388-8168-563d811d247d")
-	)
-	(wire
-		(pts
 			(xy 52.07 57.15) (xy 48.26 57.15)
 		)
 		(stroke
@@ -1922,16 +1785,6 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 116.078) (xy 76.2 113.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "951ed59f-05e3-42df-8e05-d9c07722755b")
-	)
-	(wire
-		(pts
 			(xy 118.11 74.93) (xy 119.38 74.93)
 		)
 		(stroke
@@ -1942,23 +1795,13 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 69.85) (xy 140.97 69.85)
+			(xy 118.11 69.85) (xy 128.27 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "a4259565-b075-4835-a02c-b10387b24366")
-	)
-	(wire
-		(pts
-			(xy 76.2 127.508) (xy 76.2 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b24f9ecf-1a9e-4fb8-8c38-9f1e8cfacb0c")
 	)
 	(wire
 		(pts
@@ -1972,6 +1815,16 @@
 	)
 	(wire
 		(pts
+			(xy 128.27 69.85) (xy 140.97 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b90fda37-a39f-4591-aa09-3bf32f2dfb5c")
+	)
+	(wire
+		(pts
 			(xy 36.83 62.23) (xy 40.64 62.23)
 		)
 		(stroke
@@ -1982,13 +1835,23 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 59.69) (xy 127 59.69)
+			(xy 118.11 59.69) (xy 128.27 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "bec239b0-df74-407b-beb3-ac642a63d3a3")
+	)
+	(wire
+		(pts
+			(xy 128.27 59.69) (xy 130.81 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfe29b6d-c5ff-4d78-8045-30fc1e3aeaaf")
 	)
 	(wire
 		(pts
@@ -2100,67 +1963,7 @@
 		)
 		(uuid "fbf4f8c6-9175-4e98-8e5e-5de4de092551")
 	)
-	(label "FB"
-		(at 76.2 116.078 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "097f5b70-55d1-455b-ad9d-77aec44d5064")
-	)
-	(label "SW"
-		(at 76.2 127.508 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "59bb0c76-daed-4557-81f4-762f5481d493")
-	)
-	(label "FB"
-		(at 121.92 69.85 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "5abc2cb7-f9eb-4da4-9088-04b16ee13644")
-	)
-	(label "CB"
-		(at 119.38 64.77 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "89f37a74-88e4-4fef-af3c-972b9bc12710")
-	)
-	(label "SW"
-		(at 119.38 59.69 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "bc9848d2-7774-4255-9515-62870aa5ad45")
-	)
-	(label "CB"
-		(at 62.23 127.508 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "da6effaa-4bd8-48c3-a68f-b5c35062600a")
-	)
-	(hierarchical_label "GND"
+	(hierarchical_label "LV_GND"
 		(shape input)
 		(at 119.38 74.93 0)
 		(effects
@@ -2682,91 +2485,6 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/194a8848-c0d2-44dd-9e5b-1946509490d6"
 					(reference "C45")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 76.2 113.03 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3e100c3c-7f28-49df-87d4-e3f1874d91e2")
-		(property "Reference" "TP3"
-			(at 78.74 108.4579 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "FB"
-			(at 74.676 107.442 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
-			(at 81.28 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 81.28 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 76.2 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7a0eab3c-2b75-452c-b02d-92acca36c029")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/194a8848-c0d2-44dd-9e5b-1946509490d6"
-					(reference "TP3")
-					(unit 1)
-				)
-			)
-			(project "PowerPath"
-				(path "/ad6c7df0-eb90-4670-9aa8-3e2007aefc2d/1dff8fcf-47f2-40bd-a8d2-72c78139361d"
-					(reference "TP18")
 					(unit 1)
 				)
 			)
@@ -3401,91 +3119,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 76.2 125.73 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9ec136c9-ada4-41df-a221-da4cad16d961")
-		(property "Reference" "TP4"
-			(at 78.74 121.1579 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SW"
-			(at 74.676 120.142 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
-			(at 81.28 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 81.28 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 76.2 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9f0aee20-da0d-41cc-83b5-0f5c50e9e6be")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/194a8848-c0d2-44dd-9e5b-1946509490d6"
-					(reference "TP4")
-					(unit 1)
-				)
-			)
-			(project "PowerPath"
-				(path "/ad6c7df0-eb90-4670-9aa8-3e2007aefc2d/1dff8fcf-47f2-40bd-a8d2-72c78139361d"
-					(reference "TP19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 69.85 69.85 0)
 		(unit 1)
@@ -3685,8 +3318,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 62.23 125.73 0)
+		(lib_id "power:PWR_FLAG")
+		(at 128.27 69.85 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3694,9 +3327,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "b69ac3fa-56f1-4d60-ae44-7d23945f1fb2")
-		(property "Reference" "TP2"
-			(at 64.77 121.1579 0)
+		(fields_autoplaced yes)
+		(uuid "b57f76a4-c674-4eb8-87e2-903b886a30b1")
+		(property "Reference" "#FLG05"
+			(at 128.27 67.945 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3704,22 +3338,20 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "CB"
-			(at 60.96 119.888 0)
+		(property "Value" "PWR_FLAG"
+			(at 128.27 64.77 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
-			(at 67.31 125.73 0)
+		(property "Footprint" ""
+			(at 128.27 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3730,7 +3362,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 67.31 125.73 0)
+			(at 128.27 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3740,8 +3372,8 @@
 				)
 			)
 		)
-		(property "Description" "test point"
-			(at 62.23 125.73 0)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 128.27 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3752,18 +3384,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "e374abb1-e329-4df1-bd02-3794d2bba42c")
+			(uuid "1888df3b-2276-4da6-b294-7173f398a1c5")
 		)
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/194a8848-c0d2-44dd-9e5b-1946509490d6"
-					(reference "TP2")
-					(unit 1)
-				)
-			)
-			(project "PowerPath"
-				(path "/ad6c7df0-eb90-4670-9aa8-3e2007aefc2d/1dff8fcf-47f2-40bd-a8d2-72c78139361d"
-					(reference "TP17")
+					(reference "#FLG05")
 					(unit 1)
 				)
 			)
@@ -3850,7 +3476,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 127 59.69 0)
+		(at 128.27 59.69 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3860,7 +3486,7 @@
 		(dnp no)
 		(uuid "ca33973f-db0d-47b5-82b1-d66af8592e93")
 		(property "Reference" "#FLG02"
-			(at 127 57.785 0)
+			(at 128.27 57.785 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3871,7 +3497,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 126.746 61.214 0)
+			(at 128.016 61.214 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3882,7 +3508,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 127 59.69 0)
+			(at 128.27 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3893,7 +3519,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 127 59.69 0)
+			(at 128.27 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3904,7 +3530,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 127 59.69 0)
+			(at 128.27 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
