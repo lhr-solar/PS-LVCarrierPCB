@@ -477,6 +477,16 @@
 		)
 		(uuid "f2d2641b-65b9-4f27-8627-c093b6e53ff6")
 	)
+	(text "add gpio"
+		(exclude_from_sim no)
+		(at 48.006 83.566 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0e79afde-b011-436a-84e7-98ba47ebb48c")
+	)
 	(text "Application Notes\n"
 		(exclude_from_sim no)
 		(at 321.056 174.244 0)
@@ -683,7 +693,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.1122 226.06) (xy 278.13 226.06)
+			(xy 273.05 226.06) (xy 276.86 226.06)
 		)
 		(stroke
 			(width 0.381)
@@ -1093,7 +1103,7 @@
 	)
 	(wire
 		(pts
-			(xy 278.13 227.33) (xy 278.13 226.06)
+			(xy 276.86 227.33) (xy 276.86 226.06)
 		)
 		(stroke
 			(width 0.381)
@@ -1173,7 +1183,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 87.63) (xy 57.15 87.63)
+			(xy 53.34 87.63) (xy 57.15 87.63)
 		)
 		(stroke
 			(width 0.381)
@@ -1412,7 +1422,7 @@
 		(uuid "83a05ba9-83d2-4111-9636-6f5736bf99fa")
 	)
 	(label "LV_EN"
-		(at 54.61 87.63 180)
+		(at 53.34 87.63 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1562,7 +1572,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0d949d89-d2f6-45cd-be43-0aebcb80eb29")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR02"
 			(at 52.197 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -1622,7 +1632,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR05")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -1640,7 +1650,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "11e5ac28-62ce-4474-9296-474494e38053")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR01"
 			(at 52.07 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -1700,7 +1710,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR018")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -1718,7 +1728,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3c00441b-b162-43b4-b6c2-891eeb9dadd7")
-		(property "Reference" "#PWR0112"
+		(property "Reference" "#PWR05"
 			(at 114.3 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -1778,7 +1788,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR0112")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -1796,7 +1806,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "54a2b45a-b23e-4c4e-8ff2-20f7a6546547")
-		(property "Reference" "#PWR0109"
+		(property "Reference" "#PWR07"
 			(at 271.78 166.37 0)
 			(hide yes)
 			(show_name no)
@@ -1856,7 +1866,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR0109")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -1864,7 +1874,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 278.13 227.33 0)
+		(at 276.86 227.33 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1874,8 +1884,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "55a02800-1bfe-414e-8606-869ccd572e74")
-		(property "Reference" "#PWR0108"
-			(at 278.13 233.68 0)
+		(property "Reference" "#PWR09"
+			(at 276.86 233.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1886,7 +1896,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 278.13 232.41 0)
+			(at 276.86 232.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1896,7 +1906,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 278.13 227.33 0)
+			(at 276.86 227.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1907,7 +1917,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 278.13 227.33 0)
+			(at 276.86 227.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1918,7 +1928,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 278.13 227.33 0)
+			(at 276.86 227.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1934,7 +1944,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR0108")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -1952,7 +1962,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "92068c31-43c5-4ed1-a4aa-82e674b9b576")
-		(property "Reference" "#PWR0114"
+		(property "Reference" "#PWR010"
 			(at 350.4578 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -2012,7 +2022,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR0114")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -2030,7 +2040,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "991f912f-cde9-4353-8cc0-a2c917535964")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR06"
 			(at 195.58 205.74 0)
 			(hide yes)
 			(show_name no)
@@ -2090,7 +2100,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR044")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -2108,7 +2118,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b54bd4ac-7928-473c-be83-1c49685a60c4")
-		(property "Reference" "#PWR0134"
+		(property "Reference" "#PWR03"
 			(at 82.55 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -2168,7 +2178,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR0134")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -2186,7 +2196,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b9638954-78d0-4079-aa19-a7b4d512d49e")
-		(property "Reference" "#PWR0113"
+		(property "Reference" "#PWR08"
 			(at 272.9878 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -2246,7 +2256,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR0113")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -2263,7 +2273,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bfcc1a93-820b-4add-afe7-bb7904cde244")
-		(property "Reference" "#PWR0110"
+		(property "Reference" "#PWR04"
 			(at 114.3 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -2323,7 +2333,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR0110")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
