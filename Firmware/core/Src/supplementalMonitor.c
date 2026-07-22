@@ -176,7 +176,7 @@ void supplementalMonitor(){
         suppBattStatus.FrameID_Supp = suppMeasurementsFrameID;
         suppRawMeasurements.FrameID_Supp = suppMeasurementsFrameID;
 
-        bq25756e_set_preReqBit(BQ25756E_PREREQ_SUPP_VALID);
+        //bq25756e_set_preReqBit(BQ25756E_PREREQ_SUPP_VALID);
 
         readStat = readVoltage(SUPPLEMENTAL_BATTERY_VOLTAGE, &supplementalBatteryVoltage, &supplementalBatteryVoltageCounts, ADC_TIMEOUT_TICKS);
 

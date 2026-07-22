@@ -125,7 +125,7 @@ void suppCharger(){
         if(bitsSet == BQ25756E_ALL_PREREQ_BITS){
 
             // supp vicor quiescent current is about 400mA
-            chargeCurrentLimit_Ma = 600;
+            chargeCurrentLimit_Ma = 400;
             bq25756e_charge(MAX_BQ25756E_DELAY_TICKS, chargeCurrentLimit_Ma);
 
         }

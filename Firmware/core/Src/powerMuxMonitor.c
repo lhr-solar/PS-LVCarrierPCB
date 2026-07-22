@@ -70,9 +70,12 @@ void powerMuxMonitor(){
 
     while(1){
 
+        ltc4421_shdn_enable(ON);
+        printf("LTC SHDN Disabled\n\r");
+
         statusLeds_toggle(HEARTBEAT_LED);
 
-        bq25756e_set_preReqBit(BQ25756E_PREREQ_LTC_VALID);
+        // bq25756e_set_preReqBit(BQ25756E_PREREQ_LTC_VALID);
 
         updateLtcStatus(&status);
 
