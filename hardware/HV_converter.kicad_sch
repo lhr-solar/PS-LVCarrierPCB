@@ -5,6 +5,129 @@
 	(uuid "65a5f790-3471-4092-8199-75a5774d15d8")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x02"
 			(pin_names
 				(offset 1.016)
@@ -457,6 +580,207 @@
 					(at 0 -2.54 90)
 					(length 2.032)
 					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:LED"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LED"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Light emitting diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "LED diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LED_0_1"
+				(polyline
+					(pts
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LED_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2228,7 +2552,7 @@
 		(end 163.83 186.69)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash)
 		)
 		(fill
 			(type none)
@@ -2264,7 +2588,7 @@
 		(end 163.83 140.97)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash)
 		)
 		(fill
 			(type none)
@@ -2373,9 +2697,9 @@
 		)
 		(uuid "58cb75c2-9260-49e9-8bc1-3851bcf0ce8e")
 	)
-	(text "Converter 24V Ouput VIP sensing"
+	(text "High Voltage 24V Ouput VIP Sensing"
 		(exclude_from_sim no)
-		(at 187.452 29.718 0)
+		(at 190.246 29.718 0)
 		(effects
 			(font
 				(size 1.905 1.905)
@@ -2384,6 +2708,16 @@
 			)
 		)
 		(uuid "67e2f170-69fb-4634-b17a-6712d7f6430d")
+	)
+	(text "Testpoints"
+		(exclude_from_sim no)
+		(at 186.182 105.664 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6fa6e275-ce7f-4c8b-93b3-624e17f6a9ab")
 	)
 	(text "OV: 155-169V\nUV: 54-56V\n"
 		(exclude_from_sim no)
@@ -2405,9 +2739,9 @@
 		)
 		(uuid "7e1753b9-e1ab-4031-826c-f367ba532d6f")
 	)
-	(text "HV DCDC Vicor"
+	(text "High Voltage DCDC Vicor"
 		(exclude_from_sim no)
-		(at 38.608 29.972 0)
+		(at 47.498 29.718 0)
 		(effects
 			(font
 				(size 1.905 1.905)
@@ -2477,6 +2811,16 @@
 			)
 		)
 		(uuid "c1a18ca5-2beb-46bd-8714-e592c1547e21")
+	)
+	(text "Indicator LEDs\n"
+		(exclude_from_sim no)
+		(at 232.664 105.664 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c3320226-c673-4276-afb6-5556977a2a18")
 	)
 	(text "Primary Control (HV isolated)"
 		(exclude_from_sim no)
@@ -2746,6 +3090,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 130.81) (xy 195.58 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29488f08-d6b8-45e3-8842-fae35b9ea520")
+	)
+	(wire
+		(pts
 			(xy 67.31 43.18) (xy 78.74 43.18)
 		)
 		(stroke
@@ -2773,6 +3127,16 @@
 			(type default)
 		)
 		(uuid "492c9f91-5f08-4a20-99cf-7eb00cf4352e")
+	)
+	(wire
+		(pts
+			(xy 242.57 121.92) (xy 242.57 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b9dab94-55fb-4641-8fb6-a7e6eeb81a24")
 	)
 	(wire
 		(pts
@@ -2896,7 +3260,7 @@
 	)
 	(polyline
 		(pts
-			(xy 228.6 101.6) (xy 228.6 158.75)
+			(xy 222.25 101.6) (xy 222.25 158.75)
 		)
 		(stroke
 			(width 0)
@@ -2966,6 +3330,16 @@
 	)
 	(wire
 		(pts
+			(xy 242.57 142.24) (xy 242.57 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "994a1b6e-2570-402b-87d2-580239d905ad")
+	)
+	(wire
+		(pts
 			(xy 48.26 138.43) (xy 54.61 138.43)
 		)
 		(stroke
@@ -2983,6 +3357,16 @@
 			(type default)
 		)
 		(uuid "9d03df0c-cf0e-4f2b-a237-92fb238deaa7")
+	)
+	(wire
+		(pts
+			(xy 242.57 132.08) (xy 242.57 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d93bae2-98a5-43ee-b52e-b4cc3cd67e7d")
 	)
 	(wire
 		(pts
@@ -3419,6 +3803,17 @@
 		)
 		(uuid "1acd106e-a75b-4a76-9f3c-79ebb29cf4e2")
 	)
+	(hierarchical_label "HV_24V_OUT"
+		(shape output)
+		(at 242.57 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2b0e3a83-d411-4da8-84d0-c98141b3333e")
+	)
 	(hierarchical_label "{HV_FAULT}"
 		(shape output)
 		(at 147.32 156.21 0)
@@ -3498,6 +3893,17 @@
 	)
 	(hierarchical_label "LV_GND"
 		(shape passive)
+		(at 242.57 144.78 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ad6aa395-154f-46b8-bc28-713fa3b2b4d3")
+	)
+	(hierarchical_label "LV_GND"
+		(shape passive)
 		(at 252.73 64.77 0)
 		(effects
 			(font
@@ -3517,6 +3923,17 @@
 			(justify left)
 		)
 		(uuid "d56f8881-9391-456a-851e-487181f43d6a")
+	)
+	(hierarchical_label "HV_24V_OUT"
+		(shape output)
+		(at 195.58 133.35 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e045e849-7523-436e-8e9c-8892df6ec8dd")
 	)
 	(symbol
 		(lib_id "Device:C_Small")
@@ -4270,6 +4687,99 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 242.57 138.43 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4bc61951-b3c6-4f33-8780-7bab7d4fe590")
+		(property "Reference" "D6"
+			(at 246.38 138.7474 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED"
+			(at 246.38 141.2874 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 242.57 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 242.57 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 242.57 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1c5ca79f-5eac-4db1-a805-fb1abb59fee0")
+		)
+		(pin "2"
+			(uuid "c9827430-9b40-4b8f-9e50-c89f5e7395a2")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 140.97 121.92 90)
 		(unit 1)
@@ -4344,6 +4854,85 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
 					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 195.58 130.81 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "51159fd3-146b-4a4c-b694-40f2ea7ee38a")
+		(property "Reference" "TP10"
+			(at 198.12 126.2379 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "HV_24V_OUT"
+			(at 198.12 128.7779 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 200.66 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 195.58 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "32882cd2-caa4-4edd-be11-54285e65f02a")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
+					(reference "TP10")
 					(unit 1)
 				)
 			)
@@ -5288,6 +5877,88 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
 					(reference "#FLG01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 242.57 128.27 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cc4bcad2-d040-4a1f-aa24-1dda820d5354")
+		(property "Reference" "R29"
+			(at 245.11 126.9999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "R"
+			(at 245.11 129.5399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 240.792 128.27 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 242.57 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 242.57 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bee5897c-8285-45d2-be65-ec2ee8338b14")
+		)
+		(pin "2"
+			(uuid "3fcaa0a2-0b7e-4e10-ab8d-dde5335e8dec")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
+					(reference "R29")
 					(unit 1)
 				)
 			)
