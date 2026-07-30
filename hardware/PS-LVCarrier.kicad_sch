@@ -476,7 +476,7 @@
 	)
 	(wire
 		(pts
-			(xy 375.92 78.74) (xy 380.9378 78.74)
+			(xy 311.15 46.99) (xy 306.07 46.99)
 		)
 		(stroke
 			(width 0.381)
@@ -696,7 +696,7 @@
 	)
 	(bus
 		(pts
-			(xy 307.34 46.99) (xy 311.15 46.99)
+			(xy 307.34 69.85) (xy 311.15 69.85)
 		)
 		(stroke
 			(width 0)
@@ -816,7 +816,7 @@
 	)
 	(wire
 		(pts
-			(xy 380.9378 80.01) (xy 380.9378 78.74)
+			(xy 306.07 48.26) (xy 306.07 46.99)
 		)
 		(stroke
 			(width 0.381)
@@ -1215,7 +1215,7 @@
 		(uuid "3c4fb74e-8220-495e-9661-b4a4e33314bc")
 	)
 	(label "{DISPLAY_SPI}"
-		(at 307.34 46.99 180)
+		(at 307.34 69.85 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2024,7 +2024,8 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 380.9378 80.01 0)
+		(at 306.07 48.26 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2035,7 +2036,7 @@
 		(fields_autoplaced yes)
 		(uuid "92068c31-43c5-4ed1-a4aa-82e674b9b576")
 		(property "Reference" "#PWR010"
-			(at 380.9378 86.36 0)
+			(at 306.07 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2046,7 +2047,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 380.9378 85.09 0)
+			(at 306.07 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2056,7 +2057,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 380.9378 80.01 0)
+			(at 306.07 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2067,7 +2068,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 380.9378 80.01 0)
+			(at 306.07 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2078,7 +2079,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 380.9378 80.01 0)
+			(at 306.07 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2655,7 +2656,7 @@
 			)
 		)
 		(pin "{SPI_DISPLAY}" bidirectional
-			(at 311.15 46.99 180)
+			(at 311.15 69.85 180)
 			(uuid "2060a7cc-f304-47ae-96a0-316c13d2988e")
 			(effects
 				(font
@@ -2665,18 +2666,18 @@
 			)
 		)
 		(pin "LV_GND" passive
-			(at 375.92 78.74 0)
+			(at 311.15 46.99 180)
 			(uuid "1da224fb-4cb0-474d-8d09-c1629d4f767c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(pin "OBBB_OUT" input
+		(pin "LVCARRIER_OUT" input
 			(at 311.15 40.64 180)
-			(uuid "c37ab43c-c389-484d-ba34-46342be6c8ac")
+			(uuid "bc0c3063-8e00-4ec8-a886-1a56a4521f72")
 			(effects
 				(font
 					(size 1.27 1.27)

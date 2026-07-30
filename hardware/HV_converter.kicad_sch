@@ -1736,6 +1736,260 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "lhrs_connectors:Vicor_Maxi_Brick"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "LHRS_Connectors:Vicor_Maxi_Brick"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.vicorpower.com/documents/applications_manual/fas_trak_apps_manual.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Vicor Maxi form-factor DC-DC Converter"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Vicor_Maxi_Brick_1_1"
+				(rectangle
+					(start -10.16 -1.778)
+					(end 10.16 -15.748)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin power_in line
+					(at -12.7 -3.81 0)
+					(length 2.54)
+					(name "IN+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 -6.35 0)
+					(length 2.54)
+					(name "PC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -8.89 0)
+					(length 2.54)
+					(name "PR"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -12.7 -11.43 0)
+					(length 2.54)
+					(name "IN-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 12.7 -13.97 180)
+					(length 2.54)
+					(name "OUT-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -11.43 180)
+					(length 2.54)
+					(name "SENSE-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -8.89 180)
+					(length 2.54)
+					(name "SC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -6.35 180)
+					(length 2.54)
+					(name "SENSE+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 12.7 -3.81 180)
+					(length 2.54)
+					(name "OUT+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 -13.97 0)
+					(length 2.54)
+					(name "PLATE"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3V3"
 			(power global)
 			(pin_numbers
@@ -2256,260 +2510,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "utsvt_connectors:Vicor_Maxi_Brick"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "UTSVT_Connectors:Vicor_Maxi_Brick"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" "https://www.vicorpower.com/documents/applications_manual/fas_trak_apps_manual.pdf"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Vicor Maxi form-factor DC-DC Converter"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Vicor_Maxi_Brick_1_1"
-				(rectangle
-					(start -10.16 -1.778)
-					(end 10.16 -15.748)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin power_in line
-					(at -12.7 -3.81 0)
-					(length 2.54)
-					(name "IN+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 -6.35 0)
-					(length 2.54)
-					(name "PC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -8.89 0)
-					(length 2.54)
-					(name "PR"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -12.7 -11.43 0)
-					(length 2.54)
-					(name "IN-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 12.7 -13.97 180)
-					(length 2.54)
-					(name "OUT-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 12.7 -11.43 180)
-					(length 2.54)
-					(name "SENSE-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 12.7 -8.89 180)
-					(length 2.54)
-					(name "SC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 12.7 -6.35 180)
-					(length 2.54)
-					(name "SENSE+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 12.7 -3.81 180)
-					(length 2.54)
-					(name "OUT+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -12.7 -13.97 0)
-					(length 2.54)
-					(name "PLATE"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(rectangle
 		(start 102.87 101.6)
@@ -2719,6 +2719,16 @@
 		)
 		(uuid "6fa6e275-ce7f-4c8b-93b3-624e17f6a9ab")
 	)
+	(text "tied mounting holes to PLATE in footprint editor"
+		(exclude_from_sim no)
+		(at 109.22 34.036 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7139be9e-9230-4656-941b-496d7104cb8d")
+	)
 	(text "OV: 155-169V\nUV: 54-56V\n"
 		(exclude_from_sim no)
 		(at 96.012 61.722 0)
@@ -2852,6 +2862,16 @@
 		)
 		(uuid "f2a4be0f-5036-43d8-a1a0-c4bd4bb3d460")
 	)
+	(text "add indicator led math to all"
+		(exclude_from_sim no)
+		(at 247.142 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f523cc3c-e2d9-4bd4-b87e-44cffc1d9b78")
+	)
 	(junction
 		(at 67.31 43.18)
 		(diameter 0)
@@ -2875,6 +2895,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1d0f9abf-ba8a-4b95-abe9-2f3aa00b0268")
+	)
+	(junction
+		(at 82.55 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "24042fc0-a5f1-4d04-b683-998403e801c6")
 	)
 	(junction
 		(at 143.51 165.1)
@@ -2911,12 +2937,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "970b7554-5f26-4533-b250-dbdd661c245c")
-	)
-	(junction
-		(at 82.55 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a931d3ee-170f-4ca0-a517-5a71ccfbe070")
 	)
 	(junction
 		(at 227.33 58.42)
@@ -3090,7 +3110,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 130.81) (xy 195.58 133.35)
+			(xy 195.58 123.19) (xy 195.58 125.73)
 		)
 		(stroke
 			(width 0)
@@ -3227,6 +3247,16 @@
 			(type default)
 		)
 		(uuid "69abeeb5-4a0e-401c-aa5c-57049cc76808")
+	)
+	(wire
+		(pts
+			(xy 191.77 137.16) (xy 191.77 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a54ac04-209c-40bb-9b5f-2ee59bb541df")
 	)
 	(wire
 		(pts
@@ -3417,6 +3447,16 @@
 			(type default)
 		)
 		(uuid "a9a796f3-b39d-4c9e-9efb-a72e04a4292f")
+	)
+	(wire
+		(pts
+			(xy 205.74 137.16) (xy 205.74 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b035b70e-0c26-4ad3-9577-d75fb3e493a2")
 	)
 	(wire
 		(pts
@@ -3926,7 +3966,7 @@
 	)
 	(hierarchical_label "HV_24V_OUT"
 		(shape output)
-		(at 195.58 133.35 0)
+		(at 195.58 125.73 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4328,110 +4368,6 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
 					(reference "#FLG03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "utsvt_connectors:Vicor_Maxi_Brick")
-		(at 95.25 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "40bfe5c8-e27a-494c-b73f-3401024f37a4")
-		(property "Reference" "U3"
-			(at 95.25 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 95.25 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "UTSVT_Connectors:Vicor_Maxi_Brick"
-			(at 95.25 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vicorpower.com/documents/applications_manual/fas_trak_apps_manual.pdf"
-			(at 95.25 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Vicor Maxi form-factor DC-DC Converter"
-			(at 95.25 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "5"
-			(uuid "b1cf42c7-9eb4-4b30-9341-42ec63e397bb")
-		)
-		(pin "8"
-			(uuid "4886260a-bac1-4f75-b42a-2ff911ef3a2f")
-		)
-		(pin "1"
-			(uuid "311fab0f-885c-4464-bc4d-31e50324b156")
-		)
-		(pin "9"
-			(uuid "154d5d50-9ccf-48a5-8fa7-4b29f9614818")
-		)
-		(pin "10"
-			(uuid "09c7d4a0-8e7f-401b-bb17-c6aa31b2a53d")
-		)
-		(pin "7"
-			(uuid "7d01d1b4-e181-48d4-99e4-890be0106877")
-		)
-		(pin "2"
-			(uuid "d8ed2276-c536-4c59-9362-60bddb4f4153")
-		)
-		(pin "3"
-			(uuid "5b31994e-3cef-40e3-b494-d707766916b3")
-		)
-		(pin "6"
-			(uuid "81f20081-c5e9-4d58-a08a-92f101f1c8a9")
-		)
-		(pin "4"
-			(uuid "9e0e3dac-9e2d-4789-8a45-422a5843641a")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
-					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -4860,8 +4796,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 195.58 130.81 0)
+		(lib_id "power:Earth")
+		(at 191.77 138.43 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4869,32 +4805,30 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "51159fd3-146b-4a4c-b694-40f2ea7ee38a")
-		(property "Reference" "TP10"
-			(at 198.12 126.2379 0)
+		(uuid "509ef6ba-264f-4f8e-bf32-3ff22393f184")
+		(property "Reference" "#PWR035"
+			(at 191.77 144.78 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "HV_24V_OUT"
-			(at 198.12 128.7779 0)
+		(property "Value" "Earth"
+			(at 191.77 142.494 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 200.66 130.81 0)
+			(at 191.77 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4905,7 +4839,86 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 130.81 0)
+			(at 191.77 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"Earth\""
+			(at 191.77 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "db73ccf7-ec66-43b6-9083-adf4969e5a68")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
+					(reference "#PWR035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 195.58 123.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "51159fd3-146b-4a4c-b694-40f2ea7ee38a")
+		(property "Reference" "TP10"
+			(at 198.12 118.6179 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "HV_24V_OUT"
+			(at 198.12 121.1579 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 200.66 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4916,7 +4929,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 195.58 130.81 0)
+			(at 195.58 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5805,6 +5818,164 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 191.77 137.16 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ba6a746f-ae7a-41b4-a6d0-c4abe4b8c47c")
+		(property "Reference" "TP13"
+			(at 194.31 132.5879 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 194.31 135.1279 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 196.85 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 196.85 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 191.77 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "52f9a6bf-023d-435e-80d9-e6a985e5e109")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
+					(reference "TP13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 205.74 137.16 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c04beb7f-8217-491e-af9e-4f618d9ebe73")
+		(property "Reference" "TP14"
+			(at 208.28 132.5879 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 208.28 135.1279 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 210.82 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 210.82 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 205.74 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "586c8b71-b74a-4607-b5c5-2630e8b0f81d")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
+					(reference "TP14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 78.74 43.18 0)
 		(unit 1)
@@ -5877,6 +6048,109 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
 					(reference "#FLG01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "lhrs_connectors:Vicor_Maxi_Brick")
+		(at 95.25 39.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c8aa1689-8075-476c-8ce2-2b23f1a6fbe7")
+		(property "Reference" "U13"
+			(at 95.25 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "V110A24C300BG"
+			(at 95.25 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LHRS_Connectors:Vicor_Maxi_Brick"
+			(at 95.25 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.vicorpower.com/documents/applications_manual/fas_trak_apps_manual.pdf"
+			(at 95.25 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Vicor Maxi form-factor DC-DC Converter"
+			(at 95.25 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "9"
+			(uuid "df2a0e19-0b2c-4601-b1ec-048d0912bd20")
+		)
+		(pin "10"
+			(uuid "389dd780-a9f5-4dfc-91d3-089461df1805")
+		)
+		(pin "4"
+			(uuid "7d64cfe5-4aec-45de-b303-3b139872e995")
+		)
+		(pin "8"
+			(uuid "8a1833f7-377d-403b-8d05-e3153846783b")
+		)
+		(pin "7"
+			(uuid "1f2349d3-c9ed-41e9-9afa-f2f409fdaff0")
+		)
+		(pin "1"
+			(uuid "b777efc1-7eea-4ee6-957f-5f91035f331d")
+		)
+		(pin "2"
+			(uuid "c953d9f6-3e26-4891-94c9-862e79cd907f")
+		)
+		(pin "6"
+			(uuid "f980913c-637e-4e53-a0d1-eef773a51b2c")
+		)
+		(pin "3"
+			(uuid "ece78d27-0b4f-4fa0-aaf1-2e3096d2e55c")
+		)
+		(pin "5"
+			(uuid "1901b497-6d4b-4895-8629-56abc1a96334")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
+					(reference "U13")
 					(unit 1)
 				)
 			)
@@ -6323,7 +6597,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x02"
+		(property "Value" "HV_THERM"
 			(at 68.58 149.8599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6377,6 +6651,83 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
 					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:Earth")
+		(at 205.74 138.43 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ee1cc4c3-c95d-4a84-ab42-850ba5ce2734")
+		(property "Reference" "#PWR039"
+			(at 205.74 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Earth"
+			(at 205.74 142.494 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 205.74 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"Earth\""
+			(at 205.74 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "69064a28-5b5a-4ebc-9619-ffb24cf7cd4d")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/fb835669-ee1e-4b3d-a364-7caeae7b290b"
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
