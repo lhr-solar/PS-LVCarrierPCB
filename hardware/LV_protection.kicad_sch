@@ -3834,16 +3834,6 @@
 		)
 		(uuid "42012edd-788e-4aa0-98a5-870200ab2ba1")
 	)
-	(text "inverted logic?"
-		(exclude_from_sim no)
-		(at 41.402 81.026 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "448f0057-1fc6-4fb5-a56b-fdfde5f6f0f0")
-	)
 	(text "route tightly\n"
 		(exclude_from_sim no)
 		(at 209.042 65.786 0)
@@ -4298,7 +4288,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 148.59) (xy 241.3 151.13)
+			(xy 241.3 146.05) (xy 241.3 148.59)
 		)
 		(stroke
 			(width 0)
@@ -4355,16 +4345,6 @@
 			(type default)
 		)
 		(uuid "3771c0de-f7a1-4712-8af6-f0dc8e251d65")
-	)
-	(wire
-		(pts
-			(xy 241.3 138.43) (xy 241.3 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "38a8f3d7-e8c4-4189-a5bb-09d46bc21f6f")
 	)
 	(polyline
 		(pts
@@ -4638,7 +4618,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 137.16) (xy 204.47 139.7)
+			(xy 204.47 137.16) (xy 204.47 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4918,7 +4898,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 148.59) (xy 252.73 151.13)
+			(xy 252.73 146.05) (xy 252.73 148.59)
 		)
 		(stroke
 			(width 0)
@@ -5298,16 +5278,6 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 138.43) (xy 252.73 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ebb0508f-0e41-431c-bc7d-b15ba968815d")
-	)
-	(wire
-		(pts
 			(xy 81.28 176.53) (xy 81.28 173.99)
 		)
 		(stroke
@@ -5566,16 +5536,6 @@
 		)
 		(uuid "8ab57188-dfec-4c88-a80f-95cdbd0b7546")
 	)
-	(label "VIN"
-		(at 204.47 139.7 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "aec38bf1-2f33-471e-87b9-41603b503f81")
-	)
 	(label "VCP"
 		(at 114.3 66.04 180)
 		(effects
@@ -5679,7 +5639,7 @@
 	)
 	(hierarchical_label "LV_GND"
 		(shape passive)
-		(at 241.3 151.13 0)
+		(at 241.3 148.59 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5710,6 +5670,17 @@
 		)
 		(uuid "4a5f0143-b299-4d63-8429-f26a7e96a606")
 	)
+	(hierarchical_label "LV_OUT"
+		(shape output)
+		(at 204.47 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "602a187c-811c-49af-9217-09df3e48130a")
+	)
 	(hierarchical_label "LV_GND"
 		(shape passive)
 		(at 43.18 45.72 0)
@@ -5723,7 +5694,7 @@
 	)
 	(hierarchical_label "LV_GND"
 		(shape passive)
-		(at 252.73 151.13 0)
+		(at 252.73 148.59 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7148,7 +7119,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "VIN"
+		(property "Value" "LV_OUT"
 			(at 207.01 135.1279 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8818,7 +8789,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 252.73 144.78 90)
+		(at 252.73 142.24 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8829,7 +8800,7 @@
 		(fields_autoplaced yes)
 		(uuid "711e3242-810e-42e3-8945-313ef38bf211")
 		(property "Reference" "D10"
-			(at 256.54 145.0974 90)
+			(at 256.54 142.5574 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8840,7 +8811,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 256.54 147.6374 90)
+			(at 256.54 145.0974 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8851,7 +8822,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 252.73 144.78 0)
+			(at 252.73 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8862,7 +8833,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 252.73 144.78 0)
+			(at 252.73 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8873,7 +8844,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 252.73 144.78 0)
+			(at 252.73 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8884,7 +8855,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 252.73 144.78 0)
+			(at 252.73 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9678,7 +9649,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 241.3 144.78 90)
+		(at 241.3 142.24 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9689,7 +9660,7 @@
 		(fields_autoplaced yes)
 		(uuid "936449c9-f5c1-4a85-90d5-1fe3b3c75280")
 		(property "Reference" "D7"
-			(at 245.11 145.0974 90)
+			(at 245.11 142.5574 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9700,7 +9671,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 245.11 147.6374 90)
+			(at 245.11 145.0974 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9711,7 +9682,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 241.3 144.78 0)
+			(at 241.3 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9722,7 +9693,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 241.3 144.78 0)
+			(at 241.3 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9733,7 +9704,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 241.3 144.78 0)
+			(at 241.3 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9744,7 +9715,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 241.3 144.78 0)
+			(at 241.3 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
