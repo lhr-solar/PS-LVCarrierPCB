@@ -150,145 +150,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+3V3"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "+3V3"
-				(at 0 3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+3V3\""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "+3V3_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+3V3_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -429,6 +290,47 @@
 		)
 		(uuid "f2d2641b-65b9-4f27-8627-c093b6e53ff6")
 	)
+	(text "LTC4421 & FETs + sensing"
+		(exclude_from_sim no)
+		(at 238.252 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "02b05f70-5f81-4df5-bc2b-bdb7592d4086")
+	)
+	(text "STM32G4"
+		(exclude_from_sim no)
+		(at 129.286 161.036 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "384b5352-0d10-441a-b89b-0dd1eb877e6d")
+	)
+	(text "LV input \nprotection \n+ sensing\n"
+		(exclude_from_sim no)
+		(at 56.896 92.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5ef59db4-2f45-422a-859c-17e5ab3c98b6")
+	)
+	(text "Buck converter + LDO"
+		(exclude_from_sim no)
+		(at 239.268 135.89 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "652db3fd-2ecd-4076-aaf4-eda1b35f258d")
+	)
 	(text "Application Notes\n"
 		(exclude_from_sim no)
 		(at 321.056 174.244 0)
@@ -440,6 +342,26 @@
 			)
 		)
 		(uuid "65bcd0dd-6d95-4617-b573-83efb73561f5")
+	)
+	(text "LV vicor + sensing"
+		(exclude_from_sim no)
+		(at 140.462 94.742 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6e46a359-95af-4819-afe2-defc4cb189f0")
+	)
+	(text "CAN"
+		(exclude_from_sim no)
+		(at 238.506 179.578 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7b800593-f4de-4eb3-bf10-c76b85aa1fcd")
 	)
 	(text "Next Revision Notes\n"
 		(exclude_from_sim no)
@@ -463,6 +385,16 @@
 		)
 		(uuid "ca779ccc-6db6-4dc3-bb59-02a86cfcddcf")
 	)
+	(text "Fans"
+		(exclude_from_sim no)
+		(at 237.236 227.584 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "cb51cf46-d62c-4ae0-9d6e-24180f38f04c")
+	)
 	(text "24V to PDU + SPI breakout"
 		(exclude_from_sim no)
 		(at 343.662 61.468 0)
@@ -484,16 +416,30 @@
 		(uuid "e29b3035-b7dd-4847-83c3-fc3684f2af0e")
 	)
 	(junction
-		(at 191.77 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "10ee6f64-eeb3-4589-932a-eb92894e2d76")
-	)
-	(junction
 		(at 195.58 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "843c266a-24ff-42c1-9053-33103423f9e5")
+		(uuid "1bf370dd-ec9a-4307-a10b-dc70b2923288")
+	)
+	(junction
+		(at 191.77 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2d9917ed-cf12-4f6c-af55-5bc8e49515f5")
+	)
+	(junction
+		(at 204.47 144.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3bf979a8-5791-4130-9aba-56a7eaac64a1")
+	)
+	(no_connect
+		(at 209.55 177.8)
+		(uuid "6e8918de-8d32-4d1a-a9d2-6107d9357fa4")
+	)
+	(no_connect
+		(at 209.55 180.34)
+		(uuid "a912fc3c-1ebd-4fb5-baef-629814a8aa1c")
 	)
 	(wire
 		(pts
@@ -527,7 +473,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 144.78) (xy 209.55 144.78)
+			(xy 166.37 144.78) (xy 204.47 144.78)
 		)
 		(stroke
 			(width 0.381)
@@ -537,7 +483,7 @@
 	)
 	(bus
 		(pts
-			(xy 273.05 44.45) (xy 276.86 44.45)
+			(xy 274.32 44.45) (xy 278.13 44.45)
 		)
 		(stroke
 			(width 0)
@@ -577,7 +523,7 @@
 	)
 	(bus
 		(pts
-			(xy 273.05 46.99) (xy 276.9222 46.99)
+			(xy 274.32 46.99) (xy 278.1922 46.99)
 		)
 		(stroke
 			(width 0)
@@ -737,7 +683,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 40.64) (xy 311.15 40.64)
+			(xy 274.32 40.64) (xy 311.15 40.64)
 		)
 		(stroke
 			(width 0.381)
@@ -767,23 +713,13 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 82.55) (xy 204.47 82.55)
+			(xy 191.77 82.55) (xy 205.74 82.55)
 		)
 		(stroke
 			(width 0.381)
 			(type default)
 		)
 		(uuid "565d2699-b7fd-413d-992a-41cbf7726a2d")
-	)
-	(wire
-		(pts
-			(xy 205.74 177.8) (xy 209.55 177.8)
-		)
-		(stroke
-			(width 0.381)
-			(type default)
-		)
-		(uuid "57193126-0ea0-42c1-9bdd-6f2a020328a7")
 	)
 	(wire
 		(pts
@@ -797,7 +733,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 52.07) (xy 276.86 52.07)
+			(xy 274.32 52.07) (xy 278.13 52.07)
 		)
 		(stroke
 			(width 0.381)
@@ -897,7 +833,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 40.64) (xy 204.47 40.64)
+			(xy 195.58 40.64) (xy 205.74 40.64)
 		)
 		(stroke
 			(width 0.381)
@@ -1027,16 +963,6 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 180.34) (xy 209.55 180.34)
-		)
-		(stroke
-			(width 0.381)
-			(type default)
-		)
-		(uuid "a9aec649-a736-400b-9451-992bad6fe9d7")
-	)
-	(wire
-		(pts
 			(xy 85.09 241.3) (xy 90.17 241.3)
 		)
 		(stroke
@@ -1044,6 +970,16 @@
 			(type default)
 		)
 		(uuid "aab1e690-6546-4995-a3b6-c98142fdf7c1")
+	)
+	(wire
+		(pts
+			(xy 204.47 144.78) (xy 209.55 144.78)
+		)
+		(stroke
+			(width 0.381)
+			(type default)
+		)
+		(uuid "afb997dc-afd2-4f60-854c-997d5d4e1160")
 	)
 	(wire
 		(pts
@@ -1117,7 +1053,7 @@
 	)
 	(bus
 		(pts
-			(xy 273.05 49.53) (xy 276.9222 49.53)
+			(xy 274.32 49.53) (xy 278.1922 49.53)
 		)
 		(stroke
 			(width 0)
@@ -1127,7 +1063,7 @@
 	)
 	(wire
 		(pts
-			(xy 278.13 85.09) (xy 278.13 83.82)
+			(xy 279.4 85.09) (xy 279.4 83.82)
 		)
 		(stroke
 			(width 0.381)
@@ -1177,7 +1113,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 171.45) (xy 209.55 171.45)
+			(xy 204.47 168.91) (xy 209.55 168.91)
 		)
 		(stroke
 			(width 0.381)
@@ -1187,7 +1123,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 83.82) (xy 278.13 83.82)
+			(xy 274.32 83.82) (xy 279.4 83.82)
 		)
 		(stroke
 			(width 0.381)
@@ -1227,7 +1163,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 170.18) (xy 204.47 171.45)
+			(xy 204.47 144.78) (xy 204.47 168.91)
 		)
 		(stroke
 			(width 0.381)
@@ -1316,7 +1252,7 @@
 		(uuid "12c4abbf-7e45-4103-a9fb-0545342e406c")
 	)
 	(label "{STATUS_OUT}"
-		(at 276.86 49.53 0)
+		(at 278.13 49.53 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1385,16 +1321,6 @@
 		)
 		(uuid "4dad4998-abae-4fa4-8a3d-12f1304b0d30")
 	)
-	(label "CAN_L"
-		(at 205.74 180.34 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "53ee869d-362a-4021-96ff-52bfd116a25c")
-	)
 	(label "{CONTROL_IN}"
 		(at 86.36 205.74 180)
 		(effects
@@ -1416,7 +1342,7 @@
 		(uuid "5f3626d3-6fca-45f9-9164-bc18ba42ced3")
 	)
 	(label "{CONTROL_IN}"
-		(at 276.86 46.99 0)
+		(at 278.13 46.99 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1555,16 +1481,6 @@
 		)
 		(uuid "a9722856-6bb9-4670-8eed-4ebe8cc81d9c")
 	)
-	(label "CAN_H"
-		(at 205.74 177.8 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "b0d6c707-6fcc-4778-99d8-1b33c9de9450")
-	)
 	(label "{LV_FAULT}"
 		(at 86.36 182.88 180)
 		(effects
@@ -1606,7 +1522,7 @@
 		(uuid "ed8ab93b-a473-4c14-8231-745017a06e02")
 	)
 	(label "{I2C}"
-		(at 276.86 44.45 0)
+		(at 278.13 44.45 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1626,7 +1542,7 @@
 		(uuid "f43f828f-7bbe-46a2-b83c-cedf8f717507")
 	)
 	(label "SENSE_ALERT"
-		(at 276.86 52.07 0)
+		(at 278.13 52.07 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1647,7 +1563,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "11e5ac28-62ce-4474-9296-474494e38053")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR02"
 			(at 44.45 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -1707,7 +1623,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR01")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -1725,7 +1641,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3c00441b-b162-43b4-b6c2-891eeb9dadd7")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR06"
 			(at 113.03 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -1785,7 +1701,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR05")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -1803,7 +1719,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3fb39b3c-8f66-4052-9d6d-3bedc5b3d52e")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR05"
 			(at 113.03 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -1863,7 +1779,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR04")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -1882,7 +1798,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "41fdd6b6-c343-4d2e-bfc5-fea7392da654")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR04"
 			(at 93.98 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -1942,7 +1858,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR011")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -1960,7 +1876,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "54a2b45a-b23e-4c4e-8ff2-20f7a6546547")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR010"
 			(at 274.574 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -2020,7 +1936,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR07")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -2039,7 +1955,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "652ccf26-6107-46cc-88ba-34ebd82d0f56")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR07"
 			(at 175.133 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -2099,7 +2015,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR012")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -2117,7 +2033,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8f676ccf-1f60-4a37-bed4-cd4c34e10678")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR011"
 			(at 279.273 247.65 0)
 			(hide yes)
 			(show_name no)
@@ -2177,7 +2093,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR09")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -2196,7 +2112,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "92068c31-43c5-4ed1-a4aa-82e674b9b576")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR013"
 			(at 306.07 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -2256,7 +2172,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR010")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -2274,7 +2190,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "991f912f-cde9-4353-8cc0-a2c917535964")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR08"
 			(at 196.977 218.44 0)
 			(hide yes)
 			(show_name no)
@@ -2334,7 +2250,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR06")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -2352,7 +2268,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aeaee5d2-e15e-48df-89d8-859c4753f5da")
-		(property "Reference" "#PWR099"
+		(property "Reference" "#PWR09"
 			(at 274.32 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -2412,7 +2328,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR099")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -2498,7 +2414,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 278.13 85.09 0)
+		(at 279.4 85.09 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2508,8 +2424,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b9638954-78d0-4079-aa19-a7b4d512d49e")
-		(property "Reference" "#PWR08"
-			(at 278.13 91.44 0)
+		(property "Reference" "#PWR012"
+			(at 279.4 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2520,7 +2436,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 278.13 90.17 0)
+			(at 279.4 90.17 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2530,7 +2446,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 278.13 85.09 0)
+			(at 279.4 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2541,7 +2457,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 278.13 85.09 0)
+			(at 279.4 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2552,7 +2468,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 278.13 85.09 0)
+			(at 279.4 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2568,84 +2484,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR08")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 204.47 170.18 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d2d924fd-7c42-4bb9-8570-d7fc49e624f4")
-		(property "Reference" "#PWR070"
-			(at 204.47 173.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 203.962 165.608 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 204.47 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 204.47 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 204.47 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "65950cd3-ac1f-4b10-a4cd-faed43d3a7c5")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR070")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -2663,7 +2502,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e6af4b15-e802-4c1c-981c-8aa12713687c")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR01"
 			(at 44.45 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -2723,14 +2562,14 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR02")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(sheet
-		(at 204.47 34.29)
+		(at 205.74 34.29)
 		(size 68.58 55.88)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2746,7 +2585,7 @@
 		)
 		(uuid "072644d0-f801-4006-a9bd-a5565fd84c40")
 		(property "Sheetname" "MUX"
-			(at 204.47 33.4641 0)
+			(at 205.74 33.4641 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2757,7 +2596,7 @@
 			)
 		)
 		(property "Sheetfile" "prioritycombiner.kicad_sch"
-			(at 204.47 90.8689 0)
+			(at 205.74 90.8689 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2768,7 +2607,7 @@
 			)
 		)
 		(pin "HV_24V" input
-			(at 204.47 40.64 180)
+			(at 205.74 40.64 180)
 			(uuid "1c2e64c5-a580-4581-af9f-af22d200a8c5")
 			(effects
 				(font
@@ -2778,7 +2617,7 @@
 			)
 		)
 		(pin "LV_24V" input
-			(at 204.47 82.55 180)
+			(at 205.74 82.55 180)
 			(uuid "8ebd5ac3-f663-4438-82eb-c5bb493a2f6e")
 			(effects
 				(font
@@ -2788,7 +2627,7 @@
 			)
 		)
 		(pin "{CTRL_INPUTS}" input
-			(at 273.05 46.99 0)
+			(at 274.32 46.99 0)
 			(uuid "7ccfe431-4dd7-476b-88ef-8f0df3b43254")
 			(effects
 				(font
@@ -2798,7 +2637,7 @@
 			)
 		)
 		(pin "{STATS_OUTPUTS}" output
-			(at 273.05 49.53 0)
+			(at 274.32 49.53 0)
 			(uuid "869d451d-14d2-4b3d-98a0-58c23e42fcc3")
 			(effects
 				(font
@@ -2808,7 +2647,7 @@
 			)
 		)
 		(pin "24V_VOUT" output
-			(at 273.05 40.64 0)
+			(at 274.32 40.64 0)
 			(uuid "911f1227-9249-4c61-a86b-8f4c35593470")
 			(effects
 				(font
@@ -2818,7 +2657,7 @@
 			)
 		)
 		(pin "{I2C}" bidirectional
-			(at 273.05 44.45 0)
+			(at 274.32 44.45 0)
 			(uuid "30f0dd2d-c71f-464b-a7ea-86866b74ff5e")
 			(effects
 				(font
@@ -2828,7 +2667,7 @@
 			)
 		)
 		(pin "LV_GND" passive
-			(at 273.05 83.82 0)
+			(at 274.32 83.82 0)
 			(uuid "255eb7cb-4c18-45e5-b7e0-e0253f9e5fdc")
 			(effects
 				(font
@@ -2838,7 +2677,7 @@
 			)
 		)
 		(pin "SENSE_ALERT" output
-			(at 273.05 52.07 0)
+			(at 274.32 52.07 0)
 			(uuid "0f61255a-b8cb-4f09-98d5-acf2280466ce")
 			(effects
 				(font
@@ -2913,7 +2752,7 @@
 				(justify left)
 			)
 		)
-		(pin "LVCARRIER_OUT" input
+		(pin "LVCARRIER_OUT" output
 			(at 311.15 40.64 180)
 			(uuid "bc0c3063-8e00-4ec8-a886-1a56a4521f72")
 			(effects
@@ -3592,8 +3431,8 @@
 		)
 	)
 	(sheet
-		(at 209.55 166.37)
-		(size 59.69 27.94)
+		(at 209.55 163.068)
+		(size 59.69 31.242)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -3608,7 +3447,7 @@
 		)
 		(uuid "f0804b6d-ee3f-4784-b794-2afd95f68c58")
 		(property "Sheetname" "CAN"
-			(at 209.55 165.5441 0)
+			(at 209.55 162.2421 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3631,7 +3470,7 @@
 			)
 		)
 		(pin "3.3v" input
-			(at 209.55 171.45 180)
+			(at 209.55 168.91 180)
 			(uuid "fcdb11d5-55e4-4c46-86b0-042e166fe898")
 			(effects
 				(font
