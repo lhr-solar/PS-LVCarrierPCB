@@ -3387,7 +3387,7 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 53.34) (xy 129.54 53.34)
+			(xy 140.97 53.34) (xy 129.54 53.34)
 		)
 		(stroke
 			(width 0)
@@ -3885,16 +3885,6 @@
 		)
 		(uuid "2e2dd409-8228-4880-b66f-4068d303f50a")
 	)
-	(label "HV_VSENSE"
-		(at 262.89 128.27 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "433f8366-1791-44b8-a342-eaf30578bcbf")
-	)
 	(label "HLDO_OUT"
 		(at 68.58 168.91 180)
 		(effects
@@ -3904,16 +3894,6 @@
 			(justify right bottom)
 		)
 		(uuid "62a2c576-8778-43ab-b931-b87b399fd402")
-	)
-	(label "HV_ISENSE"
-		(at 142.24 53.34 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "913bf3fe-a6ad-4e5b-afee-85389b6981a0")
 	)
 	(label "DCDC_IN"
 		(at 132.08 111.76 0)
@@ -3925,7 +3905,7 @@
 		)
 		(uuid "94b75ae3-62c1-413a-94ad-5fb69128c048")
 	)
-	(label "HV_VSNS_FAULT"
+	(label "HV_IN_VFAULT"
 		(at 144.78 124.46 180)
 		(effects
 			(font
@@ -3935,7 +3915,7 @@
 		)
 		(uuid "997230b2-0c4e-4a81-b692-65fa809c9360")
 	)
-	(label "HV_VSENSE_F"
+	(label "HV_IN_V"
 		(at 209.55 64.77 180)
 		(effects
 			(font
@@ -4015,7 +3995,7 @@
 		)
 		(uuid "c49c20ec-2381-49bb-9e7a-1895852e1024")
 	)
-	(label "HV_ISENSE_F"
+	(label "HV_IN_I"
 		(at 250.19 64.77 180)
 		(effects
 			(font
@@ -4035,6 +4015,16 @@
 		)
 		(uuid "e553b7d3-76ce-4e6b-abb6-481aab817662")
 	)
+	(label "HV_IN_V"
+		(at 262.89 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e95fc664-13ce-427b-8ffb-a7ed7ca372a2")
+	)
 	(label "LDO_OUT"
 		(at 132.08 105.41 0)
 		(effects
@@ -4044,6 +4034,16 @@
 			(justify left bottom)
 		)
 		(uuid "ecef4473-e373-4ae1-8b59-3722ecae1f87")
+	)
+	(label "HV_IN_I"
+		(at 140.97 53.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ee4c0a7a-91bb-4106-a0d9-d81cc506d470")
 	)
 	(label "DCDC_IN"
 		(at 116.84 168.91 0)
@@ -4085,7 +4085,7 @@
 		)
 		(uuid "fbde7b2e-ec00-4740-8765-d7d50b63aaff")
 	)
-	(hierarchical_label "{HV_SENSE}"
+	(hierarchical_label "{HV_IN_SENSE}"
 		(shape output)
 		(at 147.32 119.38 0)
 		(effects
@@ -4161,17 +4161,6 @@
 			(justify right)
 		)
 		(uuid "3296f215-dbf0-4cfe-a93c-6e53bee0ef6e")
-	)
-	(hierarchical_label "{HV_SENSE}"
-		(shape output)
-		(at 214.63 62.23 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3aa7dc87-0e27-4767-bd32-830988948b97")
 	)
 	(hierarchical_label "LV_GND"
 		(shape passive)
@@ -4283,6 +4272,17 @@
 		)
 		(uuid "9bb7cc51-b976-4bd3-a21c-bd378b9f3e65")
 	)
+	(hierarchical_label "{HV_IN_SENSE}"
+		(shape output)
+		(at 255.27 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9dfcc719-4f9d-4347-ab81-8f5b37dbe1fd")
+	)
 	(hierarchical_label "LV_GND"
 		(shape passive)
 		(at 243.84 142.24 0)
@@ -4327,16 +4327,16 @@
 		)
 		(uuid "b50c9242-f3c0-4ded-836c-7b7320249d98")
 	)
-	(hierarchical_label "{HV_SENSE}"
+	(hierarchical_label "{HV_IN_SENSE}"
 		(shape output)
-		(at 255.27 62.23 0)
+		(at 214.63 62.23 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "d48756a5-1325-4f2e-8c87-0fdc61e9a2a6")
+		(uuid "cf8bbb8d-059d-41d0-a62c-d4225885c29a")
 	)
 	(hierarchical_label "HV_GND"
 		(shape passive)
