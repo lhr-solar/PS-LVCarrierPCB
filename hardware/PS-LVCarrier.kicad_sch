@@ -433,13 +433,23 @@
 		(color 0 0 0 0)
 		(uuid "3bf979a8-5791-4130-9aba-56a7eaac64a1")
 	)
-	(no_connect
-		(at 209.55 177.8)
-		(uuid "6e8918de-8d32-4d1a-a9d2-6107d9357fa4")
+	(bus_entry
+		(at 207.01 179.07)
+		(size -2.54 -2.54)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(uuid "397b4dce-59b5-478e-8712-d19abd4e0195")
 	)
-	(no_connect
-		(at 209.55 180.34)
-		(uuid "a912fc3c-1ebd-4fb5-baef-629814a8aa1c")
+	(bus_entry
+		(at 207.01 181.61)
+		(size -2.54 -2.54)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(uuid "9a6afb1a-6833-4ce7-9e08-acb5f8fd0970")
 	)
 	(wire
 		(pts
@@ -933,6 +943,26 @@
 	)
 	(wire
 		(pts
+			(xy 207.01 179.07) (xy 209.55 179.07)
+		)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(uuid "a6d0d3f6-aa5c-4d80-8c9a-c65d59f1da1a")
+	)
+	(wire
+		(pts
+			(xy 207.01 181.61) (xy 209.55 181.61)
+		)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(uuid "a821f0b1-7a7d-4bff-a2b5-d77314650965")
+	)
+	(wire
+		(pts
 			(xy 85.09 241.3) (xy 90.17 241.3)
 		)
 		(stroke
@@ -1000,6 +1030,16 @@
 			(type default)
 		)
 		(uuid "b2c04e89-a14c-439f-b1a3-4a3f6d439222")
+	)
+	(bus
+		(pts
+			(xy 204.47 179.07) (xy 204.47 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4c3cd11-958c-4495-8fc2-e8ad9d89bf87")
 	)
 	(bus
 		(pts
@@ -1331,6 +1371,16 @@
 		)
 		(uuid "561d0722-f143-4861-bd1f-8c86d94b0d51")
 	)
+	(label "{CAN_BUS}"
+		(at 204.47 175.26 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5895a43c-fc83-4243-995a-8d16e0098da9")
+	)
 	(label "{HV_DCDC_FLT}"
 		(at 86.36 162.56 180)
 		(effects
@@ -1371,7 +1421,7 @@
 		)
 		(uuid "6a630579-1894-4431-af99-0108b7ef5fee")
 	)
-	(label "{HV_IN_SENSE}"
+	(label "{HV_IN_ADC}"
 		(at 92.71 44.45 0)
 		(effects
 			(font
@@ -1481,6 +1531,16 @@
 		)
 		(uuid "acdf93b6-32d0-4c74-8b86-b2d05bd48ba1")
 	)
+	(label "{HV_IN_ADC}"
+		(at 86.36 149.86 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "af1dbc59-d1c1-4134-b5fc-23c556c63e70")
+	)
 	(label "{HV_OUT_ADC}"
 		(at 86.36 165.1 180)
 		(effects
@@ -1510,16 +1570,6 @@
 			(justify left bottom)
 		)
 		(uuid "c914d9d4-f2ed-4567-9db0-28d126445b87")
-	)
-	(label "{HV_IN_SENSE}"
-		(at 86.36 149.86 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d5531e5e-efb1-4910-a2dd-fceee8302271")
 	)
 	(label "PS_ENABLE"
 		(at 92.71 91.44 0)
@@ -2043,7 +2093,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8f676ccf-1f60-4a37-bed4-cd4c34e10678")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR012"
 			(at 280.67 247.65 0)
 			(hide yes)
 			(show_name no)
@@ -2103,7 +2153,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR011")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -2434,7 +2484,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b9638954-78d0-4079-aa19-a7b4d512d49e")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR011"
 			(at 279.4 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -2494,7 +2544,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR012")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -2848,9 +2898,9 @@
 				(justify right)
 			)
 		)
-		(pin "{HV_IN_SENSE}" output
-			(at 88.9 44.45 0)
-			(uuid "601d9458-6f08-4aad-bf11-69cd456ccd7b")
+		(pin "HV_IN_VFAULT" input
+			(at 88.9 46.99 0)
+			(uuid "7f7bf3a4-b56f-4001-982d-d0e82d213699")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2858,9 +2908,9 @@
 				(justify right)
 			)
 		)
-		(pin "HV_IN_VFAULT" input
-			(at 88.9 46.99 0)
-			(uuid "7f7bf3a4-b56f-4001-982d-d0e82d213699")
+		(pin "{HV_IN_ADC}" output
+			(at 88.9 44.45 0)
+			(uuid "cd44a1fd-2ed7-4d62-bda5-0f5e1a1fd926")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3160,16 +3210,6 @@
 				(justify left)
 			)
 		)
-		(pin "{HV_IN_SENSE}" input
-			(at 90.17 149.86 180)
-			(uuid "2ac50d82-8d72-4946-8fb8-1e298afe52c1")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "{HV_OUT_SENSE}" input
 			(at 90.17 165.1 180)
 			(uuid "8d8fd3db-6c0a-4930-a32c-1703c0044bfd")
@@ -3213,6 +3253,16 @@
 		(pin "LV_OUT_ENABLE" input
 			(at 90.17 218.44 180)
 			(uuid "6fa12e89-0420-41be-88fd-fbea8dd19380")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "{HV_IN_ADC}" input
+			(at 90.17 149.86 180)
+			(uuid "3f5ac6d8-fd3b-41f3-8759-2469381f4daf")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3510,7 +3560,7 @@
 			)
 		)
 		(pin "CAN_H" bidirectional
-			(at 209.55 177.8 180)
+			(at 209.55 179.07 180)
 			(uuid "0cda4ff9-1e9f-460c-9a52-90adff7d4214")
 			(effects
 				(font
@@ -3520,7 +3570,7 @@
 			)
 		)
 		(pin "CAN_L" bidirectional
-			(at 209.55 180.34 180)
+			(at 209.55 181.61 180)
 			(uuid "d64e4ffd-deaf-4b17-bc84-58a34838531c")
 			(effects
 				(font
