@@ -128,6 +128,221 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:D_Schottky_Dual_CommonCathode_AAK_Parallel"
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Schottky_Dual_CommonCathode_AAK_Parallel"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 1.27 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 1.27 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Dual Schottky diode, common cathode on pin 3"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_Schottky_Dual_CommonCathode_AAK_Parallel_0_1"
+				(polyline
+					(pts
+						(xy -2.54 3.81) (xy 0 2.54) (xy -2.54 1.27) (xy -2.54 3.81) (xy -2.54 3.81) (xy -2.54 3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -1.27) (xy 0 -2.54) (xy -2.54 -3.81) (xy -2.54 -1.27) (xy -2.54 -1.27) (xy -2.54 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -2.54) (xy 1.27 -2.54) (xy 1.27 2.54) (xy -2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 3.556) (xy 0.508 3.81) (xy 0 3.81) (xy 0 1.27) (xy -0.508 1.27) (xy -0.508 1.524)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 -1.524) (xy 0.508 -1.27) (xy 0 -1.27) (xy 0 -3.81) (xy -0.508 -3.81) (xy -0.508 -3.556)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.27 0)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:LED_Small"
 			(pin_numbers
 				(hide yes)
@@ -454,172 +669,6 @@
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Diode:SS14"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SS14"
-				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Diode_SMD:D_SMA"
-				(at 0 -4.445 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" "https://www.vishay.com/docs/88746/ss12.pdf"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "40V 1A Schottky Diode, SMA"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "diode Schottky"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "D*SMA*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "SS14_0_1"
-				(polyline
-					(pts
-						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SS14_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -973,32 +1022,16 @@
 		(uuid "97fd38b0-08e4-47b4-9950-8c1979632f8e")
 	)
 	(junction
-		(at 62.23 60.96)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "226a07e5-547a-48b1-b9b3-50c2d5148288")
-	)
-	(junction
-		(at 158.75 60.96)
+		(at 157.48 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "36911474-e019-44e5-8687-df5541c92199")
 	)
 	(junction
-		(at 111.76 60.96)
+		(at 110.49 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c3b15aa6-fb3c-4c74-baac-0dc48bba7451")
-	)
-	(wire
-		(pts
-			(xy 62.23 57.15) (xy 62.23 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "24deeb8e-4a1d-4705-90a7-f596ab11ed94")
 	)
 	(wire
 		(pts
@@ -1012,7 +1045,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 60.96) (xy 111.76 60.96)
+			(xy 100.33 60.96) (xy 110.49 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1022,7 +1055,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 60.96) (xy 158.75 60.96)
+			(xy 152.4 60.96) (xy 157.48 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1032,7 +1065,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 60.96) (xy 163.83 60.96)
+			(xy 157.48 60.96) (xy 162.56 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1042,7 +1075,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 66.04) (xy 157.48 66.04)
+			(xy 152.4 66.04) (xy 156.21 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1052,17 +1085,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 57.15) (xy 58.42 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6e8ea186-185b-4374-b1b9-c8ac16ad9c66")
-	)
-	(wire
-		(pts
-			(xy 62.23 60.96) (xy 71.12 60.96)
+			(xy 64.77 60.96) (xy 69.85 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1072,17 +1095,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 60.96) (xy 62.23 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7ebc783b-27f4-4306-94df-37482a17ee25")
-	)
-	(wire
-		(pts
-			(xy 101.6 66.04) (xy 105.41 66.04)
+			(xy 100.33 66.04) (xy 104.14 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1092,7 +1105,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 64.77) (xy 50.8 64.77)
+			(xy 50.8 63.5) (xy 54.61 63.5)
 		)
 		(stroke
 			(width 0)
@@ -1102,17 +1115,7 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 64.77) (xy 62.23 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cb3a1c69-5fb8-4b84-9476-3cad9117bcd5")
-	)
-	(wire
-		(pts
-			(xy 111.76 60.96) (xy 123.19 60.96)
+			(xy 110.49 60.96) (xy 121.92 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1132,7 +1135,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 57.15) (xy 50.8 57.15)
+			(xy 50.8 58.42) (xy 54.61 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1153,7 +1156,7 @@
 	)
 	(hierarchical_label "LV_GND"
 		(shape passive)
-		(at 105.41 66.04 0)
+		(at 104.14 66.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1164,7 +1167,7 @@
 	)
 	(hierarchical_label "LV_V"
 		(shape input)
-		(at 46.99 64.77 180)
+		(at 50.8 63.5 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1175,7 +1178,7 @@
 	)
 	(hierarchical_label "HV_V"
 		(shape input)
-		(at 46.99 57.15 180)
+		(at 50.8 58.42 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1186,7 +1189,7 @@
 	)
 	(hierarchical_label "LV_GND"
 		(shape passive)
-		(at 157.48 66.04 0)
+		(at 156.21 66.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1197,7 +1200,7 @@
 	)
 	(hierarchical_label "3V3_OUT"
 		(shape output)
-		(at 163.83 60.96 0)
+		(at 162.56 60.96 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1576,7 +1579,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 158.75 60.96 0)
+		(at 157.48 60.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1586,7 +1589,7 @@
 		(dnp no)
 		(uuid "257fd743-77e2-404d-9bf3-2c14ff528378")
 		(property "Reference" "#PWR092"
-			(at 158.75 64.77 0)
+			(at 157.48 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1597,7 +1600,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 158.75 55.88 0)
+			(at 157.48 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1607,7 +1610,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 158.75 60.96 0)
+			(at 157.48 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1618,7 +1621,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 158.75 60.96 0)
+			(at 157.48 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1629,7 +1632,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 158.75 60.96 0)
+			(at 157.48 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1739,86 +1742,6 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/194a8848-c0d2-44dd-9e5b-1946509490d6"
 					(reference "R95")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:SS14")
-		(at 54.61 57.15 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "26b62c55-5820-49e0-bdc6-1bb8f20cc142")
-		(property "Reference" "D24"
-			(at 54.9275 50.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SS14"
-			(at 54.9275 53.34 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SMA"
-			(at 54.61 52.705 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/docs/88746/ss12.pdf"
-			(at 54.61 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "40V 1A Schottky Diode, SMA"
-			(at 54.61 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b257d088-2d04-4200-a688-0f9194b54dd6")
-		)
-		(pin "2"
-			(uuid "9fc41021-cf9d-4f29-bcd2-61bfc793e0e5")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/194a8848-c0d2-44dd-9e5b-1946509490d6"
-					(reference "D24")
 					(unit 1)
 				)
 			)
@@ -2136,87 +2059,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:SS14")
-		(at 54.61 64.77 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c624ed3e-b42f-4685-9094-51838996e92e")
-		(property "Reference" "D25"
-			(at 54.61 69.088 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SS14"
-			(at 54.61 71.628 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SMA"
-			(at 54.61 60.325 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/docs/88746/ss12.pdf"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "40V 1A Schottky Diode, SMA"
-			(at 54.61 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cadba7b3-233f-4c3f-a140-515e0d5d5db4")
-		)
-		(pin "2"
-			(uuid "c20d68ae-cfbb-4ddd-9027-d2385bf30ecd")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/194a8848-c0d2-44dd-9e5b-1946509490d6"
-					(reference "D25")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
-		(at 111.76 60.96 0)
+		(at 110.49 60.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2227,7 +2071,7 @@
 		(fields_autoplaced yes)
 		(uuid "d566ae7d-bcbe-4c5b-958e-746ec234c10a")
 		(property "Reference" "#PWR091"
-			(at 111.76 64.77 0)
+			(at 110.49 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2238,7 +2082,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 111.76 55.88 0)
+			(at 110.49 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2248,7 +2092,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 60.96 0)
+			(at 110.49 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2259,7 +2103,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 111.76 60.96 0)
+			(at 110.49 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2270,7 +2114,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 111.76 60.96 0)
+			(at 110.49 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2371,8 +2215,127 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "Device:D_Schottky_Dual_CommonCathode_AAK_Parallel")
+		(at 59.69 60.96 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "f41feb70-2318-452e-b9f4-66c90510c5dd")
+		(property "Reference" "D24"
+			(at 59.436 55.626 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D_Schottky_Dual_CommonCathode_AAK_Parallel"
+			(at 58.3566 55.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 60.96 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Dual Schottky diode, common cathode on pin 3"
+			(at 59.69 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "BAT400D-7-F "
+			(at 59.69 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Assemble" "Y"
+			(at 59.69 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C53340703"
+			(at 59.69 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "2a2b202d-de6d-482a-8593-7ad4c440b429")
+		)
+		(pin "1"
+			(uuid "7af88ae5-4a8b-4404-b0e1-c3d634a75968")
+		)
+		(pin "2"
+			(uuid "5d259112-5208-45a0-9ea8-60d440a08679")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/194a8848-c0d2-44dd-9e5b-1946509490d6"
+					(reference "D24")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(sheet
-		(at 71.12 52.07)
+		(at 69.85 52.07)
 		(size 30.48 17.78)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2388,7 +2351,7 @@
 		)
 		(uuid "243ac4a9-8c9a-48d2-8744-855b9f7d516f")
 		(property "Sheetname" "24V -> 5V Buck Converter"
-			(at 71.12 51.3584 0)
+			(at 69.85 51.3584 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2399,7 +2362,7 @@
 			)
 		)
 		(property "Sheetfile" "5VBuck.kicad_sch"
-			(at 71.12 70.4346 0)
+			(at 69.85 70.4346 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2410,7 +2373,7 @@
 			)
 		)
 		(pin "GND" input
-			(at 101.6 66.04 0)
+			(at 100.33 66.04 0)
 			(uuid "3bf7b2a2-cce7-4be2-97ab-b5c1a4546abd")
 			(effects
 				(font
@@ -2420,7 +2383,7 @@
 			)
 		)
 		(pin "V_in_24V" input
-			(at 71.12 60.96 180)
+			(at 69.85 60.96 180)
 			(uuid "94b8faee-2b4b-4666-9df8-ac1a96991170")
 			(effects
 				(font
@@ -2430,7 +2393,7 @@
 			)
 		)
 		(pin "V_out_5V" output
-			(at 101.6 60.96 0)
+			(at 100.33 60.96 0)
 			(uuid "7c9c3c9c-2efe-4f85-90c0-2d9fc814ed69")
 			(effects
 				(font
@@ -2448,7 +2411,7 @@
 		)
 	)
 	(sheet
-		(at 123.19 52.07)
+		(at 121.92 52.07)
 		(size 30.48 17.78)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2464,7 +2427,7 @@
 		)
 		(uuid "c6cd08f1-d43d-47b8-96e3-b45d3e433ee3")
 		(property "Sheetname" "5V -> 3.3V LDO"
-			(at 123.19 51.3584 0)
+			(at 121.92 51.3584 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2475,7 +2438,7 @@
 			)
 		)
 		(property "Sheetfile" "3.3VLDO.kicad_sch"
-			(at 123.19 70.4346 0)
+			(at 121.92 70.4346 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2486,7 +2449,7 @@
 			)
 		)
 		(pin "GND" input
-			(at 153.67 66.04 0)
+			(at 152.4 66.04 0)
 			(uuid "84e20064-e13c-4be1-b070-088baf5bad5c")
 			(effects
 				(font
@@ -2496,7 +2459,7 @@
 			)
 		)
 		(pin "Vin" input
-			(at 123.19 60.96 180)
+			(at 121.92 60.96 180)
 			(uuid "bbac1fa8-5697-4014-8a2b-81591526bb2f")
 			(effects
 				(font
@@ -2506,7 +2469,7 @@
 			)
 		)
 		(pin "Vout" output
-			(at 153.67 60.96 0)
+			(at 152.4 60.96 0)
 			(uuid "beeefb7c-04dc-4403-9a75-dc5828f2f39d")
 			(effects
 				(font
