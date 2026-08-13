@@ -5,6 +5,129 @@
 	(uuid "4870b940-760b-4f9b-958d-3c310fd2be02")
 	(paper "A3")
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:LED"
 			(pin_numbers
 				(hide yes)
@@ -356,10 +479,6 @@
 		(uuid "1d6fc601-c17f-42cd-924b-ba66c1c4ba7b")
 	)
 	(no_connect
-		(at 287.02 100.33)
-		(uuid "23c93074-aad6-4611-86f9-f06aca4f0639")
-	)
-	(no_connect
 		(at 368.3 115.57)
 		(uuid "2d0e67d4-2a7d-43c4-b3b7-cb1e11a7e164")
 	)
@@ -428,7 +547,7 @@
 		(uuid "7ef97d5e-e605-4db0-ac20-6bbda93e8d09")
 	)
 	(no_connect
-		(at 368.3 44.45)
+		(at 368.3 46.99)
 		(uuid "8577a4ca-d967-4f8f-baf4-91e4306d5970")
 	)
 	(no_connect
@@ -456,10 +575,6 @@
 		(uuid "9b365e03-1273-4e21-9493-b12e15811fbf")
 	)
 	(no_connect
-		(at 287.02 102.87)
-		(uuid "9fcede30-63a8-4ac2-bff7-95a8219202c6")
-	)
-	(no_connect
 		(at 368.3 113.03)
 		(uuid "aaa6cf90-e18e-4ada-81ca-d605cd66ad76")
 	)
@@ -474,10 +589,6 @@
 	(no_connect
 		(at 368.3 76.2)
 		(uuid "b781316c-eee6-4220-be87-238be0c75974")
-	)
-	(no_connect
-		(at 368.3 52.07)
-		(uuid "c5e511f8-34fb-4844-a62d-203ee200ed85")
 	)
 	(no_connect
 		(at 368.3 144.78)
@@ -866,7 +977,7 @@
 	)
 	(wire
 		(pts
-			(xy 368.3 46.99) (xy 375.92 46.99)
+			(xy 287.02 100.33) (xy 279.4 100.33)
 		)
 		(stroke
 			(width 0)
@@ -1123,6 +1234,26 @@
 			(type default)
 		)
 		(uuid "9f80f449-6aeb-454c-b678-448978f5e1d4")
+	)
+	(wire
+		(pts
+			(xy 368.3 52.07) (xy 378.46 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5741d03-5d12-4be6-abd7-07323e91e547")
+	)
+	(wire
+		(pts
+			(xy 368.3 49.53) (xy 378.46 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9258134-1c13-4d57-a222-1dbc0d7ae0ee")
 	)
 	(wire
 		(pts
@@ -1386,7 +1517,7 @@
 	)
 	(wire
 		(pts
-			(xy 368.3 49.53) (xy 375.92 49.53)
+			(xy 287.02 102.87) (xy 279.4 102.87)
 		)
 		(stroke
 			(width 0)
@@ -1403,6 +1534,16 @@
 			(type default)
 		)
 		(uuid "e8f881a9-d73e-4aaf-8d04-3b03413f2a49")
+	)
+	(wire
+		(pts
+			(xy 368.3 44.45) (xy 372.11 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0cd9626-c36f-450a-945e-3c6e883b58bd")
 	)
 	(wire
 		(pts
@@ -8758,6 +8899,16 @@
 			"awAAAABJRU5ErkJggg=="
 		)
 	)
+	(label "USBD+"
+		(at 378.46 52.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "207244e3-1467-4dfa-9197-5c7d009d2e18")
+	)
 	(label "DISPLAY_RST"
 		(at 273.05 152.4 0)
 		(effects
@@ -8857,6 +9008,16 @@
 			(justify right bottom)
 		)
 		(uuid "62bf5007-0708-4edc-8db1-302cbc40f329")
+	)
+	(label "USBD-"
+		(at 378.46 49.53 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6427e4c2-0a07-48f3-89d8-951e8606718b")
 	)
 	(label "LV_OUT_V"
 		(at 275.59 92.71 0)
@@ -9197,12 +9358,12 @@
 	)
 	(hierarchical_label "CAN_TX"
 		(shape output)
-		(at 375.92 49.53 0)
+		(at 279.4 102.87 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "409b049d-381a-4f8b-890f-f3a02465fae6")
 	)
@@ -9318,12 +9479,12 @@
 	)
 	(hierarchical_label "CAN_RX"
 		(shape input)
-		(at 375.92 46.99 0)
+		(at 279.4 100.33 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "a32d6f5a-5f23-4852-b77a-9a8869738685")
 	)
@@ -9525,6 +9686,85 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/91fef7fd-6fee-4cc6-8387-2fcfef7b7bdf"
 					(reference "R96")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 372.11 44.45 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3874a709-87c9-4eaf-aca9-da0792b8fe65")
+		(property "Reference" "TP30"
+			(at 374.65 39.8779 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BOOT"
+			(at 374.65 42.4179 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 377.19 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 377.19 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 372.11 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8d5af195-faba-485e-b41c-744037e67219")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/91fef7fd-6fee-4cc6-8387-2fcfef7b7bdf"
+					(reference "TP30")
 					(unit 1)
 				)
 			)
@@ -9858,7 +10098,7 @@
 			)
 		)
 		(pin "BOOT" bidirectional
-			(at 368.3 52.07 0)
+			(at 368.3 44.45 0)
 			(uuid "18e9fdef-559e-410f-b0b1-cc111133638b")
 			(effects
 				(font
@@ -10628,7 +10868,7 @@
 			)
 		)
 		(pin "PG10-NRST" input
-			(at 368.3 44.45 0)
+			(at 368.3 46.99 0)
 			(uuid "d319245f-94b7-45b7-92c6-29b4ab1bdd04")
 			(effects
 				(font
@@ -10638,7 +10878,7 @@
 			)
 		)
 		(pin "USB_DM" bidirectional
-			(at 368.3 46.99 0)
+			(at 368.3 49.53 0)
 			(uuid "db36e8ad-1eca-465b-b7dc-d9e372d65199")
 			(effects
 				(font
@@ -10648,7 +10888,7 @@
 			)
 		)
 		(pin "USB_DP" bidirectional
-			(at 368.3 49.53 0)
+			(at 368.3 52.07 0)
 			(uuid "4416796f-15f2-4447-b5df-ad4a58a3d0d0")
 			(effects
 				(font

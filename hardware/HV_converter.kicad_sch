@@ -2484,7 +2484,7 @@
 	)
 	(text "HV Vicor Temperature Sensing"
 		(exclude_from_sim no)
-		(at 34.544 105.918 0)
+		(at 37.084 105.664 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2502,9 +2502,20 @@
 		)
 		(uuid "571b9b1e-32b1-4ed9-8a86-7316527f56ed")
 	)
+	(text "Divider of 11\nMax SuppReg Voltage = 25, divided = 2.27V\nMin supp Voltage = 23.9, divided = 2.27V\n"
+		(exclude_from_sim no)
+		(at 164.846 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5f4e31ad-8c6a-4982-88f2-9fffe6d0bb5b")
+	)
 	(text "High Voltage 24V Ouput VIP Sensing"
 		(exclude_from_sim no)
-		(at 191.008 85.09 0)
+		(at 243.332 85.598 0)
 		(effects
 			(font
 				(size 1.905 1.905)
@@ -2565,6 +2576,16 @@
 			)
 		)
 		(uuid "8570f9e3-18ee-4ac9-9c33-79c393170ab0")
+	)
+	(text "use 1% resistors for dividers"
+		(exclude_from_sim no)
+		(at 179.578 40.132 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8ab0521f-dd56-4464-948a-33b59d7e3c5a")
 	)
 	(text "Module healthy → LED on → transistor on → \nGPIO reads low. Fault → LED off → \nGPIO reads high. Invert the firmware logic"
 		(exclude_from_sim no)
