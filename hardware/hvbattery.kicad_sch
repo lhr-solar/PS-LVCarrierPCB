@@ -5,6 +5,158 @@
 	(uuid "acd60202-3c7e-460d-87c6-b6c2116c7291")
 	(paper "A5")
 	(lib_symbols
+		(symbol "Device:Fuse"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "F"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fuse"
+				(at -1.905 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Fuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "fuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*Fuse*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Fuse_0_1"
+				(rectangle
+					(start -0.762 -2.54)
+					(end 0.762 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Fuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -123,7 +275,7 @@
 	)
 	(text "HV input protection + sensing\n"
 		(exclude_from_sim no)
-		(at 63.754 72.136 0)
+		(at 62.484 72.136 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -133,7 +285,7 @@
 	)
 	(text "HV vicor + sensing"
 		(exclude_from_sim no)
-		(at 135.636 73.152 0)
+		(at 125.476 73.152 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -143,7 +295,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 78.74) (xy 88.9 77.47)
+			(xy 87.63 81.28) (xy 87.63 80.01)
 		)
 		(stroke
 			(width 0.381)
@@ -153,7 +305,17 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 58.42) (xy 115.57 58.42)
+			(xy 163.83 58.42) (xy 166.37 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d1bd0e6-e5c0-426b-98db-c11cf00e6068")
+	)
+	(wire
+		(pts
+			(xy 82.55 58.42) (xy 105.41 58.42)
 		)
 		(stroke
 			(width 0.381)
@@ -163,7 +325,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 80.01) (xy 161.29 80.01)
+			(xy 146.05 80.01) (xy 151.13 80.01)
 		)
 		(stroke
 			(width 0.381)
@@ -173,7 +335,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 81.28) (xy 161.29 80.01)
+			(xy 151.13 81.28) (xy 151.13 80.01)
 		)
 		(stroke
 			(width 0.381)
@@ -183,7 +345,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 66.04) (xy 86.36 66.04)
+			(xy 82.55 66.04) (xy 85.09 66.04)
 		)
 		(stroke
 			(width 0)
@@ -193,7 +355,7 @@
 	)
 	(bus
 		(pts
-			(xy 156.21 66.04) (xy 160.02 66.04)
+			(xy 146.05 66.04) (xy 149.86 66.04)
 		)
 		(stroke
 			(width 0)
@@ -203,7 +365,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 80.01) (xy 115.57 80.01)
+			(xy 100.33 80.01) (xy 105.41 80.01)
 		)
 		(stroke
 			(width 0.381)
@@ -213,7 +375,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 77.47) (xy 83.82 77.47)
+			(xy 87.63 80.01) (xy 82.55 80.01)
 		)
 		(stroke
 			(width 0.381)
@@ -223,7 +385,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 68.58) (xy 160.02 68.58)
+			(xy 146.05 68.58) (xy 149.86 68.58)
 		)
 		(stroke
 			(width 0)
@@ -233,7 +395,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 80.01) (xy 110.49 81.28)
+			(xy 100.33 80.01) (xy 100.33 81.28)
 		)
 		(stroke
 			(width 0.381)
@@ -243,7 +405,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 78.74) (xy 39.37 77.47)
+			(xy 38.1 81.28) (xy 38.1 80.01)
 		)
 		(stroke
 			(width 0.381)
@@ -253,7 +415,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 58.42) (xy 160.02 58.42)
+			(xy 146.05 58.42) (xy 156.21 58.42)
 		)
 		(stroke
 			(width 0)
@@ -263,7 +425,7 @@
 	)
 	(bus
 		(pts
-			(xy 83.82 63.5) (xy 86.36 63.5)
+			(xy 82.55 63.5) (xy 85.09 63.5)
 		)
 		(stroke
 			(width 0)
@@ -273,7 +435,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 77.47) (xy 44.45 77.47)
+			(xy 38.1 80.01) (xy 43.18 80.01)
 		)
 		(stroke
 			(width 0.381)
@@ -283,7 +445,7 @@
 	)
 	(bus
 		(pts
-			(xy 156.21 63.5) (xy 160.02 63.5)
+			(xy 146.05 63.5) (xy 149.86 63.5)
 		)
 		(stroke
 			(width 0)
@@ -291,9 +453,9 @@
 		)
 		(uuid "f0f46645-a9f2-433b-9d6a-9b93c41e1eda")
 	)
-	(hierarchical_label "HV_OUT"
-		(shape input)
-		(at 160.02 58.42 0)
+	(hierarchical_label "HV_12V_FUSED"
+		(shape output)
+		(at 166.37 58.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -304,7 +466,7 @@
 	)
 	(hierarchical_label "HV_VICOR_TEMP"
 		(shape input)
-		(at 160.02 68.58 0)
+		(at 149.86 68.58 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -315,7 +477,7 @@
 	)
 	(hierarchical_label "{HV_DCDC_FLT}"
 		(shape input)
-		(at 160.02 66.04 0)
+		(at 149.86 66.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -326,7 +488,7 @@
 	)
 	(hierarchical_label "HV_IN_VFAULT"
 		(shape input)
-		(at 86.36 66.04 0)
+		(at 85.09 66.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -337,7 +499,7 @@
 	)
 	(hierarchical_label "{HV_OUT_ADC}"
 		(shape input)
-		(at 160.02 63.5 0)
+		(at 149.86 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -348,7 +510,7 @@
 	)
 	(hierarchical_label "{HV_IN_ADC}"
 		(shape input)
-		(at 86.36 63.5 0)
+		(at 85.09 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -359,7 +521,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 110.49 81.28 0)
+		(at 100.33 81.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -370,7 +532,7 @@
 		(fields_autoplaced yes)
 		(uuid "1928c811-4210-4c89-a65b-69a66add798a")
 		(property "Reference" "#PWR05"
-			(at 110.49 87.63 0)
+			(at 100.33 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -381,7 +543,7 @@
 			)
 		)
 		(property "Value" "HV_GND"
-			(at 110.49 86.36 0)
+			(at 100.33 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -391,7 +553,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 110.49 81.28 0)
+			(at 100.33 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -402,7 +564,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 81.28 0)
+			(at 100.33 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -413,7 +575,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 110.49 81.28 0)
+			(at 100.33 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -436,8 +598,99 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:Fuse")
+		(at 160.02 58.42 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3e962206-81d6-44a7-a982-56b707cba9b0")
+		(property "Reference" "F7"
+			(at 160.02 52.07 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TBD until vicor confirmed"
+			(at 160.02 54.61 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LHRS_Power:Fuse-3557-2"
+			(at 160.02 60.198 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 160.02 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C352820"
+			(at 160.02 58.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "e57be3a7-6978-4691-8c30-3736c1de4388")
+		)
+		(pin "1"
+			(uuid "902b3095-ae95-48c5-b95e-47f09408f7e6")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac"
+					(reference "F7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 88.9 78.74 0)
+		(at 87.63 81.28 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -449,7 +702,7 @@
 		(fields_autoplaced yes)
 		(uuid "4143334f-96f0-4f2b-9614-a38e9c74dc62")
 		(property "Reference" "#PWR04"
-			(at 88.9 85.09 0)
+			(at 87.63 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -460,7 +713,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 88.9 83.82 0)
+			(at 87.63 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -470,7 +723,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 88.9 78.74 0)
+			(at 87.63 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -481,7 +734,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 88.9 78.74 0)
+			(at 87.63 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -492,7 +745,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 88.9 78.74 0)
+			(at 87.63 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -516,7 +769,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 39.37 78.74 0)
+		(at 38.1 81.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -527,7 +780,7 @@
 		(fields_autoplaced yes)
 		(uuid "8ec0d52d-573f-4def-8d33-f8b28b614592")
 		(property "Reference" "#PWR01"
-			(at 39.37 85.09 0)
+			(at 38.1 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -538,7 +791,7 @@
 			)
 		)
 		(property "Value" "HV_GND"
-			(at 39.37 83.82 0)
+			(at 38.1 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -548,7 +801,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 39.37 78.74 0)
+			(at 38.1 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -559,7 +812,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 78.74 0)
+			(at 38.1 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -570,7 +823,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 39.37 78.74 0)
+			(at 38.1 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -594,7 +847,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 161.29 81.28 0)
+		(at 151.13 81.28 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -606,7 +859,7 @@
 		(fields_autoplaced yes)
 		(uuid "9733375e-8d44-4231-be2b-9b9fbb745334")
 		(property "Reference" "#PWR07"
-			(at 161.29 87.63 0)
+			(at 151.13 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -617,7 +870,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 161.29 86.36 0)
+			(at 151.13 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -627,7 +880,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 161.29 81.28 0)
+			(at 151.13 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -638,7 +891,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 161.29 81.28 0)
+			(at 151.13 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -649,7 +902,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 161.29 81.28 0)
+			(at 151.13 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -672,8 +925,8 @@
 		)
 	)
 	(sheet
-		(at 44.45 52.07)
-		(size 39.37 31.75)
+		(at 43.18 52.07)
+		(size 39.37 33.02)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -688,7 +941,7 @@
 		)
 		(uuid "22cc1fb0-4176-4c01-b88e-6af93ab0f3a2")
 		(property "Sheetname" "HV Input"
-			(at 44.45 51.2441 0)
+			(at 43.18 51.2441 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -699,7 +952,7 @@
 			)
 		)
 		(property "Sheetfile" "HV_protection.kicad_sch"
-			(at 44.45 84.5189 0)
+			(at 43.18 85.7889 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -710,7 +963,7 @@
 			)
 		)
 		(pin "HV_GND" passive
-			(at 44.45 77.47 180)
+			(at 43.18 80.01 180)
 			(uuid "41b8ea3d-bbd1-473c-a4be-9820c7ab0dc9")
 			(effects
 				(font
@@ -720,7 +973,7 @@
 			)
 		)
 		(pin "HV_OUT" output
-			(at 83.82 58.42 0)
+			(at 82.55 58.42 0)
 			(uuid "9a33fc7f-e12b-4207-875b-b2f41f2d56e1")
 			(effects
 				(font
@@ -730,7 +983,7 @@
 			)
 		)
 		(pin "LV_GND" passive
-			(at 83.82 77.47 0)
+			(at 82.55 80.01 0)
 			(uuid "7e57ed22-5f7f-4ec0-bd25-6492aa8fefdd")
 			(effects
 				(font
@@ -740,7 +993,7 @@
 			)
 		)
 		(pin "HV_IN_VFAULT" input
-			(at 83.82 66.04 0)
+			(at 82.55 66.04 0)
 			(uuid "b4b3d9b3-e2ee-4f57-8f15-7c7aeaa16caf")
 			(effects
 				(font
@@ -750,7 +1003,7 @@
 			)
 		)
 		(pin "{HV_IN_ADC}" output
-			(at 83.82 63.5 0)
+			(at 82.55 63.5 0)
 			(uuid "d401ca28-90c4-4b2a-8c26-59d260a36b72")
 			(effects
 				(font
@@ -762,13 +1015,13 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac"
-					(page "3")
+					(page "14")
 				)
 			)
 		)
 	)
 	(sheet
-		(at 115.57 52.07)
+		(at 105.41 52.07)
 		(size 40.64 33.02)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -784,7 +1037,7 @@
 		)
 		(uuid "a57b6f22-cd56-4351-a5e4-2e9e02d85251")
 		(property "Sheetname" "HV -> 12V"
-			(at 115.57 51.2441 0)
+			(at 105.41 51.2441 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -795,7 +1048,7 @@
 			)
 		)
 		(property "Sheetfile" "HV_converter.kicad_sch"
-			(at 115.57 85.7889 0)
+			(at 105.41 85.7889 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -806,7 +1059,7 @@
 			)
 		)
 		(pin "HV_GND" passive
-			(at 115.57 80.01 180)
+			(at 105.41 80.01 180)
 			(uuid "66580bba-67fb-4e9c-9ca6-68e31e71987e")
 			(effects
 				(font
@@ -816,7 +1069,7 @@
 			)
 		)
 		(pin "HV_IN" input
-			(at 115.57 58.42 180)
+			(at 105.41 58.42 180)
 			(uuid "8c6eefda-c39a-4bfc-8ae7-a5b2b600b38f")
 			(effects
 				(font
@@ -826,7 +1079,7 @@
 			)
 		)
 		(pin "HV_VICOR_TEMP" output
-			(at 156.21 68.58 0)
+			(at 146.05 68.58 0)
 			(uuid "0ab49729-4107-4ff7-9a91-b9f0ac3edc61")
 			(effects
 				(font
@@ -836,7 +1089,7 @@
 			)
 		)
 		(pin "LV_GND" passive
-			(at 156.21 80.01 0)
+			(at 146.05 80.01 0)
 			(uuid "7db14392-0306-4577-b40d-8d9b4b1febc5")
 			(effects
 				(font
@@ -846,7 +1099,7 @@
 			)
 		)
 		(pin "HV_24V_OUT" output
-			(at 156.21 58.42 0)
+			(at 146.05 58.42 0)
 			(uuid "6a964dce-d7be-4e5a-8206-59d69389622c")
 			(effects
 				(font
@@ -856,7 +1109,7 @@
 			)
 		)
 		(pin "{HV_OUT_ADC}" input
-			(at 156.21 63.5 0)
+			(at 146.05 63.5 0)
 			(uuid "85fbc96f-0df6-464c-8036-484e05de6b32")
 			(effects
 				(font
@@ -866,7 +1119,7 @@
 			)
 		)
 		(pin "{HV_DCDC_FLT}" output
-			(at 156.21 66.04 0)
+			(at 146.05 66.04 0)
 			(uuid "3ce8f1f1-57b5-4be2-abb9-0d2970e07cda")
 			(effects
 				(font
@@ -878,7 +1131,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac"
-					(page "2")
+					(page "15")
 				)
 			)
 		)
