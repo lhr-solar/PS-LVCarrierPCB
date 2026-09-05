@@ -922,7 +922,7 @@
 	)
 	(bus
 		(pts
-			(xy 34.29 31.75) (xy 38.1 31.75)
+			(xy 25.4 31.75) (xy 38.1 31.75)
 		)
 		(stroke
 			(width 0)
@@ -939,6 +939,16 @@
 			(type default)
 		)
 		(uuid "b8b99335-e645-4480-bcf3-05bfe9748377")
+	)
+	(wire
+		(pts
+			(xy 25.4 34.29) (xy 38.1 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b94ae106-eb9b-40ea-98c3-5fa230976521")
 	)
 	(wire
 		(pts
@@ -1041,12 +1051,12 @@
 		(uuid "1efbfcf8-c899-44a3-b0e1-8e2702e7111d")
 	)
 	(label "{SUPP_ADC}"
-		(at 34.29 31.75 180)
+		(at 25.4 31.75 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "25e26701-d8f2-4f3c-8bf3-f8e676ef827f")
 	)
@@ -1079,6 +1089,16 @@
 			(justify left bottom)
 		)
 		(uuid "49d430f9-5716-4416-b4d0-d4a148dbdf1a")
+	)
+	(label "LVD_RESET"
+		(at 25.4 34.29 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4f773031-93dc-4fee-998d-8d4cc3d573f0")
 	)
 	(label "{CAN_BUS}"
 		(at 213.36 83.82 0)
@@ -1232,7 +1252,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "11e5ac28-62ce-4474-9296-474494e38053")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR01"
 			(at 33.02 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -1292,7 +1312,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR02")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -1311,7 +1331,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "36e547cb-a158-4b52-a893-b2a68e3aa88c")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR04"
 			(at 143.51 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -1371,7 +1391,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR06")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -1389,7 +1409,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "565bab9a-69f3-496b-9ffb-a692d88a074a")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR02"
 			(at 33.02 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -1449,7 +1469,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR011")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -1467,7 +1487,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7f99bad2-e8f6-4256-8a3e-a533c6c123e8")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR06"
 			(at 217.17 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -1527,7 +1547,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR08")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -1545,7 +1565,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8f676ccf-1f60-4a37-bed4-cd4c34e10678")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR09"
 			(at 274.32 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -1605,7 +1625,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR012")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -1624,7 +1644,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "92068c31-43c5-4ed1-a4aa-82e674b9b576")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR05"
 			(at 209.55 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -1684,7 +1704,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR013")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -1702,7 +1722,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aeaee5d2-e15e-48df-89d8-859c4753f5da")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR08"
 			(at 271.78 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -1762,7 +1782,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR09")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -1859,7 +1879,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f8f7743d-e995-4078-81b7-654388217aab")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR07"
 			(at 270.51 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -1919,7 +1939,7 @@
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
-					(reference "#PWR047")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -2637,7 +2657,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid "b521073a-8409-41eb-9cdc-cffa14c92055")
-		(property "Sheetname" "Supp Input"
+		(property "Sheetname" "``"
 			(at 38.1 23.3041 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2702,6 +2722,16 @@
 		(pin "{SUPP_ADC}" input
 			(at 38.1 31.75 180)
 			(uuid "d21d6999-bb0b-4af9-954f-2eac912fe349")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LVD_RESET" input
+			(at 38.1 34.29 180)
+			(uuid "3f38ae31-e500-4d6a-8e01-7c9ba4c32143")
 			(effects
 				(font
 					(size 1.27 1.27)
