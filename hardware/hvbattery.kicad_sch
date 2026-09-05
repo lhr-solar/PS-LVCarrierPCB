@@ -315,6 +315,16 @@
 	)
 	(wire
 		(pts
+			(xy 146.05 71.12) (xy 149.86 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c1d0b12-3823-4911-ad86-3102a857286c")
+	)
+	(wire
+		(pts
 			(xy 82.55 58.42) (xy 105.41 58.42)
 		)
 		(stroke
@@ -507,6 +517,17 @@
 			(justify left)
 		)
 		(uuid "b143acbb-a476-4678-b02e-139a1375a682")
+	)
+	(hierarchical_label "HV_VICOR_EN"
+		(shape input)
+		(at 149.86 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ec7aee33-52ef-4d85-990d-dfa6d4a1417b")
 	)
 	(hierarchical_label "{HV_IN_ADC}"
 		(shape input)
@@ -1121,6 +1142,16 @@
 		(pin "{HV_DCDC_FLT}" output
 			(at 146.05 66.04 0)
 			(uuid "3ce8f1f1-57b5-4be2-abb9-0d2970e07cda")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "HV_VICOR_EN" input
+			(at 146.05 71.12 0)
+			(uuid "53cd73b5-6c0c-49ee-9fda-6de22cf752c8")
 			(effects
 				(font
 					(size 1.27 1.27)
