@@ -582,6 +582,16 @@
 	)
 	(wire
 		(pts
+			(xy 152.4 33.02) (xy 163.83 33.02)
+		)
+		(stroke
+			(width 0.381)
+			(type default)
+		)
+		(uuid "36f468e0-315d-4817-8e1a-b6604859c0b3")
+	)
+	(wire
+		(pts
 			(xy 143.51 45.72) (xy 143.51 44.45)
 		)
 		(stroke
@@ -619,16 +629,6 @@
 			(type default)
 		)
 		(uuid "41fada40-81a0-40ed-8721-8f5e5ee1e819")
-	)
-	(wire
-		(pts
-			(xy 149.86 33.02) (xy 163.83 33.02)
-		)
-		(stroke
-			(width 0.381)
-			(type default)
-		)
-		(uuid "42734d46-1600-4c13-ae7b-caba39ca7e6a")
 	)
 	(bus
 		(pts
@@ -699,6 +699,16 @@
 			(type default)
 		)
 		(uuid "63a643f0-913a-453b-98d1-78e46b095474")
+	)
+	(wire
+		(pts
+			(xy 138.43 35.56) (xy 148.59 35.56)
+		)
+		(stroke
+			(width 0.381)
+			(type default)
+		)
+		(uuid "6994f198-2c87-4d6a-8f8c-dd00d779f3b5")
 	)
 	(wire
 		(pts
@@ -812,7 +822,7 @@
 	)
 	(bus
 		(pts
-			(xy 163.83 35.56) (xy 149.86 35.56)
+			(xy 163.83 35.56) (xy 157.48 35.56)
 		)
 		(stroke
 			(width 0)
@@ -992,6 +1002,16 @@
 	)
 	(wire
 		(pts
+			(xy 77.47 34.29) (xy 101.6 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eddb67da-ca55-4d94-bd8f-29bcefeb48c3")
+	)
+	(wire
+		(pts
 			(xy 110.49 88.9) (xy 127 88.9)
 		)
 		(stroke
@@ -1041,7 +1061,7 @@
 		(uuid "00d25428-1c3f-4f87-94b9-7ef67b81e8f1")
 	)
 	(label "{HSS}"
-		(at 149.86 35.56 0)
+		(at 157.48 35.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1111,7 +1131,7 @@
 		(uuid "5895a43c-fc83-4243-995a-8d16e0098da9")
 	)
 	(label "CHARGE_EN"
-		(at 149.86 33.02 0)
+		(at 152.4 33.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1169,6 +1189,16 @@
 			(justify left bottom)
 		)
 		(uuid "9b632884-2143-4470-9b59-200c2692adbf")
+	)
+	(label "LV_EN_3V3"
+		(at 148.59 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ac083523-ce83-43af-afd2-ceb061a40c4e")
 	)
 	(label "{HV_IN_ADC}"
 		(at 110.49 83.82 0)
@@ -2215,6 +2245,26 @@
 				(justify left)
 			)
 		)
+		(pin "LVD_DISABLE" input
+			(at 101.6 34.29 180)
+			(uuid "80d5d262-79af-4d7a-a1ae-30b6f7b2ce91")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LV_EN_3V3" output
+			(at 138.43 35.56 0)
+			(uuid "102dfdf9-aa2c-40e9-8493-26ff9205debe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e"
@@ -2657,7 +2707,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid "b521073a-8409-41eb-9cdc-cffa14c92055")
-		(property "Sheetname" "``"
+		(property "Sheetname" "Supp Input"
 			(at 38.1 23.3041 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2737,6 +2787,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(pin "LVD_DISABLE" input
+			(at 77.47 34.29 0)
+			(uuid "def9f4dc-782d-416f-a163-e0fefebcafc9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances

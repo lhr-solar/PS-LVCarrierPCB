@@ -618,6 +618,186 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:C_Polarized_US"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_Polarized_US"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Polarized capacitor, US symbol"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CP_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_Polarized_US_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.286) (xy -0.762 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.778) (xy -1.27 2.794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.032 -1.27)
+					(mid 0 -0.5572)
+					(end 2.032 -1.27)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_Polarized_US_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 3.302)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:Fuse"
 			(pin_numbers
 				(hide yes)
@@ -1402,13 +1582,23 @@
 	)
 	(text "1.25 x (1 + 118/10) = 16V"
 		(exclude_from_sim no)
-		(at 84.328 59.944 0)
+		(at 84.328 52.324 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
 		(uuid "252573be-1dbd-461b-b638-a88e5f645473")
+	)
+	(text "swap for FET"
+		(exclude_from_sim no)
+		(at 119.38 17.018 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "45155b4c-d5e2-4463-a6a0-f01600ba721d")
 	)
 	(text "Tu PDU"
 		(exclude_from_sim no)
@@ -1422,7 +1612,7 @@
 	)
 	(text "OV comp threshold = 1.25V"
 		(exclude_from_sim no)
-		(at 72.644 56.896 0)
+		(at 72.644 49.276 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1454,6 +1644,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9c9c3192-4c01-45d7-92a9-e95740c5b0f6")
+	)
+	(junction
+		(at 54.61 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f3438886-7867-453d-a8c3-9b9fc7680291")
 	)
 	(bus_entry
 		(at 57.15 114.3)
@@ -1651,6 +1847,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 48.26) (xy 54.61 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52b92c3b-ea7f-4b99-a38f-1cc26456d873")
+	)
+	(wire
+		(pts
 			(xy 133.35 90.17) (xy 133.35 88.9)
 		)
 		(stroke
@@ -1761,13 +1967,13 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 35.56) (xy 72.39 35.56)
+			(xy 54.61 35.56) (xy 72.39 35.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ae271eab-9408-489a-81d6-5502923e33cf")
+		(uuid "b83d9ab9-bfd2-4e29-ad60-5b70e7661a73")
 	)
 	(wire
 		(pts
@@ -1831,7 +2037,17 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 36.83) (xy 36.83 36.83)
+			(xy 54.61 38.1) (xy 54.61 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd3b70c5-ec47-4f1f-85c3-2b48c0ef7b76")
+	)
+	(wire
+		(pts
+			(xy 46.99 35.56) (xy 54.61 35.56)
 		)
 		(stroke
 			(width 0)
@@ -1898,16 +2114,6 @@
 			(type default)
 		)
 		(uuid "fb0a2615-89ab-4343-895c-3165b1a0ca7a")
-	)
-	(wire
-		(pts
-			(xy 68.58 44.45) (xy 73.66 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ffc5bc38-e8dd-4c5e-b660-4e0e8d843791")
 	)
 	(label "MOSI"
 		(at 57.15 104.14 180)
@@ -2044,7 +2250,7 @@
 	)
 	(hierarchical_label "12V_FUSED"
 		(shape input)
-		(at 34.29 36.83 180)
+		(at 46.99 35.56 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2143,7 +2349,7 @@
 	)
 	(hierarchical_label "LV_GND"
 		(shape passive)
-		(at 73.66 44.45 270)
+		(at 54.61 48.26 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2962,6 +3168,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Polarized_US")
+		(at 54.61 41.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c134e69b-ecf1-4e53-b67b-577fe57819b0")
+		(property "Reference" "C43"
+			(at 58.42 40.0049 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Big ahh cap"
+			(at 58.42 42.5449 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 54.61 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 54.61 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Polarized capacitor, US symbol"
+			(at 54.61 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "08f7e9e7-1ab2-4189-b0ca-97b58d486597")
+		)
+		(pin "1"
+			(uuid "99ddb08d-42ec-452b-bf97-5504d4dd01a8")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/10a2a81d-fff8-4091-b6ef-9685e4bd9514"
+					(reference "C43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 54.61 99.06 0)
 		(unit 1)
@@ -3521,82 +3809,6 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/10a2a81d-fff8-4091-b6ef-9685e4bd9514"
 					(page "25")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 36.83 22.86)
-		(size 31.75 26.67)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "eb8c4e9b-3c3c-4615-8f78-813806fe2364")
-		(property "Sheetname" "LV Precharge"
-			(at 36.83 22.1484 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "lvprecharge.kicad_sch"
-			(at 36.83 50.1146 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "LV_GND" input
-			(at 68.58 44.45 0)
-			(uuid "058325ed-9b88-4e2f-85e4-f0bc32db85a4")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "PCHG_IN" input
-			(at 36.83 36.83 180)
-			(uuid "634cf8ff-96e3-453e-82ad-71fdf7c9bd6d")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "PCHG_OUT" input
-			(at 68.58 35.56 0)
-			(uuid "d3c7f045-45dc-48e3-805b-58f400375ba4")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/10a2a81d-fff8-4091-b6ef-9685e4bd9514"
-					(page "19")
 				)
 			)
 		)
