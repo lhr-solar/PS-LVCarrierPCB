@@ -267,6 +267,18 @@
 		)
 	)
 	(rectangle
+		(start -161.29 17.78)
+		(end -90.17 114.3)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "5f9cc4bc-0177-4b6d-bb54-7c8a7ef46bec")
+	)
+	(rectangle
 		(start 15.494 165.481)
 		(end 172.72 195.58)
 		(stroke
@@ -277,18 +289,6 @@
 			(type none)
 		)
 		(uuid "d9a08d4c-86ec-4325-9a8c-4c35c035a18b")
-	)
-	(rectangle
-		(start -151.384 131.699)
-		(end -48.514 209.804)
-		(stroke
-			(width 0.508)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "f2d2641b-65b9-4f27-8627-c093b6e53ff6")
 	)
 	(text "9V-15V"
 		(exclude_from_sim no)
@@ -320,18 +320,6 @@
 		)
 		(uuid "652db3fd-2ecd-4076-aaf4-eda1b35f258d")
 	)
-	(text "Application Notes\n"
-		(exclude_from_sim no)
-		(at -131.318 136.398 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-				(thickness 0.508)
-				(bold yes)
-			)
-		)
-		(uuid "65bcd0dd-6d95-4617-b573-83efb73561f5")
-	)
 	(text "12V"
 		(exclude_from_sim no)
 		(at 55.88 85.09 0)
@@ -344,7 +332,7 @@
 	)
 	(text "LV vicor + sensing"
 		(exclude_from_sim no)
-		(at -47.498 79.502 0)
+		(at -130.048 87.122 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -702,7 +690,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 35.56) (xy 148.59 35.56)
+			(xy 138.43 35.56) (xy 149.86 35.56)
 		)
 		(stroke
 			(width 0.381)
@@ -992,6 +980,26 @@
 	)
 	(bus
 		(pts
+			(xy 25.4 39.37) (xy 38.1 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e02ad4e9-b5fe-446b-a1d4-e011b4416745")
+	)
+	(wire
+		(pts
+			(xy 25.4 36.83) (xy 38.1 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec3a2ba9-026e-4855-99fb-f41c320ba6ae")
+	)
+	(bus
+		(pts
 			(xy 110.49 83.82) (xy 127 83.82)
 		)
 		(stroke
@@ -1005,7 +1013,7 @@
 			(xy 77.47 34.29) (xy 101.6 34.29)
 		)
 		(stroke
-			(width 0)
+			(width 0.254)
 			(type default)
 		)
 		(uuid "eddb67da-ca55-4d94-bd8f-29bcefeb48c3")
@@ -1089,6 +1097,16 @@
 			(justify right bottom)
 		)
 		(uuid "3c304227-32e2-4c34-b669-fe55199db326")
+	)
+	(label "CHARGE_EN"
+		(at 25.4 36.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3f72cb67-da8f-4d77-a11f-d716f6e5b44f")
 	)
 	(label "{DISPLAY_SPI}"
 		(at 149.86 30.48 0)
@@ -1191,7 +1209,7 @@
 		(uuid "9b632884-2143-4470-9b59-200c2692adbf")
 	)
 	(label "LV_EN_3V3"
-		(at 148.59 35.56 180)
+		(at 149.86 35.56 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1219,6 +1237,16 @@
 			(justify left bottom)
 		)
 		(uuid "c1bca9ec-93b9-4ba3-a2a3-c64f73f437f5")
+	)
+	(label "{CC}"
+		(at 25.4 39.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c5a16d27-59af-4032-9522-68fd64c23f40")
 	)
 	(label "{HV_DCDC_FLT}"
 		(at 93.98 133.35 180)
@@ -2245,16 +2273,6 @@
 				(justify left)
 			)
 		)
-		(pin "LVD_DISABLE" input
-			(at 101.6 34.29 180)
-			(uuid "80d5d262-79af-4d7a-a1ae-30b6f7b2ce91")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "LV_EN_3V3" output
 			(at 138.43 35.56 0)
 			(uuid "102dfdf9-aa2c-40e9-8493-26ff9205debe")
@@ -2263,6 +2281,16 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+		(pin "LVD_ENABLE" input
+			(at 101.6 34.29 180)
+			(uuid "db2e8bad-a171-4d3a-a4b7-d50351d01643")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -2586,7 +2614,7 @@
 		)
 	)
 	(sheet
-		(at -66.04 26.67)
+		(at -148.59 34.29)
 		(size 40.64 30.48)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2602,7 +2630,7 @@
 		)
 		(uuid "a5bb0fbd-5072-4239-af04-5df171469b26")
 		(property "Sheetname" "LV Input"
-			(at -66.04 25.8441 0)
+			(at -148.59 33.4641 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2613,7 +2641,7 @@
 			)
 		)
 		(property "Sheetfile" "LV_protection.kicad_sch"
-			(at -66.04 57.8489 0)
+			(at -148.59 65.4689 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2624,7 +2652,7 @@
 			)
 		)
 		(pin "LV_GND" passive
-			(at -66.04 50.8 180)
+			(at -148.59 58.42 180)
 			(uuid "0ab6978d-de2b-405a-a6f7-ee5d7b23c7b7")
 			(effects
 				(font
@@ -2634,7 +2662,7 @@
 			)
 		)
 		(pin "{CAN_BUS}" bidirectional
-			(at -25.4 39.37 0)
+			(at -107.95 46.99 0)
 			(uuid "7f333bc5-fff6-4e85-a8e4-1bbc2f1c1ff6")
 			(effects
 				(font
@@ -2644,7 +2672,7 @@
 			)
 		)
 		(pin "LV_3V3_DISABLE" output
-			(at -25.4 44.45 0)
+			(at -107.95 52.07 0)
 			(uuid "10f25fb6-324a-42b6-a669-78d5e3b0de2e")
 			(effects
 				(font
@@ -2654,7 +2682,7 @@
 			)
 		)
 		(pin "PS_ENABLE" output
-			(at -25.4 41.91 0)
+			(at -107.95 49.53 0)
 			(uuid "a4a265aa-d50d-43ad-b8e4-578da3984a1d")
 			(effects
 				(font
@@ -2664,7 +2692,7 @@
 			)
 		)
 		(pin "LV_OUT" input
-			(at -25.4 31.75 0)
+			(at -107.95 39.37 0)
 			(uuid "df73ccc2-821c-4e2f-b8aa-448cbdab531c")
 			(effects
 				(font
@@ -2674,7 +2702,7 @@
 			)
 		)
 		(pin "{LV_IN_ADC}" input
-			(at -25.4 36.83 0)
+			(at -107.95 44.45 0)
 			(uuid "454ec98b-d086-4a7d-b285-4a82745140d3")
 			(effects
 				(font
@@ -2789,14 +2817,34 @@
 				(justify left)
 			)
 		)
-		(pin "LVD_DISABLE" input
+		(pin "CHARGE_EN" input
+			(at 38.1 36.83 180)
+			(uuid "c2535b59-4e9b-488b-bd88-65455a2ecb1d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LVD_ENABLE" input
 			(at 77.47 34.29 0)
-			(uuid "def9f4dc-782d-416f-a163-e0fefebcafc9")
+			(uuid "428f0b31-656b-4a36-a7e4-24fcad6c65f4")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+		(pin "{CC}" input
+			(at 38.1 39.37 180)
+			(uuid "72f4cb8d-34a4-46f1-b5a1-4c3c2b6bab9e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -2874,7 +2922,7 @@
 		)
 	)
 	(sheet
-		(at -69.85 62.23)
+		(at -152.4 69.85)
 		(size 52.07 31.75)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2890,7 +2938,7 @@
 		)
 		(uuid "e0c5a289-8887-4c36-a5fa-f362f3575485")
 		(property "Sheetname" "LV -> 12V"
-			(at -69.85 61.4041 0)
+			(at -152.4 69.0241 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2901,7 +2949,7 @@
 			)
 		)
 		(property "Sheetfile" "LV_converter.kicad_sch"
-			(at -69.85 94.6789 0)
+			(at -152.4 102.2989 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2912,7 +2960,7 @@
 			)
 		)
 		(pin "LV_VICOR_TEMP" output
-			(at -17.78 78.74 0)
+			(at -100.33 86.36 0)
 			(uuid "024d7fbd-43c0-4d6e-becd-3b8c6912af73")
 			(effects
 				(font
@@ -2922,7 +2970,7 @@
 			)
 		)
 		(pin "LV_GND" passive
-			(at -69.85 88.9 180)
+			(at -152.4 96.52 180)
 			(uuid "e1ea2b68-420f-404a-930c-fb071a5b59c0")
 			(effects
 				(font
@@ -2932,7 +2980,7 @@
 			)
 		)
 		(pin "LV_24V_OUT" input
-			(at -17.78 67.31 0)
+			(at -100.33 74.93 0)
 			(uuid "7bd83148-19ef-4218-948f-141c7ee8fd4f")
 			(effects
 				(font
@@ -2942,7 +2990,7 @@
 			)
 		)
 		(pin "LV_IN" input
-			(at -69.85 67.31 180)
+			(at -152.4 74.93 180)
 			(uuid "8708179d-fb8c-4247-a36b-7d706401f952")
 			(effects
 				(font
@@ -2952,7 +3000,7 @@
 			)
 		)
 		(pin "PS_3V3_ENABLE" output
-			(at -17.78 76.2 0)
+			(at -100.33 83.82 0)
 			(uuid "f99a3f49-5634-4bd2-8a5e-c86400bc204c")
 			(effects
 				(font
@@ -2962,7 +3010,7 @@
 			)
 		)
 		(pin "PS_ENABLE" input
-			(at -69.85 76.2 180)
+			(at -152.4 83.82 180)
 			(uuid "6fd423c5-fabb-4fe0-83cf-82d57c18a953")
 			(effects
 				(font
@@ -2972,7 +3020,7 @@
 			)
 		)
 		(pin "{LV_OUT_ADC}" input
-			(at -17.78 71.12 0)
+			(at -100.33 78.74 0)
 			(uuid "a29a2786-7b5b-41a6-a7cd-408172d34119")
 			(effects
 				(font
@@ -2982,7 +3030,7 @@
 			)
 		)
 		(pin "{LV_DCDC_FLT}" input
-			(at -17.78 73.66 0)
+			(at -100.33 81.28 0)
 			(uuid "238046e7-20dc-49dc-908c-dc4832cad1ca")
 			(effects
 				(font
