@@ -315,7 +315,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 71.12) (xy 149.86 71.12)
+			(xy 146.05 68.58) (xy 149.86 68.58)
 		)
 		(stroke
 			(width 0)
@@ -363,16 +363,6 @@
 		)
 		(uuid "5dba5041-75ec-4326-940b-b49f2b864d36")
 	)
-	(bus
-		(pts
-			(xy 146.05 66.04) (xy 149.86 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7462d70b-49e3-4d06-9c91-62917bf99bdb")
-	)
 	(wire
 		(pts
 			(xy 100.33 80.01) (xy 105.41 80.01)
@@ -395,7 +385,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 68.58) (xy 149.86 68.58)
+			(xy 146.05 66.04) (xy 149.86 66.04)
 		)
 		(stroke
 			(width 0)
@@ -476,17 +466,6 @@
 	)
 	(hierarchical_label "HV_VICOR_TEMP"
 		(shape output)
-		(at 149.86 68.58 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "27d71f6a-fa91-4c46-bcb4-9e3d1da57ced")
-	)
-	(hierarchical_label "{HV_DCDC_FLT}"
-		(shape output)
 		(at 149.86 66.04 0)
 		(effects
 			(font
@@ -494,7 +473,7 @@
 			)
 			(justify left)
 		)
-		(uuid "60278d11-1131-4231-9cdc-47db0c5239bc")
+		(uuid "27d71f6a-fa91-4c46-bcb4-9e3d1da57ced")
 	)
 	(hierarchical_label "HV_IN_VFAULT"
 		(shape output)
@@ -520,7 +499,7 @@
 	)
 	(hierarchical_label "HV_VICOR_EN"
 		(shape input)
-		(at 149.86 71.12 0)
+		(at 149.86 68.58 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1079,7 +1058,7 @@
 				(justify left top)
 			)
 		)
-		(pin "HV_GND" passive
+		(pin "HV_GND" input
 			(at 105.41 80.01 180)
 			(uuid "66580bba-67fb-4e9c-9ca6-68e31e71987e")
 			(effects
@@ -1100,7 +1079,7 @@
 			)
 		)
 		(pin "HV_VICOR_TEMP" output
-			(at 146.05 68.58 0)
+			(at 146.05 66.04 0)
 			(uuid "0ab49729-4107-4ff7-9a91-b9f0ac3edc61")
 			(effects
 				(font
@@ -1109,7 +1088,7 @@
 				(justify right)
 			)
 		)
-		(pin "LV_GND" passive
+		(pin "LV_GND" input
 			(at 146.05 80.01 0)
 			(uuid "7db14392-0306-4577-b40d-8d9b4b1febc5")
 			(effects
@@ -1139,18 +1118,8 @@
 				(justify right)
 			)
 		)
-		(pin "{HV_DCDC_FLT}" output
-			(at 146.05 66.04 0)
-			(uuid "3ce8f1f1-57b5-4be2-abb9-0d2970e07cda")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "HV_VICOR_EN" input
-			(at 146.05 71.12 0)
+			(at 146.05 68.58 0)
 			(uuid "53cd73b5-6c0c-49ee-9fda-6de22cf752c8")
 			(effects
 				(font
