@@ -464,7 +464,7 @@
 		)
 		(uuid "0c03fcae-c89b-4726-8ce8-5f55ee14e2a1")
 	)
-	(hierarchical_label "HV_VICOR_TEMP"
+	(hierarchical_label "HV_DCDC_TEMP"
 		(shape output)
 		(at 149.86 66.04 0)
 		(effects
@@ -497,7 +497,7 @@
 		)
 		(uuid "b143acbb-a476-4678-b02e-139a1375a682")
 	)
-	(hierarchical_label "HV_VICOR_EN"
+	(hierarchical_label "HV_DCDC_EN"
 		(shape input)
 		(at 149.86 68.58 0)
 		(effects
@@ -663,6 +663,17 @@
 			)
 		)
 		(property "LCSC P/N" "C352820"
+			(at 160.02 58.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 160.02 58.42 90)
 			(hide yes)
 			(show_name no)
@@ -1068,7 +1079,7 @@
 				(justify left)
 			)
 		)
-		(pin "HV_IN" input
+		(pin "HV_IN" output
 			(at 105.41 58.42 180)
 			(uuid "8c6eefda-c39a-4bfc-8ae7-a5b2b600b38f")
 			(effects
@@ -1078,7 +1089,7 @@
 				(justify left)
 			)
 		)
-		(pin "HV_VICOR_TEMP" output
+		(pin "HV_DCDC_TEMP" output
 			(at 146.05 66.04 0)
 			(uuid "0ab49729-4107-4ff7-9a91-b9f0ac3edc61")
 			(effects
@@ -1118,7 +1129,7 @@
 				(justify right)
 			)
 		)
-		(pin "HV_VICOR_EN" input
+		(pin "HV_DCDC_EN" input
 			(at 146.05 68.58 0)
 			(uuid "53cd73b5-6c0c-49ee-9fda-6de22cf752c8")
 			(effects

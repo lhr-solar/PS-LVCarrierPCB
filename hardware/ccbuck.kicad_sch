@@ -227,6 +227,129 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -2519,7 +2642,7 @@
 	)
 	(text "6.5A peak current limit\ninductor must not saturate before protection,\nchoose inductor I_sat >= 8A"
 		(exclude_from_sim no)
-		(at 244.348 85.852 0)
+		(at 250.698 85.598 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2556,12 +2679,6 @@
 			)
 		)
 		(uuid "eee1f84a-a05c-4dc7-b297-22ba81e31b9b")
-	)
-	(junction
-		(at 161.29 130.81)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0c033132-30c3-4341-81be-3e002b8efefd")
 	)
 	(junction
 		(at 161.29 148.59)
@@ -2618,6 +2735,30 @@
 		(uuid "402afd51-2456-4e02-8df9-73cb121379bc")
 	)
 	(junction
+		(at 161.29 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4421f9ea-4c07-47a6-a6ab-1b191d5479b4")
+	)
+	(junction
+		(at 201.93 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5a1ddca6-802f-41ea-a3ff-77d65e667604")
+	)
+	(junction
+		(at 217.17 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "77776214-702b-4de2-9c26-604725ebfe57")
+	)
+	(junction
+		(at 36.83 151.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7829668e-b53a-4e18-9baf-de3a716625fe")
+	)
+	(junction
 		(at 228.6 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2664,6 +2805,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d428ef9e-9966-4ed4-b682-a9ae07f4607d")
+	)
+	(junction
+		(at 166.37 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "debebfa2-81f1-4135-a3cf-d5450ba4fc88")
 	)
 	(junction
 		(at 67.31 158.75)
@@ -2857,7 +3004,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 151.13) (xy 38.1 151.13)
+			(xy 35.56 151.13) (xy 36.83 151.13)
 		)
 		(stroke
 			(width 0)
@@ -3177,16 +3324,6 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 130.81) (xy 161.29 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "56fa00b9-d777-401e-bb41-4b8d76544b4b")
-	)
-	(wire
-		(pts
 			(xy 198.12 121.92) (xy 198.12 124.46)
 		)
 		(stroke
@@ -3347,7 +3484,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 128.27) (xy 161.29 130.81)
+			(xy 166.37 128.27) (xy 166.37 130.81)
 		)
 		(stroke
 			(width 0)
@@ -3394,6 +3531,16 @@
 			(type default)
 		)
 		(uuid "88343fe8-3d94-48e2-9da0-c9b0ff4e1a92")
+	)
+	(wire
+		(pts
+			(xy 161.29 130.81) (xy 166.37 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89503f3d-2f9f-4287-90a9-414107c38ed4")
 	)
 	(wire
 		(pts
@@ -3717,6 +3864,16 @@
 	)
 	(wire
 		(pts
+			(xy 36.83 151.13) (xy 38.1 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e758d83d-6dcd-4de1-9ace-26c766a88f1b")
+	)
+	(wire
+		(pts
 			(xy 124.46 41.91) (xy 124.46 44.45)
 		)
 		(stroke
@@ -3737,7 +3894,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 130.81) (xy 156.21 130.81)
+			(xy 156.21 130.81) (xy 161.29 130.81)
 		)
 		(stroke
 			(width 0)
@@ -3936,7 +4093,7 @@
 		(uuid "41aff4cb-97b1-4249-99b9-9ea5954ae96e")
 	)
 	(label "COMP"
-		(at 161.29 128.27 0)
+		(at 166.37 128.27 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4352,6 +4509,96 @@
 		(uuid "f0380ad9-da63-4604-9cd2-6577f7d2e54b")
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 161.29 130.81 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "098370ef-ea9e-4c7f-9641-a419c60dbd67")
+		(property "Reference" "TP53"
+			(at 162.306 122.682 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "COMP"
+			(at 162.306 125.222 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 156.21 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 156.21 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 161.29 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 161.29 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1aa9fcfe-cd8b-4ddd-930f-b861e1dd6b4f")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/b521073a-8409-41eb-9cdc-cffa14c92055/ce9f4f06-8ff2-4cb3-b7ef-8da2e2438bff"
+					(reference "TP53")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 156.21 139.7 0)
 		(unit 1)
@@ -4408,6 +4655,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 156.21 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 156.21 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -4500,6 +4758,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 109.22 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "7e346b09-0bfb-4d6c-be67-51bd55f6bf61")
 		)
@@ -4572,6 +4841,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 59.69 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 59.69 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -4675,6 +4955,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 168.91 41.91 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "74f3dea6-9ced-40a5-872e-a9a8ae50e076")
 		)
@@ -4757,6 +5048,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 218.44 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "379ec425-f5d3-4f09-a0e3-a17f2a5feb2d")
 		)
@@ -4806,7 +5108,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 217.17 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -4829,6 +5131,28 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 217.17 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 217.17 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C14663"
 			(at 217.17 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -4910,6 +5234,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 166.37 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 166.37 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -5002,6 +5337,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 238.76 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c184179b-05f5-49ed-8967-11e57fd43511")
 		)
@@ -5074,6 +5420,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 114.3 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 114.3 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -5223,6 +5580,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 166.37 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "591b1ffa-50fe-4ee0-afa9-54dced05a936")
 		)
@@ -5294,6 +5662,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 124.46 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 124.46 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -5405,6 +5784,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 184.15 109.22 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "f47d8128-a3fa-4018-8b5c-1f12d62c4dc8")
 		)
@@ -5483,6 +5873,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 48.26 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 48.26 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -5575,6 +5976,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 182.88 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "6e4b234f-4154-4742-9034-ed058451bf68")
 		)
@@ -5657,6 +6069,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 59.69 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "aa1d3856-b02f-4635-94f6-739097ed1270")
 		)
@@ -5729,6 +6152,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 120.65 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 120.65 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -5832,6 +6266,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 182.88 41.91 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "47010b28-9ca9-461a-9ce9-481e9eea082c")
 		)
@@ -5904,6 +6349,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 41.91 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 41.91 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -5996,6 +6452,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 198.12 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a32946e2-ecf5-45ba-ac65-f0196bdddd3d")
 		)
@@ -6078,6 +6545,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 198.12 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "231a8f6a-5f77-4b9f-9922-5e546c13a4f7")
 		)
@@ -6150,6 +6628,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 228.6 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 228.6 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6340,6 +6829,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 209.55 87.63 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "ac9c65de-516c-4579-b736-c174b2a0b416")
 		)
@@ -6412,6 +6912,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 248.92 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 248.92 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6504,6 +7015,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 168.91 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "8af48cce-4de5-419c-8b53-a2ab430f4b32")
 		)
@@ -6553,7 +7075,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 201.93 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -6576,6 +7098,28 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 201.93 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 201.93 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C14663"
 			(at 201.93 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -6667,6 +7211,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 134.62 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "ed8056a0-6d77-4bc6-a4bf-bf7dc94360d5")
 		)
@@ -6677,6 +7232,96 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/b521073a-8409-41eb-9cdc-cffa14c92055/ce9f4f06-8ff2-4cb3-b7ef-8da2e2438bff"
 					(reference "R114")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 201.93 87.63 90)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c3937858-0a08-4ad6-b276-c2f467b4149d")
+		(property "Reference" "TP51"
+			(at 193.802 86.614 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SW1"
+			(at 196.342 86.614 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 201.93 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.93 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 201.93 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 201.93 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bad65f01-adb9-4dcc-9d92-4506b09440d5")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/b521073a-8409-41eb-9cdc-cffa14c92055/ce9f4f06-8ff2-4cb3-b7ef-8da2e2438bff"
+					(reference "TP51")
 					(unit 1)
 				)
 			)
@@ -6749,6 +7394,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 86.36 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f7fa989e-4463-4a3b-86fe-0d25117dfac2")
 		)
@@ -6759,6 +7415,96 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/b521073a-8409-41eb-9cdc-cffa14c92055/ce9f4f06-8ff2-4cb3-b7ef-8da2e2438bff"
 					(reference "C103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 217.17 87.63 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dbaa001e-af27-4c05-950d-87246357248d")
+		(property "Reference" "TP52"
+			(at 225.298 88.646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SW2"
+			(at 222.758 88.646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 217.17 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 217.17 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 217.17 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "98474edd-397a-471a-89b2-2877f3afe0aa")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/b521073a-8409-41eb-9cdc-cffa14c92055/ce9f4f06-8ff2-4cb3-b7ef-8da2e2438bff"
+					(reference "TP52")
 					(unit 1)
 				)
 			)
@@ -6798,7 +7544,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 133.0452 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -6821,6 +7567,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 132.08 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 132.08 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -6913,6 +7670,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 57.15 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a6456317-5066-4071-ab8b-a14799f9192d")
 		)
@@ -6923,6 +7691,96 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/b521073a-8409-41eb-9cdc-cffa14c92055/ce9f4f06-8ff2-4cb3-b7ef-8da2e2438bff"
 					(reference "R125")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 36.83 151.13 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e06fd3da-cafb-4fd7-98ea-198368f8b138")
+		(property "Reference" "TP35"
+			(at 37.846 143.002 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CHARGE_EN"
+			(at 37.846 145.542 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.75 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 36.83 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 36.83 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9592f429-218e-4bcd-8ba2-038e69dc424e")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/b521073a-8409-41eb-9cdc-cffa14c92055/ce9f4f06-8ff2-4cb3-b7ef-8da2e2438bff"
+					(reference "TP35")
 					(unit 1)
 				)
 			)
@@ -6998,6 +7856,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 57.15 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "207571d6-9fd9-4330-a925-bb06e1bd375c")
 		)
@@ -7050,7 +7919,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 182.5752 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -7073,6 +7942,28 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 181.61 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 181.61 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C22387800"
 			(at 181.61 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -7165,6 +8056,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 97.79 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "fe5d8408-bf77-4fbb-889b-4098ec07d2a4")
 		)
@@ -7238,6 +8140,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 48.26 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 48.26 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -7456,7 +8369,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 67.31 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -7479,6 +8392,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 67.31 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 67.31 165.1 0)
 			(hide yes)
 			(show_name no)

@@ -5,6 +5,129 @@
 	(uuid "b1c77b17-6f4a-44f2-97e3-3670945affe7")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C_Small"
 			(pin_numbers
 				(hide yes)
@@ -1092,16 +1215,22 @@
 		(uuid "064cb58a-a7f1-4d3b-a9ab-a20b66e4c690")
 	)
 	(junction
+		(at 62.23 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "08175934-f1ef-454f-9448-5877be91000b")
+	)
+	(junction
 		(at 219.71 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0e717a26-ba50-4d95-b89a-cafaa4c99b04")
 	)
 	(junction
-		(at 95.25 57.15)
+		(at 71.12 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "13d79c72-db46-4914-9be1-71f1f7f44b60")
+		(uuid "141b1148-7aa1-4140-91e7-7baf20c0872f")
 	)
 	(junction
 		(at 58.42 99.06)
@@ -1116,12 +1245,6 @@
 		(uuid "1ab51f42-f5e4-4144-b030-0f92989617f0")
 	)
 	(junction
-		(at 172.72 54.61)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "25a48aee-fe89-4b6f-beaa-97c75d17c575")
-	)
-	(junction
 		(at 71.12 167.64)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1134,6 +1257,12 @@
 		(uuid "2c66b640-ac9e-4788-9059-a98a28aa383c")
 	)
 	(junction
+		(at 95.25 148.59)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "363b92c4-5c2f-48d9-988d-15282682585f")
+	)
+	(junction
 		(at 95.25 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1144,6 +1273,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5921270b-dcec-4cf3-aad4-ac0eea211a1e")
+	)
+	(junction
+		(at 95.25 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5d0486cc-2ba5-4e06-b2a8-f7b308ae8d9f")
+	)
+	(junction
+		(at 71.12 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6813643e-4859-4271-a41c-db3801769a03")
 	)
 	(junction
 		(at 62.23 167.64)
@@ -1194,22 +1335,16 @@
 		(uuid "acb0deb7-0453-4f58-95f8-acebcdfe501d")
 	)
 	(junction
-		(at 62.23 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b08c51b7-4cc2-4b3f-9ab3-26fe53ef717e")
-	)
-	(junction
-		(at 71.12 57.15)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b803bb49-47da-4c43-8ca1-800af138052b")
-	)
-	(junction
 		(at 71.12 121.92)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ca880a6c-9a29-44a3-8e97-6932e98ef485")
+	)
+	(junction
+		(at 180.34 54.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d4f7c563-1c24-4062-8c71-f5eaf9b7157f")
 	)
 	(junction
 		(at 62.23 156.21)
@@ -1230,10 +1365,22 @@
 		(uuid "e803ff63-46dd-4d8a-b950-a060163ec71d")
 	)
 	(junction
+		(at 172.72 54.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ee3493f3-f43e-4ff0-9984-54d87e672e3f")
+	)
+	(junction
 		(at 95.25 105.41)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f794b6ef-df18-4221-bcde-3eb0242f6b9b")
+	)
+	(junction
+		(at 95.25 102.87)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8e32bf6-05c5-4089-97b1-867f5b1d6945")
 	)
 	(wire
 		(pts
@@ -1264,6 +1411,16 @@
 			(type default)
 		)
 		(uuid "0539f6a6-44ed-42e6-9674-f6a4b637db7d")
+	)
+	(wire
+		(pts
+			(xy 95.25 57.15) (xy 107.95 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0feedea0-a5ee-417e-b25a-016f5b709af7")
 	)
 	(wire
 		(pts
@@ -1377,6 +1534,16 @@
 	)
 	(wire
 		(pts
+			(xy 95.25 148.59) (xy 107.95 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3068d980-545b-4a73-a440-74367229d19d")
+	)
+	(wire
+		(pts
 			(xy 54.61 99.06) (xy 54.61 101.6)
 		)
 		(stroke
@@ -1397,23 +1564,13 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 54.61) (xy 184.15 54.61)
+			(xy 172.72 54.61) (xy 180.34 54.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "3808e11f-2a77-48f1-be0a-1af099de070b")
-	)
-	(wire
-		(pts
-			(xy 95.25 54.61) (xy 95.25 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "397bb29c-a70c-40d9-a0cf-7bc4d253d7c5")
 	)
 	(wire
 		(pts
@@ -1427,7 +1584,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 102.87) (xy 107.95 102.87)
+			(xy 71.12 102.87) (xy 95.25 102.87)
 		)
 		(stroke
 			(width 0)
@@ -1617,13 +1774,23 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 148.59) (xy 107.95 148.59)
+			(xy 71.12 148.59) (xy 95.25 148.59)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "67691f51-8710-4f12-98bf-3939cb8f1883")
+	)
+	(wire
+		(pts
+			(xy 180.34 54.61) (xy 194.31 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a47fca1-9d28-437f-bd2f-a1d625efa05e")
 	)
 	(wire
 		(pts
@@ -1887,6 +2054,16 @@
 	)
 	(wire
 		(pts
+			(xy 95.25 102.87) (xy 107.95 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8d23080-a6c5-45b8-b47e-5782a05e9554")
+	)
+	(wire
+		(pts
 			(xy 62.23 99.06) (xy 62.23 101.6)
 		)
 		(stroke
@@ -1914,6 +2091,16 @@
 			(type default)
 		)
 		(uuid "ae2cae11-c090-4a1d-acda-4dbe1f3c0875")
+	)
+	(wire
+		(pts
+			(xy 71.12 38.1) (xy 76.2 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b30ac732-540f-4c01-a76d-cd64ca058111")
 	)
 	(wire
 		(pts
@@ -2057,7 +2244,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 54.61) (xy 200.66 54.61)
+			(xy 201.93 54.61) (xy 205.74 54.61)
 		)
 		(stroke
 			(width 0)
@@ -2107,16 +2294,6 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 57.15) (xy 107.95 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "da00395c-2740-49a0-bf15-04e0293ee474")
-	)
-	(wire
-		(pts
 			(xy 95.25 116.84) (xy 95.25 115.57)
 		)
 		(stroke
@@ -2134,6 +2311,16 @@
 			(type default)
 		)
 		(uuid "de9ab285-acc5-417c-8c2a-fdcb2dfaa0fc")
+	)
+	(wire
+		(pts
+			(xy 180.34 54.61) (xy 180.34 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e053bfde-e033-4e58-b1b9-e21e315e4ff9")
 	)
 	(wire
 		(pts
@@ -2420,9 +2607,20 @@
 		)
 		(uuid "1bc8e8a4-2d8a-4e71-a9ae-32ab17a5c184")
 	)
+	(hierarchical_label "LV_GND"
+		(shape input)
+		(at 180.34 71.12 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "54c668bc-f8d7-492b-8cf5-d0ce4e842855")
+	)
 	(hierarchical_label "12V_FUSED"
 		(shape output)
-		(at 200.66 54.61 0)
+		(at 205.74 54.61 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2609,12 +2807,12 @@
 	)
 	(hierarchical_label "LVD_ENABLE"
 		(shape input)
-		(at 95.25 54.61 180)
+		(at 76.2 38.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "dbb5e854-f4a5-4744-8a90-96ce9cb72afe")
 	)
@@ -2707,6 +2905,17 @@
 			)
 		)
 		(property "LCSC P/N" "C25804"
+			(at 219.71 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 219.71 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -2822,6 +3031,17 @@
 			)
 		)
 		(property "LCSC P/N" "C23162"
+			(at 203.2 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 203.2 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -2958,6 +3178,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 203.2 110.49 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "51b9f672-7e5e-4ffe-8030-a3043dae2209")
 		)
@@ -2974,8 +3205,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Fuse")
-		(at 187.96 54.61 90)
+		(lib_id "Device:R")
+		(at 180.34 59.69 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2984,29 +3215,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "19640222-7275-49b4-a96d-7e661fa6c463")
-		(property "Reference" "F4"
-			(at 187.96 48.26 90)
+		(uuid "0b51c4fe-ffcc-4074-8aaf-79cfb08db9b4")
+		(property "Reference" "R83"
+			(at 182.88 58.4199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "Fuse"
-			(at 187.96 50.8 90)
+		(property "Value" "10k"
+			(at 182.88 60.9599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 187.96 56.388 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 178.562 59.69 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3017,7 +3250,109 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 187.96 54.61 0)
+			(at 180.34 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 180.34 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C31850"
+			(at 180.34 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 180.34 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "87c7ca8b-fa97-4f31-8ea7-ecf5543b6e38")
+		)
+		(pin "2"
+			(uuid "4d9ef0bc-601e-49e6-8ccd-edbe42c54f60")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
+					(reference "R83")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 198.12 54.61 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "19640222-7275-49b4-a96d-7e661fa6c463")
+		(property "Reference" "F4"
+			(at 198.12 48.26 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Fuse"
+			(at 198.12 50.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 198.12 56.388 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 198.12 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3028,7 +3363,18 @@
 			)
 		)
 		(property "Description" "Fuse"
-			(at 187.96 54.61 0)
+			(at 198.12 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 198.12 54.61 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3152,6 +3498,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 71.12 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "0e1e06d7-0942-483a-b1d7-fc91677668a2")
 		)
@@ -3162,6 +3519,96 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
 					(reference "R111")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 95.25 57.15 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1b3914ef-2543-4fca-aac4-3541d080f89c")
+		(property "Reference" "TP33"
+			(at 92.71 52.5779 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DIODE_EN"
+			(at 92.71 55.1179 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 95.25 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 95.25 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "473e2f90-616c-41c1-821c-d1968dec27d0")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
+					(reference "TP33")
 					(unit 1)
 				)
 			)
@@ -3256,6 +3703,17 @@
 			)
 		)
 		(property "LCSC P/N" "C1693952"
+			(at 95.25 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 95.25 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -3380,6 +3838,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 62.23 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "47f388e6-1b30-45fd-b58c-c02dc2626a83")
 		)
@@ -3484,6 +3953,17 @@
 			)
 		)
 		(property "LCSC P/N" "C1693952"
+			(at 95.25 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 95.25 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -3608,6 +4088,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 62.23 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5f7267c3-39d8-4332-81cb-f648042f5496")
 		)
@@ -3722,6 +4213,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 95.25 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a1cdad4d-9978-4301-8571-471988ef2d9b")
 		)
@@ -3732,6 +4234,96 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
 					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 180.34 54.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "536d54c0-16cd-441f-9238-d86716e7d20e")
+		(property "Reference" "TP42"
+			(at 182.88 50.0379 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DIODE_VOUT"
+			(at 182.88 52.5779 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 185.42 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 180.34 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 180.34 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0ac7cadf-47aa-486d-9cc0-c3b587b14569")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
+					(reference "TP42")
 					(unit 1)
 				)
 			)
@@ -3840,6 +4432,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 68.58 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "57921834-83b2-4e78-b42a-525809ffa91e")
 		)
@@ -3853,6 +4456,96 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
 					(reference "Q34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 57.15 53.34 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "622bc120-e705-449b-99ba-8c7c9c16ef3e")
+		(property "Reference" "TP38"
+			(at 58.166 45.212 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LV_ENABLE"
+			(at 58.166 47.752 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 52.07 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 52.07 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 57.15 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 57.15 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ff23403f-0a93-4bdf-98b0-a5379a075d8c")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
+					(reference "TP38")
 					(unit 1)
 				)
 			)
@@ -3947,6 +4640,17 @@
 			)
 		)
 		(property "LCSC P/N" "C21190"
+			(at 54.61 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 54.61 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -4071,6 +4775,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 57.15 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f3388167-8be9-4ece-ac8f-1b5c8e883917")
 		)
@@ -4185,6 +4900,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 54.61 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "95ab0788-e270-48e7-80f1-70384b0d7b6f")
 		)
@@ -4289,6 +5015,17 @@
 			)
 		)
 		(property "LCSC P/N" "C25804"
+			(at 95.25 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 95.25 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -4417,6 +5154,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 68.58 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "6646d4c0-742f-4e1e-a362-6d0beb03bcbb")
 		)
@@ -4524,6 +5272,17 @@
 			)
 		)
 		(property "LCSC P/N" "C25804"
+			(at 95.25 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 95.25 166.37 0)
 			(hide yes)
 			(show_name no)
@@ -4648,6 +5407,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 71.12 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3bf95612-3fec-4d61-95d4-5b6af3bba865")
 		)
@@ -4762,6 +5532,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 62.23 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "8a5ee27c-a933-4118-a750-dd8d85f05084")
 		)
@@ -4866,6 +5647,17 @@
 			)
 		)
 		(property "LCSC P/N" "C25803"
+			(at 54.61 162.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 54.61 162.56 0)
 			(hide yes)
 			(show_name no)
@@ -4991,6 +5783,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 57.15 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "cfc4b75d-9e2b-4b65-96c7-84bb07ce3c12")
 		)
@@ -5105,6 +5908,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 54.61 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "cea67f6a-337e-41d9-8b1a-a9272dc232e7")
 		)
@@ -5115,6 +5929,200 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
 					(reference "R116")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 180.34 67.31 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a9af9962-b995-4db7-b096-cbc6c22f6cac")
+		(property "Reference" "D30"
+			(at 184.15 67.6274 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "HV24V_LED"
+			(at 184.15 70.1674 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 180.34 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 180.34 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 180.34 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 180.34 67.31 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "eaee4f4f-1870-47d3-8490-534a4829c753")
+		)
+		(pin "2"
+			(uuid "1102c47c-3a2c-474e-ae64-17d3f234eaf4")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
+					(reference "D30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 95.25 102.87 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "be6cf6fd-27b6-47c7-bfee-2eaed126b5be")
+		(property "Reference" "TP30"
+			(at 92.71 98.2979 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DIODE_EN"
+			(at 92.71 100.8379 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 95.25 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 95.25 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1df53505-900f-4e82-bf24-7235e2383adc")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
+					(reference "TP30")
 					(unit 1)
 				)
 			)
@@ -5209,6 +6217,17 @@
 			)
 		)
 		(property "LCSC P/N" "C1693952"
+			(at 95.25 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 95.25 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -5323,6 +6342,17 @@
 			)
 		)
 		(property "LCSC P/N" "C21190"
+			(at 62.23 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 62.23 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -5448,6 +6478,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 219.71 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "f1f1f8b0-8d69-4290-9cdd-c105adfed5d9")
 		)
@@ -5552,6 +6593,17 @@
 			)
 		)
 		(property "LCSC P/N" "C25803"
+			(at 54.61 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 54.61 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -5676,6 +6728,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 62.23 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "21760bd5-76e7-4f00-9090-f6282cd9c4b3")
 		)
@@ -5725,7 +6788,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 229.87 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -5758,6 +6821,28 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 229.87 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C14663"
+			(at 229.87 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "0f600221-8399-4123-94b8-8241f9a8d675")
 		)
@@ -5768,6 +6853,96 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
 					(reference "C111")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 95.25 148.59 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ead1d552-21df-4e07-ba69-91a9b5ef3131")
+		(property "Reference" "TP31"
+			(at 92.71 144.0179 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DIODE_EN"
+			(at 92.71 146.5579 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 95.25 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 95.25 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ea0b54fe-b6bf-4a68-a794-1dec28bfe7ae")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
+					(reference "TP31")
 					(unit 1)
 				)
 			)
@@ -5866,6 +7041,17 @@
 			)
 		)
 		(property "LCSC P/N" "C67272"
+			(at 68.58 156.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 68.58 156.21 0)
 			(hide yes)
 			(show_name no)

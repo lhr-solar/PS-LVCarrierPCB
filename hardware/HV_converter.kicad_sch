@@ -2509,7 +2509,7 @@
 	)
 	(text "1. Use low impedance solid capacitor with excellent temperature characteristics.\n　　 (Nippon Chemi-Con PSG Series or equivalent)\n"
 		(exclude_from_sim no)
-		(at 95.25 75.946 0)
+		(at 105.918 75.438 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2519,7 +2519,7 @@
 	)
 	(text "connect close to respective terminals"
 		(exclude_from_sim no)
-		(at 129.286 61.976 0)
+		(at 128.016 64.516 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2527,9 +2527,9 @@
 		)
 		(uuid "331d74cc-63ea-496e-b642-abfe33367110")
 	)
-	(text "led off -> transistor off, CNT not pulled to -VIN, \ninternal pullup pulls CNT high -> converter off"
+	(text "led off -> transistor off, \nCNT not pulled to -VIN, \ninternal pullup pulls CNT \nhigh -> converter off"
 		(exclude_from_sim no)
-		(at 137.16 153.67 0)
+		(at 137.922 157.48 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2713,7 +2713,7 @@
 	)
 	(text "tie mounting holes to plate on footprint"
 		(exclude_from_sim no)
-		(at 96.52 70.866 0)
+		(at 102.87 72.136 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2850,7 +2850,7 @@
 		(uuid "6d3e7993-6a69-4b0b-b674-58d413159a26")
 	)
 	(bus_entry
-		(at 236.22 53.34)
+		(at 236.22 52.07)
 		(size 2.54 -2.54)
 		(stroke
 			(width 0)
@@ -2859,7 +2859,7 @@
 		(uuid "5704f2e3-def2-42d1-b2cb-83609799c6be")
 	)
 	(bus_entry
-		(at 236.22 50.8)
+		(at 236.22 49.53)
 		(size 2.54 -2.54)
 		(stroke
 			(width 0)
@@ -2959,16 +2959,6 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 125.73) (xy 207.01 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3ef5575e-77d9-4ffd-9890-8124d59ac67c")
-	)
-	(wire
-		(pts
 			(xy 107.95 45.72) (xy 109.22 45.72)
 		)
 		(stroke
@@ -3059,7 +3049,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 57.15) (xy 229.87 57.15)
+			(xy 226.06 55.88) (xy 229.87 55.88)
 		)
 		(stroke
 			(width 0)
@@ -3209,7 +3199,7 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 123.19) (xy 242.57 124.46)
+			(xy 233.68 123.19) (xy 233.68 124.46)
 		)
 		(stroke
 			(width 0)
@@ -3239,7 +3229,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 53.34) (xy 236.22 53.34)
+			(xy 226.06 52.07) (xy 236.22 52.07)
 		)
 		(stroke
 			(width 0)
@@ -3309,7 +3299,7 @@
 	)
 	(bus
 		(pts
-			(xy 238.76 46.99) (xy 238.76 50.8)
+			(xy 238.76 45.72) (xy 238.76 49.53)
 		)
 		(stroke
 			(width 0)
@@ -3369,7 +3359,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 50.8) (xy 236.22 50.8)
+			(xy 226.06 49.53) (xy 236.22 49.53)
 		)
 		(stroke
 			(width 0)
@@ -3478,7 +3468,7 @@
 		(uuid "15a43277-2983-45e8-af82-e0e93fc25995")
 	)
 	(label "HV_V_OUT"
-		(at 227.33 53.34 0)
+		(at 227.33 52.07 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3497,18 +3487,18 @@
 		)
 		(uuid "b3e15da3-99e8-4d66-9c46-6e515cb15812")
 	)
-	(label "HV_24OUT_V"
-		(at 207.01 129.54 0)
+	(label "OUT+"
+		(at 255.27 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "c11d3a62-9ef5-4f80-900d-a589ffbb7fbf")
+		(uuid "b93ceb84-0267-44a8-a73b-a4dbb0ec8ca0")
 	)
 	(label "HV_I_OUT"
-		(at 227.33 50.8 0)
+		(at 227.33 49.53 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3537,7 +3527,7 @@
 		)
 		(uuid "fce60cae-3b17-4940-9a62-9780c4d5dc05")
 	)
-	(hierarchical_label "HV_VICOR_TEMP"
+	(hierarchical_label "HV_DCDC_TEMP"
 		(shape output)
 		(at 60.96 138.43 0)
 		(effects
@@ -3550,7 +3540,7 @@
 	)
 	(hierarchical_label "HV_24V_OUT"
 		(shape output)
-		(at 242.57 123.19 0)
+		(at 233.68 123.19 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3559,7 +3549,7 @@
 		)
 		(uuid "2b0e3a83-d411-4da8-84d0-c98141b3333e")
 	)
-	(hierarchical_label "HV_VICOR_EN"
+	(hierarchical_label "HV_DCDC_EN"
 		(shape input)
 		(at 146.05 133.35 0)
 		(effects
@@ -3572,7 +3562,7 @@
 	)
 	(hierarchical_label "{HV_OUT_ADC}"
 		(shape input)
-		(at 238.76 46.99 0)
+		(at 238.76 45.72 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3582,7 +3572,7 @@
 		(uuid "482ada2c-6c5d-4495-808c-450df229f8db")
 	)
 	(hierarchical_label "HV_IN"
-		(shape input)
+		(shape output)
 		(at 52.07 43.18 180)
 		(effects
 			(font
@@ -3602,6 +3592,17 @@
 			(justify right)
 		)
 		(uuid "6dac8321-1a1a-402a-942d-3e2c6249aae6")
+	)
+	(hierarchical_label "LV_GND"
+		(shape input)
+		(at 255.27 139.7 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "723244df-ece2-4f7c-80c5-98547ee2c871")
 	)
 	(hierarchical_label "HV_24V_OUT"
 		(shape output)
@@ -3627,7 +3628,7 @@
 	)
 	(hierarchical_label "LV_GND"
 		(shape input)
-		(at 242.57 139.7 270)
+		(at 233.68 139.7 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3658,9 +3659,20 @@
 		)
 		(uuid "e045e849-7523-436e-8e9c-8892df6ec8dd")
 	)
+	(hierarchical_label "HV_IN"
+		(shape output)
+		(at 41.91 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e29659cb-5587-4813-994a-4683779a5d93")
+	)
 	(hierarchical_label "LV_GND"
 		(shape input)
-		(at 229.87 57.15 270)
+		(at 229.87 55.88 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3668,6 +3680,17 @@
 			(justify right)
 		)
 		(uuid "f7ac82a1-3e01-4d92-a555-ca3d4fdd8a91")
+	)
+	(hierarchical_label "LV_GND"
+		(shape input)
+		(at 142.24 53.34 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fddd4c75-beb9-4e70-9d24-7b235dd52d0f")
 	)
 	(symbol
 		(lib_id "Device:C_Small")
@@ -3747,6 +3770,17 @@
 			)
 		)
 		(property "Mouser P/N" "MLASH168SB7104KTNA01"
+			(at 48.26 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 48.26 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -3860,6 +3894,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 137.16 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "64c6ce00-ede0-4150-af0c-a00ad58a1708")
 		)
@@ -3954,6 +3999,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 130.81 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "4"
 			(uuid "c9229900-12ba-4673-a49c-7855b78ddf36")
 		)
@@ -3970,6 +4026,291 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
 					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 255.27 128.27 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "234a7e3b-69be-49e9-8954-00b0a6f17ee1")
+		(property "Reference" "R53"
+			(at 257.81 126.9999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 257.81 129.5399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 253.492 128.27 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 255.27 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 255.27 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C31850"
+			(at 255.27 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 255.27 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4cac07ce-b5f2-4fbe-bbf8-466b38a09427")
+		)
+		(pin "2"
+			(uuid "16acaf40-79d6-4f3b-8b4d-7b569d00ed0c")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
+					(reference "R53")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 120.65 133.35 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2eb8cd6d-d68e-4b44-82d7-f2e9b8b4d4ec")
+		(property "Reference" "TP34"
+			(at 121.666 125.222 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CNT"
+			(at 121.666 127.762 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 115.57 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 120.65 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 120.65 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5db92853-4fae-4462-8ce3-2673fe6315d9")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
+					(reference "TP34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 53.34 78.74 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "317e7d16-76e7-4e96-b758-995090bc7f34")
+		(property "Reference" "J14"
+			(at 53.34 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "HV_IN"
+			(at 53.34 72.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LHRS_Connectors:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical"
+			(at 53.34 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 53.34 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 53.34 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "dcbdac46-5d83-4e08-bdbe-84adddc8dd0a")
+		)
+		(pin "1"
+			(uuid "1761263d-466f-4832-a219-6177bae2bd1b")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
+					(reference "J14")
 					(unit 1)
 				)
 			)
@@ -4053,6 +4394,17 @@
 			)
 		)
 		(property "Mouser P/N" "06035C472K4T2A"
+			(at 124.46 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 124.46 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -4222,6 +4574,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 62.23 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "42c8f85f-f3d2-4c9b-be3a-b403fc65e20b")
 		)
@@ -4239,7 +4602,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 242.57 135.89 90)
+		(at 233.68 135.89 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4250,7 +4613,7 @@
 		(fields_autoplaced yes)
 		(uuid "4bc61951-b3c6-4f33-8780-7bab7d4fe590")
 		(property "Reference" "D12"
-			(at 246.38 136.2074 90)
+			(at 237.49 136.2074 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4261,7 +4624,7 @@
 			)
 		)
 		(property "Value" "HV24V_LED"
-			(at 246.38 138.7474 90)
+			(at 237.49 138.7474 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4272,7 +4635,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 242.57 135.89 0)
+			(at 233.68 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4283,7 +4646,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 242.57 135.89 0)
+			(at 233.68 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4294,7 +4657,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 242.57 135.89 0)
+			(at 233.68 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4305,7 +4668,18 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 242.57 135.89 0)
+			(at 233.68 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 233.68 135.89 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4464,6 +4838,17 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 189.23 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 189.23 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -4640,6 +5025,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 54.61 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "bf83b087-8fa6-4ca6-be48-2a8f49adadc2")
 		)
@@ -4711,6 +5107,17 @@
 		)
 		(property "Description" "Resistor"
 			(at 113.03 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 113.03 45.72 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4900,6 +5307,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 72.39 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "4a5d533d-2e7a-4f96-9c8d-592b5a4955ed")
 		)
@@ -4982,6 +5400,17 @@
 			)
 		)
 		(property "LCSC P/N" "C1812C204KAGLCAUTO"
+			(at 142.24 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 142.24 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -5083,6 +5512,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 58.42 43.18 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "4b5f5e48-dc94-470b-bc32-fd4ccaf2056d")
 		)
@@ -5093,6 +5533,110 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
 					(reference "F9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 255.27 135.89 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ac3ee5b1-4cc7-46b3-9dfb-f4275a944d96")
+		(property "Reference" "D18"
+			(at 259.08 136.2074 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "HV24V_LED"
+			(at 259.08 138.7474 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 255.27 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 255.27 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 255.27 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 255.27 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 255.27 135.89 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1b1e4c7b-f914-4c3b-9ae8-78a9fb877bad")
+		)
+		(pin "2"
+			(uuid "c34d2ba0-0683-4361-830d-bbc832e365da")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
+					(reference "D18")
 					(unit 1)
 				)
 			)
@@ -5155,6 +5699,17 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 189.23 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 189.23 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -5234,6 +5789,17 @@
 			)
 		)
 		(property "Description" "test point"
+			(at 207.01 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 207.01 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -5344,6 +5910,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 124.46 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "de1accad-8f57-455e-ad3f-30606df8548a")
 		)
@@ -5416,6 +5993,17 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 144.78 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 144.78 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -5583,6 +6171,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 95.25 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "9"
 			(uuid "6bfba18f-23fa-4cef-a0dc-edd1fbcfb426")
 		)
@@ -5624,7 +6223,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 242.57 128.27 0)
+		(at 233.68 128.27 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5635,7 +6234,7 @@
 		(fields_autoplaced yes)
 		(uuid "cc4bcad2-d040-4a1f-aa24-1dda820d5354")
 		(property "Reference" "R49"
-			(at 245.11 126.9999 0)
+			(at 236.22 126.9999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5645,8 +6244,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22k"
-			(at 245.11 129.5399 0)
+		(property "Value" "10k"
+			(at 236.22 129.5399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5657,7 +6256,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 240.792 128.27 90)
+			(at 231.902 128.27 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5668,7 +6267,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 242.57 128.27 0)
+			(at 233.68 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5679,7 +6278,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 242.57 128.27 0)
+			(at 233.68 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5690,7 +6289,18 @@
 			)
 		)
 		(property "LCSC P/N" "C31850"
-			(at 242.57 128.27 0)
+			(at 233.68 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 233.68 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5770,6 +6380,17 @@
 		)
 		(property "Description" "Resistor"
 			(at 113.03 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 113.03 48.26 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5959,6 +6580,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 72.39 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "2b803211-6f72-4761-b08e-579f4b1c2c18")
 		)
@@ -6108,6 +6740,17 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 66.04 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 66.04 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -6275,6 +6918,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 140.97 133.35 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "ff8d272f-7ff8-4c1a-8940-d7a9fa288193")
 		)
@@ -6291,8 +6945,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 207.01 125.73 0)
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 36.83 78.74 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6301,31 +6955,29 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f6aab992-1426-46a1-a30a-c56ebe76d497")
-		(property "Reference" "TP16"
-			(at 209.55 121.1579 0)
+		(uuid "f67d2fc4-9570-4c7f-9c17-40db550edb73")
+		(property "Reference" "J11"
+			(at 36.83 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "HV_24V_OUT"
-			(at 209.55 123.6979 0)
+		(property "Value" "HV_IN"
+			(at 36.83 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
-			(at 212.09 125.73 0)
+		(property "Footprint" "LHRS_Connectors:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical"
+			(at 36.83 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6336,7 +6988,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 212.09 125.73 0)
+			(at 36.83 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6346,8 +6998,8 @@
 				)
 			)
 		)
-		(property "Description" "test point"
-			(at 207.01 125.73 0)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 36.83 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6356,14 +7008,28 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(property "LCSC" ""
+			(at 36.83 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "d979dc3b-382b-4da3-b864-d7eef22e4c12")
 		)
 		(pin "1"
-			(uuid "1081adc6-26eb-4f0e-8604-f0d4f60f6940")
+			(uuid "51483248-a0df-436f-b0f5-9705bce759aa")
 		)
 		(instances
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
-					(reference "TP16")
+					(reference "J11")
 					(unit 1)
 				)
 			)
@@ -6435,7 +7101,7 @@
 				)
 			)
 		)
-		(property "LCSC P/N" "C106218"
+		(property "LCSC P/N" "C14663"
 			(at 120.65 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -6447,6 +7113,17 @@
 			)
 		)
 		(property "Mouser P/N" "06035C472K4T2A"
+			(at 120.65 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 120.65 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -6511,7 +7188,7 @@
 			)
 		)
 		(pin "LV_GND" passive
-			(at 226.06 57.15 0)
+			(at 226.06 55.88 0)
 			(uuid "7b699dd9-e25c-4e54-9cd6-73e724747824")
 			(effects
 				(font
@@ -6541,7 +7218,7 @@
 			)
 		)
 		(pin "I_ADC" output
-			(at 226.06 50.8 0)
+			(at 226.06 49.53 0)
 			(uuid "b6beb78b-8936-4f8b-8e80-f2583ef4b7db")
 			(effects
 				(font
@@ -6551,7 +7228,7 @@
 			)
 		)
 		(pin "V_ADC" output
-			(at 226.06 53.34 0)
+			(at 226.06 52.07 0)
 			(uuid "485c177d-bb68-4a66-b4cd-4db2eea9f6e4")
 			(effects
 				(font
