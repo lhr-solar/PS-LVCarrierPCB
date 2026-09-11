@@ -31837,58 +31837,33 @@
 				)
 			)
 		)
-		(symbol "utsvt_connectors:CarCANConnector"
-			(pin_names
-				(offset 1.016)
-			)
+		(symbol "lhrs_connectors:CAN_NANO_01x03"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "J"
-				(at 0 7.874 0)
+				(at 3.81 0.508 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
-						(size 1.524 1.524)
+						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "CarCANConnector"
-				(at 0 5.588 0)
+			(property "Value" "CAN_NANO_01x03"
+				(at 1.016 -1.27 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
-						(size 1.524 1.524)
+						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "UTSVT_Connectors:Molex_Nano-Fit_105309-xx02_1x02_P2.50mm_Vertical"
-				(at 0 -8.89 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Datasheet" "https://www.digikey.com/en/products/detail/molex/1053091102/7693146"
-				(at 3.81 7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Description" "Connector"
+			(property "Footprint" "LHRS_Connectors:Molex_Nano-Fit_105309-xx03_1x03_P2.50mm_Vertical"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -31899,7 +31874,7 @@
 					)
 				)
 			)
-			(property "P/N" "1053091102"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -31910,23 +31885,43 @@
 					)
 				)
 			)
-			(symbol "CarCANConnector_0_1"
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "P/N" "1053091103"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "CAN_NANO_01x03_1_1"
 				(rectangle
-					(start -3.81 3.81)
-					(end 3.81 -3.81)
+					(start 0 -5.08)
+					(end 8.89 -17.78)
 					(stroke
-						(width 0)
-						(type solid)
+						(width 0.254)
+						(type default)
 					)
 					(fill
 						(type background)
 					)
 				)
-			)
-			(symbol "CarCANConnector_1_1"
 				(pin bidirectional line
-					(at 8.89 2.54 180)
-					(length 5.08)
+					(at -2.54 -7.62 0)
+					(length 2.54)
 					(name "CAN_H"
 						(effects
 							(font
@@ -31943,8 +31938,8 @@
 					)
 				)
 				(pin bidirectional line
-					(at 8.89 -2.54 180)
-					(length 5.08)
+					(at -2.54 -11.43 0)
+					(length 2.54)
 					(name "CAN_L"
 						(effects
 							(font
@@ -31953,6 +31948,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -2.54 -15.24 0)
+					(length 2.54)
+					(name "SHIELD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -32138,6 +32151,16 @@
 	)
 	(wire
 		(pts
+			(xy 110.49 149.86) (xy 113.03 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32311da3-8da2-4e45-a14c-d893aef7391d")
+	)
+	(wire
+		(pts
 			(xy 100.33 91.44) (xy 100.33 93.98)
 		)
 		(stroke
@@ -32145,6 +32168,16 @@
 			(type default)
 		)
 		(uuid "34e9e19a-645e-4817-a53b-11ea4ec15937")
+	)
+	(wire
+		(pts
+			(xy 110.49 146.05) (xy 113.03 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3571cbf0-1ca8-4ae9-8bd1-836c54dccc51")
 	)
 	(wire
 		(pts
@@ -32465,6 +32498,16 @@
 			(type default)
 		)
 		(uuid "f1545d5e-e8b8-4f5b-9625-3f5248400e82")
+	)
+	(wire
+		(pts
+			(xy 111.76 153.67) (xy 113.03 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5cc896a-b63d-4738-b53e-5a8e02500146")
 	)
 	(wire
 		(pts
@@ -33625,6 +33668,30 @@
 			"gEBAICAQEAgMPQL/D3SdeAReOj/fAAAAAElFTkSuQmCC"
 		)
 	)
+	(global_label "SHIELD"
+		(shape input)
+		(at 111.76 153.67 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "25852b26-126f-4606-a44a-c40873e6ea64")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 102.1829 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(hierarchical_label "3.3v"
 		(shape input)
 		(at 165.1 90.17 0)
@@ -33737,7 +33804,7 @@
 	)
 	(hierarchical_label "CAN_L"
 		(shape bidirectional)
-		(at 104.14 148.59 180)
+		(at 110.49 149.86 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -33759,7 +33826,7 @@
 	)
 	(hierarchical_label "CAN_H"
 		(shape bidirectional)
-		(at 104.14 143.51 180)
+		(at 110.49 146.05 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -33811,6 +33878,102 @@
 			(justify left)
 		)
 		(uuid "f97194eb-8b04-459a-bd92-5670cfc15c32")
+	)
+	(symbol
+		(lib_id "lhrs_connectors:CAN_NANO_01x03")
+		(at 115.57 138.43 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0433c5f6-2686-4fb4-805b-3407420b0f80")
+		(property "Reference" "J11"
+			(at 125.73 148.5899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CAN_NANO_01x03"
+			(at 125.73 151.1299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "LHRS_Connectors:Molex_Nano-Fit_105309-xx03_1x03_P2.50mm_Vertical"
+			(at 115.57 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 115.57 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "1053091103"
+			(at 115.57 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d0bf268d-64f2-48c1-b926-d90053e89b03")
+		)
+		(pin "2"
+			(uuid "6fb2b91a-3a22-442d-a4e1-2c7b747d48bc")
+		)
+		(pin "3"
+			(uuid "c0123eb5-6642-4787-a23c-624a94913228")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f0804b6d-ee3f-4784-b794-2afd95f68c58"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -34057,120 +34220,6 @@
 			(project "CAN_Transceiver"
 				(path "/a09f9696-80ee-4697-8aaa-225f287b667b"
 					(reference "C4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "utsvt_connectors:CarCANConnector")
-		(at 113.03 146.05 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3228d9c9-dc43-4354-be40-8d67a3ee29f5")
-		(property "Reference" "J11"
-			(at 113.03 137.16 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "CarCANConnector"
-			(at 113.03 139.7 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "UTSVT_Connectors:Molex_Nano-Fit_105309-xx02_1x02_P2.50mm_Vertical"
-			(at 113.03 154.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/molex/1053091102/7693146"
-			(at 109.22 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Description" "Connector"
-			(at 113.03 146.05 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "P/N" "1053091102"
-			(at 113.03 146.05 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Assemble" "N"
-			(at 113.03 146.05 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 113.03 146.05 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "db3c436d-ba20-46d7-93a5-a94fb97d8e4d")
-		)
-		(pin "1"
-			(uuid "7c1979c6-36a8-46a5-afab-195818378498")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f0804b6d-ee3f-4784-b794-2afd95f68c58"
-					(reference "J11")
 					(unit 1)
 				)
 			)

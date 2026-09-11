@@ -777,158 +777,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:Fuse"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "F"
-				(at 2.032 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Fuse"
-				(at -1.905 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Fuse"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "fuse"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "*Fuse*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Fuse_0_1"
-				(rectangle
-					(start -0.762 -2.54)
-					(end 0.762 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Fuse_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:LED"
 			(pin_numbers
 				(hide yes)
@@ -2768,6 +2616,12 @@
 		(uuid "49f7a4b1-6bba-46be-a18b-69bead406b04")
 	)
 	(junction
+		(at 62.23 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4f07f120-724f-4d57-bb3b-f7e2b01c03e0")
+	)
+	(junction
 		(at 82.55 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2790,12 +2644,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7988335f-d71e-4879-9f53-7c023d36c8e0")
-	)
-	(junction
-		(at 62.23 43.18)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8964b7c1-0a1f-4731-b7a2-dc7e29afecde")
 	)
 	(junction
 		(at 137.16 53.34)
@@ -3389,7 +3237,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 43.18) (xy 54.61 43.18)
+			(xy 52.07 43.18) (xy 62.23 43.18)
 		)
 		(stroke
 			(width 0)
@@ -3467,7 +3315,7 @@
 		)
 		(uuid "15a43277-2983-45e8-af82-e0e93fc25995")
 	)
-	(label "HV_V_OUT"
+	(label "HV_OUT_V"
 		(at 227.33 52.07 0)
 		(effects
 			(font
@@ -3497,7 +3345,7 @@
 		)
 		(uuid "b93ceb84-0267-44a8-a73b-a4dbb0ec8ca0")
 	)
-	(label "HV_I_OUT"
+	(label "HV_OUT_I"
 		(at 227.33 49.53 0)
 		(effects
 			(font
@@ -3526,6 +3374,17 @@
 			(justify left bottom)
 		)
 		(uuid "fce60cae-3b17-4940-9a62-9780c4d5dc05")
+	)
+	(hierarchical_label "HV_IN-"
+		(shape output)
+		(at 38.1 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "06408839-d5b6-4fcb-b956-cd7dd9d4e40a")
 	)
 	(hierarchical_label "HV_DCDC_TEMP"
 		(shape output)
@@ -3626,6 +3485,17 @@
 		)
 		(uuid "9e354401-9531-45e0-98f5-905cc13e2299")
 	)
+	(hierarchical_label "HV_OUT+"
+		(shape output)
+		(at 54.61 77.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "aa84c47c-14fb-4458-98b0-90d07f597e28")
+	)
 	(hierarchical_label "LV_GND"
 		(shape input)
 		(at 233.68 139.7 270)
@@ -3648,6 +3518,17 @@
 		)
 		(uuid "b4f5b5cb-8a67-477e-bd91-8aa0fc4bf9ce")
 	)
+	(hierarchical_label "HV_OUT-"
+		(shape output)
+		(at 54.61 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c69a408f-5a13-4bef-863a-e862306d061c")
+	)
 	(hierarchical_label "HV_24V_OUT"
 		(shape output)
 		(at 189.23 128.27 0)
@@ -3659,9 +3540,9 @@
 		)
 		(uuid "e045e849-7523-436e-8e9c-8892df6ec8dd")
 	)
-	(hierarchical_label "HV_IN"
+	(hierarchical_label "HV_IN+"
 		(shape output)
-		(at 41.91 76.2 0)
+		(at 38.1 77.47 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4227,7 +4108,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 53.34 78.74 180)
+		(at 49.53 80.01 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4238,7 +4119,7 @@
 		(fields_autoplaced yes)
 		(uuid "317e7d16-76e7-4e96-b758-995090bc7f34")
 		(property "Reference" "J7"
-			(at 53.34 69.85 0)
+			(at 49.53 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4248,7 +4129,7 @@
 			)
 		)
 		(property "Value" "HV_IN"
-			(at 53.34 72.39 0)
+			(at 49.53 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4258,7 +4139,7 @@
 			)
 		)
 		(property "Footprint" "LHRS_Connectors:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical"
-			(at 53.34 78.74 0)
+			(at 49.53 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4269,7 +4150,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 78.74 0)
+			(at 49.53 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4280,7 +4161,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 53.34 78.74 0)
+			(at 49.53 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4291,7 +4172,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 53.34 78.74 0)
+			(at 49.53 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5448,108 +5329,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Fuse")
-		(at 58.42 43.18 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9b8b7a05-f518-4e59-b0a3-251a7a309115")
-		(property "Reference" "F5"
-			(at 58.42 36.83 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "5A"
-			(at 58.42 39.37 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LHRS_Power:Fuse-3557-2"
-			(at 58.42 44.958 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 58.42 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Fuse"
-			(at 58.42 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C352820"
-			(at 58.42 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 58.42 43.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "4b5f5e48-dc94-470b-bc32-fd4ccaf2056d")
-		)
-		(pin "1"
-			(uuid "adb7d781-247d-4332-bba1-f3c7871c1064")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
-					(reference "F5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:LED")
 		(at 255.27 135.89 90)
 		(unit 1)
@@ -6149,7 +5928,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "OBBB Footprints:lvc_dcdc"
 			(at 95.25 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -6957,7 +6736,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 36.83 78.74 180)
+		(at 33.02 80.01 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6968,7 +6747,7 @@
 		(fields_autoplaced yes)
 		(uuid "f67d2fc4-9570-4c7f-9c17-40db550edb73")
 		(property "Reference" "J6"
-			(at 36.83 69.85 0)
+			(at 33.02 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6978,7 +6757,7 @@
 			)
 		)
 		(property "Value" "HV_IN"
-			(at 36.83 72.39 0)
+			(at 33.02 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6988,7 +6767,7 @@
 			)
 		)
 		(property "Footprint" "LHRS_Connectors:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical"
-			(at 36.83 78.74 0)
+			(at 33.02 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6999,7 +6778,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 36.83 78.74 0)
+			(at 33.02 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7010,7 +6789,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 36.83 78.74 0)
+			(at 33.02 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7021,7 +6800,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 36.83 78.74 0)
+			(at 33.02 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
