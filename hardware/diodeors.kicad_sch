@@ -706,12 +706,6 @@
 		(uuid "044a010f-3ceb-4655-be00-a9e950457a3f")
 	)
 	(junction
-		(at 95.25 148.59)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "363b92c4-5c2f-48d9-988d-15282682585f")
-	)
-	(junction
 		(at 95.25 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -765,12 +759,6 @@
 		(color 0 0 0 0)
 		(uuid "f794b6ef-df18-4221-bcde-3eb0242f6b9b")
 	)
-	(junction
-		(at 95.25 102.87)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f8e32bf6-05c5-4089-97b1-867f5b1d6945")
-	)
 	(wire
 		(pts
 			(xy 95.25 57.15) (xy 107.95 57.15)
@@ -823,16 +811,6 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 148.59) (xy 107.95 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3068d980-545b-4a73-a440-74367229d19d")
-	)
-	(wire
-		(pts
 			(xy 172.72 54.61) (xy 180.34 54.61)
 		)
 		(stroke
@@ -840,16 +818,6 @@
 			(type default)
 		)
 		(uuid "3808e11f-2a77-48f1-be0a-1af099de070b")
-	)
-	(wire
-		(pts
-			(xy 71.12 102.87) (xy 95.25 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c66944b-a7f5-4850-8d39-5de7d4679627")
 	)
 	(wire
 		(pts
@@ -913,7 +881,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 148.59) (xy 95.25 148.59)
+			(xy 71.12 148.59) (xy 107.95 148.59)
 		)
 		(stroke
 			(width 0)
@@ -993,7 +961,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 102.87) (xy 107.95 102.87)
+			(xy 71.12 102.87) (xy 107.95 102.87)
 		)
 		(stroke
 			(width 0)
@@ -2431,7 +2399,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "HV24V_LED"
+		(property "Value" "DIODE_VOUT_LED"
 			(at 184.15 70.1674 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2507,96 +2475,6 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
 					(reference "D15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 95.25 102.87 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "be6cf6fd-27b6-47c7-bfee-2eaed126b5be")
-		(property "Reference" "TP27"
-			(at 92.71 98.2979 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "PS_DIODE_EN"
-			(at 92.71 100.8379 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm_LowProfile"
-			(at 90.17 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 95.25 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 95.25 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1df53505-900f-4e82-bf24-7235e2383adc")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
-					(reference "TP27")
 					(unit 1)
 				)
 			)
@@ -2722,96 +2600,6 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
 					(reference "R75")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 95.25 148.59 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ead1d552-21df-4e07-ba69-91a9b5ef3131")
-		(property "Reference" "TP28"
-			(at 92.71 144.0179 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "HV_DIODE_EN"
-			(at 92.71 146.5579 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm_LowProfile"
-			(at 90.17 148.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 148.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 95.25 148.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 95.25 148.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ea0b54fe-b6bf-4a68-a794-1dec28bfe7ae")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/1bb70e84-a5b9-4a48-ae28-663d6ef6e6b1"
-					(reference "TP28")
 					(unit 1)
 				)
 			)
