@@ -63,19 +63,13 @@
           "min_clearance": 0.5,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
-          "pad_connection": 2,
+          "pad_connection": 1,
           "remove_islands": 0,
           "thermal_relief_gap": 0.5,
           "thermal_relief_spoke_width": 0.5
         }
       },
-      "diff_pair_dimensions": [
-        {
-          "gap": 0.0,
-          "via_gap": 0.0,
-          "width": 0.0
-        }
-      ],
+      "diff_pair_dimensions": [],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -146,22 +140,22 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.1,
+        "min_clearance": 0.0,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.2,
+        "min_copper_edge_clearance": 0.5,
         "min_groove_width": 0.0,
-        "min_hole_clearance": 0.28,
-        "min_hole_to_hole": 0.45,
+        "min_hole_clearance": 0.25,
+        "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
         "min_resolved_spokes": 2,
-        "min_silk_clearance": 0.15,
-        "min_text_height": 1.0,
-        "min_text_thickness": 0.15,
-        "min_through_hole_diameter": 0.2,
-        "min_track_width": 0.1,
-        "min_via_annular_width": 0.15,
-        "min_via_diameter": 0.4,
+        "min_silk_clearance": 0.0,
+        "min_text_height": 0.8,
+        "min_text_thickness": 0.08,
+        "min_through_hole_diameter": 0.3,
+        "min_track_width": 0.2,
+        "min_via_annular_width": 0.1,
+        "min_via_diameter": 0.5,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -209,10 +203,7 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [
-        0.0,
-        0.15
-      ],
+      "track_widths": [],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -239,12 +230,7 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [
-        {
-          "diameter": 0.0,
-          "drill": 0.0
-        }
-      ],
+      "via_dimensions": [],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -257,86 +243,7 @@
       "sch_revision": "A"
     },
     "layer_pairs": [],
-    "layer_presets": [
-      {
-        "activeLayer": -2,
-        "flipBoard": false,
-        "layers": [
-          0,
-          1,
-          2,
-          9,
-          13,
-          17,
-          25,
-          29,
-          31
-        ],
-        "name": "1",
-        "renderLayers": [
-          "vias",
-          "footprint_text",
-          "footprint_anchors",
-          "ratsnest",
-          "grid",
-          "footprints_front",
-          "footprints_back",
-          "footprint_values",
-          "footprint_references",
-          "tracks",
-          "drc_errors",
-          "drawing_sheet",
-          "bitmaps",
-          "pads",
-          "zones",
-          "drc_warnings",
-          "drc_exclusions",
-          "locked_item_shadows",
-          "conflict_shadows",
-          "shapes",
-          "board_outline_area",
-          "ly_points"
-        ]
-      },
-      {
-        "activeLayer": -2,
-        "flipBoard": false,
-        "layers": [
-          0,
-          1,
-          9,
-          13,
-          17,
-          25,
-          31
-        ],
-        "name": "2",
-        "renderLayers": [
-          "vias",
-          "footprint_text",
-          "footprint_anchors",
-          "ratsnest",
-          "grid",
-          "footprints_front",
-          "footprints_back",
-          "footprint_values",
-          "footprint_references",
-          "tracks",
-          "drc_errors",
-          "drawing_sheet",
-          "bitmaps",
-          "pads",
-          "zones",
-          "drc_warnings",
-          "drc_exclusions",
-          "locked_item_shadows",
-          "conflict_shadows",
-          "shapes",
-          "board_outline_area",
-          "ly_points"
-        ]
-      }
-    ],
+    "layer_presets": [],
     "viewports": []
   },
   "boards": [],
@@ -619,7 +526,6 @@
       "netlist": "",
       "plot": "",
       "specctra_dsn": "",
-      "step": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -658,7 +564,7 @@
           "show": false
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Value",
           "name": "Value",
           "show": true
@@ -902,15 +808,9 @@
           "label": "Price",
           "name": "Price",
           "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Digikey P/N",
-          "name": "Digikey P/N",
-          "show": false
         }
       ],
-      "filter_string": "",
+      "filter_string": "U5",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
@@ -918,10 +818,6 @@
       "sort_field": "Reference"
     },
     "bus_aliases": {
-      "CC": [
-        "CHG_PG",
-        "CHG_CC"
-      ],
       "CTRL_INPUTS": [
         "RETRY",
         "DISABLE1",
@@ -937,32 +833,13 @@
         "FAN_B_TACH",
         "FAN_A_TACH"
       ],
-      "HSS": [
-        "HSS_SCLK",
-        "MISO",
-        "HSS_SNS",
-        "DI_MODE",
-        "LIMP_HOME"
-      ],
-      "HV_IN_ADC": [
-        "HV_IN_I",
-        "HV_IN_V"
-      ],
-      "HV_OUT_ADC": [
-        "HV_OUT_I",
-        "HV_OUT_V"
-      ],
       "HV_VSNS": [
         "HV_VSNS+",
         "HV_VSNS-"
       ],
       "I2C": [
-        "I2C_SCL",
-        "I2C_SDA"
-      ],
-      "LV_ADC": [
-        "LV_I",
-        "LV_V"
+        "SDA",
+        "SCL"
       ],
       "SPI_DISPLAY": [
         "SCK",
@@ -980,10 +857,6 @@
         "FAULT1",
         "FAULT2",
         "CASOUT"
-      ],
-      "SUPP_ADC": [
-        "SUPP_I",
-        "SUPP_V"
       ]
     },
     "connection_grid_size": 50.0,
@@ -1026,7 +899,7 @@
         "uuid": "9bab2d9d-20f3-40ef-8545-e1299efec47e"
       }
     ],
-    "used_designators": "R61,R66-68,R82-84,R144,J11,J16,C57,C114,TP25,TP55,Q10,D16",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
