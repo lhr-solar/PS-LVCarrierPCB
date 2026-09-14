@@ -1614,6 +1614,10 @@
 		(color 0 0 0 0)
 		(uuid "fa0a4263-21be-4b4a-95d2-80b61010f5bb")
 	)
+	(no_connect
+		(at 44.45 180.34)
+		(uuid "2ef43f36-127c-4949-84fb-89de078a56de")
+	)
 	(bus_entry
 		(at 170.18 135.89)
 		(size 2.54 -2.54)
@@ -1821,16 +1825,6 @@
 			(type default)
 		)
 		(uuid "2a2eaf95-48ca-4ba1-9cff-2cd5df6d3c8b")
-	)
-	(wire
-		(pts
-			(xy 44.45 180.34) (xy 57.15 180.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2c26227e-6c4c-4011-bebb-90518ade4119")
 	)
 	(wire
 		(pts
@@ -2562,16 +2556,6 @@
 		)
 		(uuid "20ab288b-aad5-452f-b78f-92edc6c4c836")
 	)
-	(label "LV_ENABLE-"
-		(at 57.15 180.34 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "32609709-0255-409b-87f5-81e7c6dc0b52")
-	)
 	(label "HV_OVLO"
 		(at 73.66 50.8 180)
 		(effects
@@ -2773,7 +2757,7 @@
 		)
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape bidirectional)
 		(at 257.81 90.17 270)
 		(effects
 			(font
@@ -2784,7 +2768,7 @@
 		(uuid "01210317-3e47-4bb6-b12c-e168e5edade7")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape bidirectional)
 		(at 114.3 52.07 270)
 		(effects
 			(font
@@ -2795,7 +2779,7 @@
 		(uuid "06003289-8ef6-487b-8495-6875657c5b51")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape bidirectional)
 		(at 163.83 173.99 270)
 		(effects
 			(font
@@ -2806,7 +2790,7 @@
 		(uuid "152bd097-d11f-4aca-835c-47222d86f15a")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape bidirectional)
 		(at 231.14 142.24 270)
 		(effects
 			(font
@@ -2861,7 +2845,7 @@
 		(uuid "3f774c92-7850-491a-b890-12dca21f89a9")
 	)
 	(hierarchical_label "LV_GND"
-		(shape passive)
+		(shape bidirectional)
 		(at 59.69 130.81 270)
 		(effects
 			(font
@@ -2872,7 +2856,7 @@
 		(uuid "456d8f9e-9eb3-440d-a63b-3b70fd116c63")
 	)
 	(hierarchical_label "LV_GND"
-		(shape passive)
+		(shape bidirectional)
 		(at 194.31 93.98 270)
 		(effects
 			(font
@@ -2883,7 +2867,7 @@
 		(uuid "472dadc0-208b-4ed0-a41b-a635617664fe")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape bidirectional)
 		(at 189.23 88.9 270)
 		(effects
 			(font
@@ -2894,7 +2878,7 @@
 		(uuid "48bfcf01-73e1-478a-8dc7-7961e62b278b")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape bidirectional)
 		(at 124.46 90.17 270)
 		(effects
 			(font
@@ -2905,7 +2889,7 @@
 		(uuid "51c4c0ed-1235-4aad-b0b4-d567713698fc")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape bidirectional)
 		(at 102.87 130.81 270)
 		(effects
 			(font
@@ -2938,7 +2922,7 @@
 		(uuid "75b6a846-14a4-4e36-ab97-452a474c58b3")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape bidirectional)
 		(at 114.3 90.17 270)
 		(effects
 			(font
@@ -2949,7 +2933,7 @@
 		(uuid "7a0ad9e3-6a39-42c5-b754-e5dbd8577ce9")
 	)
 	(hierarchical_label "LV_GND"
-		(shape passive)
+		(shape bidirectional)
 		(at 207.01 99.06 270)
 		(effects
 			(font
@@ -2971,7 +2955,7 @@
 		(uuid "a065451d-3101-4685-824d-849180c62ddd")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape bidirectional)
 		(at 151.13 92.71 270)
 		(effects
 			(font
@@ -2982,7 +2966,7 @@
 		(uuid "ad264d2d-e1cd-438f-bddd-591bdc057939")
 	)
 	(hierarchical_label "LV_GND"
-		(shape passive)
+		(shape bidirectional)
 		(at 63.5 60.96 270)
 		(effects
 			(font
@@ -2993,7 +2977,7 @@
 		(uuid "b169c2d6-0164-4371-8a18-585d49a28df1")
 	)
 	(hierarchical_label "LV_GND"
-		(shape passive)
+		(shape bidirectional)
 		(at 68.58 160.02 270)
 		(effects
 			(font
@@ -3004,7 +2988,7 @@
 		(uuid "b53fe68c-0776-40fd-8b97-36c3e5e17262")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape bidirectional)
 		(at 163.83 142.24 270)
 		(effects
 			(font
@@ -3015,7 +2999,7 @@
 		(uuid "bf537d20-c07a-4faa-810e-36e0f2b6b38a")
 	)
 	(hierarchical_label "LV_GND"
-		(shape passive)
+		(shape bidirectional)
 		(at 63.5 99.06 270)
 		(effects
 			(font

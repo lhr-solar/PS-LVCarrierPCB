@@ -1021,7 +1021,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 38.1) (xy 160.02 38.1)
+			(xy 171.45 38.1) (xy 172.72 38.1)
 		)
 		(stroke
 			(width 0)
@@ -1233,7 +1233,7 @@
 	)
 	(global_label "DIODE_EN"
 		(shape input)
-		(at 160.02 38.1 0)
+		(at 172.72 38.1 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1243,7 +1243,7 @@
 		)
 		(uuid "ed27b524-71f9-41a9-ad3c-c60150356e74")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 172.0766 38.1 0)
+			(at 184.7766 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1278,7 +1278,7 @@
 		(uuid "1acb4ea5-d7d9-46a1-9b46-fc295222a423")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape passive)
 		(at 180.34 71.12 270)
 		(effects
 			(font
@@ -1311,7 +1311,7 @@
 		(uuid "6c45f99d-5bb6-488b-9b69-ff0484cddf78")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape passive)
 		(at 147.32 162.56 270)
 		(effects
 			(font
@@ -1333,7 +1333,7 @@
 		(uuid "8e85f6d2-b1f8-4c0f-8eae-775714ba3bd8")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape passive)
 		(at 147.32 71.12 270)
 		(effects
 			(font
@@ -1345,7 +1345,7 @@
 	)
 	(hierarchical_label "PS_12V_FUSED"
 		(shape input)
-		(at 151.13 35.56 0)
+		(at 163.83 35.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1355,7 +1355,7 @@
 		(uuid "a2ec325b-bfb5-4270-bba9-b1bd062ba7de")
 	)
 	(hierarchical_label "LV_GND"
-		(shape input)
+		(shape passive)
 		(at 147.32 116.84 270)
 		(effects
 			(font
@@ -2298,7 +2298,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 146.05 38.1 180)
+		(at 158.75 38.1 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2309,7 +2309,7 @@
 		(fields_autoplaced yes)
 		(uuid "a385eba0-3293-448d-8cf6-0d3632e23ce7")
 		(property "Reference" "J16"
-			(at 146.05 29.21 0)
+			(at 158.75 29.21 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2318,8 +2318,8 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02"
-			(at 146.05 31.75 0)
+		(property "Value" "in the off chance no supp pwr"
+			(at 158.75 31.75 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2329,7 +2329,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical"
-			(at 146.05 38.1 0)
+			(at 158.75 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2340,7 +2340,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 146.05 38.1 0)
+			(at 158.75 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2351,7 +2351,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 146.05 38.1 0)
+			(at 158.75 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2607,7 +2607,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 154.94 38.1 90)
+		(at 167.64 38.1 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2617,7 +2617,7 @@
 		(dnp no)
 		(uuid "f289fada-6e20-44eb-8fc9-59d16826c7b6")
 		(property "Reference" "R144"
-			(at 152.654 40.894 90)
+			(at 165.354 40.894 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2628,7 +2628,7 @@
 			)
 		)
 		(property "Value" "47k"
-			(at 152.654 43.2054 90)
+			(at 165.354 43.2054 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2639,7 +2639,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 154.94 39.878 90)
+			(at 167.64 39.878 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2650,7 +2650,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.com/ProductDetail/Vishay/CRCW06031K00FKEI?qs=%252B6g0mu59x7LmDUigK4duvw%3D%3D&srsltid=AfmBOoq-qbpfAjzhtzCNjmKpq35FQ1BHTaIyFUz28_1v8HZaKbIrwYgN"
-			(at 154.94 38.1 0)
+			(at 167.64 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2661,7 +2661,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 154.94 38.1 0)
+			(at 167.64 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2672,7 +2672,7 @@
 			)
 		)
 		(property "P/N" "CRCW06031K00FKEI "
-			(at 154.94 38.1 0)
+			(at 167.64 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2683,7 +2683,7 @@
 			)
 		)
 		(property "Assemble" "Y"
-			(at 154.94 38.1 0)
+			(at 167.64 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2694,7 +2694,7 @@
 			)
 		)
 		(property "LCSC P/N" ""
-			(at 154.94 38.1 0)
+			(at 167.64 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2705,7 +2705,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 154.94 38.1 0)
+			(at 167.64 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

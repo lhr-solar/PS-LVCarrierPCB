@@ -1478,16 +1478,6 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 92.71) (xy 163.83 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c421e708-a40b-4ee9-a412-60c9d17ae8b2")
-	)
-	(wire
-		(pts
 			(xy 78.74 93.98) (xy 78.74 97.79)
 		)
 		(stroke
@@ -1515,16 +1505,6 @@
 			(type default)
 		)
 		(uuid "d34d83bb-7f9e-43ea-884a-c18c522fb24a")
-	)
-	(wire
-		(pts
-			(xy 179.07 92.71) (xy 179.07 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ec5d9332-b389-4fc4-aa44-cf070e4b521c")
 	)
 	(wire
 		(pts
@@ -6068,16 +6048,6 @@
 		)
 		(uuid "7e349823-381a-41fe-a6e1-eab835f7ec3a")
 	)
-	(label "FAN_B_TACH"
-		(at 179.07 95.25 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "91675434-3b8c-4e26-9e6f-7318de3e9354")
-	)
 	(label "FAN_A_TACH"
 		(at 166.37 39.37 180)
 		(effects
@@ -6107,16 +6077,6 @@
 			(justify left bottom)
 		)
 		(uuid "b82329f6-a10c-4381-8da9-14cd9f4be92a")
-	)
-	(label "FAN_A_TACH"
-		(at 163.83 95.25 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "bc4c47c2-4b57-4121-bd45-8a22d6d90aa7")
 	)
 	(label "FAN_B_PWM"
 		(at 177.8 77.47 0)
@@ -6645,96 +6605,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 179.07 92.71 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "34b0f396-1935-4ace-aff7-64d18753a953")
-		(property "Reference" "TP54"
-			(at 181.61 88.1379 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "FAN_B_TACH"
-			(at 181.61 90.6779 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm_LowProfile"
-			(at 184.15 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 184.15 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 179.07 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 179.07 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "019272a9-8274-4f0a-91fb-b5ba9e396fb4")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f9fba8b7-0cf3-4419-9ae4-4e9c55277e07"
-					(reference "TP54")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3V3")
 		(at 130.81 29.21 0)
 		(unit 1)
@@ -6989,96 +6859,6 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f9fba8b7-0cf3-4419-9ae4-4e9c55277e07"
 					(reference "#PWR046")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 163.83 92.71 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6d3fe330-70e9-4df4-8da2-7b720fffae55")
-		(property "Reference" "TP53"
-			(at 166.37 88.1379 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "FAN_A_TACH"
-			(at 166.37 90.6779 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm_LowProfile"
-			(at 168.91 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 168.91 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 163.83 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 163.83 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "152e36a3-c1c9-4e6a-af15-30f3548e1b9f")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f9fba8b7-0cf3-4419-9ae4-4e9c55277e07"
-					(reference "TP53")
 					(unit 1)
 				)
 			)
