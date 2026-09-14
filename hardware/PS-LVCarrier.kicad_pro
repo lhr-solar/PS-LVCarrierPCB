@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.8,
-          "height": 1.27,
-          "width": 2.54
+          "drill": 1.9,
+          "height": 2.7,
+          "width": 2.7
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -63,13 +63,19 @@
           "min_clearance": 0.5,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
-          "pad_connection": 1,
+          "pad_connection": 2,
           "remove_islands": 0,
           "thermal_relief_gap": 0.5,
           "thermal_relief_spoke_width": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -203,7 +209,13 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0,
+        0.2,
+        1.0,
+        2.0,
+        4.0
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -230,7 +242,12 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -564,7 +581,7 @@
           "show": false
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Value",
           "name": "Value",
           "show": true
@@ -588,7 +605,7 @@
           "show": false
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
           "show": true
@@ -808,9 +825,15 @@
           "label": "Price",
           "name": "Price",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Digikey P/N",
+          "name": "Digikey P/N",
+          "show": false
         }
       ],
-      "filter_string": "U5",
+      "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
@@ -818,6 +841,10 @@
       "sort_field": "Reference"
     },
     "bus_aliases": {
+      "CC": [
+        "CHG_PG",
+        "CHG_CC"
+      ],
       "CTRL_INPUTS": [
         "RETRY",
         "DISABLE1",
@@ -833,13 +860,33 @@
         "FAN_B_TACH",
         "FAN_A_TACH"
       ],
+      "HSS": [
+        "HSS_SCLK",
+        "MISO",
+        "HSS_SNS",
+        "DI_MODE",
+        "LIMP_HOME",
+        "HSS_MOSI"
+      ],
+      "HV_IN_ADC": [
+        "HV_IN_V",
+        "HV_IN_I"
+      ],
+      "HV_OUT_ADC": [
+        "HV_OUT_I",
+        "HV_OUT_V"
+      ],
       "HV_VSNS": [
         "HV_VSNS+",
         "HV_VSNS-"
       ],
       "I2C": [
-        "SDA",
-        "SCL"
+        "I2C_SDA",
+        "I2C_SCL"
+      ],
+      "LV_ADC": [
+        "LV_I",
+        "LV_V"
       ],
       "SPI_DISPLAY": [
         "SCK",
@@ -857,6 +904,10 @@
         "FAULT1",
         "FAULT2",
         "CASOUT"
+      ],
+      "SUPP_ADC": [
+        "SUPP_I",
+        "SUPP_V"
       ]
     },
     "connection_grid_size": 50.0,
@@ -1005,7 +1056,7 @@
     ],
     [
       "296654fd-4fbd-49cb-a2a3-d3a049f14f33",
-      "STM32G491VET"
+      "STM32G473VETx"
     ],
     [
       "f9fba8b7-0cf3-4419-9ae4-4e9c55277e07",

@@ -5,129 +5,6 @@
 	(uuid "ea41364a-cb46-477e-af05-9d8cf8ccb0a9")
 	(paper "A5")
 	(lib_symbols
-		(symbol "Connector:TestPoint"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.762)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "test point"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:C_Small"
 			(pin_numbers
 				(hide yes)
@@ -913,12 +790,6 @@
 		(uuid "0e7e9bfb-d254-4c4d-8805-6e1333bd646a")
 	)
 	(junction
-		(at 129.54 55.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2ffa8920-90b2-4667-9435-73455e9d8365")
-	)
-	(junction
 		(at 129.54 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -947,12 +818,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ced85d66-8c2b-436c-949e-6c4cd17ce3de")
-	)
-	(junction
-		(at 63.5 64.77)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d14f11bd-86d1-48bc-9af6-3e3ae25753b9")
 	)
 	(junction
 		(at 67.31 64.77)
@@ -1192,7 +1057,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 64.77) (xy 67.31 64.77)
+			(xy 59.69 64.77) (xy 67.31 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1219,16 +1084,6 @@
 			(type default)
 		)
 		(uuid "e634f449-6987-47ee-8657-c29b33aa3682")
-	)
-	(wire
-		(pts
-			(xy 59.69 64.77) (xy 63.5 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e724d8f6-00d0-4340-8c10-1610f118e573")
 	)
 	(wire
 		(pts
@@ -1482,104 +1337,6 @@
 				)
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251/72c78d2c-2a65-43a0-ad78-90d0e31c028b"
 					(reference "U9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 129.54 55.88 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "19708ca1-87a4-4b49-824a-73d4de983e35")
-		(property "Reference" "TP11"
-			(at 132.08 51.3079 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "I_ADC"
-			(at 132.08 53.8479 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm_LowProfile"
-			(at 134.62 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 134.62 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 129.54 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 129.54 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "161ceba8-561f-4610-a5b7-0b9d56d068ce")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/10a2a81d-fff8-4091-b6ef-9685e4bd9514/a12cc91e-7ffe-4aca-bb00-a063147b4e50"
-					(reference "TP41")
-					(unit 1)
-				)
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/b521073a-8409-41eb-9cdc-cffa14c92055/37ef47ed-2aee-4ae2-b946-13f1b7a76e72"
-					(reference "TP11")
-					(unit 1)
-				)
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251/72c78d2c-2a65-43a0-ad78-90d0e31c028b"
-					(reference "TP24")
 					(unit 1)
 				)
 			)
@@ -2558,104 +2315,6 @@
 				)
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251/72c78d2c-2a65-43a0-ad78-90d0e31c028b"
 					(reference "#PWR032")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 63.5 64.77 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e6b3aa19-ed3d-4918-9082-6013d11d5f0d")
-		(property "Reference" "TP10"
-			(at 60.96 60.1979 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "V_ADC"
-			(at 60.96 62.7379 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm_LowProfile"
-			(at 58.42 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 58.42 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 63.5 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 63.5 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "81d6f326-b020-4c40-8f8e-ccab44dd87b9")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/10a2a81d-fff8-4091-b6ef-9685e4bd9514/a12cc91e-7ffe-4aca-bb00-a063147b4e50"
-					(reference "TP40")
-					(unit 1)
-				)
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/b521073a-8409-41eb-9cdc-cffa14c92055/37ef47ed-2aee-4ae2-b946-13f1b7a76e72"
-					(reference "TP10")
-					(unit 1)
-				)
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251/72c78d2c-2a65-43a0-ad78-90d0e31c028b"
-					(reference "TP23")
 					(unit 1)
 				)
 			)
