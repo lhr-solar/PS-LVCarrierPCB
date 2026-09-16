@@ -6150,6 +6150,17 @@
 	)
 	(hierarchical_label "LV_GND"
 		(shape passive)
+		(at 176.53 57.15 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "262f2053-7232-4b37-bee1-e3011d43b2d6")
+	)
+	(hierarchical_label "LV_GND"
+		(shape passive)
 		(at 130.81 67.31 270)
 		(effects
 			(font
@@ -6203,6 +6214,17 @@
 		)
 		(uuid "88a38fb9-049a-4c33-8950-89c5bd8d7f17")
 	)
+	(hierarchical_label "FAN+"
+		(shape input)
+		(at 176.53 49.53 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8c2319bf-b89a-4865-bb10-65cefc3bacd2")
+	)
 	(hierarchical_label "FAN_ALERT"
 		(shape output)
 		(at 92.71 96.52 0)
@@ -6227,7 +6249,7 @@
 	)
 	(hierarchical_label "FAN+"
 		(shape input)
-		(at 175.26 39.37 90)
+		(at 171.45 35.56 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6238,7 +6260,7 @@
 	)
 	(hierarchical_label "LV_GND"
 		(shape passive)
-		(at 175.26 46.99 270)
+		(at 171.45 43.18 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6859,6 +6881,98 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f9fba8b7-0cf3-4419-9ae4-4e9c55277e07"
 					(reference "#PWR046")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:C3D25170H")
+		(at 176.53 53.34 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7477b137-1f4a-4b1d-a515-5e87ca2912ae")
+		(property "Reference" "D50"
+			(at 179.07 50.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VSSAF522-M3/H"
+			(at 179.07 53.594 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "LHRS_Passives:SODFL5026X125N"
+			(at 172.085 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.wolfspeed.com/media/downloads/103/C3D25170H.pdf"
+			(at 176.53 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1700V, 25A, SiC Schottky Diode, TO-247"
+			(at 176.53 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 176.53 53.34 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4629b2ff-98ea-4040-a911-fbbdd0879738")
+		)
+		(pin "2"
+			(uuid "ff6e4054-7ef9-4030-95ab-f5ac2b493d1d")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f9fba8b7-0cf3-4419-9ae4-4e9c55277e07"
+					(reference "D50")
 					(unit 1)
 				)
 			)
@@ -7922,7 +8036,7 @@
 	)
 	(symbol
 		(lib_id "Diode:C3D25170H")
-		(at 175.26 43.18 270)
+		(at 171.45 39.37 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7932,7 +8046,7 @@
 		(dnp no)
 		(uuid "d86dfe11-a948-461b-a475-cb0b6077004d")
 		(property "Reference" "D46"
-			(at 177.8 40.64 90)
+			(at 173.99 36.83 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7943,7 +8057,7 @@
 			)
 		)
 		(property "Value" "VSSAF522-M3/H"
-			(at 177.8 43.434 90)
+			(at 173.99 39.624 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7954,7 +8068,7 @@
 			)
 		)
 		(property "Footprint" "LHRS_Passives:SODFL5026X125N"
-			(at 170.815 43.18 0)
+			(at 167.005 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7965,7 +8079,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.wolfspeed.com/media/downloads/103/C3D25170H.pdf"
-			(at 175.26 43.18 0)
+			(at 171.45 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7976,7 +8090,7 @@
 			)
 		)
 		(property "Description" "1700V, 25A, SiC Schottky Diode, TO-247"
-			(at 175.26 43.18 0)
+			(at 171.45 39.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7987,7 +8101,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 175.26 43.18 90)
+			(at 171.45 39.37 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
