@@ -443,6 +443,16 @@
 		)
 		(uuid "c826c8b3-f069-4ef3-ba55-55112f1cf481")
 	)
+	(wire
+		(pts
+			(xy 146.05 55.88) (xy 149.86 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e99a9389-5fdd-43ad-a282-063473d91235")
+	)
 	(bus
 		(pts
 			(xy 146.05 63.5) (xy 149.86 63.5)
@@ -474,6 +484,17 @@
 			(justify left)
 		)
 		(uuid "27d71f6a-fa91-4c46-bcb4-9e3d1da57ced")
+	)
+	(hierarchical_label "VS"
+		(shape input)
+		(at 149.86 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6795d110-7abe-450c-ad72-72b803c6ad92")
 	)
 	(hierarchical_label "HV_IN_VFAULT"
 		(shape output)
@@ -1079,7 +1100,7 @@
 				(justify left)
 			)
 		)
-		(pin "HV_IN" output
+		(pin "HV_IN" input
 			(at 105.41 58.42 180)
 			(uuid "8c6eefda-c39a-4bfc-8ae7-a5b2b600b38f")
 			(effects
@@ -1132,6 +1153,16 @@
 		(pin "HV_DCDC_EN" input
 			(at 146.05 68.58 0)
 			(uuid "53cd73b5-6c0c-49ee-9fda-6de22cf752c8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VS" input
+			(at 146.05 55.88 0)
+			(uuid "2652713a-9434-47a4-a760-b3cb08284cbe")
 			(effects
 				(font
 					(size 1.27 1.27)

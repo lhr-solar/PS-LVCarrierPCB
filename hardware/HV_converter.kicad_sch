@@ -2737,6 +2737,16 @@
 	)
 	(wire
 		(pts
+			(xy 226.06 40.64) (xy 229.87 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1dc33026-c484-4db7-8552-c72414e38d8e")
+	)
+	(wire
+		(pts
 			(xy 60.96 138.43) (xy 60.96 147.32)
 		)
 		(stroke
@@ -2747,7 +2757,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 125.73) (xy 189.23 128.27)
+			(xy 196.85 125.73) (xy 196.85 128.27)
 		)
 		(stroke
 			(width 0)
@@ -2947,7 +2957,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 138.43) (xy 189.23 139.7)
+			(xy 196.85 138.43) (xy 196.85 139.7)
 		)
 		(stroke
 			(width 0)
@@ -3489,8 +3499,19 @@
 		)
 		(uuid "482ada2c-6c5d-4495-808c-450df229f8db")
 	)
+	(hierarchical_label "VS"
+		(shape input)
+		(at 229.87 40.64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5580462d-3118-431d-9eee-5a1899c911cb")
+	)
 	(hierarchical_label "HV_IN"
-		(shape output)
+		(shape input)
 		(at 52.07 43.18 180)
 		(effects
 			(font
@@ -3568,7 +3589,7 @@
 	)
 	(hierarchical_label "HV_24V_OUT"
 		(shape output)
-		(at 189.23 128.27 0)
+		(at 196.85 128.27 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4624,7 +4645,7 @@
 	)
 	(symbol
 		(lib_id "power:Earth")
-		(at 189.23 139.7 0)
+		(at 196.85 139.7 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4634,7 +4655,7 @@
 		(dnp no)
 		(uuid "509ef6ba-264f-4f8e-bf32-3ff22393f184")
 		(property "Reference" "#PWR029"
-			(at 189.23 146.05 0)
+			(at 196.85 146.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4645,7 +4666,7 @@
 			)
 		)
 		(property "Value" "Earth"
-			(at 189.23 143.764 0)
+			(at 196.85 143.764 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4655,7 +4676,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 189.23 139.7 0)
+			(at 196.85 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4666,7 +4687,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 189.23 139.7 0)
+			(at 196.85 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4677,7 +4698,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"Earth\""
-			(at 189.23 139.7 0)
+			(at 196.85 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4701,7 +4722,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 189.23 125.73 0)
+		(at 196.85 125.73 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4712,7 +4733,7 @@
 		(fields_autoplaced yes)
 		(uuid "51159fd3-146b-4a4c-b694-40f2ea7ee38a")
 		(property "Reference" "TP20"
-			(at 191.77 121.1579 0)
+			(at 199.39 121.1579 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4723,7 +4744,7 @@
 			)
 		)
 		(property "Value" "HV_24V_OUT"
-			(at 191.77 123.6979 0)
+			(at 199.39 123.6979 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4734,7 +4755,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm_LowProfile"
-			(at 194.31 125.73 0)
+			(at 201.93 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4745,7 +4766,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 194.31 125.73 0)
+			(at 201.93 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4756,7 +4777,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 189.23 125.73 0)
+			(at 196.85 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4767,7 +4788,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 189.23 125.73 0)
+			(at 196.85 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5460,7 +5481,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 189.23 138.43 0)
+		(at 196.85 138.43 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5471,7 +5492,7 @@
 		(fields_autoplaced yes)
 		(uuid "ba6a746f-ae7a-41b4-a6d0-c4abe4b8c47c")
 		(property "Reference" "TP21"
-			(at 191.77 133.8579 0)
+			(at 199.39 133.8579 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5482,7 +5503,7 @@
 			)
 		)
 		(property "Value" "Earf"
-			(at 191.77 136.3979 0)
+			(at 199.39 136.3979 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5493,7 +5514,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm_LowProfile"
-			(at 194.31 138.43 0)
+			(at 201.93 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5504,7 +5525,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 194.31 138.43 0)
+			(at 201.93 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5515,7 +5536,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 189.23 138.43 0)
+			(at 196.85 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5526,7 +5547,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 189.23 138.43 0)
+			(at 196.85 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6879,6 +6900,16 @@
 		(pin "V_ADC" output
 			(at 226.06 52.07 0)
 			(uuid "485c177d-bb68-4a66-b4cd-4db2eea9f6e4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VS" input
+			(at 226.06 40.64 0)
+			(uuid "630fae50-751b-4077-b119-a09b1d350920")
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -1531,12 +1531,6 @@
 		(uuid "30965d96-1b3f-4249-b0df-a1af624b7f13")
 	)
 	(junction
-		(at 68.58 120.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3f1b95bf-3f36-465b-85a8-a699201568dd")
-	)
-	(junction
 		(at 59.69 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2108,7 +2102,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 128.27) (xy 163.83 128.27)
+			(xy 161.29 129.54) (xy 163.83 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2185,16 +2179,6 @@
 			(type default)
 		)
 		(uuid "93601748-80be-4ca5-9627-e59dc9ddeb6f")
-	)
-	(wire
-		(pts
-			(xy 68.58 120.65) (xy 73.66 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "963851ab-0dc2-4f89-b726-ee1e71f034dc")
 	)
 	(wire
 		(pts
@@ -2508,6 +2492,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 127) (xy 165.1 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f74f957d-9091-4fef-99e8-80b125919e30")
+	)
+	(wire
+		(pts
 			(xy 186.69 88.9) (xy 189.23 88.9)
 		)
 		(stroke
@@ -2660,7 +2654,7 @@
 			)
 		)
 	)
-	(global_label "LVD_ENABLE"
+	(global_label "DIODE_EN"
 		(shape input)
 		(at 123.19 168.91 180)
 		(fields_autoplaced yes)
@@ -2670,9 +2664,9 @@
 			)
 			(justify right)
 		)
-		(uuid "a19a9d78-07d9-44ad-9c1d-fb1c34cc5336")
+		(uuid "95270e32-1789-4a75-a206-1fd15a6f366c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 108.8353 168.91 0)
+			(at 111.1334 168.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2721,30 +2715,6 @@
 		(uuid "ecc0ce80-e528-413b-91e2-2d77279e3813")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 88.2566 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "LVD_ENABLE"
-		(shape input)
-		(at 73.66 120.65 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fbb43fc8-fdd3-46b4-b38b-4148b06ebd90")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 88.0147 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2910,9 +2880,20 @@
 		)
 		(uuid "663800cf-a32e-4e71-84ae-54c893be0755")
 	)
+	(hierarchical_label "VS"
+		(shape input)
+		(at 165.1 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6976fa76-805f-41a3-a1ad-0abd8fb54be5")
+	)
 	(hierarchical_label "SUPP_12V_FUSED"
 		(shape output)
-		(at 163.83 128.27 0)
+		(at 163.83 129.54 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3384,7 +3365,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Zener")
-		(at 194.31 87.63 90)
+		(at 194.31 87.63 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3402,7 +3383,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "D_Zener"
@@ -3413,7 +3394,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SMA"
@@ -6069,7 +6050,7 @@
 			)
 		)
 		(pin "SENSE_OUT" output
-			(at 161.29 128.27 0)
+			(at 161.29 129.54 0)
 			(uuid "a1524fb0-e798-45b3-9f9d-c1a264bbe952")
 			(effects
 				(font
@@ -6081,6 +6062,16 @@
 		(pin "V_ADC" output
 			(at 161.29 138.43 0)
 			(uuid "175d8074-06ea-48a2-8ad9-4fb61370913e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VS" input
+			(at 161.29 127 0)
+			(uuid "ed327506-c2ea-4c0f-bef3-ae4ec39ee886")
 			(effects
 				(font
 					(size 1.27 1.27)

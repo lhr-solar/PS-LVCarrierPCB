@@ -1874,6 +1874,12 @@
 		(uuid "0f743144-0cbf-4bc0-9ae8-b31545c7ebdf")
 	)
 	(junction
+		(at 114.3 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "12f2c454-9b14-4fe6-bb88-89ebe215c927")
+	)
+	(junction
 		(at 44.45 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1938,12 +1944,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bf715b0d-fc9b-4433-bd89-35613ad65c56")
-	)
-	(junction
-		(at 114.3 39.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d724df4d-882d-4739-9b51-debdf65412e2")
 	)
 	(junction
 		(at 102.87 39.37)
@@ -2861,7 +2861,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 39.37) (xy 121.92 39.37)
+			(xy 114.3 39.37) (xy 118.11 39.37)
 		)
 		(stroke
 			(width 0)
@@ -6908,7 +6908,7 @@
 		)
 		(uuid "551ab02c-4957-4709-aa84-6bb75bcb2da5")
 	)
-	(label "HSS_SCLK"
+	(label "HSS_MOSI"
 		(at 88.9 168.91 180)
 		(effects
 			(font
@@ -6968,16 +6968,6 @@
 		)
 		(uuid "79397110-b2c3-4043-a2b0-7900a464186e")
 	)
-	(label "VBB"
-		(at 118.11 78.74 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "889e722f-0cc5-42ae-9218-c893eee98153")
-	)
 	(label "HSS_SNS"
 		(at 161.29 128.27 0)
 		(effects
@@ -6987,16 +6977,6 @@
 			(justify left bottom)
 		)
 		(uuid "a928f349-cb60-432e-81c5-91119d34a74f")
-	)
-	(label "VBB"
-		(at 121.92 39.37 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "be746478-78bf-448f-b0e5-dc78a82b04ca")
 	)
 	(label "VDD"
 		(at 58.42 44.45 180)
@@ -7048,6 +7028,17 @@
 			(justify right)
 		)
 		(uuid "0ec40039-8aa0-4cf0-8b4f-5c829ff190e4")
+	)
+	(hierarchical_label "12V_HSS"
+		(shape input)
+		(at 118.11 39.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "284623aa-a624-4e1b-9550-6370fca0ed38")
 	)
 	(hierarchical_label "12V_HSS"
 		(shape input)
