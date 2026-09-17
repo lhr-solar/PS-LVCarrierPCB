@@ -1288,6 +1288,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 83.82) (xy 172.72 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d8bc719-97a2-419b-8598-e15bd7e96523")
+	)
+	(wire
+		(pts
 			(xy 166.37 36.83) (xy 151.13 36.83)
 		)
 		(stroke
@@ -1318,6 +1328,16 @@
 	)
 	(wire
 		(pts
+			(xy 182.88 83.82) (xy 182.88 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39f5905e-a77a-47fb-b117-ea8279359546")
+	)
+	(wire
+		(pts
 			(xy 34.29 119.38) (xy 33.02 119.38)
 		)
 		(stroke
@@ -1328,7 +1348,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 77.47) (xy 166.37 77.47)
+			(xy 158.75 71.12) (xy 162.56 71.12)
 		)
 		(stroke
 			(width 0)
@@ -1358,7 +1378,17 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 77.47) (xy 177.8 77.47)
+			(xy 182.88 92.71) (xy 182.88 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "48c762ac-673f-4ca2-88a5-bccf41700dc2")
+	)
+	(wire
+		(pts
+			(xy 170.18 71.12) (xy 173.99 71.12)
 		)
 		(stroke
 			(width 0)
@@ -1375,6 +1405,16 @@
 			(type default)
 		)
 		(uuid "5a6f5745-ee07-4c61-8a92-ca47645ed1d1")
+	)
+	(wire
+		(pts
+			(xy 172.72 92.71) (xy 172.72 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78c7e321-b724-442d-81d3-c2904f142342")
 	)
 	(wire
 		(pts
@@ -6079,7 +6119,7 @@
 		(uuid "b82329f6-a10c-4381-8da9-14cd9f4be92a")
 	)
 	(label "FAN_B_PWM"
-		(at 177.8 77.47 0)
+		(at 173.99 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6109,7 +6149,7 @@
 		(uuid "cc4a29f9-3214-45e6-b3b7-8fbd4c823a4d")
 	)
 	(label "FAN_A_PWM"
-		(at 162.56 77.47 180)
+		(at 158.75 71.12 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6128,6 +6168,16 @@
 		)
 		(uuid "e91251ae-b46f-4db1-8cce-b363c08bcb70")
 	)
+	(label "I2C_SDA"
+		(at 182.88 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f7d2ee5a-5bc1-4345-af1d-08e6c4a3dd98")
+	)
 	(label "FAN_B_TACH"
 		(at 50.8 97.79 0)
 		(effects
@@ -6137,6 +6187,16 @@
 			(justify left bottom)
 		)
 		(uuid "fa9bd60c-d169-462b-aaaf-9a14481a53e1")
+	)
+	(label "I2C_SCL"
+		(at 172.72 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fea05cc2-0d02-4b72-9e96-aebd848e6589")
 	)
 	(label "FAN_A_PWM"
 		(at 133.35 95.25 0)
@@ -6809,6 +6869,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 182.88 88.9 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6b920705-6430-46c4-b5db-8dcbddc0364b")
+		(property "Reference" "R147"
+			(at 180.34 87.6299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 180.34 90.1699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 184.658 88.9 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 182.88 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C25804"
+			(at 182.88 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 182.88 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1f07bb29-c73e-4415-a39b-b53ff12df4a9")
+		)
+		(pin "2"
+			(uuid "8cf724eb-f6f7-408c-972b-3d316adf66b1")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f9fba8b7-0cf3-4419-9ae4-4e9c55277e07"
+					(reference "R147")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 36.83 86.36 0)
 		(unit 1)
@@ -7371,6 +7535,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 182.88 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "84c27aec-5bcf-42fc-98f3-a54a0b0e5fd8")
+		(property "Reference" "#PWR055"
+			(at 182.88 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 182.88 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 182.88 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 182.88 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "535d976e-a77c-4487-ad24-99a3cb7accc5")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f9fba8b7-0cf3-4419-9ae4-4e9c55277e07"
+					(reference "#PWR055")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 106.68 90.17 0)
 		(unit 1)
@@ -7706,7 +7948,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm_LowProfile"
+		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
 			(at 153.67 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -7796,7 +8038,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm_LowProfile"
+		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical"
 			(at 138.43 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -7925,6 +8167,110 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f9fba8b7-0cf3-4419-9ae4-4e9c55277e07"
 					(reference "#PWR052")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 172.72 88.9 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c700f433-10d5-4672-b207-4291a63625ad")
+		(property "Reference" "R146"
+			(at 170.18 87.6299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 170.18 90.1699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 174.498 88.9 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 172.72 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C25804"
+			(at 172.72 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 172.72 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bec007ce-9e72-4c97-8962-927fbfcd9677")
+		)
+		(pin "2"
+			(uuid "f3406ac7-3a75-4139-8fb9-d3e40c81e665")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f9fba8b7-0cf3-4419-9ae4-4e9c55277e07"
+					(reference "R146")
 					(unit 1)
 				)
 			)
@@ -8128,7 +8474,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 170.18 77.47 90)
+		(at 166.37 71.12 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8139,7 +8485,7 @@
 		(fields_autoplaced yes)
 		(uuid "dac1bea0-6455-4721-b80b-bb6992642855")
 		(property "Reference" "R143"
-			(at 170.18 71.12 90)
+			(at 166.37 64.77 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8149,7 +8495,7 @@
 			)
 		)
 		(property "Value" "0"
-			(at 170.18 73.66 90)
+			(at 166.37 67.31 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8159,7 +8505,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 170.18 79.248 90)
+			(at 166.37 72.898 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8170,7 +8516,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 170.18 77.47 0)
+			(at 166.37 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8181,7 +8527,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 170.18 77.47 0)
+			(at 166.37 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8192,7 +8538,7 @@
 			)
 		)
 		(property "Manufacturer" ""
-			(at 170.18 77.47 90)
+			(at 166.37 71.12 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8203,7 +8549,7 @@
 			)
 		)
 		(property "Mouser Link" ""
-			(at 170.18 77.47 90)
+			(at 166.37 71.12 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8214,7 +8560,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CRCW06030000Z0EE"
-			(at 170.18 77.47 90)
+			(at 166.37 71.12 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8225,7 +8571,7 @@
 			)
 		)
 		(property "Sim.Type" ""
-			(at 170.18 77.47 90)
+			(at 166.37 71.12 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8236,7 +8582,7 @@
 			)
 		)
 		(property "Description (Customer #)" ""
-			(at 170.18 77.47 90)
+			(at 166.37 71.12 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8247,7 +8593,7 @@
 			)
 		)
 		(property "LCSC P/N" "C21189"
-			(at 170.18 77.47 90)
+			(at 166.37 71.12 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8258,7 +8604,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 170.18 77.47 90)
+			(at 166.37 71.12 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8436,6 +8782,84 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f9fba8b7-0cf3-4419-9ae4-4e9c55277e07"
 					(reference "R136")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 172.72 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eb77949b-ed27-4a1e-a674-67fcb00ea12e")
+		(property "Reference" "#PWR054"
+			(at 172.72 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 172.72 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 172.72 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e2dd1720-731e-4382-8ee9-399e893870e7")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/f9fba8b7-0cf3-4419-9ae4-4e9c55277e07"
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)

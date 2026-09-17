@@ -2357,7 +2357,7 @@
 	)
 	(text "1. Use low impedance solid capacitor with excellent temperature characteristics.\n　　 (Nippon Chemi-Con PSG Series or equivalent)\n"
 		(exclude_from_sim no)
-		(at 105.918 75.438 0)
+		(at 72.898 77.216 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2561,7 +2561,7 @@
 	)
 	(text "tie mounting holes to plate on footprint"
 		(exclude_from_sim no)
-		(at 102.87 72.136 0)
+		(at 69.85 73.914 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2717,6 +2717,26 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 76.2) (xy 130.81 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "068c4341-d31f-4299-85b8-2d6f8d695403")
+	)
+	(wire
+		(pts
+			(xy 130.81 78.74) (xy 129.54 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1411d2d8-95e5-4756-a681-8cc1d09b16fa")
+	)
+	(wire
+		(pts
 			(xy 54.61 154.94) (xy 48.26 154.94)
 		)
 		(stroke
@@ -2774,16 +2794,6 @@
 			(type default)
 		)
 		(uuid "2b2c3b32-fca1-49b0-bb0f-8b8bfb072c97")
-	)
-	(wire
-		(pts
-			(xy 45.72 77.47) (xy 38.1 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "31a40960-48e2-46ac-9e41-4d97aa82b45c")
 	)
 	(wire
 		(pts
@@ -2864,16 +2874,6 @@
 			(type default)
 		)
 		(uuid "43f1e627-4d15-4edd-a11c-26bf1a66d723")
-	)
-	(wire
-		(pts
-			(xy 63.5 80.01) (xy 54.61 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "45dd9eb4-a68b-48a7-948a-1742a1f542ce")
 	)
 	(wire
 		(pts
@@ -2984,16 +2984,6 @@
 			(type default)
 		)
 		(uuid "6c2ab310-cdaf-4cf1-a2b0-86ef9e2882bc")
-	)
-	(wire
-		(pts
-			(xy 63.5 77.47) (xy 54.61 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6fc55755-e4e5-49b2-9e14-c4e704428855")
 	)
 	(wire
 		(pts
@@ -3124,16 +3114,6 @@
 			(type default)
 		)
 		(uuid "8cd987a0-7d63-4ac5-b3c4-56d30563a072")
-	)
-	(wire
-		(pts
-			(xy 45.72 80.01) (xy 38.1 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9288c1ff-b631-455d-8358-e2f0363a16ae")
 	)
 	(wire
 		(pts
@@ -3345,16 +3325,6 @@
 		)
 		(uuid "fa5a4dd7-5a5f-48be-bd4a-6987f4325f93")
 	)
-	(label "HV_OUT-"
-		(at 63.5 80.01 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "12ffcbe1-efd1-4769-bd27-166ef11b2614")
-	)
 	(label "CNT"
 		(at 77.47 45.72 0)
 		(effects
@@ -3365,15 +3335,15 @@
 		)
 		(uuid "15a43277-2983-45e8-af82-e0e93fc25995")
 	)
-	(label "HV_OUT+"
-		(at 63.5 77.47 180)
+	(label "OUT+"
+		(at 130.81 76.2 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
-		(uuid "ac42cfa2-be4d-40ee-852b-d83f1ae0f582")
+		(uuid "835f21b6-5da7-4f93-9f34-42c15a1fe7c7")
 	)
 	(label "HV_OUT_V"
 		(at 227.33 52.07 0)
@@ -3404,26 +3374,6 @@
 			(justify left bottom)
 		)
 		(uuid "b93ceb84-0267-44a8-a73b-a4dbb0ec8ca0")
-	)
-	(label "HV_IN+"
-		(at 45.72 77.47 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "c070cf1f-c9c3-4d03-86ed-07e83d48931c")
-	)
-	(label "HV_IN-"
-		(at 45.72 80.01 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "c8263a6b-f1a3-4b58-8d5a-5662f1eb2a9a")
 	)
 	(label "HV_OUT_I"
 		(at 227.33 49.53 0)
@@ -3597,6 +3547,17 @@
 			(justify left)
 		)
 		(uuid "e045e849-7523-436e-8e9c-8892df6ec8dd")
+	)
+	(hierarchical_label "LV_GND"
+		(shape input)
+		(at 130.81 78.74 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e824cf14-7f1e-4c3a-a3dc-b4ccacf37b30")
 	)
 	(hierarchical_label "LV_GND"
 		(shape input)
@@ -4148,97 +4109,6 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
 					(reference "TP19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 49.53 80.01 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "317e7d16-76e7-4e96-b758-995090bc7f34")
-		(property "Reference" "J7"
-			(at 49.53 71.12 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "HV_OUT"
-			(at 49.53 73.66 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LHRS_Connectors:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical"
-			(at 49.53 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 49.53 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 49.53 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 49.53 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "dcbdac46-5d83-4e08-bdbe-84adddc8dd0a")
-		)
-		(pin "1"
-			(uuid "1761263d-466f-4832-a219-6177bae2bd1b")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
-					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -5153,6 +5023,97 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
 					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 124.46 78.74 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8a6ea331-435c-4041-91e0-5a9ed2b08327")
+		(property "Reference" "J6"
+			(at 124.46 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "HV_IN"
+			(at 124.46 72.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LHRS_Connectors:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical"
+			(at 124.46 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 124.46 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 124.46 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "a7cfc3f0-adeb-460a-b1ef-0958f3703f4f")
+		)
+		(pin "1"
+			(uuid "b32df771-f2d6-4511-89a6-f9fa4ce1e9d0")
+		)
+		(instances
+			(project "PS-LVCarrier"
+				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -6609,97 +6570,6 @@
 			(project "PS-LVCarrier"
 				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
 					(reference "R54")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 33.02 80.01 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f67d2fc4-9570-4c7f-9c17-40db550edb73")
-		(property "Reference" "J6"
-			(at 33.02 71.12 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "HV_IN"
-			(at 33.02 73.66 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LHRS_Connectors:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical"
-			(at 33.02 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 33.02 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 33.02 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 33.02 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "d979dc3b-382b-4da3-b864-d7eef22e4c12")
-		)
-		(pin "1"
-			(uuid "51483248-a0df-436f-b0f5-9705bce759aa")
-		)
-		(instances
-			(project "PS-LVCarrier"
-				(path "/9bab2d9d-20f3-40ef-8545-e1299efec47e/4f26e4eb-a337-4f9d-865d-e2c0801c36ac/a57b6f22-cd56-4351-a5e4-2e9e02d85251"
-					(reference "J6")
 					(unit 1)
 				)
 			)
