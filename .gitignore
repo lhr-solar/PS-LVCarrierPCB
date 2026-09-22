@@ -1,3 +1,6 @@
+# -----------------------------------------------------------------------------
+# HARDWARE (KICAD)
+# -----------------------------------------------------------------------------
 # For PCBs designed using KiCad: https://www.kicad.org/
 # Format documentation: https://kicad.org/help/file-formats/
 
@@ -8,10 +11,13 @@
 *.kicad_pcb-bak
 *.kicad_sch-bak
 *-backups
-*.kicad_prl
-*.sch-bak
+*-cache*
+*-bak
+*-bak*
 *~
+~*
 _autosave-*
+\#auto_saved_files\#
 *.tmp
 *-save.pro
 *-save.kicad_pcb
@@ -28,16 +34,50 @@ fp-info-cache
 
 # Exported BOM files
 *.xml
+*.csv
 
-**/production/backups/*
+# Whitelist production files directory
+!**/jlcpcb/production_files/
+!**/jlcpcb/production_files/**
 
-.DS_Store
-replicate_layout.log
+# Archived Backups (KiCad 6.0)
+**/*-backups/*.zip
 
-build/
+# Local project settings
+*.kicad_prl
+
+# -----------------------------------------------------------------------------
+# FIRMWARE
+# -----------------------------------------------------------------------------
+
+# VS Code
 .vscode/
-.vscode/compile_commands.json
+compile_commands.json
 
-fabrication-toolkit-options.json
+# Build files
+build
+.dockerfile.hash
+.cache
+/can/CANMetaData.*
+Madefile
 
-.venv
+# Python
+*venv
+__pycache__/
+.env
+
+# Nix
+flake.lock
+
+# Documentation toolset
+docs/doxygen/
+site/*
+!site/empty.a
+Zone.Identifier
+
+# Mac specific files
+.DS_Store
+
+Hardware/BasePCB
+
+.history
