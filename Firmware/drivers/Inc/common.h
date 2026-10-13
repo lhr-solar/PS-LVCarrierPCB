@@ -2,6 +2,7 @@
 
 #include "stm32xx_hal.h"
 #include "stdint.h"
+#include "string.h"
 
 typedef enum pinState {OFF = GPIO_PIN_RESET, ON = GPIO_PIN_SET} pin_state_t;
 

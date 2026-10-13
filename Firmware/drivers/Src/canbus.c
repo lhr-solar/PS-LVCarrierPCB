@@ -5,38 +5,17 @@
 
 FDCAN_HandleTypeDef* carfdcan;
 
-
 can_status_t canbus_init(){
+    
     carfdcan = hfdcan3;
 
-    // carfdcan->Init.ClockDivider = FDCAN_CLOCK_DIV1;
-    // carfdcan->Init.FrameFormat = FDCAN_FRAME_CLASSIC;
-    // carfdcan->Init.Mode = FDCAN_MODE_NORMAL;
-    // carfdcan->Init.AutoRetransmission = DISABLE;
-    // carfdcan->Init.TransmitPause = DISABLE;
-    // carfdcan->Init.ProtocolException = DISABLE;
-    // carfdcan->Init.NominalPrescaler = 20;
-    // carfdcan->Init.NominalSyncJumpWidth = 1;
-    // carfdcan->Init.NominalTimeSeg1 = 13;
-    // carfdcan->Init.NominalTimeSeg2 = 2;
-    // carfdcan->Init.DataPrescaler = 1;
-    // carfdcan->Init.DataSyncJumpWidth = 1;
-    // carfdcan->Init.DataTimeSeg1 = 1;
-    // carfdcan->Init.DataTimeSeg2 = 1;
-    // carfdcan->Init.StdFiltersNbr = 0;
-    // carfdcan->Init.ExtFiltersNbr = 0;
-    // carfdcan->Init.TxFifoQueueMode = FDCAN_TX_FIFO_OPERATION;
-
-    // CubeMX gen'ed
-    
     carfdcan->Instance = FDCAN3;
     carfdcan->Init.ClockDivider = FDCAN_CLOCK_DIV1;
     carfdcan->Init.FrameFormat = FDCAN_FRAME_CLASSIC;
 
     // external loop back + auto retry enable
-    carfdcan->Init.Mode = FDCAN_MODE_EXTERNAL_LOOPBACK;
-    // carfdcan->Init.Mode = FDCAN_MODE_NORMAL;
-    carfdcan->Init.AutoRetransmission = DISABLE;
+    carfdcan->Init.Mode = FDCAN_MODE_NORMAL;
+    carfdcan->Init.AutoRetransmission = ENABLE;
     carfdcan->Init.TransmitPause = DISABLE;
     carfdcan->Init.ProtocolException = DISABLE;
     carfdcan->Init.NominalPrescaler = 20;
@@ -47,7 +26,7 @@ can_status_t canbus_init(){
     carfdcan->Init.DataSyncJumpWidth = 1;
     carfdcan->Init.DataTimeSeg1 = 1;
     carfdcan->Init.DataTimeSeg2 = 1;
-    carfdcan->Init.StdFiltersNbr = 0;
+    carfdcan->Init.StdFiltersNbr = 1;
     carfdcan->Init.ExtFiltersNbr = 0;
     carfdcan->Init.TxFifoQueueMode = FDCAN_TX_FIFO_OPERATION;
 

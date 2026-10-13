@@ -188,7 +188,6 @@ adc_status_t adc3_init(void){
     return ADC_INIT_FAIL;
   }
 
-  HAL_ADCEx_Calibration_Start(hadc1, ADC_SINGLE_ENDED);
 
 
   return ADC_OK;

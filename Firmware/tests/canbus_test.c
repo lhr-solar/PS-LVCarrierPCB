@@ -10,7 +10,7 @@ StackType_t task_stack[512];
 void can_error_handler(){
     while(1){
         // rapidly toggle
-        statusLeds_toggle(LSOM_HEARTBEAT_LED);
+        statusLeds_toggle(SUPPBAT_FAULT_LED);
         HAL_Delay(500);
     }
 }
@@ -33,12 +33,14 @@ static void task(void *pvParameters){
     
     while(1){
 
-        if (canbus_send(test_id, 8, tx_data, portMAX_DELAY) == CAN_ERR){
-            can_error_handler();
-        }
-        else{
+        if (canbus_send(test_id, CAN_DLC_SUPP_BATTERY_STATUS, tx_data, portMAX_DELAY) == CAN_OK){
             statusLeds_toggle(LSOM_HEARTBEAT_LED);
         }
+        else{
+            can_error_handler();
+        }
+
+        statusLeds_toggle(HEARTBEAT_LED);
 
         vTaskDelay(pdMS_TO_TICKS(1000));
 

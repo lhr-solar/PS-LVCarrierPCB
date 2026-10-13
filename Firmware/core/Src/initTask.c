@@ -6,7 +6,9 @@
 #include "commandLine.h"
 #include "tasksConfig.h"
 #include "faultState.h"
- 
+#include "canbus.h" 
+#include "bq25756e_preReqBits.h"
+
 
 void initThread(){
 
@@ -15,6 +17,11 @@ void initThread(){
     statusLeds_toggle(LSOM_HEARTBEAT_LED);
 
     faultBits_init();
+
+    canbus_init();
+
+   // init pre req bits for the supp charger
+   bq25756e_preReqBits_init();
 
      xTaskCreateStatic(
                     powerMuxMonitor,
